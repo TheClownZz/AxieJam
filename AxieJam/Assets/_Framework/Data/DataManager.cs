@@ -1,11 +1,9 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine;
 using CI.QuickSave;
 using Sirenix.OdinInspector;
-using UnityEngine;
-using UnityEngine.Events;
-
+using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class DataManager : MonoSingleton<DataManager>
 {
@@ -19,17 +17,17 @@ public class DataManager : MonoSingleton<DataManager>
 
     private void SetupController()
     {
-        reader = QuickSaveReader.Create(rootKey);
         writer = QuickSaveWriter.Create(rootKey);
+        reader = QuickSaveReader.Create(rootKey);
     }
 
     protected override void Initiate()
     {
         base.Initiate();
         SetupController();
-        for (int i = 0; i < gameDatasList.Count; i++)
+        foreach (GameData data in gameDatasList)
         {
-            var data = gameDatasList[i];
+            Debug.LogError(data.HasData());
             data.Initiate();
             if (!data.HasData())
             {
@@ -72,19 +70,16 @@ public class DataManager : MonoSingleton<DataManager>
     public void SaveData<T>(string key, T userSaveData)
     {
         writer.Write(key, userSaveData).Commit();
-       // BayatGames.SaveGamePro.SaveGame.Save<T>(key, userSaveData);
     }
 
     public T LoadData<T>(string key)
     {
         return reader.Read<T>(key);
-        //  return BayatGames.SaveGamePro.SaveGame.Load<T>(key);
     }
 
     public bool HasData(string key)
     {
-        return reader.Exists(key);
-        // return BayatGames.SaveGamePro.SaveGame.Exists(key);
+        return writer.Exists(key);
     }
 
 
@@ -93,7 +88,10 @@ public class DataManager : MonoSingleton<DataManager>
     {
         foreach (GameData data in gameDatasList)
         {
-            data.LoadData();
+            if (data.HasData())
+                data.LoadData();
+            else
+                data.NewData();
         }
     }
 
@@ -111,8 +109,10 @@ public class DataManager : MonoSingleton<DataManager>
     {
         foreach (GameData data in gameDatasList)
         {
-            data.NewData();
+            writer.Delete(data.GetName());
         }
+        writer.Commit();
+        reader = QuickSaveReader.Create(rootKey);// syns with writer
     }
 
     private void OnApplicationQuit()

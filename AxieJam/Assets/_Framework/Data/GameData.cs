@@ -6,7 +6,6 @@ interface IGameData
 {
     void Initiate();
     void NewData();
-    void Delete();
     void SaveData();
     void LoadData();
     bool HasData();
@@ -25,11 +24,6 @@ public class GameData : MonoBehaviour, IGameData
 
     }
 
-
-
-    public virtual void Delete()
-    {
-    }
 
     public virtual void SaveData()
     {
