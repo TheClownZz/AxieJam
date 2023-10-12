@@ -7,6 +7,7 @@ public class GameManager : MonoSingleton<GameManager>
 {
     public void OnInit()
     {
+        UIManager.Instance.ShowScreen<ScreenGame>();
     }
 
 }

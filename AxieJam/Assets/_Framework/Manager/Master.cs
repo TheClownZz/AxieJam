@@ -41,14 +41,14 @@ public class Master : MonoSingleton<Master>
 
         AudioManager.Instance.OnInit();
 
-        yield return new WaitUntil(() => GameManager.Instance != null);
-
-        GameManager.Instance.OnInit();
 
         yield return new WaitUntil(() => UIManager.Instance != null);
 
         UIManager.Instance.OnInit();
 
+        yield return new WaitUntil(() => GameManager.Instance != null);
+
+        GameManager.Instance.OnInit();
 
 
 #if UNITY_EDITOR
