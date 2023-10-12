@@ -27,7 +27,6 @@ public class DataManager : MonoSingleton<DataManager>
         SetupController();
         foreach (GameData data in gameDatasList)
         {
-            Debug.LogError(data.HasData());
             data.Initiate();
             if (!data.HasData())
             {
