@@ -8,6 +8,7 @@ using UnityEngine;
 
 namespace AxieMixer.Unity
 {
+    [System.Serializable]
     public class Axie2dBuilderResult
     {
         public string error;

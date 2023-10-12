@@ -94,11 +94,11 @@ namespace Game
         {
             animationDropDown.value = (animationDropDown.value + step + animationDropDown.options.Count) % animationDropDown.options.Count;
         }
+        [SerializeField] List<(string, string, int, int)> bodies = new List<(string, string, int, int)>();
 
         void TestAll()
         {
             ClearAll();
-            List<(string, string, int, int)> bodies = new List<(string, string, int, int)>();
             string[] specialBodys = new[]
             {
                 "body-normal",
@@ -113,10 +113,10 @@ namespace Game
 
             int k = 0;
             string bodyMode = bodyDropDown.options[bodyDropDown.value].text.ToLower().Replace("body ", "");
-            for (int classIdx = 0;classIdx < 6;classIdx++)
+            for (int classIdx = 0; classIdx < 6; classIdx++)
             {
                 var characterClass = (CharacterClass)classIdx;
-                for (int classValue = 2;classValue <= 12;classValue += 2)
+                for (int classValue = 2; classValue <= 12; classValue += 2)
                 {
                     string key = $"{characterClass}-{classValue:00}";
                     //
@@ -131,7 +131,7 @@ namespace Game
                 }
             }
 
-            for (int classIdx = 0;classIdx < 6;classIdx++)
+            for (int classIdx = 0; classIdx < 6; classIdx++)
             {
                 var characterClass = (CharacterClass)classIdx;
                 string key = $"{characterClass}-mystic-02";
@@ -140,14 +140,14 @@ namespace Game
             }
 
             {
-                for (int classValue = 1;classValue <= 2;classValue += 1)
+                for (int classValue = 1; classValue <= 2; classValue += 1)
                 {
                     string key = $"xmas-{classValue:00}";
                     bodies.Add((key, "body-frosty", 0, classValue));
                 }
             }
             {
-                for (int classValue = 1;classValue <= 3;classValue += 1)
+                for (int classValue = 1; classValue <= 3; classValue += 1)
                 {
                     string key = $"japan-{classValue:00}";
                     bodies.Add((key, "body-normal", 0, classValue));
@@ -155,7 +155,7 @@ namespace Game
 
             }
             {
-                for (int classValue = 0;classValue <= 1;classValue += 1)
+                for (int classValue = 0; classValue <= 1; classValue += 1)
                 {
                     string key = $"agamo-{classValue:00}";
                     bodies.Add((key, "body-agamo", 0, classValue));
@@ -165,7 +165,7 @@ namespace Game
             bodies.Add(("summer-a", "body-normal", 0, 0));
 
 
-          
+
             int total = 0;
             foreach (var (key, body, classIdx, classValue) in bodies)
             {
@@ -184,8 +184,8 @@ namespace Game
                     {"body-class", characterClass.ToString() },
                     {"body-id", " 2727 " },
                 };
-                 
-                foreach(var accessorySlot in ACCESSORY_SLOTS)
+
+                foreach (var accessorySlot in ACCESSORY_SLOTS)
                 {
                     adultCombo.Add(accessorySlot, $"{accessorySlot}1{System.Char.ConvertFromUtf32((int)('a') + accessoryIdx - 1)}");
                 }
@@ -193,7 +193,7 @@ namespace Game
                 byte colorVariant = (byte)builder.GetSampleColorVariant(characterClass, classValue);
 
                 var builderResult = builder.BuildSpineAdultCombo(adultCombo, colorVariant, scale);
-
+                axie2DBuilderResult = builderResult;
                 //Test
                 GameObject go = new GameObject("DemoAxie");
                 int row = total / 6;
@@ -224,6 +224,7 @@ namespace Game
             }
             Debug.Log("Done");
         }
+        [SerializeField] Axie2dBuilderResult axie2DBuilderResult = new Axie2dBuilderResult();
 
         void TestSummer()
         {
