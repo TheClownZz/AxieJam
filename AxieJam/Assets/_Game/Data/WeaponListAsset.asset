@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c553a29dca6456478e76cfdc96e3043, type: 3}
+  m_Name: WeaponListAsset
+  m_EditorClassIdentifier: 
+  dataList:
+  - WeaponType: 1
+    pf: {fileID: 2127867565194770972, guid: 916a101b95faac945b2bf5b89dd17b53, type: 3}
+    config: {fileID: 11400000, guid: b4f7b6fa6021a4db49f6ec5160f0b2c7, type: 2}
+  - WeaponType: 2
+    pf: {fileID: 2127867565194770972, guid: 216c9921b004ab94b8c7e48ddba87866, type: 3}
+    config: {fileID: 11400000, guid: d05d09cf0b957a5418a76d83091042fb, type: 2}
+  - WeaponType: 3
+    pf: {fileID: 8371294464888690839, guid: cc4cbfd07a0a37e47a9e598aafb76138, type: 3}
+    config: {fileID: 11400000, guid: c874399dca9284047846cdfd6ff453e7, type: 2}
+  - WeaponType: 4
+    pf: {fileID: 1497509898237301158, guid: 57bdfc6771a1bdf488a83f11e1570920, type: 3}
+    config: {fileID: 11400000, guid: c818a8aad531679429c3819a0253bf13, type: 2}
+  - WeaponType: 5
+    pf: {fileID: 1497509898237301158, guid: a975c1e218eb83b439f832adc2a64244, type: 3}
+    config: {fileID: 11400000, guid: 91435b724009d4480a7e9b79f1914fa6, type: 2}
+  - WeaponType: 6
+    pf: {fileID: 2127867565194770972, guid: c35f19a65efb41c48999fd94cfbdd7d1, type: 3}
+    config: {fileID: 11400000, guid: 2a38afcbfdd364ddfa048e20678042fc, type: 2}
+  - WeaponType: 7
+    pf: {fileID: 6390536557577081298, guid: 1a7997dd526eb6f45a43fd08852e1570, type: 3}
+    config: {fileID: 11400000, guid: 85585beb865166d489f30a16fc17af60, type: 2}
+  - WeaponType: 8
+    pf: {fileID: 8717005751167080510, guid: 8db6c3d0d94f2a44ea1774293482b8d0, type: 3}
+    config: {fileID: 11400000, guid: cdadb273eb0504c42b283d7763abde82, type: 2}
+  - WeaponType: 9
+    pf: {fileID: 2127867565194770972, guid: 6ced1ec151ef75445a60a7d43d76634a, type: 3}
+    config: {fileID: 11400000, guid: ad106fbf643ac0e49be401269bfd2444, type: 2}
+  - WeaponType: 10
+    pf: {fileID: 1497509898237301158, guid: 48045262c733d164cabd529a25c6afc4, type: 3}
+    config: {fileID: 11400000, guid: eedf5ccaeaea0d54c93b553d0e2441f3, type: 2}
+  - WeaponType: 11
+    pf: {fileID: 1497509898237301158, guid: d460d90820dfa444b8261a3f4f73423c, type: 3}
+    config: {fileID: 11400000, guid: 4d8867ca085dded47afc210d4055510b, type: 2}
+  - WeaponType: 12
+    pf: {fileID: 1497509898237301158, guid: 323a33a660bb30d4bbd649130b536e85, type: 3}
+    config: {fileID: 11400000, guid: 3101a502d6eb2f64280de09580f1d47b, type: 2}
+  - WeaponType: 13
+    pf: {fileID: 1497509898237301158, guid: 648f6173198914c49959dd0f57715acd, type: 3}
+    config: {fileID: 11400000, guid: 22b68c0ce8b4ca944abec398253399b3, type: 2}
+  - WeaponType: 14
+    pf: {fileID: 3317946484588869478, guid: 787b58a715bd0504ca7c23ecb4115eb6, type: 3}
+    config: {fileID: 11400000, guid: 2afdaccb15fa52844914858430017004, type: 2}

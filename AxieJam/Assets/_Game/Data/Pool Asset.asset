@@ -12,4 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d1c24c2fa4832498d59c2253fbafa7, type: 3}
   m_Name: Pool Asset
   m_EditorClassIdentifier: 
-  poolDataList: []
+  poolDataList:
+  - poolType: 100
+    prefab: {fileID: 8911379269055794545, guid: 083b219e0899cdb4392cbee9c3529a40, type: 3}
+  - poolType: 101
+    prefab: {fileID: 8911379269055794545, guid: def5a9bbb982e564eb2ec62431ece4e7, type: 3}
+  - poolType: 102
+    prefab: {fileID: 8911379269055794545, guid: 0ce62e7364a47634999fc5702711159e, type: 3}
+  - poolType: 103
+    prefab: {fileID: 8911379269055794545, guid: 3e3853fa4da7ab047b4874736da89a58, type: 3}
+  - poolType: 104
+    prefab: {fileID: 5236725627696191383, guid: 164734ed7e9acd3459d07eae8d422275, type: 3}
+  - poolType: 300
+    prefab: {fileID: 6866847650525164682, guid: b4d9f4b38d4e7a54c89a3fa96c0a4fe8, type: 3}
+  - poolType: 1
+    prefab: {fileID: 3943016598055714950, guid: ba0b4d2650aafb64ab65c49087a9f602, type: 3}
+  - poolType: 2
+    prefab: {fileID: 7012256406836314523, guid: c5162cc07e9d6ed42af10c51d38470a4, type: 3}
+  - poolType: 3
+    prefab: {fileID: 5724466204189832536, guid: 97b182d94a3c6d34c9058d2893af073e, type: 3}
+  - poolType: 4
+    prefab: {fileID: 5189289661411729999, guid: e6ffb211665aec247bed06e14fdfa060, type: 3}
+  - poolType: 5
+    prefab: {fileID: 8415887524325586885, guid: 612dfeb4bf2afe34e94ee765b49ef9fb, type: 3}

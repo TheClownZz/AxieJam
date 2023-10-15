@@ -6,9 +6,13 @@ interface IGameData
 {
     void Initiate();
     void NewData();
+    void UpdateData();
+    void Delete();
     void SaveData();
     void LoadData();
     bool HasData();
+    bool HasUpdateData();
+    IEnumerator ProcessData();
     string GetName();
 }
 
@@ -24,6 +28,14 @@ public class GameData : MonoBehaviour, IGameData
 
     }
 
+    public virtual void UpdateData()
+    {
+
+    }
+
+    public virtual void Delete()
+    {
+    }
 
     public virtual void SaveData()
     {
@@ -35,13 +47,22 @@ public class GameData : MonoBehaviour, IGameData
 
     }
 
-    public bool HasData()
+    public virtual bool HasData()
     {
         return DataManager.Instance.HasData(GetName());
     }
 
+    public virtual bool HasUpdateData()
+    {
+        return false;
+    }
 
-    public string GetName()
+    public virtual IEnumerator ProcessData()
+    {
+        yield return null;
+    }
+
+    public virtual string GetName()
     {
         return GetType().FullName;
     }

@@ -113,13 +113,15 @@ public class DataCurrency : GameData
     {
         saveData = new CurrencySave();
 
-        saveData.dataList = new List<int>
-        {
-            0
-        };
+        saveData.dataList = new List<int>();
+        saveData.dataList.Add(0);
         SaveData();
     }
 
+    public override bool HasData()
+    {
+        return !(saveData == null || saveData.dataList == null || saveData.dataList.Count == 0);
+    }
     #endregion
 
     #region DEBUG

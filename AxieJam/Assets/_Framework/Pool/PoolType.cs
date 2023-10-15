@@ -1,12 +1,21 @@
 public enum PoolType
 {
-    Piece = 0,
+    None = 0,
+    SpawnFx = 1,
+    HitBullet,
+    HitSlash,
+    Explosion,
+    Stone,
 
-    Block = 50,
-    MoneyBlock,
+    Normal = 100,
+    Tank,
+    Run,
+    Vomit,
+    Twin,
 
-    GoldCollect = 100,
-    FireWork = 101,
-    CutWoodFx,
-    SortWoodFx,
+    Porky = 200,
+    Medic,
+
+    TextDisplay = 300,
+    IconDisplay,
 }

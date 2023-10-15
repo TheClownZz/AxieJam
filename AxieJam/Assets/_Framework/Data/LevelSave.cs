@@ -27,14 +27,16 @@ public class LevelSave
     #region PARAMS
     public int currentLevel;
     public int highestLevel;
+    public int currentDay;
     public List<LevelSaveData> dataList = new List<LevelSaveData>();
     #endregion
 
     #region PROPERTIES
-    public LevelSave(int currentLevelId, int highestLevelId)
+    public LevelSave(int currentLevelId, int highestLevelId, int currentDay)
     {
         this.currentLevel = currentLevelId;
         this.highestLevel = highestLevelId;
+        this.currentDay = currentDay;
     }
     #endregion
 

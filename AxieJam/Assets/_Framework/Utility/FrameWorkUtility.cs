@@ -533,4 +533,19 @@ public static class FrameWorkUtility
         canvasGroup.blocksRaycasts = isActive;
     }
 
+    public static string TimeFormatter(float seconds, bool forceHHMMSS = false)
+    {
+        float secondsRemainder = Mathf.Floor((seconds % 60) * 100) / 100.0f;
+        int minutes = ((int)(seconds / 60)) % 60;
+        int hours = (int)(seconds / 3600);
+
+        if (!forceHHMMSS)
+        {
+            if (hours == 0)
+            {
+                return String.Format("{0:00}:{1:00}", minutes, secondsRemainder);
+            }
+        }
+        return String.Format("{0}:{1:00}:{2:00}", hours, minutes, secondsRemainder);
+    }
 }

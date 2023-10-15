@@ -12,4 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fa0715a806c19740888e433011ab257, type: 3}
   m_Name: Audio Asset
   m_EditorClassIdentifier: 
-  audioDataSet: []
+  audioDataSet:
+  - audioType: 6
+    audioClip: {fileID: 8300000, guid: 1751b4e6ebfb67749940cca2de2d03d9, type: 3}
+  - audioType: 4
+    audioClip: {fileID: 8300000, guid: 59836934c00e2bf4281f9bc15adcc555, type: 3}
+  - audioType: 3
+    audioClip: {fileID: 8300000, guid: 853a044b3b88d06469b1fab06a328d50, type: 3}
+  - audioType: 2
+    audioClip: {fileID: 8300000, guid: cc224cd8368e1b6448489c0c27ba3d9f, type: 3}
+  - audioType: 7
+    audioClip: {fileID: 8300000, guid: 13bf0a383a8b54248985f1a16ccc7de8, type: 3}
+  - audioType: 8
+    audioClip: {fileID: 8300000, guid: ca0cec22a9aec6042b07802b037ff9fb, type: 3}
+  - audioType: 9
+    audioClip: {fileID: 8300000, guid: c518cbfdf474643449979a6287d0fddc, type: 3}

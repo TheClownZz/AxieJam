@@ -4,33 +4,20 @@ using UnityEngine;
 
 public class DataLevel : GameData
 {
-    #region CONST
-    #endregion
+
 
     #region EDITOR PARAMS
     [SerializeField]
     private LevelSave levelSave;
     #endregion
 
-    #region PARAMS    
-    #endregion
-
-    #region PROPERTIES
-    #endregion
-
-    #region EVENTS
-
     public LevelSave LevelSave { get => levelSave; set => levelSave = value; }
     public int CurrentLevelId { get => this.levelSave.currentLevel; set => this.levelSave.currentLevel = value; }
     public int HighestLevelId { get => this.levelSave.highestLevel; set => this.levelSave.highestLevel = value; }
-    #endregion
+    public int CurrentDay { get => this.levelSave.currentDay; set => this.levelSave.currentDay = value; }
 
     #region METHODS
 
-    public int GetCurrentLevel()
-    {
-        return this.LevelSave.currentLevel;
-    }
 
     public override void SaveData()
     {
@@ -44,15 +31,28 @@ public class DataLevel : GameData
 
     public override void NewData()
     {
-        levelSave = new LevelSave(1, 0);
+        levelSave = new LevelSave(1, 0, 1);
         SaveData();
     }
 
     public void PassLevel()
     {
+        CurrentDay = 1;
         if (CurrentLevelId > HighestLevelId)
             HighestLevelId = CurrentLevelId;
         CurrentLevelId++;
+        SaveData();
+    }
+
+    public void PassDay()
+    {
+        CurrentDay += 1;
+        SaveData();
+    }
+
+    public void ResetDay()
+    {
+        CurrentDay = 1;
         SaveData();
     }
 

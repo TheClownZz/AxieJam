@@ -37,24 +37,19 @@ public class Master : MonoSingleton<Master>
     {
         isMasterLoaded = isMasterReady = false;
 
+
         yield return new WaitUntil(() => AudioManager.Instance != null);
 
         AudioManager.Instance.OnInit();
-
 
         yield return new WaitUntil(() => UIManager.Instance != null);
 
         UIManager.Instance.OnInit();
 
-        yield return new WaitUntil(() => GameManager.Instance != null);
-
-        GameManager.Instance.OnInit();
-
-
 #if UNITY_EDITOR
         Debug.unityLogger.logEnabled = true;
 #else
-        Debug.unityLogger.logEnabled = false;
+        Debug.unityLogger.logEnabled = true;
 #endif
         isMasterReady = true;
 

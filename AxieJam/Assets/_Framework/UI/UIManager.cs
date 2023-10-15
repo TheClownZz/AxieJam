@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoSingleton<UIManager>
 {
-    #region Const paramters
-    #endregion
+ 
 
     #region Editor paramters
     [SerializeField]
@@ -18,13 +18,10 @@ public class UIManager : MonoSingleton<UIManager>
     protected Dictionary<string, PopupBase> dicPopups = new Dictionary<string, PopupBase>();
     #endregion
 
-    #region Normal parameters
-    #endregion
-
-    #region Encapsulate
-    #endregion
-
-
+    private void Start()
+    {
+        GetComponent<Canvas>().enabled= true;
+    }
     public void OnInit()
     {
 
@@ -62,7 +59,6 @@ public class UIManager : MonoSingleton<UIManager>
         {
             arrPopups[i].OnInit();
         }
-        
 
     }
 
@@ -116,26 +112,26 @@ public class UIManager : MonoSingleton<UIManager>
         return null;
     }
 
-    public T ShowPopup<T>() where T : PopupBase
+    public T ShowPopup<T>(float fadeTime = 0) where T : PopupBase
     {
         var popupName = typeof(T).FullName;
 
         if (dicPopups.ContainsKey(popupName))
         {
-            dicPopups[popupName].OnShow();
+            dicPopups[popupName].OnShow(fadeTime);
             return dicPopups[popupName] as T;
         }
 
         return null;
     }
 
-    public T HidePopup<T>() where T : PopupBase
+    public T HidePopup<T>(float fadeTime = 0) where T : PopupBase
     {
         var popupName = typeof(T).FullName;
 
         if (dicPopups.ContainsKey(popupName))
         {
-            dicPopups[popupName].OnHide();
+            dicPopups[popupName].OnHide(fadeTime);
             return dicPopups[popupName] as T;
         }
 
@@ -181,6 +177,5 @@ public class UIManager : MonoSingleton<UIManager>
         arrPopups = gameObject.GetComponentsInChildren<PopupBase>();
     }
 #endif
-
 
 }

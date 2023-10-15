@@ -1,0 +1,433 @@
+
+packing_zombie_enemy.png
+size: 1608,792
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Contrast 2
+  rotate: true
+  xy: 2, 106
+  size: 260, 220
+  orig: 262, 222
+  offset: 1, 1
+  index: -1
+Contrast 3
+  rotate: true
+  xy: 1350, 586
+  size: 90, 130
+  orig: 92, 132
+  offset: 1, 1
+  index: -1
+Contrast 4
+  rotate: false
+  xy: 1482, 465
+  size: 110, 140
+  orig: 112, 142
+  offset: 1, 1
+  index: -1
+Layer 10
+  rotate: true
+  xy: 620, 108
+  size: 30, 70
+  orig: 32, 72
+  offset: 1, 1
+  index: -1
+Layer 12
+  rotate: true
+  xy: 446, 108
+  size: 30, 90
+  orig: 32, 92
+  offset: 1, 1
+  index: -1
+Layer 13
+  rotate: false
+  xy: 1422, 216
+  size: 30, 70
+  orig: 32, 72
+  offset: 1, 1
+  index: -1
+Layer 4
+  rotate: true
+  xy: 1315, 416
+  size: 160, 110
+  orig: 162, 112
+  offset: 1, 1
+  index: -1
+Layer 5
+  rotate: false
+  xy: 124, 4
+  size: 100, 100
+  orig: 102, 102
+  offset: 1, 1
+  index: -1
+Layer 6
+  rotate: false
+  xy: 532, 6
+  size: 90, 100
+  orig: 92, 102
+  offset: 1, 1
+  index: -1
+Layer 6 copy 2
+  rotate: false
+  xy: 615, 376
+  size: 200, 180
+  orig: 202, 182
+  offset: 1, 1
+  index: -1
+Layer 7 copy
+  rotate: true
+  xy: 706, 2
+  size: 150, 130
+  orig: 152, 132
+  offset: 1, 1
+  index: -1
+Layer 8
+  rotate: true
+  xy: 538, 108
+  size: 30, 80
+  orig: 32, 82
+  offset: 1, 1
+  index: -1
+arm_L_1
+  rotate: false
+  xy: 1422, 288
+  size: 50, 40
+  orig: 50, 40
+  offset: 0, 0
+  index: -1
+arm_R_1
+  rotate: false
+  xy: 1422, 288
+  size: 50, 40
+  orig: 50, 40
+  offset: 0, 0
+  index: -1
+leg_L
+  rotate: false
+  xy: 1427, 494
+  size: 50, 90
+  orig: 52, 92
+  offset: 1, 1
+  index: -1
+leg_R
+  rotate: false
+  xy: 1427, 402
+  size: 50, 90
+  orig: 52, 92
+  offset: 1, 1
+  index: -1
+poison_hand_L
+  rotate: true
+  xy: 1454, 190
+  size: 80, 130
+  orig: 82, 132
+  offset: 1, 1
+  index: -1
+poison_hand_R
+  rotate: true
+  xy: 1439, 108
+  size: 80, 130
+  orig: 82, 132
+  offset: 1, 1
+  index: -1
+poison_head
+  rotate: true
+  xy: 523, 558
+  size: 230, 220
+  orig: 232, 222
+  offset: 1, 1
+  index: -1
+posion_body
+  rotate: true
+  xy: 877, 159
+  size: 220, 160
+  orig: 222, 162
+  offset: 1, 1
+  index: -1
+posion_leg_L
+  rotate: false
+  xy: 226, 4
+  size: 100, 100
+  orig: 102, 102
+  offset: 1, 1
+  index: -1
+posion_leg_R
+  rotate: false
+  xy: 624, 6
+  size: 80, 100
+  orig: 82, 102
+  offset: 1, 1
+  index: -1
+red_dog_back_leg_L
+  rotate: false
+  xy: 1350, 678
+  size: 70, 110
+  orig: 72, 112
+  offset: 1, 1
+  index: -1
+red_dog_front_leg_R
+  rotate: false
+  xy: 1350, 678
+  size: 70, 110
+  orig: 72, 112
+  offset: 1, 1
+  index: -1
+red_dog_back_leg_R
+  rotate: false
+  xy: 1350, 314
+  size: 70, 100
+  orig: 72, 102
+  offset: 1, 1
+  index: -1
+red_dog_front_leg_L
+  rotate: false
+  xy: 1350, 314
+  size: 70, 100
+  orig: 72, 102
+  offset: 1, 1
+  index: -1
+red_dog_body
+  rotate: true
+  xy: 1111, 386
+  size: 180, 80
+  orig: 182, 82
+  offset: 1, 1
+  index: -1
+red_dog_head
+  rotate: true
+  xy: 1134, 2
+  size: 190, 110
+  orig: 192, 112
+  offset: 1, 1
+  index: -1
+red_dog_tail
+  rotate: true
+  xy: 1331, 30
+  size: 90, 60
+  orig: 92, 62
+  offset: 1, 1
+  index: -1
+tears
+  rotate: false
+  xy: 1474, 272
+  size: 130, 90
+  orig: 130, 90
+  offset: 0, 0
+  index: -1
+twin_A_Hand_L
+  rotate: true
+  xy: 1427, 708
+  size: 80, 160
+  orig: 82, 162
+  offset: 1, 1
+  index: -1
+twin_A_arm_R
+  rotate: false
+  xy: 1002, 17
+  size: 130, 140
+  orig: 132, 142
+  offset: 1, 1
+  index: -1
+twin_A_body
+  rotate: false
+  xy: 817, 381
+  size: 200, 180
+  orig: 202, 182
+  offset: 1, 1
+  index: -1
+twin_A_head
+  rotate: true
+  xy: 936, 568
+  size: 220, 210
+  orig: 222, 212
+  offset: 1, 1
+  index: -1
+twin_A_leg_L
+  rotate: false
+  xy: 1393, 26
+  size: 80, 80
+  orig: 82, 82
+  offset: 1, 1
+  index: -1
+twin_A_leg_R
+  rotate: false
+  xy: 1347, 130
+  size: 90, 80
+  orig: 92, 82
+  offset: 1, 1
+  index: -1
+twin_B_arm_L
+  rotate: false
+  xy: 1019, 386
+  size: 90, 180
+  orig: 92, 182
+  offset: 1, 1
+  index: -1
+twin_B_arm_R
+  rotate: false
+  xy: 1238, 214
+  size: 110, 170
+  orig: 112, 172
+  offset: 1, 1
+  index: -1
+twin_B_body
+  rotate: true
+  xy: 1148, 578
+  size: 210, 200
+  orig: 212, 202
+  offset: 1, 1
+  index: -1
+twin_B_head
+  rotate: true
+  xy: 224, 106
+  size: 260, 220
+  orig: 262, 222
+  offset: 1, 1
+  index: -1
+twin_B_leg_L
+  rotate: false
+  xy: 328, 4
+  size: 100, 100
+  orig: 102, 102
+  offset: 1, 1
+  index: -1
+twin_B_leg_R
+  rotate: false
+  xy: 2, 4
+  size: 120, 100
+  orig: 122, 102
+  offset: 1, 1
+  index: -1
+twin_arm_L
+  rotate: false
+  xy: 496, 376
+  size: 117, 170
+  orig: 119, 172
+  offset: 1, 1
+  index: -1
+twin_arm_R
+  rotate: true
+  xy: 838, 8
+  size: 144, 162
+  orig: 146, 164
+  offset: 1, 1
+  index: -1
+twin_bodyL
+  rotate: false
+  xy: 1039, 168
+  size: 75, 216
+  orig: 77, 218
+  offset: 1, 1
+  index: -1
+twin_bodyR
+  rotate: true
+  xy: 314, 548
+  size: 240, 207
+  orig: 242, 209
+  offset: 1, 1
+  index: -1
+twin_head_L
+  rotate: true
+  xy: 745, 563
+  size: 225, 189
+  orig: 227, 191
+  offset: 1, 1
+  index: -1
+twin_head_R
+  rotate: true
+  xy: 446, 140
+  size: 234, 207
+  orig: 236, 209
+  offset: 1, 1
+  index: -1
+twin_leg_L
+  rotate: true
+  xy: 1246, 122
+  size: 90, 99
+  orig: 92, 101
+  offset: 1, 1
+  index: -1
+twin_leg_R
+  rotate: false
+  xy: 1482, 607
+  size: 117, 99
+  orig: 119, 101
+  offset: 1, 1
+  index: -1
+white_flag
+  rotate: false
+  xy: 2, 368
+  size: 310, 420
+  orig: 310, 420
+  offset: 0, 0
+  index: -1
+zombie_tank_body
+  rotate: false
+  xy: 314, 376
+  size: 180, 170
+  orig: 182, 172
+  offset: 1, 1
+  index: -1
+zombie_tank_hand_L
+  rotate: false
+  xy: 1116, 194
+  size: 120, 190
+  orig: 122, 192
+  offset: 1, 1
+  index: -1
+zombie_tank_hand_R
+  rotate: false
+  xy: 1193, 386
+  size: 120, 190
+  orig: 122, 192
+  offset: 1, 1
+  index: -1
+zombie_tank_head
+  rotate: false
+  xy: 655, 154
+  size: 220, 220
+  orig: 222, 222
+  offset: 1, 1
+  index: -1
+zombie_tank_leg_L
+  rotate: true
+  xy: 1479, 364
+  size: 99, 110
+  orig: 101, 112
+  offset: 1, 1
+  index: -1
+zombie_tank_leg_R
+  rotate: false
+  xy: 1246, 10
+  size: 83, 110
+  orig: 85, 112
+  offset: 1, 1
+  index: -1
+zombie_tank_sample_1
+  rotate: false
+  xy: 430, 4
+  size: 100, 100
+  orig: 102, 102
+  offset: 1, 1
+  index: -1
+zombie_tank_sample_2
+  rotate: false
+  xy: 1475, 26
+  size: 70, 80
+  orig: 72, 82
+  offset: 1, 1
+  index: -1
+zombie_tank_sample_3
+  rotate: true
+  xy: 1350, 212
+  size: 100, 70
+  orig: 102, 72
+  offset: 1, 1
+  index: -1
+zombie_tank_sample_4
+  rotate: true
+  xy: 1422, 330
+  size: 70, 50
+  orig: 72, 52
+  offset: 1, 1
+  index: -1

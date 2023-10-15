@@ -9,6 +9,11 @@ public enum AudioType
     CLICK,
     ADS,
     Hit,
+    CountDown,
+    EnemyDead,
+    EndTime,
+    CoolDown,
+
 }
 
 [CreateAssetMenu]

@@ -36,17 +36,17 @@ public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T
 
     private void Awake()
     {
-        // if (m_Instance == null)
-        // {
+        if (m_Instance == null)
+        {
             m_Instance = this as T;
             m_Instance.Initiate();
-        // }
-        // else if (m_Instance != this)
-        // {
-        //     Debug.LogError("Another instance of " + GetType() + " is already exist! Destroying self...");
-        //     Destroy(this.gameObject);
-        //     return;
-        // }
+        }
+        else if (m_Instance != this)
+        {
+            Debug.LogError("Another instance of " + GetType() + " is already exist! Destroying self...");
+            Destroy(this.gameObject);
+            return;
+        }
     }
 
 

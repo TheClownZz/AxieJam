@@ -211,4 +211,13 @@ public class AudioManager : MonoSingleton<AudioManager>
             PauseSound();
         }
     }
+
+    public void PlaySound(AudioSource audio, AudioClip clip)
+    {
+        if(isSoundOn)
+        {
+            audio.clip = clip;
+            audio.Play();
+        }
+    }
 }

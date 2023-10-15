@@ -36,15 +36,15 @@ public class PopupBase : MonoBehaviour
     }
 
     [Sirenix.OdinInspector.Button]
-    public virtual void OnShow()
+    public virtual void OnShow(float fadeTime = 0)
     {
-        canvasGroup.SetActive(true);
+        canvasGroup.SetActive(true, fadeTime);
     }
 
     [Sirenix.OdinInspector.Button]
-    public virtual void OnHide()
+    public virtual void OnHide(float fadeTime = 0)
     {
-        canvasGroup.SetActive(false);
+        canvasGroup.SetActive(false, fadeTime);
     }
 
     public virtual void OnRelease()
