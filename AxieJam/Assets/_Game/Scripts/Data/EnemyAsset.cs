@@ -6,12 +6,10 @@ using UnityEngine;
 public class EnemyConfig
 {
     public float hp;
-    public float armor;
     public float damage;
-    public float critRate;
     public float moveSpeed;
-    public float critDamage;
     public float attackSpeed = 0.5f;
+    public float armor = 0;
 }
 
 [CreateAssetMenu(menuName = "Game/EnemyAsset", fileName = "EnemyAsset")]

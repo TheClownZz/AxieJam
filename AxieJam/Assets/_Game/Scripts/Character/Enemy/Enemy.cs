@@ -104,8 +104,6 @@ public class Enemy : Character
         stat.hp = data.hp;
         stat.armor = data.armor;
         stat.damage = data.damage;
-        stat.critRate = data.critRate;
-        stat.critDamage = data.critDamage;
         stat.attackSpeed = data.attackSpeed;
         stat.moveSpeed = data.moveSpeed;
     }
@@ -122,14 +120,7 @@ public class Enemy : Character
         return GetECom<EnemyHp>().TakeDamage(damage, isCrit);
     }
 
-    [Button]
-    public override void OnWin()
-    {
-        base.OnWin();
-        ClearDelaySpawn();
-        SetState(CharacterState.Die);
-        isDead = true;
-    }
+   
 
     public override void OnLose()
     {

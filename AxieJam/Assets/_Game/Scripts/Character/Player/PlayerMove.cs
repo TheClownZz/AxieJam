@@ -22,9 +22,9 @@ public class PlayerMove : PlayerComponent
         pAttack = pControl.GetPCom<PlayerAttack>();
     }
 
-    public override void OnWin()
+    public override void OnCompleteLevel()
     {
-        base.OnWin();
+        base.OnCompleteLevel();
         body.velocity = Vector2.zero;
         control.SetState(CharacterState.Idle);
     }

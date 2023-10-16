@@ -14,7 +14,6 @@ public class DataLevel : GameData
     public LevelSave LevelSave { get => levelSave; set => levelSave = value; }
     public int CurrentLevelId { get => this.levelSave.currentLevel; set => this.levelSave.currentLevel = value; }
     public int HighestLevelId { get => this.levelSave.highestLevel; set => this.levelSave.highestLevel = value; }
-    public int CurrentDay { get => this.levelSave.currentDay; set => this.levelSave.currentDay = value; }
 
     #region METHODS
 
@@ -31,30 +30,18 @@ public class DataLevel : GameData
 
     public override void NewData()
     {
-        levelSave = new LevelSave(1, 0, 1);
+        levelSave = new LevelSave(1, 0);
         SaveData();
     }
 
-    public void PassLevel()
+    public void CompleteLevel()
     {
-        CurrentDay = 1;
         if (CurrentLevelId > HighestLevelId)
             HighestLevelId = CurrentLevelId;
         CurrentLevelId++;
         SaveData();
     }
 
-    public void PassDay()
-    {
-        CurrentDay += 1;
-        SaveData();
-    }
-
-    public void ResetDay()
-    {
-        CurrentDay = 1;
-        SaveData();
-    }
 
     #endregion
 

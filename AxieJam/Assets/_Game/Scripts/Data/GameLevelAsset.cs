@@ -4,14 +4,11 @@ using UnityEngine;
 
 public enum EnemyType
 {
-    Normal = 100,
-    Tank,
-    Run,
-    Vomit,
-    Twin,
+    Enemy_0 = 100,
+    Enemy_1,
+    Enemy_2,
 
-    Porky = 200,
-    Medic,
+    Boss_1 = 200,
 }
 
 [System.Serializable]
@@ -24,7 +21,7 @@ public class WaveStat
 [System.Serializable]
 public class EnemyWaveConfig
 {
-    public EnemyType type = EnemyType.Normal;
+    public EnemyType type = EnemyType.Enemy_0;
     public float timeSpawn;
     public int numberSpawn;
 }
@@ -33,35 +30,12 @@ public class EnemyWaveConfig
 
 public class WaveConfig
 {
+    public float waveTime = 60;
     public WaveStat waveProterties;
     public List<EnemyWaveConfig> enemyConfigList;
 }
 
-[System.Serializable]
-public class DayProperties
-{
-    public int dayIndex;
-    public float timeSurvival;
-    public List<RarityDropConfig> dropList;
-
-}
-
-[System.Serializable]
-public class RarityDropConfig
-{
-    public WeaponRarity weaponRarity;
-    public float dropRate;
-}
-
-
-[System.Serializable]
-public class DayConfig
-{
-    public DayProperties dayProperties;
-    [TableList(ShowIndexLabels = true)]
-    public WaveConfig waveConfig;
-
-}
+ 
 [System.Serializable]
 public class BossSpawnConfig
 {
@@ -75,22 +49,12 @@ public class BossSpawnConfig
 public class GameLevelAsset : GameAsset
 {
     [TableList(ShowIndexLabels = true)]
-    public List<DayConfig> dataList = new List<DayConfig>();
+    public List<WaveConfig> dataList = new List<WaveConfig>();
     public BossSpawnConfig bossSpawnConfig;
-    public WeaponType weaponStart;
-    public DayConfig GetConfig(int day)
+    public WaveConfig GetConfig(int wave)
     {
-        return dataList.Find(x => x.dayProperties.dayIndex == day);
+        return dataList[wave];
 
     }
 
-#if UNITY_EDITOR
-    private void OnValidate()
-    {
-        for (int i = 0; i < dataList.Count; i++)
-        {
-            dataList[i].dayProperties.dayIndex = i + 1;
-        }
-    }
-#endif
 }

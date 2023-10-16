@@ -25,6 +25,8 @@ public class PlayerHp : PlayerComponent, ITakeDamage
     Player pControl;
 
     float timeHaptic = 0;
+
+    Coroutine coroutine;
     private void Awake()
     {
         delay = new WaitForSeconds(1);
@@ -37,15 +39,21 @@ public class PlayerHp : PlayerComponent, ITakeDamage
         regen = control.stat.regen;
     }
 
-    private void OnEnable()
+    public override void OnLose()
     {
-        StartCoroutine(IRegen());
+        base.OnLose();
+        if(coroutine != null)
+        {
+            StopCoroutine(coroutine);
+            coroutine = null;
+        }
     }
-
     public override void OnStartLevel()
     {
         base.OnStartLevel();
         UIManager.Instance.GetScreen<ScreenGame>().SetHp(currentHp);
+        coroutine = StartCoroutine(IRegen());
+
     }
 
     public float TakeDamage(float damage, bool isCrit)

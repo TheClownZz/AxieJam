@@ -9,10 +9,7 @@ public class Weapon : MonoBehaviour
     protected int tier;
     protected float attackTime;
     public Character characterControl;
-    public WeaponConfig config;
-    public WeaponStat stat;
     public List<EffectData> effectDataList;
-    protected IAttack attckController;
     [SerializeField] protected AudioClip attackClip;
 
     protected float coolDown = 1;
@@ -31,17 +28,8 @@ public class Weapon : MonoBehaviour
 
     public void SetDamageRate(float rate)
     {
-        damage = stat.damage * rate;
+        //damage = stat.damage * rate;
 
-    }
-    public virtual void SetTier(int tier)
-    {
-        this.tier = tier;
-        stat = config.GetStat(tier);
-
-        float _as = characterControl.stat.attackSpeed * (1 + stat.attackSpeed);
-        coolDown = 1f / _as;
-        attckController.OnWeaponUpdate();
     }
 
     public virtual void OnUpdate(float dt)
@@ -82,11 +70,6 @@ public class Weapon : MonoBehaviour
         return characterControl.stat;
     }
 
-    public void SetController(IAttack ctl)
-    {
-        attckController = ctl;
-    }
-
     private bool CheckCoolDown()
     {
         return Time.time - attackTime > coolDown;
@@ -94,9 +77,7 @@ public class Weapon : MonoBehaviour
 
     private bool CheckRange()
     {
-        if (!attckController.GetTarget())
-            return false;
-        return Vector2.Distance(transform.position, attckController.GetTarget().position) < stat.range;
+        return false;
     }
 }
 

@@ -27,9 +27,9 @@ public class Gun : Weapon
     protected override void FaceToTarget(float dt)
     {
         base.FaceToTarget(dt);
-        Vector2 dir = attckController.GetTarget().position - characterControl.transform.position;
-        Quaternion q = Quaternion.FromToRotation(Vector3.up, dir);
-        transform.rotation = q;
+        //Vector2 dir = attckController.GetTarget().position - characterControl.transform.position;
+        //Quaternion q = Quaternion.FromToRotation(Vector3.up, dir);
+        //transform.rotation = q;
 
     }
 

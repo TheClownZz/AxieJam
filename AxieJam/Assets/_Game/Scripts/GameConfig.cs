@@ -21,4 +21,6 @@ public class GameConfig : ScriptableObject
     public float spawnRadius = 5;
     [Space(5)]
     public Color critColor;
+
+    public float forceValue = 50;
 }

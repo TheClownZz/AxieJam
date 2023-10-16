@@ -61,7 +61,7 @@ public class Bullet : MonoBehaviour, ICreateDamage
         damage = Random.Range(0.9f * damage, 1.1f * damage);
 
         character.TakeDamage(damage, isCrit);
-        character.KnockBack(dir.normalized, weapon.stat.knockBack);
+        character.KnockBack(dir.normalized, GameManager.Instance.gameConfig.forceValue);
 
         AddEffect(character);
         if (hitClip && Time.time - timePlaySound > 0.1f)

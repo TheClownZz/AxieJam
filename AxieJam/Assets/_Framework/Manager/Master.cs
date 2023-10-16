@@ -13,7 +13,6 @@ public class Master : MonoSingleton<Master>
     #endregion
 
     #region PARAMS
-    public bool isMasterLoaded;
     public bool isMasterReady;
     #endregion
 
@@ -35,8 +34,10 @@ public class Master : MonoSingleton<Master>
 
     private IEnumerator I_Initiate()
     {
-        isMasterLoaded = isMasterReady = false;
+        isMasterReady = false;
 
+        yield return new WaitUntil(() => DataManager.Instance != null);
+        DataManager.Instance.OnInit();
 
         yield return new WaitUntil(() => AudioManager.Instance != null);
 
@@ -49,7 +50,7 @@ public class Master : MonoSingleton<Master>
 #if UNITY_EDITOR
         Debug.unityLogger.logEnabled = true;
 #else
-        Debug.unityLogger.logEnabled = true;
+        Debug.unityLogger.logEnabled = false;
 #endif
         isMasterReady = true;
 

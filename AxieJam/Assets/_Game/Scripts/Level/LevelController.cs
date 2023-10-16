@@ -18,7 +18,7 @@ public class LevelController : MonoBehaviour
     GameLevelAsset asset;
     ScreenGame screen;
 
-    public DayConfig config;
+    public WaveConfig config;
 
     Tween bossTween;
     float spawnRadius = 7.5f;
@@ -41,15 +41,19 @@ public class LevelController : MonoBehaviour
     {
         this.asset = asset;
     }
-    public void OnLevelLoad(int day)
+    public void OnLevelLoad(int waveIndex)
     {
+        this.waveIndex = waveIndex;
         screen = UIManager.Instance.GetScreen<ScreenGame>();
-        config = asset.GetConfig(day);
+        config = asset.GetConfig(waveIndex);
+
     }
+
+    int waveIndex;
     public void StartSpawn()
     {
         StartCoroutine(ISpawn());
-        if (config.dayProperties.dayIndex == asset.dataList.Count)
+        if (waveIndex == asset.dataList.Count)
         {
             SpawnBoss();
         }
@@ -60,11 +64,7 @@ public class LevelController : MonoBehaviour
         foreach (var e in enemyList)
             e.OnLose();
     }
-    public void OnWin()
-    {
-        foreach (var e in enemyList)
-            e.OnWin();
-    }
+  
     public void DestroyCurrentLevel()
     {
         StopAllCoroutines();
@@ -77,8 +77,8 @@ public class LevelController : MonoBehaviour
     public IEnumerator ISpawn()
     {
         timeSpawnList.Clear();
-        float time = config.dayProperties.timeSurvival;
-        WaveConfig waveConfig = config.waveConfig;
+        float time = config.waveTime;
+        WaveConfig waveConfig = config;
         List<EnemyWaveConfig> enemyConfigList = waveConfig.enemyConfigList;
 
         for (int i = 0; i < enemyConfigList.Count; i++)
@@ -105,7 +105,7 @@ public class LevelController : MonoBehaviour
             }
         }
 
-        GameManager.Instance.OnWin();
+        GameManager.Instance.OnCompleteLevel();
     }
     public Enemy SpawnEnemy(Transform pf)
     {

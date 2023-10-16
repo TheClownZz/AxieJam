@@ -1,32 +1,97 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 
+public enum SkillType
+{
+    Damage,
+    NumberBullet,
+    AtkSpeed,
+    Range,
+    ActiveTime,
+    ActiveValue,
+    Size,
+    ExtraBullet,
+    ExtraDamage,
+}
+[System.Serializable]
+public class PlayerSkillProperties
+{
+    public SkillType type;
+    public float value;
+}
+[System.Serializable]
 
+public class PlayerSkillDefaultProperties
+{
+    public int itemRequire = 15;
+    public float duration = 3;
+    public float cooldown = 20;
+}
+
+[System.Serializable]
+public class PlayerSkillConfig
+{
+    public PlayerSkillDefaultProperties defaultValue;
+    [TableList(ShowIndexLabels = true)]
+    public List<PlayerSkillProperties> propertieList;
+}
+
+[System.Serializable]
+public class PlayerLevelConfig
+{
+    public int item = 5;
+    public float hp = 50;
+    public float damage = 5;
+    public float attackSpeed = 0.5f;
+    public float moveSpeed = 0.5f;
+    public float critRate = 0.2f;
+}
 [System.Serializable]
 public class PlayerConfig
 {
-    public string name;
+    public PlayerType type;
     public Sprite avatar;
 
-    public float hp;
-    public float damage;
-    public float armor;
-    public float attackSpeed;
-    public float regen;
-    public float moveSpeed;
-    public float critRate;
-    public float critDamage;
-    public float dodge;
-    public float lifeSteal;
+    public float hp = 200;
+    public float damage = 10;
+    public float attackSpeed = 1;
+    public float moveSpeed = 5;
+    public float critRate = 0.05f;
+    public float critDamage = 2;
+    public float armor = 0;
+    [TableList(ShowIndexLabels = true)]
+    public List<PlayerLevelConfig> levelConfiglist;
+    [TableList(ShowIndexLabels = true)]
+    public List<PlayerSkillConfig> skillConfiglist;
 
-    public List<float> chartRationList;
+    public PlayerLevelConfig GetLevelConfig(int level)
+    {
+        return levelConfiglist[Mathf.Min(level, levelConfiglist.Count - 1)];
+    }
+
+    public PlayerSkillConfig GetSkillConfig(int level)
+    {
+        return skillConfiglist[Mathf.Min(level, levelConfiglist.Count - 1)];
+    }
+
+    public float GetSkillValue(SkillType type, int level, float defaultValue = 0)
+    {
+        var config = GetSkillConfig(level);
+        var propertie = config.propertieList.Find(x => x.type == type);
+
+        if (propertie != null)
+            return propertie.value;
+        return defaultValue;
+    }
 }
 
 
 [CreateAssetMenu(menuName = "Game/PlayerAsset", fileName = "PlayerAsset")]
 public class PlayerAsset : GameAsset
 {
-    public List<PlayerConfig> dataList;
+    public PlayerConfig data;
 
 }

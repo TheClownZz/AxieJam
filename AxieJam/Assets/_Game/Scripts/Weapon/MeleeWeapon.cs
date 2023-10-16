@@ -20,25 +20,15 @@ public class MeleeWeapon : Weapon
     {
         base.OnInits(characterControl);
         hitBox.OnInits(this);
-    }
-    public override void SetTier(int tier)
-    {
-        base.SetTier(tier);
-        hitter.transform.localScale = stat.range * Vector3.one;
-        if (particleController)
-        {
-            particleController.transform.SetParent(null);
-            particleController.SetRange(stat.range);
-        }
-
         effectTime = MathF.Min(minFxTime, coolDown);
 
     }
+
     protected override void FaceToTarget(float dt)
     {
-        Vector2 dir = attckController.GetTarget().position - characterControl.transform.position;
-        Quaternion q = Quaternion.FromToRotation(Vector3.up, dir);
-        transform.rotation = q;
+      //  Vector2 dir = attckController.GetTarget().position - characterControl.transform.position;
+      //  Quaternion q = Quaternion.FromToRotation(Vector3.up, dir);
+      //  transform.rotation = q;
     }
 
     public override void OnAttack()

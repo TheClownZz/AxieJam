@@ -10,7 +10,6 @@ public enum GameState
 }
 public class GameManager : MonoSingleton<GameManager>
 {
-    public const int playerIndex = 0;
     const int delay = 3;
 
 
@@ -20,7 +19,6 @@ public class GameManager : MonoSingleton<GameManager>
     public Transform bulletSpawner;
     public LevelController levelController;
 
-    public GameObject map;
     DataLevel dataLevel;
     [SerializeField] GameLevelAsset asset;
 
@@ -34,7 +32,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     private IEnumerator I_Initiate()
     {
-        yield return new WaitUntil(() => Master.Instance.isMasterLoaded);
+        yield return new WaitUntil(() => Master.Instance.isMasterReady);
         OnInit();
     }
     void OnInit()
@@ -65,7 +63,7 @@ public class GameManager : MonoSingleton<GameManager>
 
         player.StartLevel();
         Camera.main.GetComponent<CameraFollow>().ForceUpdate();
-        levelController.OnLevelLoad(dataLevel.CurrentDay);
+        levelController.OnLevelLoad(dataLevel.CurrentLevelId);
 
         int count = delay;
         ScreenGame screenInGame = UIManager.Instance.GetScreen<ScreenGame>();
@@ -105,22 +103,17 @@ public class GameManager : MonoSingleton<GameManager>
             bulletSpawner.GetChild(i).GetComponent<Bullet>().Clear();
         }
     }
-    public void OnWin()
+    public void OnCompleteLevel()
     {
-        if (gameState != GameState.Playing)
-            return;
-        PassDay();
-        player.OnWin();
-        levelController.OnWin();
-        SetGameState(GameState.Ending);
-        UIManager.Instance.ShowPopup<PopupWin>();
-
+        player.OnCompleteLevel();
+        dataLevel.CompleteLevel();
+        levelController.OnLevelLoad(dataLevel.CurrentLevelId);
+        levelController.StartSpawn();
     }
     public void OnLoss()
     {
         if (gameState != GameState.Playing)
             return;
-        ResetDay();
         player.OnLose();
         levelController.OnLose();
         SetGameState(GameState.Ending);
@@ -132,15 +125,6 @@ public class GameManager : MonoSingleton<GameManager>
         this.gameState = gameState;
         player.isActive = gameState == GameState.Playing;
         UIManager.Instance.GetScreen<ScreenGame>().SetInput(gameState == GameState.Playing);
-    }
-
-    private void PassDay()
-    {
-        dataLevel.PassDay();
-        if (dataLevel.CurrentDay > asset.dataList.Count)
-        {
-            dataLevel.PassLevel();
-        }
     }
 
 
@@ -155,11 +139,4 @@ public class GameManager : MonoSingleton<GameManager>
         player.GetCom<PlayerHp>().ResetHp();
     }
 
-    private void ResetDay()
-    {
-        dataLevel.ResetDay();
-        var dataUser = DataManager.Instance.GetData<DataUser>();
-        dataUser.ClearAllWeapon();
-        dataUser.AddWeapon(asset.weaponStart);
-    }
 }

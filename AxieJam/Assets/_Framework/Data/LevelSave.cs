@@ -2,19 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-[System.Serializable]
-public class LevelSaveData
-{
-    [SerializeField]
-    private int id;
-    [SerializeField]
-    private int enemyLeft;
-
-    public int Id { get => id; set => id = value; }
-    public int EnemyLeft { get => enemyLeft; set => enemyLeft = value; }
-}
-
 [System.Serializable]
 public class LevelSave
 {
@@ -27,16 +14,13 @@ public class LevelSave
     #region PARAMS
     public int currentLevel;
     public int highestLevel;
-    public int currentDay;
-    public List<LevelSaveData> dataList = new List<LevelSaveData>();
     #endregion
 
     #region PROPERTIES
-    public LevelSave(int currentLevelId, int highestLevelId, int currentDay)
+    public LevelSave(int currentLevelId, int highestLevelId)
     {
         this.currentLevel = currentLevelId;
         this.highestLevel = highestLevelId;
-        this.currentDay = currentDay;
     }
     #endregion
 

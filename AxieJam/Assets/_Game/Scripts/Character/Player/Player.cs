@@ -52,18 +52,15 @@ public class Player : Character
 
     public override void SetStat()
     {
-        var data = asset.dataList[GameManager.playerIndex];
+        var data = asset.data;
 
         stat.hp = data.hp;
-        stat.regen = data.regen;
         stat.armor = data.armor;
         stat.damage = data.damage;
         stat.critRate = data.critRate;
         stat.critDamage = data.critDamage;
         stat.attackSpeed = data.attackSpeed;
         stat.moveSpeed = data.moveSpeed;
-        stat.lifeSteal = data.lifeSteal;
-        stat.dodge = data.dodge;
     }
 
     public override void LifeSteal(float hp)

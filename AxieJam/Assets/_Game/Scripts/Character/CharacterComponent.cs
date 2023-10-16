@@ -21,7 +21,7 @@ public class CharacterComponent : MonoBehaviour
 
     }
 
-    public virtual void OnWin()
+    public virtual void OnCompleteLevel()
     {
 
     }

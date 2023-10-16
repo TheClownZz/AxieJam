@@ -20,9 +20,8 @@ public class DataManager : MonoSingleton<DataManager>
         reader = QuickSaveReader.Create(rootKey);
     }
 
-    protected override void Initiate()
+    public void OnInit()
     {
-        base.Initiate();
         SetupController();
         foreach (GameData data in gameDatasList)
         {
@@ -37,7 +36,6 @@ public class DataManager : MonoSingleton<DataManager>
             }
         }
     }
-
 
     public T GetAsset<T>() where T : ScriptableObject
     {

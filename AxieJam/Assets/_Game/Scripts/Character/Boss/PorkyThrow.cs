@@ -33,9 +33,9 @@ public class PorkyThrow : BossAttack
         ClearBullet();
     }
 
-    public override void OnWin()
+    public override void OnCompleteLevel()
     {
-        base.OnWin();
+        base.OnCompleteLevel();
         ClearBullet();
     }
     protected override void HandleEvent(TrackEntry trackEntry, Spine.Event e)

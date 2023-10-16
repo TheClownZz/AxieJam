@@ -39,7 +39,7 @@ public class Hitbox : MonoBehaviour, ICreateDamage
         weapon.LifeSteal(damageDeal * weapon.characterControl.stat.lifeSteal);
 
         Vector2 dir = character.transform.position - transform.position;
-        character.KnockBack(dir.normalized, weapon.stat.knockBack);
+        character.KnockBack(dir.normalized, GameManager.Instance.gameConfig.forceValue);
 
         AddEffect(character);
     }
