@@ -63,7 +63,6 @@ public class GameManager : MonoSingleton<GameManager>
         int count = delay;
         ScreenGame screenInGame = UIManager.Instance.GetScreen<ScreenGame>();
         screenInGame.UpdateCountDown(count.ToString());
-        screenInGame.SetInput(false);
         SetGameState(GameState.Starting);
 
         DOVirtual.DelayedCall(1, () =>
@@ -71,10 +70,8 @@ public class GameManager : MonoSingleton<GameManager>
             count -= 1;
             if (count == 0)
             {
-                levelController.LoadLevel();
+               // levelController.LoadLevel();
                 SetGameState(GameState.Playing);
-
-                screenInGame.SetInput(true);
                 screenInGame.UpdateCountDown(string.Empty);
             }
             else
@@ -114,7 +111,6 @@ public class GameManager : MonoSingleton<GameManager>
     {
         this.gameState = gameState;
         player.isActive = gameState == GameState.Playing;
-        UIManager.Instance.GetScreen<ScreenGame>().SetInput(gameState == GameState.Playing);
     }
 
 

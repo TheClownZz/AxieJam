@@ -45,7 +45,7 @@ public class EnemyMove : EnemyComponent
     public override void OnLose()
     {
         base.OnLose();
-        control.anim.SetSpeed(0);
+        control.spineController.Pause();
     }
 
     public override void OnUpdate(float dt)
@@ -101,7 +101,7 @@ public class EnemyMove : EnemyComponent
         if (direction.x * dir.x <= 0 && dir.x != 0)
         {
             float face = dir.x > 0 ? -1 : 1;
-            control.anim.FlipX(face);
+            control.spineController.FlipX(face);
         }
     }
 
@@ -114,7 +114,6 @@ public class EnemyMove : EnemyComponent
         else
         {
             control.SetState(CharacterState.Run);
-            control.anim.SetSpeed(currentSpeed * GameManager.Instance.gameConfig.speedFactor);
         }
     }
 

@@ -1,14 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using DG.Tweening;
 using UnityEngine.UI;
 
 public class ScreenGame : ScreenBase
 {
     [SerializeField] Button btnPlay;
-    [SerializeField] Joystick joystick;
     [SerializeField] TextMeshProUGUI tmpHp;
     [SerializeField] TextMeshProUGUI tmpCountDown;
 
@@ -21,7 +17,6 @@ public class ScreenGame : ScreenBase
     {
         base.OnInit();
         btnPlay.onClick.AddListener(OnBtnPlayClick);
-        GameManager.Instance.player.GetPCom<PlayerMove>().SetJoyStick(joystick);
     }
 
     public override void OnShow()
@@ -40,11 +35,6 @@ public class ScreenGame : ScreenBase
         tmpCountDown.SetText(text);
     }
 
-    public void SetInput(bool isActive)
-    {
-        joystick.OnPointerUp(null);
-        joystick.enabled = isActive;
-    }
 
     public void SetPause(bool isPause)
     {

@@ -60,7 +60,7 @@ public class Character : MonoBehaviour
     public bool isKnockBack;
     public Transform body;
     public CharacterStat stat;
-    public BaseAnimController anim;
+    public SpineController spineController;
     protected CharacterState state = CharacterState.None;
 
     [SerializeField] protected List<CharacterComponent> componentList;
@@ -70,7 +70,7 @@ public class Character : MonoBehaviour
 #if UNITY_EDITOR
     protected virtual void OnValidate()
     {
-        anim = GetComponentInChildren<BaseAnimController>();
+        spineController = GetComponentInChildren<SpineController>();
         if (componentList.Count == 0)
         {
             componentList.Clear();
@@ -81,7 +81,7 @@ public class Character : MonoBehaviour
     public virtual void OnInit()
     {
         isDisable = isDead = false;
-        anim.OnInits();
+        spineController.OnInits();
         foreach (var comp in componentList)
             comp.OnInits(this);
     }
@@ -98,7 +98,7 @@ public class Character : MonoBehaviour
         if (state == playerState || isDead)
             return;
         state = playerState;
-        anim.SetAnim(state);
+        spineController.SetAnim(state);
     }
 
     public virtual void OnDead()
@@ -127,9 +127,9 @@ public class Character : MonoBehaviour
             return;
         this.isDisable = isDisable;
         if (isDisable)
-            anim.Pause();
+            spineController.Pause();
         else
-            anim.Resume();
+            spineController.Resume();
     }
 
     public virtual void KnockBack(Vector2 dir, float force)
@@ -138,7 +138,7 @@ public class Character : MonoBehaviour
             return;
         isKnockBack = true;
 
-        anim.SetSpeed(0);
+        spineController.Pause();
         knockBackTween = DOVirtual.DelayedCall(GameManager.Instance.gameConfig.forceBackTime, StopKnockBack);
     }
 

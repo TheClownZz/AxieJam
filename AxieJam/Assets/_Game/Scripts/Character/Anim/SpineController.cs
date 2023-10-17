@@ -3,20 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using Spine.Unity;
 
-public static class SpineKey
-{
-    public static string Run = "run";
-    public static string Idle = "idle";
-    public static string Die = "die";
-}
-public class SpineController : BaseAnimController
-{
-    [SerializeField] float speedFactor = 1;
-    [SerializeField] SkeletonAnimation anim;
 
-    string cachedKey;
-    float cachedSpeed = 1;
-    CharacterState cachedState;
+public class SpineController : MonoBehaviour
+{
+    [SerializeField] float runScale = 1.5f;
+    [SerializeField] SkeletonAnimation anim;
+    [SerializeField] string Run = "run";
+    [SerializeField] string Idle = "idle";
+    [SerializeField] string Die = "die";
+
+    float cachedScale;
 #if UNITY_EDITOR
     protected virtual void OnValidate()
     {
@@ -24,64 +20,56 @@ public class SpineController : BaseAnimController
     }
 #endif
 
-    public override void OnInits()
+    public void OnInits()
     {
-        base.OnInits();
-        anim.timeScale = cachedSpeed;
-    }
-
-    public override void SetSpeed(float speed)
-    {
-        if (cachedState == CharacterState.Die || cachedKey != AnimKey.Speed)
-            return;
-        base.SetSpeed(speed);
-        anim.timeScale = speed * speedFactor;
+        anim.timeScale = 1;
     }
 
 
-
-    public override void SetAnim(CharacterState state)
+    public void SetAnim(CharacterState state)
     {
-        cachedState = state;
-        base.SetAnim(state);
         switch (state)
         {
             case CharacterState.Alive:
             case CharacterState.Idle:
-                anim.state.SetAnimation(0, SpineKey.Idle, true);
-                cachedKey = SpineKey.Idle;
+                anim.state.SetAnimation(0, Idle, true);
                 anim.timeScale = 1;
                 break;
             case CharacterState.Die:
-                anim.state.SetAnimation(0, SpineKey.Die, false);
-                cachedKey = SpineKey.Die;
+                anim.state.SetAnimation(0, Die, false);
                 anim.timeScale = 1;
 
                 break;
             case CharacterState.Run:
-                anim.state.SetAnimation(0, SpineKey.Run, true);
-                cachedKey = SpineKey.Run;
+                anim.state.SetAnimation(0, Run, true);
+                anim.timeScale = runScale;
                 break;
             default:
-                cachedKey = string.Empty;
                 break;
         }
+        cachedScale = anim.timeScale;
     }
 
-    public override void FlipX(float flip)
+    public void FlipX(float flip)
     {
         anim.skeleton.ScaleX = flip;
     }
 
-    public override void Pause()
+    public void SetScale(float value )
     {
-        base.Pause();
-        cachedSpeed = anim.timeScale;
+        anim.timeScale = value;
+    }
+
+    public void ResetScale()
+    {
+        anim.timeScale = cachedScale;
+    }
+    public void Pause()
+    {
         anim.timeScale = 0;
     }
-    public override void Resume()
+    public void Resume()
     {
-        base.Resume();
-        anim.timeScale = cachedSpeed;
+        anim.timeScale = cachedScale;
     }
 }

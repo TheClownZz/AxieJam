@@ -55,7 +55,7 @@ public class PlayerAttack : PlayerComponent
     private void Facing()
     {
         float face = target.transform.position.x > control.body.position.x ? 1 : -1;
-        control.anim.FlipX(face);
+        control.spineController.FlipX(face);
     }
 
 }

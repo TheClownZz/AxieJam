@@ -13,8 +13,6 @@ public class GameConfig : ScriptableObject
     [SerializeField, Range(0, 5)]
     public float forceDrag = 1f;
     [Space(5)]
-    public float speedFactor = 0.75f;
-    [Space(5)]
     public float textHeight = 0.5f;
     public float iconHeight = 0.5f;
     [Space(5)]

@@ -5,21 +5,22 @@ using UnityEngine;
 public class PlayerMove : PlayerComponent
 {
     public bool allowMove;
-    [SerializeField] float currentSpeed;
     [SerializeField] Rigidbody2D body;
+    [SerializeField] float currentSpeed;
+    [SerializeField] float faceDistance = 0.25f;
+    [SerializeField] float moveDistance = 0.5f;
 
-    Joystick joystick;
-    Vector2 direction;
-
-    PlayerAttack pAttack;
+    Camera cam;
     Player pControl;
+    Vector3 mousePos;
+    Vector2 direction;
 
     public override void OnInits(Character p)
     {
         base.OnInits(p);
+        cam = Camera.main;
         pControl = (Player)p;
         currentSpeed = p.stat.moveSpeed;
-        pAttack = pControl.GetPCom<PlayerAttack>();
     }
 
     public override void OnCompleteLevel()
@@ -38,55 +39,48 @@ public class PlayerMove : PlayerComponent
         base.OnStartLevel();
         allowMove = true;
     }
-    public void SetJoyStick(Joystick joystick)
-    {
-        this.joystick = joystick;
-    }
 
     public override void OnUpdate(float dt)
     {
-        if (!allowMove || !joystick)
-            return;
-        Move();
-    }
-    void Move()
-    {
-        if (!pAttack.target || pAttack.target.isDead)
-            Facing();
-        direction = joystick.Direction;
-        body.velocity = currentSpeed * direction;
+        Vector3 mouseWorldPos = cam.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPos.z = body.transform.position.z;
+        Vector2 dif = mouseWorldPos - transform.position;
 
-        UpdateState();
-    }
-
-
-    private void Facing()
-    {
-        if (direction.x * joystick.Direction.x <= 0 && joystick.Direction.x != 0)
+        if (!allowMove || Input.GetMouseButton(0))
         {
-            float face = joystick.Direction.x > 0 ? 1 : -1;
-            control.anim.FlipX(face);
-        }
-    }
-    private void UpdateState()
-    {
-        if (direction == Vector2.zero)
-        {
+            direction = Vector2.zero;
+            body.velocity = Vector2.zero;
             control.SetState(CharacterState.Idle);
+            Facing(dif.normalized);
         }
         else
         {
-            float speed = body.velocity.magnitude * GameManager.Instance.gameConfig.speedFactor;
-            if (speed < 0.05)
+            if (dif.sqrMagnitude > faceDistance)
             {
-                control.SetState(CharacterState.Idle);
-
+                Facing(dif.normalized);
+                direction = dif.normalized;
+            }
+            if (dif.sqrMagnitude > moveDistance)
+            {
+                body.velocity = currentSpeed * dif.normalized;
             }
             else
             {
-                control.SetState(CharacterState.Run);
-                control.anim.SetSpeed(body.velocity.magnitude * GameManager.Instance.gameConfig.speedFactor);
+                body.velocity = Vector2.zero;
             }
+            control.SetState(CharacterState.Run);
+        }
+
+        mousePos = mouseWorldPos;
+    }
+
+
+    private void Facing(Vector2 dir)
+    {
+        if (direction.x * dir.x <= 0 && dir.x != 0)
+        {
+            float face = dir.x > 0 ? -1 : 1;
+            control.spineController.FlipX(face);
         }
     }
 }
