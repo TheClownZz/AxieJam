@@ -34,7 +34,7 @@ public class DataLevel : GameData
         SaveData();
     }
 
-    public void CompleteLevel()
+    public void SetNextLevel()
     {
         if (CurrentLevelId > HighestLevelId)
             HighestLevelId = CurrentLevelId;

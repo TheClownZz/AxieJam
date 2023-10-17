@@ -153,12 +153,6 @@ public class Character : MonoBehaviour
         stat.armor = value;
     }
 
-    public virtual void OnCompleteLevel()
-    {
-        foreach (var comp in componentList)
-            comp.OnCompleteLevel();
-    }
-
     public virtual void OnLose()
     {
         foreach (var comp in componentList)

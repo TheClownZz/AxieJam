@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Hitbox : MonoBehaviour, ICreateDamage
 {
-    [SerializeField] PoolType hitType = PoolType.HitSlash;
     public Weapon weapon;
 
     protected float damageDeal;
@@ -47,7 +46,6 @@ public class Hitbox : MonoBehaviour, ICreateDamage
     public void CreateDamage(Character character)
     {
         HitCharacter(character);
-        SpawnHitFx(character.transform.position);
     }
 
     private void AddEffect(Character character)
@@ -71,18 +69,6 @@ public class Hitbox : MonoBehaviour, ICreateDamage
     }
 
 
-    private void SpawnHitFx(Vector3 pos)
-    {
-        if (hitType != PoolType.None)
-        {
-            Transform fx = PoolManager.Instance.SpawnObject(hitType);
-            fx.position = pos;
-            DOVirtual.DelayedCall(0.5f, () =>
-            {
-                PoolManager.Instance.DespawnObject(fx);
-            });
-        }
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

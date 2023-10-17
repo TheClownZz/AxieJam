@@ -12,7 +12,6 @@ public class Gun : Weapon
     [SerializeField] protected int butlletMaxHit = 1;
     [SerializeField] Sprite bulletSprite;
     [SerializeField] AudioClip hitClip;
-    [SerializeField] PoolType hitType = PoolType.None;
     public override void OnClear()
     {
         base.OnClear();
@@ -44,7 +43,6 @@ public class Gun : Weapon
         b.SetMaxHit(butlletMaxHit);
         b.SetSprite(bulletSprite);
         b.SetHitClip(hitClip);
-        b.SetHitType(hitType);
         return b;
     }
 }

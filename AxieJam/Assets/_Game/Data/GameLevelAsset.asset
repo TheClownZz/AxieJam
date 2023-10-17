@@ -13,305 +13,180 @@ MonoBehaviour:
   m_Name: GameLevelAsset
   m_EditorClassIdentifier: 
   dataList:
-  - dayProperties:
-      dayIndex: 1
-      timeSurvival: 15
-      dropList:
-      - weaponRarity: 0
-        dropRate: 0.3
-      - weaponRarity: 1
-        dropRate: 0.4
-      - weaponRarity: 2
-        dropRate: 0.3
-      - weaponRarity: 3
-        dropRate: 0
-      - weaponRarity: 4
-        dropRate: 0
-    waveConfig:
-      waveProterties:
-        hpRate: 1
-        damageRate: 1
-      enemyConfigList:
-      - type: 100
-        timeSpawn: 3
-        numberSpawn: 2
-  - dayProperties:
-      dayIndex: 2
-      timeSurvival: 20
-      dropList:
-      - weaponRarity: 0
-        dropRate: 0.95
-      - weaponRarity: 1
-        dropRate: 0.05
-      - weaponRarity: 2
-        dropRate: 0
-      - weaponRarity: 3
-        dropRate: 0
-      - weaponRarity: 4
-        dropRate: 0
-    waveConfig:
-      waveProterties:
-        hpRate: 1
-        damageRate: 1
-      enemyConfigList:
-      - type: 100
-        timeSpawn: 3
-        numberSpawn: 2
-      - type: 102
-        timeSpawn: 3
-        numberSpawn: 1
-  - dayProperties:
-      dayIndex: 3
-      timeSurvival: 25
-      dropList:
-      - weaponRarity: 0
-        dropRate: 0.9
-      - weaponRarity: 1
-        dropRate: 0.1
-      - weaponRarity: 2
-        dropRate: 0
-      - weaponRarity: 3
-        dropRate: 0
-      - weaponRarity: 4
-        dropRate: 0
-    waveConfig:
-      waveProterties:
-        hpRate: 1
-        damageRate: 1
-      enemyConfigList:
-      - type: 100
-        timeSpawn: 3
-        numberSpawn: 3
-      - type: 102
-        timeSpawn: 3
-        numberSpawn: 2
-      - type: 103
-        timeSpawn: 3
-        numberSpawn: 1
-  - dayProperties:
-      dayIndex: 4
-      timeSurvival: 25
-      dropList:
-      - weaponRarity: 0
-        dropRate: 0.85
-      - weaponRarity: 1
-        dropRate: 0.15
-      - weaponRarity: 2
-        dropRate: 0
-      - weaponRarity: 3
-        dropRate: 0
-      - weaponRarity: 4
-        dropRate: 0
-    waveConfig:
-      waveProterties:
-        hpRate: 1
-        damageRate: 1
-      enemyConfigList:
-      - type: 100
-        timeSpawn: 2
-        numberSpawn: 4
-      - type: 102
-        timeSpawn: 3
-        numberSpawn: 2
-      - type: 103
-        timeSpawn: 3
-        numberSpawn: 2
-  - dayProperties:
-      dayIndex: 5
-      timeSurvival: 30
-      dropList:
-      - weaponRarity: 0
-        dropRate: 0.85
-      - weaponRarity: 1
-        dropRate: 0.15
-      - weaponRarity: 2
-        dropRate: 0
-      - weaponRarity: 3
-        dropRate: 0
-      - weaponRarity: 4
-        dropRate: 0
-    waveConfig:
-      waveProterties:
-        hpRate: 1
-        damageRate: 1
-      enemyConfigList:
-      - type: 100
-        timeSpawn: 3
-        numberSpawn: 5
-      - type: 102
-        timeSpawn: 3
-        numberSpawn: 4
-      - type: 103
-        timeSpawn: 3
-        numberSpawn: 4
-      - type: 101
-        timeSpawn: 3
-        numberSpawn: 1
-  - dayProperties:
-      dayIndex: 6
-      timeSurvival: 30
-      dropList:
-      - weaponRarity: 0
-        dropRate: 0.85
-      - weaponRarity: 1
-        dropRate: 0.15
-      - weaponRarity: 2
-        dropRate: 0
-      - weaponRarity: 3
-        dropRate: 0
-      - weaponRarity: 4
-        dropRate: 0
-    waveConfig:
-      waveProterties:
-        hpRate: 1
-        damageRate: 1
-      enemyConfigList:
-      - type: 100
-        timeSpawn: 3
-        numberSpawn: 6
-      - type: 102
-        timeSpawn: 3
-        numberSpawn: 5
-      - type: 103
-        timeSpawn: 3
-        numberSpawn: 5
-      - type: 101
-        timeSpawn: 3
-        numberSpawn: 2
-  - dayProperties:
-      dayIndex: 7
-      timeSurvival: 35
-      dropList:
-      - weaponRarity: 0
-        dropRate: 0.8
-      - weaponRarity: 1
-        dropRate: 0.2
-      - weaponRarity: 2
-        dropRate: 0
-      - weaponRarity: 3
-        dropRate: 0
-      - weaponRarity: 4
-        dropRate: 0
-    waveConfig:
-      waveProterties:
-        hpRate: 1
-        damageRate: 1
-      enemyConfigList:
-      - type: 100
-        timeSpawn: 3
-        numberSpawn: 7
-      - type: 102
-        timeSpawn: 2
-        numberSpawn: 5
-      - type: 103
-        timeSpawn: 2
-        numberSpawn: 5
-      - type: 101
-        timeSpawn: 3
-        numberSpawn: 3
-  - dayProperties:
-      dayIndex: 8
-      timeSurvival: 35
-      dropList:
-      - weaponRarity: 0
-        dropRate: 0.75
-      - weaponRarity: 1
-        dropRate: 0.25
-      - weaponRarity: 2
-        dropRate: 0.05
-      - weaponRarity: 3
-        dropRate: 0
-      - weaponRarity: 4
-        dropRate: 0
-    waveConfig:
-      waveProterties:
-        hpRate: 1
-        damageRate: 1
-      enemyConfigList:
-      - type: 100
-        timeSpawn: 3
-        numberSpawn: 8
-      - type: 102
-        timeSpawn: 3
-        numberSpawn: 6
-      - type: 103
-        timeSpawn: 3
-        numberSpawn: 6
-      - type: 101
-        timeSpawn: 3
-        numberSpawn: 4
-  - dayProperties:
-      dayIndex: 9
-      timeSurvival: 40
-      dropList:
-      - weaponRarity: 0
-        dropRate: 0.7
-      - weaponRarity: 1
-        dropRate: 0.25
-      - weaponRarity: 2
-        dropRate: 0.5
-      - weaponRarity: 3
-        dropRate: 0
-      - weaponRarity: 4
-        dropRate: 0
-    waveConfig:
-      waveProterties:
-        hpRate: 1
-        damageRate: 1
-      enemyConfigList:
-      - type: 100
-        timeSpawn: 3
-        numberSpawn: 9
-      - type: 102
-        timeSpawn: 3
-        numberSpawn: 7
-      - type: 103
-        timeSpawn: 3
-        numberSpawn: 7
-      - type: 101
-        timeSpawn: 2
-        numberSpawn: 5
-      - type: 104
-        timeSpawn: 3
-        numberSpawn: 1
-  - dayProperties:
-      dayIndex: 10
-      timeSurvival: 40
-      dropList:
-      - weaponRarity: 0
-        dropRate: 0.65
-      - weaponRarity: 1
-        dropRate: 0.25
-      - weaponRarity: 2
-        dropRate: 0.1
-      - weaponRarity: 3
-        dropRate: 0
-      - weaponRarity: 4
-        dropRate: 0
-    waveConfig:
-      waveProterties:
-        hpRate: 1
-        damageRate: 1
-      enemyConfigList:
-      - type: 100
-        timeSpawn: 2
-        numberSpawn: 9
-      - type: 102
-        timeSpawn: 3
-        numberSpawn: 7
-      - type: 103
-        timeSpawn: 3
-        numberSpawn: 7
-      - type: 101
-        timeSpawn: 2
-        numberSpawn: 5
-      - type: 104
-        timeSpawn: 3
-        numberSpawn: 2
+  - waveTime: 60
+    waveProterties:
+      hpRate: 1.1
+      damageRate: 1.1
+    enemyConfigList:
+    - type: 100
+      numberSpawn: 5
+  - waveTime: 60
+    waveProterties:
+      hpRate: 1.1
+      damageRate: 1.1
+    enemyConfigList:
+    - type: 100
+      numberSpawn: 10
+  - waveTime: 60
+    waveProterties:
+      hpRate: 1.1
+      damageRate: 1.1
+    enemyConfigList:
+    - type: 100
+      numberSpawn: 5
+    - type: 101
+      numberSpawn: 5
+  - waveTime: 60
+    waveProterties:
+      hpRate: 1.1
+      damageRate: 1.1
+    enemyConfigList:
+    - type: 100
+      numberSpawn: 10
+    - type: 100
+      numberSpawn: 5
+  - waveTime: 60
+    waveProterties:
+      hpRate: 1.1
+      damageRate: 1.1
+    enemyConfigList:
+    - type: 100
+      numberSpawn: 15
+  - waveTime: 60
+    waveProterties:
+      hpRate: 1.3
+      damageRate: 1.3
+    enemyConfigList:
+    - type: 102
+      numberSpawn: 5
+  - waveTime: 60
+    waveProterties:
+      hpRate: 1.3
+      damageRate: 1.3
+    enemyConfigList:
+    - type: 101
+      numberSpawn: 5
+    - type: 102
+      numberSpawn: 5
+  - waveTime: 60
+    waveProterties:
+      hpRate: 1.3
+      damageRate: 1.3
+    enemyConfigList:
+    - type: 101
+      numberSpawn: 10
+    - type: 102
+      numberSpawn: 5
+  - waveTime: 60
+    waveProterties:
+      hpRate: 1.3
+      damageRate: 1.3
+    enemyConfigList:
+    - type: 100
+      numberSpawn: 10
+    - type: 101
+      numberSpawn: 5
+    - type: 102
+      numberSpawn: 5
+  - waveTime: 60
+    waveProterties:
+      hpRate: 1.3
+      damageRate: 1.3
+    enemyConfigList:
+    - type: 100
+      numberSpawn: 10
+    - type: 101
+      numberSpawn: 10
+  - waveTime: 60
+    waveProterties:
+      hpRate: 1.5
+      damageRate: 1.5
+    enemyConfigList:
+    - type: 100
+      numberSpawn: 10
+  - waveTime: 60
+    waveProterties:
+      hpRate: 1.5
+      damageRate: 1.5
+    enemyConfigList:
+    - type: 100
+      numberSpawn: 5
+    - type: 101
+      numberSpawn: 5
+  - waveTime: 60
+    waveProterties:
+      hpRate: 1.5
+      damageRate: 1.5
+    enemyConfigList:
+    - type: 100
+      numberSpawn: 10
+    - type: 101
+      numberSpawn: 5
+  - waveTime: 60
+    waveProterties:
+      hpRate: 1.5
+      damageRate: 1.5
+    enemyConfigList:
+    - type: 100
+      numberSpawn: 15
+  - waveTime: 60
+    waveProterties:
+      hpRate: 1.5
+      damageRate: 1.5
+    enemyConfigList:
+    - type: 102
+      numberSpawn: 5
+  - waveTime: 60
+    waveProterties:
+      hpRate: 1.5
+      damageRate: 1.5
+    enemyConfigList:
+    - type: 101
+      numberSpawn: 5
+    - type: 102
+      numberSpawn: 5
+  - waveTime: 60
+    waveProterties:
+      hpRate: 2
+      damageRate: 2
+    enemyConfigList:
+    - type: 101
+      numberSpawn: 10
+    - type: 102
+      numberSpawn: 5
+  - waveTime: 60
+    waveProterties:
+      hpRate: 2
+      damageRate: 2
+    enemyConfigList:
+    - type: 100
+      numberSpawn: 10
+    - type: 101
+      numberSpawn: 5
+    - type: 102
+      numberSpawn: 5
+  - waveTime: 60
+    waveProterties:
+      hpRate: 2
+      damageRate: 2
+    enemyConfigList:
+    - type: 100
+      numberSpawn: 10
+    - type: 101
+      numberSpawn: 10
+  - waveTime: 60
+    waveProterties:
+      hpRate: 2
+      damageRate: 2
+    enemyConfigList:
+    - type: 100
+      numberSpawn: 10
+    - type: 101
+      numberSpawn: 10
+    - type: 101
+      numberSpawn: 10
   bossSpawnConfig:
-    delayTime: 0
     waveStat:
       hpRate: 1
       damageRate: 1
     pf: {fileID: 3133285046682895124, guid: 6aa00139801504149b112ae5da403448, type: 3}
-  weaponStart: 10

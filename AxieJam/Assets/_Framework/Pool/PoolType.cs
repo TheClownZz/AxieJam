@@ -2,19 +2,12 @@ public enum PoolType
 {
     None = 0,
     SpawnFx = 1,
-    HitBullet,
-    HitSlash,
-    Explosion,
-    Stone,
 
-    Normal = 100,
-    Tank,
-    Run,
-    Vomit,
-    Twin,
+    Enemy_A = 100,
+    Enemy_B,
+    Enemy_C,
 
-    Porky = 200,
-    Medic,
+    Boss_1 = 200,
 
     TextDisplay = 300,
     IconDisplay,

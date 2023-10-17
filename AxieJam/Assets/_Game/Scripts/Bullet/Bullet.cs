@@ -9,7 +9,6 @@ public class Bullet : MonoBehaviour, ICreateDamage
     protected int hitCount;
     protected Vector3 dir;
 
-    [SerializeField] protected PoolType hitType = PoolType.HitBullet;
     [SerializeField] protected AudioClip hitClip;
     [SerializeField] protected float timeHit = 0.5f;
     [SerializeField] protected SpriteRenderer bulletRender;
@@ -82,8 +81,6 @@ public class Bullet : MonoBehaviour, ICreateDamage
         hitCount += 1;
         if (IsMaxHit())
             Clear();
-        SpawnHitFx();
-
     }
 
     protected virtual void PreHit(Character character)
@@ -130,10 +127,6 @@ public class Bullet : MonoBehaviour, ICreateDamage
         hitClip = clip;
     }
 
-    public void SetHitType(PoolType type)
-    {
-        hitType = type;
-    }
     // only for enemy -- player do in player hp
     protected void OnTriggerEnter2D(Collider2D collision)
     {
@@ -143,16 +136,5 @@ public class Bullet : MonoBehaviour, ICreateDamage
         CreateDamage(e);
     }
 
-    public void SpawnHitFx()
-    {
-        if (hitType != PoolType.None)
-        {
-            Transform fx = PoolManager.Instance.SpawnObject(hitType);
-            fx.position = transform.position;
-            DOVirtual.DelayedCall(timeHit, () =>
-            {
-                PoolManager.Instance.DespawnObject(fx);
-            });
-        }
-    }
+   
 }

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public enum EnemyType
 {
-    Enemy_0 = 100,
-    Enemy_1,
-    Enemy_2,
+    Enemy_A = 100,
+    Enemy_B,
+    Enemy_C,
 
     Boss_1 = 200,
 }
@@ -21,8 +21,7 @@ public class WaveStat
 [System.Serializable]
 public class EnemyWaveConfig
 {
-    public EnemyType type = EnemyType.Enemy_0;
-    public float timeSpawn;
+    public EnemyType type = EnemyType.Enemy_A;
     public int numberSpawn;
 }
 
@@ -39,9 +38,7 @@ public class WaveConfig
 [System.Serializable]
 public class BossSpawnConfig
 {
-    public float delayTime;
     public WaveStat waveStat;
-
     public Transform pf;
 }
 

@@ -4,29 +4,23 @@ using UnityEngine;
 using DG.Tweening;
 public class LevelController : MonoBehaviour
 {
-    const int maxEnemy = 100;
     const float step = 0.1f;
     const float viewHorizonl = 5;
     const float viewVerticle = 7.5f;
 
-    [SerializeField] float delaySpawn = 0.5f;
-    [SerializeField] List<Enemy> enemyList;
-    [SerializeField] List<float> timeSpawnList;
     public Transform top, bot, left, right;
-    Transform player;
-    WaitForSeconds delay;
-    GameLevelAsset asset;
-    ScreenGame screen;
 
-    public WaveConfig config;
-
+    int waveIndex;
     Tween bossTween;
-    float spawnRadius = 7.5f;
+    Transform player;
+    GameLevelAsset asset;
+    WaveConfig waveConfig;
+    Coroutine spawnCoroutine;
 
-    private void Awake()
-    {
-        delay = new WaitForSeconds(step);
-    }
+    float spawnRadius = 7.5f;
+    float delaySpawn = 0.5f;
+    [SerializeField] List<Enemy> enemyList;
+
     public void OnUpdate(float dt)
     {
         foreach (var enemy in enemyList)
@@ -41,30 +35,37 @@ public class LevelController : MonoBehaviour
     {
         this.asset = asset;
     }
-    public void OnLevelLoad(int waveIndex)
+    public void LoadLevel()
     {
-        this.waveIndex = waveIndex;
-        screen = UIManager.Instance.GetScreen<ScreenGame>();
-        config = asset.GetConfig(waveIndex);
-
+        waveIndex = 0;
+        waveConfig = asset.GetConfig(waveIndex);
+        spawnCoroutine = StartCoroutine(ISpawn());
     }
 
-    int waveIndex;
-    public void StartSpawn()
+    private void LoadNextWave()
     {
-        StartCoroutine(ISpawn());
+        waveIndex += 1;
         if (waveIndex == asset.dataList.Count)
         {
             SpawnBoss();
         }
+        else
+        {
+            spawnCoroutine = StartCoroutine(ISpawn());
+        }
     }
+
     public void OnLose()
     {
-        StopAllCoroutines();
+        if (spawnCoroutine != null)
+        {
+            StopCoroutine(spawnCoroutine);
+            spawnCoroutine = null; ;
+        }
         foreach (var e in enemyList)
             e.OnLose();
     }
-  
+
     public void DestroyCurrentLevel()
     {
         StopAllCoroutines();
@@ -76,36 +77,18 @@ public class LevelController : MonoBehaviour
     }
     public IEnumerator ISpawn()
     {
-        timeSpawnList.Clear();
-        float time = config.waveTime;
-        WaveConfig waveConfig = config;
+        float time = waveConfig.waveTime;
         List<EnemyWaveConfig> enemyConfigList = waveConfig.enemyConfigList;
 
         for (int i = 0; i < enemyConfigList.Count; i++)
         {
-            timeSpawnList.Add(enemyConfigList[i].timeSpawn);
-        }
-        while (true)
-        {
-            yield return delay;
-            time -= step;
-            if (time <= 0)
-                break;
-            for (int i = 0; i < enemyConfigList.Count; i++)
+            for (int j = 0; j < enemyConfigList[i].numberSpawn; j++)
             {
-                timeSpawnList[i] -= step;
-                if (timeSpawnList[i] <= 0)
-                {
-                    timeSpawnList[i] = enemyConfigList[i].timeSpawn;
-                    for (int j = 0; j < enemyConfigList[i].numberSpawn; j++)
-                    {
-                        SpawnEnemy(enemyConfigList[i].type, waveConfig.waveProterties);
-                    }
-                }
+                SpawnEnemy(enemyConfigList[i].type, waveConfig.waveProterties);
             }
         }
-
-        GameManager.Instance.OnCompleteLevel();
+        yield return new WaitForSeconds(time);
+        LoadNextWave();
     }
     public Enemy SpawnEnemy(Transform pf)
     {
@@ -115,11 +98,6 @@ public class LevelController : MonoBehaviour
     }
     public void SpawnEnemy(EnemyType enemyType, WaveStat stat)
     {
-        if (enemyList.Count >= maxEnemy)
-        {
-            return;
-        }
-
         Vector2 randomPos = Quaternion.Euler(0f, 0f, Random.Range(0, 360)) * Vector2.right * spawnRadius;
         Vector3 pos = player.position + (Vector3)randomPos;
         pos.x = Mathf.Clamp(pos.x, left.position.x, right.position.x);
@@ -132,43 +110,6 @@ public class LevelController : MonoBehaviour
         e.DelaySpawn(delaySpawn, pos);
         enemyList.Add(e);
     }
-    private Vector3 GetOutSidePlayer(Vector3 pos)
-    {
-        float maxViewX = player.position.x + viewHorizonl;
-        float minViewX = player.position.x - viewHorizonl;
-
-        if (pos.x < maxViewX && pos.x > minViewX)
-        {
-            if (maxViewX > right.position.x)
-            {
-                pos.x = minViewX;
-            }
-            else
-            {
-                pos.x = maxViewX;
-            }
-        }
-
-        float maxViewY = player.position.y + viewVerticle;
-        float minViewY = player.position.y - viewVerticle;
-
-        if (pos.y < maxViewY && pos.y > minViewY)
-        {
-            if (maxViewY > top.position.y)
-            {
-                pos.y = minViewY;
-            }
-            else
-            {
-                pos.y = maxViewY;
-            }
-        }
-        return pos;
-    }
-    public List<Enemy> GetEnemyList()
-    {
-        return enemyList;
-    }
     public void RemoveEnemy(Enemy enemy)
     {
         int index = enemyList.FindIndex(x => x == enemy);
@@ -180,25 +121,30 @@ public class LevelController : MonoBehaviour
 
             enemyList.RemoveAt(enemyList.Count - 1);
         }
-    }
 
+        if (enemyList.Count == 0)
+        {
+            LoadNextWave();
+        }
+    }
     private void SpawnBoss()
     {
-        bossTween = DOVirtual.DelayedCall(asset.bossSpawnConfig.delayTime, () =>
-        {
-            Vector2 randomPos = Quaternion.Euler(0f, 0f, Random.Range(0, 360)) * Vector2.right * spawnRadius;
-            Vector3 pos = player.position + (Vector3)randomPos;
-            pos.x = Mathf.Clamp(pos.x, left.position.x, right.position.x);
-            pos.y = Mathf.Clamp(pos.y, bot.position.y, top.position.y);
+        Vector2 randomPos = Quaternion.Euler(0f, 0f, Random.Range(0, 360)) * Vector2.right * spawnRadius;
+        Vector3 pos = player.position + (Vector3)randomPos;
+        pos.x = Mathf.Clamp(pos.x, left.position.x, right.position.x);
+        pos.y = Mathf.Clamp(pos.y, bot.position.y, top.position.y);
 
-            Enemy e = PoolManager.Instance.SpawnObject(asset.bossSpawnConfig.pf).GetComponent<Enemy>();
+        Enemy e = PoolManager.Instance.SpawnObject(asset.bossSpawnConfig.pf).GetComponent<Enemy>();
 
-            e.SetStat();
-            e.SetWaveStat(asset.bossSpawnConfig.waveStat);
-            e.OnInit();
-            e.DelaySpawn(1, pos);
-            enemyList.Add(e);
-        });
+        e.SetStat();
+        e.SetWaveStat(asset.bossSpawnConfig.waveStat);
+        e.OnInit();
+        e.DelaySpawn(1, pos);
+        enemyList.Add(e);
+    }
+    public List<Enemy> GetEnemyList()
+    {
+        return enemyList;
     }
 
 }

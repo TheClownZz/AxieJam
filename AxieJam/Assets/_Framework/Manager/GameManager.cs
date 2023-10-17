@@ -19,7 +19,6 @@ public class GameManager : MonoSingleton<GameManager>
     public Transform bulletSpawner;
     public LevelController levelController;
 
-    DataLevel dataLevel;
     [SerializeField] GameLevelAsset asset;
 
     public bool isCheat;
@@ -37,9 +36,6 @@ public class GameManager : MonoSingleton<GameManager>
     }
     void OnInit()
     {
-        dataLevel = DataManager.Instance.GetData<DataLevel>();
-        asset = DataManager.Instance.GetAsset<GameLevelAsset>();
-
         player.OnInit();
         levelController.OnInits();
         levelController.SetAsset(asset);
@@ -63,7 +59,6 @@ public class GameManager : MonoSingleton<GameManager>
 
         player.StartLevel();
         Camera.main.GetComponent<CameraFollow>().ForceUpdate();
-        levelController.OnLevelLoad(dataLevel.CurrentLevelId);
 
         int count = delay;
         ScreenGame screenInGame = UIManager.Instance.GetScreen<ScreenGame>();
@@ -76,8 +71,9 @@ public class GameManager : MonoSingleton<GameManager>
             count -= 1;
             if (count == 0)
             {
+                levelController.LoadLevel();
                 SetGameState(GameState.Playing);
-                levelController.StartSpawn();
+
                 screenInGame.SetInput(true);
                 screenInGame.UpdateCountDown(string.Empty);
             }
@@ -103,13 +99,7 @@ public class GameManager : MonoSingleton<GameManager>
             bulletSpawner.GetChild(i).GetComponent<Bullet>().Clear();
         }
     }
-    public void OnCompleteLevel()
-    {
-        player.OnCompleteLevel();
-        dataLevel.CompleteLevel();
-        levelController.OnLevelLoad(dataLevel.CurrentLevelId);
-        levelController.StartSpawn();
-    }
+
     public void OnLoss()
     {
         if (gameState != GameState.Playing)
