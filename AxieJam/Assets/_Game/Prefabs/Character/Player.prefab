@@ -316,7 +316,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 868f82e5d9b1b4c8d8a1b677c9e7faa5, type: 2}
+  - {fileID: 2100000, guid: 862a3ce85ecaf4c51904dc2dd6e07a74, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: b49379cb4c0ea41ad8687d360ccaa72b, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: 17b8d394a4a3048c6b388872700353a8, type: 2}
   initialSkinName: 
   initialFlipX: 0
   initialFlipY: 0
@@ -524,6 +524,7 @@ MonoBehaviour:
   - {fileID: 8915905001403885886}
   - {fileID: 2093326263687780720}
   isActive: 0
+  type: 0
   asset: {fileID: 11400000, guid: 511b63438521ecd4db4505c929b97674, type: 2}
 --- !u!114 &4173694845247501963
 MonoBehaviour:
@@ -579,8 +580,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control: {fileID: 0}
-  currentWpList: []
-  target: {fileID: 0}
+  weapon: {fileID: 0}
+  setcursor: {fileID: 3338595176116409183}
 --- !u!114 &3338595176116409183
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,25 +5,20 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour, ICreateDamage
 {
-    protected int maxHit = 1;
-    protected int hitCount;
     protected Vector3 dir;
+    protected float timePlaySound;
+    protected float damageRate = 1;
 
     [SerializeField] protected AudioClip hitClip;
-    [SerializeField] protected float timeHit = 0.5f;
     [SerializeField] protected SpriteRenderer bulletRender;
-    [HideInInspector] public Weapon weapon;
-
     [SerializeField] TrailRenderer trailRenderer;
 
-    protected float timePlaySound;
+    [HideInInspector] public Weapon weapon;
 
     public virtual void OnInits(Weapon weapon, float speed, Vector3 dir)
     {
         this.weapon = weapon;
         this.dir = dir * speed;
-
-        hitCount = 0;
 
         if (trailRenderer)
         {
@@ -31,10 +26,11 @@ public class Bullet : MonoBehaviour, ICreateDamage
         }
     }
 
-    public void SetMaxHit(int value)
+    public void SetDamageRate(float value)
     {
-        maxHit = value;
+        damageRate = value;
     }
+
     protected virtual void Update()
     {
         transform.position += dir * Time.deltaTime;
@@ -48,7 +44,7 @@ public class Bullet : MonoBehaviour, ICreateDamage
     protected virtual void HitCharacter(Character character)
     {
         CharacterStat stat = weapon.GetCharacterStat();
-        float damage = stat.damage + weapon.damage;
+        float damage = stat.damage;
         float critDamage = stat.critDamage;
 
         float critRate = stat.critRate;
@@ -71,16 +67,11 @@ public class Bullet : MonoBehaviour, ICreateDamage
     }
     public virtual void CreateDamage(Character character)
     {
-        if (IsMaxHit())
-            return;
 
         PreHit(character);
         HitCharacter(character);
         AfterHit(character);
-
-        hitCount += 1;
-        if (IsMaxHit())
-            Clear();
+        Clear();
     }
 
     protected virtual void PreHit(Character character)
@@ -93,10 +84,6 @@ public class Bullet : MonoBehaviour, ICreateDamage
 
     }
 
-    public virtual bool IsMaxHit()
-    {
-        return hitCount >= maxHit;
-    }
     protected void AddEffect(Character character)
     {
         EffectController controller = character.GetCom<EffectController>();
@@ -136,5 +123,5 @@ public class Bullet : MonoBehaviour, ICreateDamage
         CreateDamage(e);
     }
 
-   
+
 }

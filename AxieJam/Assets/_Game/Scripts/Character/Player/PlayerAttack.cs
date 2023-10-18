@@ -4,58 +4,40 @@ using UnityEngine;
 
 public class PlayerAttack : PlayerComponent
 {
-    [SerializeField] List<Weapon> currentWpList;
-    protected List<Enemy> enemyList;
-    public Enemy target;
+    [SerializeField] Weapon weapon;
+    [SerializeField] Setcursor setcursor;
 
-    float maxDistance;
-
-    public override void OnInits(Character player)
+    Camera mainCamera;
+    public override void OnInits(Character control)
     {
-        base.OnInits(player);
-        enemyList = GameManager.Instance.levelController.GetEnemyList();
+        base.OnInits(control);
+        weapon.OnInits(control);
+        weapon.UpdateStat();
+        mainCamera = Camera.main;
     }
-
-
     public override void OnUpdate(float dt)
     {
-        base.OnUpdate(dt);
-        target = GetNearEnemy();
-        if (target && !target.isDead)
+        Facing();
+        if (Input.GetMouseButton(0))
         {
-            Facing();
-            foreach (var wp in currentWpList)
-                wp.OnUpdate(dt);
+            weapon.OnUpdate(dt);
         }
+
     }
 
-    public Enemy GetNearEnemy()
-    {
-        Enemy result = null;
-        float curDistance = maxDistance;
-        foreach (Enemy enemy in enemyList)
-        {
-            if (enemy.isDead || !enemy.gameObject.activeInHierarchy)
-                continue;
-            float distance = Vector2.Distance(transform.position, enemy.transform.position);
-            if (distance < curDistance)
-            {
-                curDistance = distance;
-                result = enemy;
-            }
-        }
-        return result;
-    }
-
-    public Character GetControl()
-    {
-        return control;
-    }
 
     private void Facing()
     {
-        float face = target.transform.position.x > control.body.position.x ? 1 : -1;
-        control.spineController.FlipX(face);
-    }
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition = mainCamera.ScreenToWorldPoint(mousePosition);
 
+        Transform wpTrans = weapon.transform;
+        Vector2 direction = new Vector2(
+            mousePosition.x - wpTrans.position.x,
+            mousePosition.y - wpTrans.position.y
+        );
+
+        wpTrans.right = -direction;
+    }
 }
+

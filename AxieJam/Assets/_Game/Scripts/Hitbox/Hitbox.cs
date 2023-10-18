@@ -21,7 +21,7 @@ public class Hitbox : MonoBehaviour, ICreateDamage
     protected virtual void HitCharacter(Character character)
     {
         CharacterStat stat = weapon.GetCharacterStat();
-        float damage = stat.damage + weapon.damage;
+        float damage = stat.damage;
         float critDamage = stat.critDamage;
 
         float critRate = stat.critRate;
@@ -35,7 +35,7 @@ public class Hitbox : MonoBehaviour, ICreateDamage
 
         damageDeal = character.TakeDamage(damage, isCrit);
 
-        weapon.LifeSteal(damageDeal * weapon.characterControl.stat.lifeSteal);
+        weapon.LifeSteal(damageDeal * weapon.GetCharacterStat().lifeSteal);
 
         Vector2 dir = character.transform.position - transform.position;
         character.KnockBack(dir.normalized, GameManager.Instance.gameConfig.forceValue);

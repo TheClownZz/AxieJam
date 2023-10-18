@@ -37,19 +37,72 @@ public class CharacterStat
     public float lifeSteal;
     public float dodge;
 
-    public void SetStat(CharacterStat stat)
+    public void Copy(CharacterStat stat)
     {
-        hp = stat.hp;
-        regen = stat.regen;
-        armor = stat.armor;
-        damage = stat.damage;
-        critRate = stat.critRate;
-        critDamage = stat.critDamage;
-        attackSpeed = stat.attackSpeed;
-        moveSpeed = stat.moveSpeed;
-        lifeSteal = stat.lifeSteal;
-        dodge = stat.dodge;
+        SetHp(stat.hp).SetRegen(stat.regen).Setarmor(stat.armor).
+            SetDamage(stat.damage).SetCritRate(stat.critRate).
+            SetAttackSpeed(stat.attackSpeed).SetMoveSpeed(stat.moveSpeed).
+            SetLifeSteal(stat.lifeSteal).SetDodge(stat.dodge);
+    }
 
+    public CharacterStat SetHp(float value)
+    {
+        hp = value;
+        return this;
+    }
+
+    public CharacterStat SetRegen(float value)
+    {
+        regen = value;
+        return this;
+    }
+
+    public CharacterStat Setarmor(float value)
+    {
+        armor = value;
+        return this;
+    }
+
+    public CharacterStat SetDamage(float value)
+    {
+        damage = value;
+        return this;
+    }
+
+    public CharacterStat SetCritRate(float value)
+    {
+        critRate = value;
+        return this;
+    }
+
+    public CharacterStat SetCritDamage(float value)
+    {
+        critDamage = value;
+        return this;
+    }
+
+    public CharacterStat SetAttackSpeed(float value)
+    {
+        attackSpeed = value;
+        return this;
+    }
+
+    public CharacterStat SetMoveSpeed(float value)
+    {
+        moveSpeed = value;
+        return this;
+    }
+
+    public CharacterStat SetLifeSteal(float value)
+    {
+        lifeSteal = value;
+        return this;
+    }
+
+    public CharacterStat SetDodge(float value)
+    {
+        dodge = value;
+        return this;
     }
 
 }

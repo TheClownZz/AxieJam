@@ -37,7 +37,8 @@ public class DataSavePlayer
 public class DataSaveUser
 {
     public List<DataSavePlayer> playerSaveList;
-    public DataSaveUser()
+
+    public void NewData()
     {
         playerSaveList = new List<DataSavePlayer>();
         for (int i = 0; i < (int)PlayerType.None; i++)
@@ -71,6 +72,7 @@ public class DataUser : GameData
     public override void NewData()
     {
         dataSave = new DataSaveUser();
+        dataSave.NewData();
     }
 
     private DataSavePlayer GetPlayer(PlayerType type)
@@ -105,6 +107,12 @@ public class DataUser : GameData
         player.itemSkillCount -= itemCount;
         player.levelSkill += 1;
         SaveData();
+    }
+
+    public int GetLevel(PlayerType type)
+    {
+        DataSavePlayer player = GetPlayer(type);
+        return player.level;
     }
 
 }

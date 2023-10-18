@@ -8,34 +8,28 @@ public class Weapon : MonoBehaviour
 {
     protected int tier;
     protected float attackTime;
-    public Character characterControl;
-    public List<EffectData> effectDataList;
-    [SerializeField] protected AudioClip attackClip;
+    protected Character characterControl;
 
     protected float coolDown = 1;
-    protected float range;
-    [HideInInspector] public float damage;
+
+    [SerializeField] protected AudioClip attackClip;
+    public List<EffectData> effectDataList;
 
     public virtual void OnInits(Character characterControl)
     {
         this.characterControl = characterControl;
         attackTime = 0;
-
-        transform.SetParent(characterControl.body);
-        transform.position = characterControl.transform.position;
-
     }
 
-    public void SetDamageRate(float rate)
-    {
-        //damage = stat.damage * rate;
 
+    public virtual void UpdateStat()
+    {
+        coolDown = 1 / GetCharacterStat().attackSpeed;
     }
 
     public virtual void OnUpdate(float dt)
     {
-        FaceToTarget(dt);
-        if (CheckCoolDown() && CheckRange())
+        if (CheckCoolDown())
         {
             OnAttack();
         }
@@ -55,12 +49,6 @@ public class Weapon : MonoBehaviour
     }
 
 
-
-    protected virtual void FaceToTarget(float dt)
-    {
-
-    }
-
     public virtual void LifeSteal(float hp)
     {
         characterControl.LifeSteal(hp);
@@ -75,9 +63,5 @@ public class Weapon : MonoBehaviour
         return Time.time - attackTime > coolDown;
     }
 
-    private bool CheckRange()
-    {
-        return false;
-    }
 }
 

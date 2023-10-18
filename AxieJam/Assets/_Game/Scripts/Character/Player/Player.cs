@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Player : Character
 {
-    
+
     public bool isActive;
+    [SerializeField] PlayerType type;
     [SerializeField] PlayerAsset asset;
 
 
@@ -53,14 +54,29 @@ public class Player : Character
     public override void SetStat()
     {
         var data = asset.data;
+        stat.SetHp(data.hp)
+            .Setarmor(data.armor)
+            .SetDamage(data.damage)
+            .SetCritRate(data.critRate)
+            .SetMoveSpeed(data.moveSpeed)
+            .SetCritDamage(data.critDamage)
+            .SetAttackSpeed(data.attackSpeed);
 
-        stat.hp = data.hp;
-        stat.armor = data.armor;
-        stat.damage = data.damage;
-        stat.critRate = data.critRate;
-        stat.critDamage = data.critDamage;
-        stat.attackSpeed = data.attackSpeed;
-        stat.moveSpeed = data.moveSpeed;
+
+        int level = DataManager.Instance.GetData<DataUser>().GetLevel(type);
+        for (int i = 1; i < level; i++)
+        {
+            PlayerLevelConfig config = data.GetLevelConfig(i - 1);
+            stat.SetHp(config.hp + stat.hp)
+                .Setarmor(config.armor + stat.armor)
+                .SetDamage(config.damage + stat.damage)
+                .SetCritRate(config.critRate + stat.critRate)
+                .SetMoveSpeed(config.moveSpeed + stat.moveSpeed)
+                .SetCritDamage(config.critDamage + stat.critDamage)
+                .SetAttackSpeed(config.attackSpeed + stat.attackSpeed);
+
+        }
+
     }
 
     public override void LifeSteal(float hp)

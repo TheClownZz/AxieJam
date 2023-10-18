@@ -17,7 +17,7 @@ MonoBehaviour:
     avatar: {fileID: 21300000, guid: 4b8c41cf5c198e44b9794979862fc5ad, type: 3}
     hp: 200
     damage: 10
-    attackSpeed: 1
+    attackSpeed: 4
     moveSpeed: 5
     critRate: 0.05
     critDamage: 2
@@ -29,6 +29,8 @@ MonoBehaviour:
       attackSpeed: 0.5
       moveSpeed: 0.5
       critRate: 0.2
+      critDamage: 0
+      armor: 0
     skillConfiglist:
     - defaultValue:
         itemRequire: 0

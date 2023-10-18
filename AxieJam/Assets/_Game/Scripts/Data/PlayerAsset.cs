@@ -48,6 +48,8 @@ public class PlayerLevelConfig
     public float attackSpeed = 0.5f;
     public float moveSpeed = 0.5f;
     public float critRate = 0.2f;
+    public float critDamage = 0;
+    public float armor = 0;
 }
 [System.Serializable]
 public class PlayerConfig
@@ -67,14 +69,14 @@ public class PlayerConfig
     [TableList(ShowIndexLabels = true)]
     public List<PlayerSkillConfig> skillConfiglist;
 
-    public PlayerLevelConfig GetLevelConfig(int level)
+    public PlayerLevelConfig GetLevelConfig(int lvIndex)
     {
-        return levelConfiglist[Mathf.Min(level, levelConfiglist.Count - 1)];
+        return levelConfiglist[Mathf.Min(lvIndex, levelConfiglist.Count - 1)];
     }
 
-    public PlayerSkillConfig GetSkillConfig(int level)
+    public PlayerSkillConfig GetSkillConfig(int lvIndex)
     {
-        return skillConfiglist[Mathf.Min(level, levelConfiglist.Count - 1)];
+        return skillConfiglist[Mathf.Min(lvIndex, levelConfiglist.Count - 1)];
     }
 
     public float GetSkillValue(SkillType type, int level, float defaultValue = 0)

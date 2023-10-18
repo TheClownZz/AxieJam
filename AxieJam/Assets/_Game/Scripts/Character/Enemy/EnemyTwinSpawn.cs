@@ -15,16 +15,16 @@ public class EnemyTwinSpawn : EnemyComponent
 
     private void SpawnTwin()
     {
-        for (int i = 0; i < numberSpawn; i++)
-        {
-            Vector3 pos = control.transform.position + (Vector3)Random.insideUnitCircle;
-            Enemy e = GameManager.Instance.levelController.SpawnEnemy(pf.transform);
-            e.stat.SetStat(control.stat);
-            e.stat.hp *= statRate;
-            e.stat.armor *= statRate;
-            e.stat.damage *= statRate;
-            e.transform.position = pos;
-            e.OnInit();
-        }
+        //for (int i = 0; i < numberSpawn; i++)
+        //{
+        //    Vector3 pos = control.transform.position + (Vector3)Random.insideUnitCircle;
+        //    Enemy e = GameManager.Instance.levelController.SpawnEnemy(pf.transform);
+        //    e.stat.Copy(control.stat);
+        //    e.stat.hp *= statRate;
+        //    e.stat.armor *= statRate;
+        //    e.stat.damage *= statRate;
+        //    e.transform.position = pos;
+        //    e.OnInit();
+        //}
     }
 }

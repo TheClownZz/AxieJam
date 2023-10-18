@@ -14,7 +14,6 @@ public class EnemyShoot : EnemyComponent
         base.OnInits(enemy);
         eControl = (Enemy)enemy;
         currentWp.OnInits(control);
-        currentWp.SetDamageRate(eControl.waveStat.damageRate);
     }
 
     public override void OnUpdate(float dt)

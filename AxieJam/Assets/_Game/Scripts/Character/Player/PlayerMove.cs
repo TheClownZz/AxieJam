@@ -32,6 +32,7 @@ public class PlayerMove : PlayerComponent
     public override void OnDead()
     {
         base.OnDead();
+        allowMove = false;
         body.velocity = Vector2.zero;
     }
     public override void OnStartLevel()
@@ -39,18 +40,21 @@ public class PlayerMove : PlayerComponent
         base.OnStartLevel();
         allowMove = true;
     }
-
     public override void OnUpdate(float dt)
     {
+        if (!allowMove) return;
         Vector3 mouseWorldPos = cam.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPos.z = body.transform.position.z;
         Vector2 dif = mouseWorldPos - transform.position;
-
-        if (!allowMove || Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
+            Facing(dif.normalized);
             direction = Vector2.zero;
             body.velocity = Vector2.zero;
             control.SetState(CharacterState.Idle);
+        }
+        else if (Input.GetMouseButton(0))
+        {
             Facing(dif.normalized);
         }
         else
@@ -74,7 +78,6 @@ public class PlayerMove : PlayerComponent
         mousePos = mouseWorldPos;
     }
 
-
     private void Facing(Vector2 dir)
     {
         if (direction.x * dir.x <= 0 && dir.x != 0)
@@ -82,5 +85,11 @@ public class PlayerMove : PlayerComponent
             float face = dir.x > 0 ? -1 : 1;
             control.spineController.FlipX(face);
         }
+    }
+
+    public void ForceBack(Vector2 force)
+    {
+        body.velocity = Vector2.zero;
+        body.AddForce(force);
     }
 }

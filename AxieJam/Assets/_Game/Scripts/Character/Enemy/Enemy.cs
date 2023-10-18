@@ -100,18 +100,16 @@ public class Enemy : Character
     public override void SetStat()
     {
         var data = asset.data;
-
-        stat.hp = data.hp;
-        stat.armor = data.armor;
-        stat.damage = data.damage;
-        stat.attackSpeed = data.attackSpeed;
-        stat.moveSpeed = data.moveSpeed;
+        stat.SetHp(data.hp)
+            .Setarmor(data.armor)
+            .SetDamage(data.damage)
+            .SetAttackSpeed(data.attackSpeed)
+            .SetMoveSpeed(data.moveSpeed);
     }
     public void SetWaveStat(WaveStat waveStat)
     {
         this.waveStat = waveStat;
-        stat.hp *= waveStat.hpRate;
-        stat.damage *= waveStat.damageRate;
+        stat.SetHp(stat.hp * waveStat.hpRate).SetDamage(stat.damage * waveStat.damageRate);
     }
 
 
