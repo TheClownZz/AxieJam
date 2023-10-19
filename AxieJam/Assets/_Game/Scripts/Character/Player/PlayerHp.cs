@@ -48,17 +48,23 @@ public class PlayerHp : PlayerComponent, ITakeDamage
             coroutine = null;
         }
     }
-    public override void OnStartLevel()
+    public override void OnSelect()
     {
-        base.OnStartLevel();
+        base.OnSelect();
         UIManager.Instance.GetScreen<ScreenGame>().SetHp(currentHp);
         coroutine = StartCoroutine(IRegen());
+    }
 
+    public override void OnUnSelect()
+    {
+        base.OnUnSelect();
+        if (coroutine == null)
+            StopCoroutine(coroutine);
     }
 
     public float TakeDamage(float damage, bool isCrit)
     {
-        if (damage == 0 || pControl.isDead || GameManager.Instance.gameState == GameState.Ending)
+        if (damage == 0 || pControl.isDead || GameManager.Instance.gameState == GameState.Ready)
             return 0;
         float damageRate = damage / (damage + control.stat.armor);
         damage = damage * damageRate;

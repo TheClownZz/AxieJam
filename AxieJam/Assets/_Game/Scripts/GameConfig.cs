@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Game/GameConfig", fileName = "GameConfig")]
 public class GameConfig : ScriptableObject
 {
+    public const int maxPlayer = 3;
     public const int maxTier = 5;
     public const int slotUnLock = 3;
     public const int maxSlot = 5;

@@ -160,7 +160,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 240, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &349962143748005352
 CanvasRenderer:
@@ -212,9 +212,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d561c8bfb1293eb4e846a419ac85e2c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerType: 0
+  tmpLevel: {fileID: 3480641100937117601}
+  tmpSkill: {fileID: 8612893768665617908}
+  tmpFood: {fileID: 7728856104362199182}
+  tmpPotion: {fileID: 4969537225144070207}
+  tmpSelect: {fileID: 8123385487018916196}
   imgSelected: {fileID: 1145651024388156411}
   imgIcon: {fileID: 7801167271580712313}
-  btnSelect: {fileID: 0}
+  imgFood: {fileID: 3851817206306166946}
+  imgPotion: {fileID: 92292504650845775}
+  btnSelect: {fileID: 8051191796110612417}
 --- !u!1 &4759862260061585469
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,7 +309,7 @@ GameObject:
   - component: {fileID: 3656910785857237935}
   - component: {fileID: 8612893768665617908}
   m_Layer: 5
-  m_Name: tmpProgress
+  m_Name: tmpLvel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -569,7 +577,7 @@ GameObject:
   - component: {fileID: 8376998408752707440}
   - component: {fileID: 3480641100937117601}
   m_Layer: 5
-  m_Name: tmpProgress
+  m_Name: tmpLvel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1278,7 +1286,7 @@ GameObject:
   - component: {fileID: 6704539610540583329}
   - component: {fileID: 92292504650845775}
   m_Layer: 5
-  m_Name: imgFood
+  m_Name: imgPotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

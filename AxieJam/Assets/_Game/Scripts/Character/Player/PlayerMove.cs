@@ -12,15 +12,12 @@ public class PlayerMove : PlayerComponent
     [SerializeField] float minMoveDistance = 0.2f;
 
     Camera cam;
-    Player pControl;
-    Vector3 mousePos;
     Vector2 direction;
 
     public override void OnInits(Character p)
     {
         base.OnInits(p);
         cam = Camera.main;
-        pControl = (Player)p;
         currentSpeed = p.stat.moveSpeed;
     }
 
@@ -36,9 +33,9 @@ public class PlayerMove : PlayerComponent
         allowMove = false;
         body.velocity = Vector2.zero;
     }
-    public override void OnStartLevel()
+    public override void OnSelect()
     {
-        base.OnStartLevel();
+        base.OnSelect();
         allowMove = true;
     }
     public override void OnUpdate(float dt)
@@ -69,16 +66,15 @@ public class PlayerMove : PlayerComponent
             if (distance > moveDistance || body.velocity != Vector2.zero && distance > minMoveDistance)
             {
                 body.velocity = currentSpeed * dif.normalized;
+                control.SetState(CharacterState.Run);
 
             }
             else
             {
                 body.velocity = Vector2.zero;
+                control.SetState(CharacterState.Idle);
             }
-            control.SetState(CharacterState.Run);
         }
-
-        mousePos = mouseWorldPos;
     }
 
     private void Facing(Vector2 dir)

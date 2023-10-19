@@ -12,7 +12,6 @@ public class LevelController : MonoBehaviour
 
     int waveIndex;
     Tween bossTween;
-    Transform player;
     GameLevelAsset asset;
     WaveConfig waveConfig;
     Coroutine spawnCoroutine;
@@ -28,7 +27,6 @@ public class LevelController : MonoBehaviour
     }
     public void OnInits()
     {
-        player = GameManager.Instance.player.transform;
         spawnRadius = GameManager.Instance.gameConfig.spawnRadius;
     }
     public void SetAsset(GameLevelAsset asset)
@@ -98,8 +96,7 @@ public class LevelController : MonoBehaviour
     }
     public void SpawnEnemy(EnemyType enemyType, WaveStat stat)
     {
-        Vector2 randomPos = Quaternion.Euler(0f, 0f, Random.Range(0, 360)) * Vector2.right * spawnRadius;
-        Vector3 pos = player.position + (Vector3)randomPos;
+        Vector2 pos = Quaternion.Euler(0f, 0f, Random.Range(0, 360)) * Vector2.right * spawnRadius;
         pos.x = Mathf.Clamp(pos.x, left.position.x, right.position.x);
         pos.y = Mathf.Clamp(pos.y, bot.position.y, top.position.y);
 
@@ -129,8 +126,7 @@ public class LevelController : MonoBehaviour
     }
     private void SpawnBoss()
     {
-        Vector2 randomPos = Quaternion.Euler(0f, 0f, Random.Range(0, 360)) * Vector2.right * spawnRadius;
-        Vector3 pos = player.position + (Vector3)randomPos;
+        Vector2 pos = Quaternion.Euler(0f, 0f, Random.Range(0, 360)) * Vector2.right * spawnRadius;
         pos.x = Mathf.Clamp(pos.x, left.position.x, right.position.x);
         pos.y = Mathf.Clamp(pos.y, bot.position.y, top.position.y);
 

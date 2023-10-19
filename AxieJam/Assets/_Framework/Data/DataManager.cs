@@ -80,18 +80,6 @@ public class DataManager : MonoSingleton<DataManager>
 
 
     [Button]
-    public void LoadAllData()
-    {
-        foreach (GameData data in gameDatasList)
-        {
-            if (data.HasData())
-                data.LoadData();
-            else
-                data.NewData();
-        }
-    }
-
-    [Button]
     public void SaveAllData()
     {
         foreach (GameData data in gameDatasList)
@@ -101,11 +89,11 @@ public class DataManager : MonoSingleton<DataManager>
     }
 
     [Button]
-    public void DeleteAllData()
+    public void ResetData()
     {
         foreach (GameData data in gameDatasList)
         {
-            writer.Delete(data.GetName());
+            data.NewData();
         }
         writer.Commit();
         reader = QuickSaveReader.Create(rootKey);// syns with writer

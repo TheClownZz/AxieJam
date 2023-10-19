@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerComponent : CharacterComponent
 {
-    public override void OnStartLevel()
+    public override void OnSelect()
     {
 
     }

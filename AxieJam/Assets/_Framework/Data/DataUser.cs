@@ -1,5 +1,6 @@
 using Newtonsoft.Json.Linq;
 using Sirenix.OdinInspector;
+using Sirenix.Utilities;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,7 +15,6 @@ public class DataSavePlayer
     public int levelSkill;
     public int itemLevelCount;
     public int itemSkillCount;
-
     public DataSavePlayer(PlayerType type)
     {
         this.type = type;
@@ -27,6 +27,7 @@ public class DataSavePlayer
 public class DataSaveUser
 {
     public List<DataSavePlayer> playerSaveList;
+    public List<PlayerType> teamList;
 
     public void NewData()
     {
@@ -36,6 +37,14 @@ public class DataSaveUser
             DataSavePlayer data = new DataSavePlayer((PlayerType)i);
             playerSaveList.Add(data);
         }
+
+        teamList = new List<PlayerType>();
+        for (int i = GameConfig.maxPlayer - 1; i >=0; i--)
+        {
+            teamList.Add((PlayerType)i);
+
+        }
+
     }
 
 
@@ -65,27 +74,27 @@ public class DataUser : GameData
         dataSave.NewData();
     }
 
-    private DataSavePlayer GetPlayer(PlayerType type)
+    public DataSavePlayer GetDataPlayer(PlayerType type)
     {
         return dataSave.playerSaveList.Find(x => x.type == type);
     }
 
     public void UpdateLevellItem(PlayerType type, int number = 1)
     {
-        DataSavePlayer player = GetPlayer(type);
+        DataSavePlayer player = GetDataPlayer(type);
         player.itemLevelCount += number;
         SaveData();
     }
 
     public void UpdateSkillItem(PlayerType type, int number = 1)
     {
-        DataSavePlayer player = GetPlayer(type);
+        DataSavePlayer player = GetDataPlayer(type);
         player.itemSkillCount += number;
         SaveData();
     }
     public void UpLevel(PlayerType type, int itemCount)
     {
-        DataSavePlayer player = GetPlayer(type);
+        DataSavePlayer player = GetDataPlayer(type);
         player.itemLevelCount -= itemCount;
         player.level += 1;
         SaveData();
@@ -93,7 +102,7 @@ public class DataUser : GameData
 
     public void UpSkill(PlayerType type, int itemCount)
     {
-        DataSavePlayer player = GetPlayer(type);
+        DataSavePlayer player = GetDataPlayer(type);
         player.itemSkillCount -= itemCount;
         player.levelSkill += 1;
         SaveData();
@@ -101,8 +110,19 @@ public class DataUser : GameData
 
     public int GetLevel(PlayerType type)
     {
-        DataSavePlayer player = GetPlayer(type);
+        DataSavePlayer player = GetDataPlayer(type);
         return player.level;
     }
 
+    public List<PlayerType> GetTeam()
+    {
+        return dataSave.teamList;
+    }
+
+    public void SetTeam(List<PlayerType> list)
+    {
+        dataSave.teamList.Clear();
+        dataSave.teamList.AddRange(list);
+        SaveData();
+    }
 }

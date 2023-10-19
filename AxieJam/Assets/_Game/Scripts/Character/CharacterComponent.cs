@@ -31,7 +31,12 @@ public class CharacterComponent : MonoBehaviour
 
     }
 
-    public virtual void OnStartLevel()
+    public virtual void OnSelect()
+    {
+
+    }
+
+    public virtual void OnUnSelect()
     {
 
     }

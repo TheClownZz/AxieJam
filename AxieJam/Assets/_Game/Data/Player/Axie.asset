@@ -77,3 +77,4 @@ MonoBehaviour:
         value: 6
       - type: 0
         value: 0.6
+  prefab: {fileID: 8915905001403885883, guid: 1f20aad660854d345800d09714c01fa9, type: 3}

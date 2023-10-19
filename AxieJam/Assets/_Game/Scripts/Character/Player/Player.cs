@@ -6,8 +6,8 @@ public class Player : Character
 {
 
     public bool isActive;
-    [SerializeField] PlayerType type;
-    [SerializeField] PlayerAsset asset;
+    PlayerConfig config;
+    public PlayerType type;
 
 
     public T GetPCom<T>() where T : PlayerComponent
@@ -24,14 +24,19 @@ public class Player : Character
     }
 
 
-    public void StartLevel()
+    public void OnSelect()
     {
         isDead = false;
         isActive = true;
         foreach (var comp in componentList)
-            comp.OnStartLevel();
+            comp.OnSelect();
         SetState(CharacterState.Alive);
-        transform.position = Vector3.zero;
+    }
+
+    public void OnUnSelect()
+    {
+        foreach (var comp in componentList)
+            comp.OnUnSelect();
     }
 
     public void OnUpdate(float dt)
@@ -53,27 +58,26 @@ public class Player : Character
 
     public override void SetStat()
     {
-        var data = asset.data;
-        stat.SetHp(data.hp)
-            .Setarmor(data.armor)
-            .SetDamage(data.damage)
-            .SetCritRate(data.critRate)
-            .SetMoveSpeed(data.moveSpeed)
-            .SetCritDamage(data.critDamage)
-            .SetAttackSpeed(data.attackSpeed);
+        stat.SetHp(config.hp)
+            .Setarmor(config.armor)
+            .SetDamage(config.damage)
+            .SetCritRate(config.critRate)
+            .SetMoveSpeed(config.moveSpeed)
+            .SetCritDamage(config.critDamage)
+            .SetAttackSpeed(config.attackSpeed);
 
 
         int level = DataManager.Instance.GetData<DataUser>().GetLevel(type);
         for (int i = 1; i < level; i++)
         {
-            PlayerLevelConfig config = data.GetLevelConfig(i - 1);
-            stat.SetHp(config.hp + stat.hp)
-                .Setarmor(config.armor + stat.armor)
-                .SetDamage(config.damage + stat.damage)
-                .SetCritRate(config.critRate + stat.critRate)
-                .SetMoveSpeed(config.moveSpeed + stat.moveSpeed)
-                .SetCritDamage(config.critDamage + stat.critDamage)
-                .SetAttackSpeed(config.attackSpeed + stat.attackSpeed);
+            PlayerLevelConfig lvConfig = config.GetLevelConfig(i - 1);
+            stat.SetHp(lvConfig.hp + stat.hp)
+                .Setarmor(lvConfig.armor + stat.armor)
+                .SetDamage(lvConfig.damage + stat.damage)
+                .SetCritRate(lvConfig.critRate + stat.critRate)
+                .SetMoveSpeed(lvConfig.moveSpeed + stat.moveSpeed)
+                .SetCritDamage(lvConfig.critDamage + stat.critDamage)
+                .SetAttackSpeed(lvConfig.attackSpeed + stat.attackSpeed);
 
         }
 
@@ -89,4 +93,8 @@ public class Player : Character
         return GetPCom<PlayerHp>().TakeDamage(damage, isCrit);
     }
 
+    public void SetData(PlayerConfig data)
+    {
+        config = data;
+    }
 }

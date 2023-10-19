@@ -105,5 +105,5 @@ public class PlayerConfig
 public class PlayerAsset : GameAsset
 {
     public PlayerConfig data;
-
+    public Player prefab;
 }

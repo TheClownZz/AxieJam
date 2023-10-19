@@ -11,10 +11,19 @@ public class PlayerGun : Weapon
     [SerializeField] Sprite bulletSprite;
     [SerializeField] AudioClip hitClip;
     [SerializeField] float force = 50;
+
+    CameraShake cameraShake;
+
+    public override void OnInits(Character characterControl)
+    {
+        base.OnInits(characterControl);
+        cameraShake = Camera.main.GetComponent<CameraShake>();
+    }
     public override void OnAttack()
     {
         base.OnAttack();
         SpawnBullet();
+        cameraShake.SmallShake();
         characterControl.GetCom<PlayerMove>().ForceBack(force * transform.right);
     }
 

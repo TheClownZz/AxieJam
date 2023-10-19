@@ -15,7 +15,6 @@ public class EnemyMove : EnemyComponent
     protected float forceStr;
 
     protected Enemy eControl;
-    protected Player target;
 
     Transform top, bot, left, right;
 
@@ -24,7 +23,6 @@ public class EnemyMove : EnemyComponent
         base.OnInits(e);
         forceStr = 0;
         eControl = (Enemy)e;
-        target = GameManager.Instance.player;
         direction = Vector3.zero;
 
         baseSpeed = Random.Range(e.stat.moveSpeed * 0.9f, e.stat.moveSpeed * 1.1f);
@@ -50,7 +48,7 @@ public class EnemyMove : EnemyComponent
 
     public override void OnUpdate(float dt)
     {
-        if (target.isDead || eControl.isDisable) return;
+        if (GetTarget().isDead || eControl.isDisable) return;
         if (!eControl.isKnockBack)
             Move(dt);
         else
@@ -60,17 +58,17 @@ public class EnemyMove : EnemyComponent
 
     private void Move(float dt)
     {
-        float distance = Vector2.Distance(transform.position, target.transform.position);
+        float distance = Vector2.Distance(transform.position, GetTarget().transform.position);
 
         Vector3 dir = Vector3.zero;
         if(direction == Vector3.zero)
         {
             if(distance > runDistance)
-                dir = (target.transform.position - transform.position).normalized;
+                dir = (GetTarget().transform.position - transform.position).normalized;
         }else
         {
             if (distance >= minDistance)
-                dir = (target.transform.position - transform.position).normalized;
+                dir = (GetTarget().transform.position - transform.position).normalized;
         }
 
         Facing(dir);
@@ -85,6 +83,11 @@ public class EnemyMove : EnemyComponent
     {
         transform.position += forceStr * forceDir * dt;
         forceStr -= forceDrag * dt;
+    }
+
+    public Player GetTarget()
+    {
+        return GameManager.Instance.currentPlayer;
     }
 
 

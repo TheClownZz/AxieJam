@@ -7,10 +7,11 @@ public class PopupGameOver : PopupBase
 {
     [SerializeField] SkeletonGraphic anim;
 
-    public void OnBtnReplayClick()
+    public void OnBtnBackClick()
     {
         OnHide();
-        GameManager.Instance.OnReplay();
+        UIManager.Instance.HideScreen<ScreenGame>();
+        UIManager.Instance.ShowScreen<ScreenSelect>();
     }
 
     public override void OnHide(float fadeTime = 0)

@@ -18,6 +18,8 @@ public class PopupBase : MonoBehaviour
     protected CanvasGroup canvasGroup;
     [SerializeField]
     private Animator uiAnimator;
+
+    public bool isShowing;
     #endregion
 
     #region PARAMS    
@@ -39,12 +41,14 @@ public class PopupBase : MonoBehaviour
     public virtual void OnShow(float fadeTime = 0)
     {
         canvasGroup.SetActive(true, fadeTime);
+        this.isShowing = true;
     }
 
     [Sirenix.OdinInspector.Button]
     public virtual void OnHide(float fadeTime = 0)
     {
         canvasGroup.SetActive(false, fadeTime);
+        this.isShowing = false;
     }
 
     public virtual void OnRelease()

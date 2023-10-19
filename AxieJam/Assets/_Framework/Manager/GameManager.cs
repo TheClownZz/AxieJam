@@ -4,25 +4,22 @@ using DG.Tweening;
 using UnityEngine;
 public enum GameState
 {
-    Starting,
+    Ready,
     Playing,
-    Ending,
 }
 public class GameManager : MonoSingleton<GameManager>
 {
-    const int delay = 3;
-
-
-    public Player player;
+    public List<Player> playerList;
     public GameState gameState;
     public GameConfig gameConfig;
     public Transform bulletSpawner;
     public LevelController levelController;
-
+    public bool isPause { get { return Time.timeScale == 0; } }
     [SerializeField] GameLevelAsset asset;
 
     public bool isCheat;
-
+    [SerializeField] GameObject objMap;
+    public Player currentPlayer;
     protected override void Initiate()
     {
         base.Initiate();
@@ -36,51 +33,67 @@ public class GameManager : MonoSingleton<GameManager>
     }
     void OnInit()
     {
-        player.OnInit();
         levelController.OnInits();
         levelController.SetAsset(asset);
-        UIManager.Instance.ShowScreen<ScreenGame>();
+        SetGameState(GameState.Ready);
+        UIManager.Instance.ShowScreen<ScreenSelect>();
     }
 
     private void Update()
     {
-        if (gameState == GameState.Playing)
+        if (gameState == GameState.Playing && !isPause)
         {
-            player.OnUpdate(Time.deltaTime);
+            currentPlayer.OnUpdate(Time.deltaTime);
             levelController.OnUpdate(Time.deltaTime);
         }
+    }
+    public void UpdatePlayerList(List<ItemSelect> itemSelectList)
+    {
+        foreach (var p in playerList)
+        {
+            Destroy(p.gameObject);
+        }
+        playerList.Clear();
+        var assetList = DataManager.Instance.GetAsset<PlayerListAsset>();
+
+        foreach (var item in itemSelectList)
+        {
+            var asset = assetList.GetAsset(item.playerType);
+            Player p = Instantiate(asset.prefab);
+            p.transform.position = Vector3.zero;
+            p.gameObject.SetActive(false);
+            p.SetData(asset.data);
+            p.OnInit();
+            p.transform.SetParent(objMap.transform);
+            playerList.Add(p);
+        }
+
+        currentPlayer = playerList[0];
+        currentPlayer.gameObject.SetActive(true);
+    }
+
+
+    public void SetPlayer(int index)
+    {
+        Vector3 pos = currentPlayer.transform.position;
+        currentPlayer.OnUnSelect();
+        currentPlayer.gameObject.SetActive(false);
+
+        currentPlayer = playerList[index];
+        currentPlayer.gameObject.SetActive(true);
+        currentPlayer.transform.position = pos;
+        currentPlayer.OnSelect();
+
     }
 
 
     public void StartLevel()
     {
-
+        ShowMap(true);
         ClearLevel();
-
-        player.StartLevel();
-        Camera.main.GetComponent<CameraFollow>().ForceUpdate();
-
-        int count = delay;
-        ScreenGame screenInGame = UIManager.Instance.GetScreen<ScreenGame>();
-        screenInGame.UpdateCountDown(count.ToString());
-        SetGameState(GameState.Starting);
-
-        DOVirtual.DelayedCall(1, () =>
-        {
-            count -= 1;
-            if (count == 0)
-            {
-               // levelController.LoadLevel();
-                SetGameState(GameState.Playing);
-                screenInGame.UpdateCountDown(string.Empty);
-            }
-            else
-            {
-                screenInGame.UpdateCountDown(count.ToString());
-
-            }
-        }, false).SetLoops(delay);
-
+        currentPlayer.OnSelect();
+        SetGameState(GameState.Playing);
+        //levelController.LoadLevel();
     }
 
     public void ClearLevel()
@@ -101,28 +114,21 @@ public class GameManager : MonoSingleton<GameManager>
     {
         if (gameState != GameState.Playing)
             return;
-        player.OnLose();
+        currentPlayer.OnLose();
         levelController.OnLose();
-        SetGameState(GameState.Ending);
+        SetGameState(GameState.Ready);
         UIManager.Instance.ShowPopup<PopupGameOver>();
     }
 
     public void SetGameState(GameState gameState)
     {
         this.gameState = gameState;
-        player.isActive = gameState == GameState.Playing;
     }
 
-
-    public void OnReplay()
+    public void ShowMap(bool isShow)
     {
-        ResetPlayerHp();
-        UIManager.Instance.HideScreen<ScreenGame>();
+        objMap.SetActive(isShow);
     }
 
-    public void ResetPlayerHp()
-    {
-        player.GetCom<PlayerHp>().ResetHp();
-    }
 
 }

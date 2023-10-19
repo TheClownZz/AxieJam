@@ -5,7 +5,6 @@ using Spine.Unity;
 using Spine;
 public class BossAttack : EnemyComponent
 {
-    protected Player target;
     protected Enemy eControl;
     [SerializeField] protected BossAttackConfig config;
     protected float damage;
@@ -20,6 +19,11 @@ public class BossAttack : EnemyComponent
      [SerializeField] protected string animName;
 
     [SerializeField] List<BossAttack> attackList;
+
+    public Player GetTarget()
+    {
+        return GameManager.Instance.currentPlayer;
+    }
     protected void Awake()
     {
         anim.AnimationState.Event += HandleEvent;
@@ -31,7 +35,6 @@ public class BossAttack : EnemyComponent
     {
         base.OnInits(control);
         eControl = (Enemy)control;
-        target = GameManager.Instance.player;
         damage = config.GetValue(BossDataType.damage, 1);
         range = config.GetValue(BossDataType.range, 1);
         coolDown = config.GetValue(BossDataType.coolDown, 5);
@@ -86,8 +89,8 @@ public class BossAttack : EnemyComponent
     }
     protected virtual bool CheckRange()
     {
-        if (target.isDead)
+        if (GetTarget().isDead)
             return false;
-        return Vector2.Distance(eControl.transform.position, target.transform.position) < range;
+        return Vector2.Distance(eControl.transform.position, GetTarget().transform.position) < range;
     }
 }
