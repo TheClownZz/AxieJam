@@ -8,7 +8,8 @@ public class PlayerMove : PlayerComponent
     [SerializeField] Rigidbody2D body;
     [SerializeField] float currentSpeed;
     [SerializeField] float faceDistance = 0.25f;
-    [SerializeField] float moveDistance = 0.5f;
+    [SerializeField] float moveDistance = 1f;
+    [SerializeField] float minMoveDistance = 0.2f;
 
     Camera cam;
     Player pControl;
@@ -59,14 +60,16 @@ public class PlayerMove : PlayerComponent
         }
         else
         {
-            if (dif.sqrMagnitude > faceDistance)
+            float distance = dif.sqrMagnitude;
+            if (distance > faceDistance)
             {
                 Facing(dif.normalized);
                 direction = dif.normalized;
             }
-            if (dif.sqrMagnitude > moveDistance)
+            if (distance > moveDistance || body.velocity != Vector2.zero && distance > minMoveDistance)
             {
                 body.velocity = currentSpeed * dif.normalized;
+
             }
             else
             {

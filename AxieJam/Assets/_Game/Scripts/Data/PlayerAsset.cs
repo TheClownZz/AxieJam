@@ -4,6 +4,16 @@ using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 
+public enum PlayerType
+{
+    Blue,
+    Orange,
+    Red,
+    Green,
+    Purple,
+    Pink,
+    None,
+}
 public enum SkillType
 {
     Damage,

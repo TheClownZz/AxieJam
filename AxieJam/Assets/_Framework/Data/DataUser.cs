@@ -5,16 +5,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum PlayerType
-{
-    Blue,
-    Orange,
-    Red,
-    Green,
-    Purple,
-    Pink,
-    None,
-}
 
 [System.Serializable]
 public class DataSavePlayer
