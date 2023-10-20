@@ -9,17 +9,18 @@ public enum GameState
 }
 public class GameManager : MonoSingleton<GameManager>
 {
-    public List<Player> playerList;
     public GameState gameState;
     public GameConfig gameConfig;
     public Transform bulletSpawner;
     public LevelController levelController;
-    public bool isPause { get { return Time.timeScale == 0; } }
-    [SerializeField] GameLevelAsset asset;
 
     public bool isCheat;
-    [SerializeField] GameObject objMap;
     public Player currentPlayer;
+    public List<Player> playerList;
+
+    [SerializeField] GameLevelAsset asset;
+    [SerializeField] GameObject objMap;
+    public bool isPause { get { return Time.timeScale == 0; } }
     protected override void Initiate()
     {
         base.Initiate();
@@ -36,7 +37,7 @@ public class GameManager : MonoSingleton<GameManager>
         levelController.OnInits();
         levelController.SetAsset(asset);
         SetGameState(GameState.Ready);
-        UIManager.Instance.ShowScreen<ScreenSelect>();
+        UIManager.Instance.ShowScreen<ScreenHome>();
     }
 
     private void Update()
@@ -59,7 +60,7 @@ public class GameManager : MonoSingleton<GameManager>
         foreach (var item in itemSelectList)
         {
             var asset = assetList.GetAsset(item.playerType);
-            Player p = Instantiate(asset.prefab);
+            Player p = Instantiate(asset.prefab).GetComponent<Player>();
             p.transform.position = Vector3.zero;
             p.gameObject.SetActive(false);
             p.SetData(asset.data);
@@ -93,7 +94,7 @@ public class GameManager : MonoSingleton<GameManager>
         ClearLevel();
         currentPlayer.OnSelect();
         SetGameState(GameState.Playing);
-        //levelController.LoadLevel();
+        levelController.LoadLevel();
     }
 
     public void ClearLevel()

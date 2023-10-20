@@ -482,6 +482,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3047324129538619989, guid: 4fbccfa51146fbe4c8cf49ba50534f1c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.11
+      objectReference: {fileID: 0}
     - target: {fileID: 3047324130005486660, guid: 4fbccfa51146fbe4c8cf49ba50534f1c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -526,13 +530,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game
       objectReference: {fileID: 0}
-    - target: {fileID: 3047324130005486663, guid: 4fbccfa51146fbe4c8cf49ba50534f1c, type: 3}
-      propertyPath: gameState
-      value: 0
+    - target: {fileID: 8337613083929336433, guid: 4fbccfa51146fbe4c8cf49ba50534f1c, type: 3}
+      propertyPath: m_Size.y
+      value: 2.9112816
       objectReference: {fileID: 0}
-    - target: {fileID: 6878109118464913256, guid: 4fbccfa51146fbe4c8cf49ba50534f1c, type: 3}
-      propertyPath: m_Mesh
-      value: 
+    - target: {fileID: 8337613083929336433, guid: 4fbccfa51146fbe4c8cf49ba50534f1c, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.6175194
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -853,6 +857,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1869715470938481927, guid: 4ea75e35e49f3c14daf7f25e4f72b6ce, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1869715470938481929, guid: 4ea75e35e49f3c14daf7f25e4f72b6ce, type: 3}
       propertyPath: m_Name
       value: ScreenGame
@@ -1076,7 +1084,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7490929636644506645, guid: d779c3066cb0b1c44a539300a92682e9, type: 3}
       propertyPath: m_Name
-      value: ScreenSelect
+      value: ScreenHome
       objectReference: {fileID: 0}
     - target: {fileID: 7723127369245432114, guid: d779c3066cb0b1c44a539300a92682e9, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1139,7 +1147,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fcd5bd917d46684bbded7963561f3de, type: 3}
+  m_Script: {fileID: 11500000, guid: f51b40b0d3b5dc84badec44ec963b3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &4337825415699806755
@@ -1173,14 +1181,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1868016943, guid: 5e49b154cd648c146b9880f63b0b88ad, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4577836405381219829, guid: 5e49b154cd648c146b9880f63b0b88ad, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 4577836405381219829, guid: 5e49b154cd648c146b9880f63b0b88ad, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1224,10 +1224,6 @@ PrefabInstance:
     - target: {fileID: 4577836405381219835, guid: 5e49b154cd648c146b9880f63b0b88ad, type: 3}
       propertyPath: m_Name
       value: Master
-      objectReference: {fileID: 0}
-    - target: {fileID: 4577836405810613523, guid: 5e49b154cd648c146b9880f63b0b88ad, type: 3}
-      propertyPath: levelSave.currentDay
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

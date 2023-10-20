@@ -40,12 +40,6 @@ public class EnemyMove : EnemyComponent
         right = r;
     }
 
-    public override void OnLose()
-    {
-        base.OnLose();
-        control.spineController.Pause();
-    }
-
     public override void OnUpdate(float dt)
     {
         if (GetTarget().isDead || eControl.isDisable) return;

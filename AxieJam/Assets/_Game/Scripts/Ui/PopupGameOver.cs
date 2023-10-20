@@ -11,7 +11,7 @@ public class PopupGameOver : PopupBase
     {
         OnHide();
         UIManager.Instance.HideScreen<ScreenGame>();
-        UIManager.Instance.ShowScreen<ScreenSelect>();
+        UIManager.Instance.ShowScreen<ScreenHome>();
     }
 
     public override void OnHide(float fadeTime = 0)

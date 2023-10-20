@@ -4,9 +4,6 @@ using UnityEngine;
 using DG.Tweening;
 public class LevelController : MonoBehaviour
 {
-    const float step = 0.1f;
-    const float viewHorizonl = 5;
-    const float viewVerticle = 7.5f;
 
     public Transform top, bot, left, right;
 
@@ -17,7 +14,7 @@ public class LevelController : MonoBehaviour
     Coroutine spawnCoroutine;
 
     float spawnRadius = 7.5f;
-    float delaySpawn = 0.5f;
+    float delaySpawn = 1f;
     [SerializeField] List<Enemy> enemyList;
 
     public void OnUpdate(float dt)

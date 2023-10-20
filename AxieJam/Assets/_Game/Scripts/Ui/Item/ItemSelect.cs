@@ -38,6 +38,7 @@ public class ItemSelect : MonoBehaviour
         tmpFood.SetText("{0}/{1}", data.itemLevelCount, levelConfig.item);
         tmpPotion.SetText("{0}/{1}", data.itemSkillCount, skillConfig.defaultValue.itemRequire);
         imgIcon.sprite = listAsset.data.avatar;
+
         imgFood.sprite = DataManager.Instance.GetAsset<FoodAsset>().GetConfig(playerType).sprite;
         imgPotion.sprite = DataManager.Instance.GetAsset<PotionAsset>().GetConfig(playerType).sprite;
 
@@ -46,7 +47,7 @@ public class ItemSelect : MonoBehaviour
     void OnBtnSelectClick()
     {
         SetSelect(true);
-        UIManager.Instance.GetScreen<ScreenSelect>().OnSelect(this);
+        UIManager.Instance.GetScreen<ScreenHome>().OnSelect(this);
         AudioManager.Instance.PlayOnceShot(AudioType.CLICK);
     }
 

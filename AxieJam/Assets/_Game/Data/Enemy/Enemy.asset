@@ -16,5 +16,5 @@ MonoBehaviour:
     hp: 10
     damage: 2
     moveSpeed: 1
-    attackSpeed: 2
+    attackSpeed: 0.5
     armor: 0

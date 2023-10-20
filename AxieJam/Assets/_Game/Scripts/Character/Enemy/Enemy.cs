@@ -8,7 +8,7 @@ public class Enemy : Character
 {
     static float timePlayHit;
     const float delayPlayHit = 0.1f;
-    const float timeDelayDespawn = 3;
+    const float timeDelayDespawn = 1;
     [SerializeField] EnemyAsset asset;
     [HideInInspector] public WaveStat waveStat;
 
@@ -27,15 +27,10 @@ public class Enemy : Character
         gameObject.SetActive(false);
         spawnTween = DOVirtual.DelayedCall(time, () =>
         {
-            DOVirtual.DelayedCall(time, () =>
-            {
-                if (spawnFx)
-                {
-                    PoolManager.Instance.DespawnObject(spawnFx);
-                    spawnFx = null;
-                }
-            });
+            PoolManager.Instance.DespawnObject(spawnFx);
+            spawnFx = null;
             gameObject.SetActive(true);
+
             OnInit();
             transform.position = pos;
         });
@@ -86,7 +81,6 @@ public class Enemy : Character
         });
     }
 
-
     public void Clear()
     {
         if (clearTween != null)
@@ -95,7 +89,6 @@ public class Enemy : Character
             comp.Clear();
         PoolManager.Instance.DespawnObject(transform);
     }
-
 
     public override void SetStat()
     {
@@ -112,14 +105,10 @@ public class Enemy : Character
         stat.SetHp(stat.hp * waveStat.hpRate).SetDamage(stat.damage * waveStat.damageRate);
     }
 
-
     public override float TakeDamage(float damage, bool isCrit)
     {
         return GetECom<EnemyHp>().TakeDamage(damage, isCrit);
     }
-
-   
-
     public override void OnLose()
     {
         base.OnLose();
@@ -130,5 +119,12 @@ public class Enemy : Character
     {
         base.KnockBack(dir, force);
         GetCom<EnemyMove>().SetForceDir(dir, force);
+    }
+
+    public override void OnHitDone()
+    {
+        base.OnHitDone();
+        DisableEnemy(false);
+        SetState(CharacterState.Idle);
     }
 }

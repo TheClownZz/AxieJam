@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using DG.Tweening;
+using Unity.VisualScripting;
 
 public class EnemyAttack : EnemyComponent
 {
@@ -18,12 +19,33 @@ public class EnemyAttack : EnemyComponent
 
     public override void OnUpdate(float dt)
     {
+        if (!control) return;
         base.OnUpdate(dt);
-        if (target && Time.time - timeAttack >= coolDown && !control.isDisable)
+
+        if (target && Time.time - timeAttack >= coolDown)
         {
             OnAttack();
         }
     }
+    public virtual void OnAttack()
+    {
+        timeAttack = Time.time;
+
+        float dodge = target.stat.dodge;
+
+        if (Random.value <= dodge)
+        {
+            SpawnText();
+            return;
+
+        }
+        float damage = control.stat.damage;
+        bool isCrit = Random.value <= control.stat.critRate;
+        if (isCrit)
+            damage += damage * control.stat.critDamage;
+        target.GetPCom<PlayerHp>().TakeDamage(damage, isCrit);
+    }
+
     public override void OnDead()
     {
         base.OnDead();
@@ -44,25 +66,6 @@ public class EnemyAttack : EnemyComponent
         }
     }
 
-    public virtual void OnAttack()
-    {
-        timeAttack = Time.time;
-
-        float dodge = target.stat.dodge;
-
-        if (Random.value <= dodge)
-        {
-            SpawnText();
-            return;
-
-        }
-
-        float damage = control.stat.damage;
-        bool isCrit = Random.value <= control.stat.critRate;
-        if (isCrit)
-            damage += damage * control.stat.critDamage;
-        target.GetPCom<PlayerHp>().TakeDamage(damage, isCrit);
-    }
 
 
     private void SpawnText()

@@ -21,6 +21,7 @@ public enum CharacterState
     Run,
     Die,
     Attack,
+    Hit,
 }
 
 [System.Serializable]
@@ -134,7 +135,7 @@ public class Character : MonoBehaviour
     public virtual void OnInit()
     {
         isDisable = isDead = false;
-        spineController.OnInits();
+        spineController.OnInits(this);
         foreach (var comp in componentList)
             comp.OnInits(this);
     }
@@ -179,19 +180,20 @@ public class Character : MonoBehaviour
         if (isDead)
             return;
         this.isDisable = isDisable;
-        if (isDisable)
-            spineController.Pause();
-        else
-            spineController.Resume();
+    }
+
+    public virtual void OnHitDone()
+    {
+        
     }
 
     public virtual void KnockBack(Vector2 dir, float force)
     {
+        return; // not use
         if (isKnockBack || force <=0)
             return;
         isKnockBack = true;
 
-        spineController.Pause();
         knockBackTween = DOVirtual.DelayedCall(GameManager.Instance.gameConfig.forceBackTime, StopKnockBack);
     }
 

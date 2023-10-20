@@ -3,33 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
-[System.Serializable]
-public class HpInfo
-{
-    public float percen;
-    public Color color = Color.green;
-}
+
 public class PlayerHp : PlayerComponent, ITakeDamage
 {
-    const float animTime = 0.05f;
-
+    [SerializeField] float hitTime = 0.2f;
     [SerializeField] float currentHp;
-    [SerializeField] Image imgHp;
-    [SerializeField] List<HpInfo> hpInfoList;
-    [SerializeField] Color damageColor = Color.magenta;
+    [SerializeField] ItemAvt itemAvt;
+
     float maxHp;
     float regen;
-
-    WaitForSeconds delay;
+    bool allowTakeDamge;
 
     Player pControl;
-
-    float timeHaptic = 0;
-
-    Coroutine coroutine;
+    WaitForSeconds delay;
+    CameraShake camShake;
+    Coroutine hitCoroutine;
+    Coroutine regenCoroutine;
     private void Awake()
     {
         delay = new WaitForSeconds(1);
+        camShake = Camera.main.GetComponent<CameraShake>();
     }
     public override void OnInits(Character player)
     {
@@ -42,45 +35,46 @@ public class PlayerHp : PlayerComponent, ITakeDamage
     public override void OnLose()
     {
         base.OnLose();
-        if(coroutine != null)
+        if (regenCoroutine != null)
         {
-            StopCoroutine(coroutine);
-            coroutine = null;
+            StopCoroutine(regenCoroutine);
+            regenCoroutine = null;
         }
     }
     public override void OnSelect()
     {
         base.OnSelect();
-        UIManager.Instance.GetScreen<ScreenGame>().SetHp(currentHp);
-        coroutine = StartCoroutine(IRegen());
+        allowTakeDamge = true;
+        regenCoroutine = StartCoroutine(IRegen());
+
     }
 
     public override void OnUnSelect()
     {
         base.OnUnSelect();
-        if (coroutine == null)
-            StopCoroutine(coroutine);
+        if (regenCoroutine == null)
+            StopCoroutine(regenCoroutine);
+        if (hitCoroutine != null)
+            StopCoroutine(hitCoroutine);
     }
 
     public float TakeDamage(float damage, bool isCrit)
     {
-        if (damage == 0 || pControl.isDead || GameManager.Instance.gameState == GameState.Ready)
+        if (!allowTakeDamge || damage == 0 || pControl.isDead || GameManager.Instance.gameState == GameState.Ready)
             return 0;
+        allowTakeDamge = false;
+
         float damageRate = damage / (damage + control.stat.armor);
         damage = damage * damageRate;
 
+        camShake.BigShake();
         Sethp(currentHp - damage);
-        imgHp.color= damageColor;
+        hitCoroutine = StartCoroutine(Ihit());
+        AudioManager.Instance.PlayOnceShot(AudioType.Hit);
 
-        if (currentHp <= 0 && !GameManager.Instance.isCheat)
+        if (currentHp <= 0)
         {
             pControl.OnDead();
-        }
-
-        if (Time.time - timeHaptic > 0.1f)
-        {
-            timeHaptic = Time.time;
-            AudioManager.Instance.PlayOnceShot(AudioType.Hit);
         }
         return damage;
     }
@@ -97,11 +91,24 @@ public class PlayerHp : PlayerComponent, ITakeDamage
         }
     }
 
-    public void Regen(float hp)
+    IEnumerator Ihit()
     {
-        Sethp(Mathf.Min(currentHp + hp, maxHp));
-    }
+        float time = 0;
+        float maxTime = 0.5f;
+        float flashTime = 0.1f;
 
+        bool isShow = true;
+        while (time < maxTime)
+        {
+            isShow = !isShow;
+            control.spineController.ShowRender(isShow);
+            yield return new WaitForSeconds(flashTime);
+            time += flashTime;
+        }
+
+        allowTakeDamge = true;
+        control.spineController.ShowRender(true);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (control.isDead)
@@ -118,27 +125,19 @@ public class PlayerHp : PlayerComponent, ITakeDamage
         currentHp = hp;
         currentHp = Mathf.Clamp(currentHp, 0, maxHp);
         float percen = currentHp / maxHp;
-        imgHp.DOKill();
-        imgHp.DOFillAmount(percen, animTime).OnComplete(UpdateColorHp);
-        UIManager.Instance.GetScreen<ScreenGame>().SetHp(currentHp);
+        itemAvt.UpdateHealth(percen);
     }
 
-    public void ResetHp()
+    public void Regen(float hp)
     {
-        Sethp(maxHp);
+        Sethp(Mathf.Min(currentHp + hp, maxHp));
     }
-
-    private void UpdateColorHp()
+    public void SetItem(ItemAvt item)
     {
+        itemAvt = item;
+        currentHp = Mathf.Clamp(currentHp, 0, maxHp);
         float percen = currentHp / maxHp;
-        foreach (var info in hpInfoList)
-        {
-            if (percen <= info.percen)
-            {
-                imgHp.color = info.color;
-                break;
-            }
-        }
+        itemAvt.UpdateHealth(percen, 0);
     }
 }
 

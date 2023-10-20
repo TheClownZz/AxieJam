@@ -2,27 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Spine.Unity;
-
+using Spine;
 
 public class SpineController : MonoBehaviour
 {
+
+    [SerializeField] MeshRenderer meshRender;
     [SerializeField] float runScale = 1.5f;
     [SerializeField] SkeletonAnimation anim;
     [SerializeField] string Run = "run";
     [SerializeField] string Idle = "idle";
     [SerializeField] string Die = "die";
+    [SerializeField] string Hit = "die";
 
+    Character control;
     float cachedScale;
+
 #if UNITY_EDITOR
     protected virtual void OnValidate()
     {
         anim = GetComponentInChildren<SkeletonAnimation>();
+        meshRender = anim.GetComponent<MeshRenderer>();
     }
 #endif
 
-    public void OnInits()
+    public void OnInits(Character control)
     {
-        anim.timeScale = 1;
+        this.control = control;
+        SetTimeScale(1);
+        anim.AnimationState.Complete += delegate (TrackEntry trackEntry)
+        {
+            if (trackEntry.Animation.Name == Hit)
+            {
+                control.OnHitDone();
+            }
+        };
     }
 
 
@@ -33,16 +47,20 @@ public class SpineController : MonoBehaviour
             case CharacterState.Alive:
             case CharacterState.Idle:
                 anim.state.SetAnimation(0, Idle, true);
-                anim.timeScale = 1;
+                SetTimeScale(1);
                 break;
             case CharacterState.Die:
                 anim.state.SetAnimation(0, Die, false);
-                anim.timeScale = 1;
+                SetTimeScale(1);
 
                 break;
             case CharacterState.Run:
                 anim.state.SetAnimation(0, Run, true);
-                anim.timeScale = runScale;
+                SetTimeScale(runScale);
+                break;
+            case CharacterState.Hit:
+                anim.state.SetAnimation(0, Hit, false);
+                SetTimeScale(1);
                 break;
             default:
                 break;
@@ -55,21 +73,26 @@ public class SpineController : MonoBehaviour
         anim.skeleton.ScaleX = flip;
     }
 
-    public void SetScale(float value )
-    {
-        anim.timeScale = value;
-    }
 
     public void ResetScale()
     {
-        anim.timeScale = cachedScale;
+        SetTimeScale(cachedScale);
     }
     public void Pause()
     {
-        anim.timeScale = 0;
+        SetTimeScale(0);
     }
     public void Resume()
     {
-        anim.timeScale = cachedScale;
+        SetTimeScale(cachedScale);
+    }
+
+    public void ShowRender(bool isShow)
+    {
+        meshRender.enabled = isShow;
+    }
+    private void SetTimeScale(float timeScale)
+    {
+        anim.timeScale = timeScale;
     }
 }

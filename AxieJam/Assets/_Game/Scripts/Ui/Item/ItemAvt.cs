@@ -15,9 +15,9 @@ public class ItemAvt : MonoBehaviour
         imgIcon.sprite = avt;
     }
 
-    public void UpdateHealth(float percen)
+    public void UpdateHealth(float percen, float time =0.05f)
     {
-        imgHealth.DOFillAmount(percen, 0.05f);
+        imgHealth.DOFillAmount(percen, time);
     }
 
     public void UpdateMana(float percen)

@@ -60,7 +60,7 @@ public class CameraShake : MonoBehaviour
         this.shakeAmount = shakeAmount;
     }
 
-    public void BigShake(float time = 0.1f, float shakeAmount = 0.2f)
+    public void BigShake(float time = 0.15f, float shakeAmount = 0.3f)
     {
         if (isBigShake)
         {

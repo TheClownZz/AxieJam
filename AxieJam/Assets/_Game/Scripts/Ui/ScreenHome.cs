@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScreenSelect : ScreenBase
+public class ScreenHome : ScreenBase
 {
     [SerializeField] Button btnPlay;
     [SerializeField] List<ItemSelect> itemList;

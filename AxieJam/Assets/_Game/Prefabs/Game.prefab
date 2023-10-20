@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3047324129953656190}
@@ -280,15 +280,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c077dd23eecbe41a004d9490dbd51d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerList: []
-  gameState: 1
+  gameState: 0
   gameConfig: {fileID: 11400000, guid: 4416bdb8c189c1a449fad7383d0c8ade, type: 2}
   bulletSpawner: {fileID: 3047324129953656190}
   levelController: {fileID: 3047324131151416340}
-  asset: {fileID: 11400000, guid: 78a6cf93f30c26f498a642d12ab74a62, type: 2}
   isCheat: 0
-  objMap: {fileID: 1945581464236972957}
   currentPlayer: {fileID: 0}
+  playerList: []
+  asset: {fileID: 11400000, guid: 78a6cf93f30c26f498a642d12ab74a62, type: 2}
+  objMap: {fileID: 1945581464236972957}
 --- !u!1 &3047324130391617660
 GameObject:
   m_ObjectHideFlags: 0

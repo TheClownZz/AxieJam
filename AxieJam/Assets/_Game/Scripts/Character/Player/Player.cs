@@ -30,6 +30,7 @@ public class Player : Character
         isActive = true;
         foreach (var comp in componentList)
             comp.OnSelect();
+        spineController.ShowRender(true);
         SetState(CharacterState.Alive);
     }
 
@@ -96,5 +97,10 @@ public class Player : Character
     public void SetData(PlayerConfig data)
     {
         config = data;
+    }
+
+    public void SetItemAvt(ItemAvt itemAvt)
+    {
+        GetCom<PlayerHp>().SetItem(itemAvt);
     }
 }
