@@ -1,44 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
-public class EnemyShoot : EnemyComponent
+public class EnemyShoot : EnemyAttack
 {
-    Player target;
-    [SerializeField] Weapon currentWp;
-    [SerializeField] CircleCollider2D col2d;
+    [SerializeField] EnemyGun gun;
 
-    Enemy eControl;
     public override void OnInits(Character enemy)
     {
         base.OnInits(enemy);
-        eControl = (Enemy)enemy;
-        currentWp.OnInits(control);
+        gun.OnInits(enemy);
     }
 
-    public override void OnUpdate(float dt)
+    public override void OnAttack()
     {
-        base.OnUpdate(dt);
-        if (target && !target.isDead)
-        {
-            currentWp.OnUpdate(dt);
-        }
+        timeAttack = Time.time;
+        control.DisableEnemy(true);
+        control.SetState(CharacterState.Attack);
+        gun.targetPos = target.transform.position;
     }
 
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void SetTarget(Player target)
     {
-        if (!target)
-            target = collision.GetComponent<Player>();
-    }
+        if(this.target && !target)
+            gun.targetPos = this.target.transform.position;
 
-    private void OnTriggerExit2D(Collider2D collision)
+        base.SetTarget(target);
+    }
+    public override void Attacktarget()
     {
-        if (target && target == collision.GetComponent<Player>())
-        {
-            target = null;
-        }
+        if (target)
+            gun.targetPos = target.transform.position;
+        gun.SpawnBullet();
     }
-
 
 }

@@ -19,17 +19,18 @@ public class Weapon : MonoBehaviour
     {
         this.characterControl = characterControl;
         attackTime = 0;
+        UpdateStat();
     }
 
 
-    public virtual void UpdateStat()
+    protected virtual void UpdateStat()
     {
         coolDown = 1 / GetCharacterStat().attackSpeed;
     }
 
     public virtual void OnUpdate(float dt)
     {
-        if (CheckCoolDown())
+        if (CheckAttack())
         {
             OnAttack();
         }
@@ -58,7 +59,7 @@ public class Weapon : MonoBehaviour
         return characterControl.stat;
     }
 
-    private bool CheckCoolDown()
+    private bool CheckAttack()
     {
         return Time.time - attackTime > coolDown;
     }

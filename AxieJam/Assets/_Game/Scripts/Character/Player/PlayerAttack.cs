@@ -12,7 +12,6 @@ public class PlayerAttack : PlayerComponent
     {
         base.OnInits(control);
         weapon.OnInits(control);
-        weapon.UpdateStat();
         mainCamera = Camera.main;
     }
     public override void OnUpdate(float dt)

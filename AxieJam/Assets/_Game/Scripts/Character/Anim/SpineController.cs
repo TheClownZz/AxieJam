@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Spine.Unity;
 using Spine;
+using Unity.VisualScripting;
 
 public class SpineController : MonoBehaviour
 {
@@ -30,6 +31,10 @@ public class SpineController : MonoBehaviour
 
     }
 
+    public virtual void OnDead()
+    {
+
+    }
     public void SetAnim(string anim)
     {
 
@@ -44,6 +49,7 @@ public class SpineController : MonoBehaviour
                 SetTimeScale(1);
                 break;
             case CharacterState.Die:
+                OnDead();
                 anim.state.SetAnimation(0, Die, false);
                 SetTimeScale(1);
 

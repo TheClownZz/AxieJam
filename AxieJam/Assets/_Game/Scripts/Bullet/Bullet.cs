@@ -11,7 +11,6 @@ public class Bullet : MonoBehaviour, ICreateDamage
 
     [SerializeField] protected AudioClip hitClip;
     [SerializeField] protected SpriteRenderer bulletRender;
-    [SerializeField] TrailRenderer trailRenderer;
 
     [HideInInspector] public Weapon weapon;
 
@@ -20,10 +19,6 @@ public class Bullet : MonoBehaviour, ICreateDamage
         this.weapon = weapon;
         this.dir = dir * speed;
 
-        if (trailRenderer)
-        {
-            trailRenderer.Clear();
-        }
     }
 
     public void SetDamageRate(float value)

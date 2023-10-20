@@ -7,9 +7,9 @@ using Unity.VisualScripting;
 
 public class EnemyAttack : EnemyComponent
 {
-    float timeAttack;
-    float coolDown;
-    Player target;
+    protected float timeAttack;
+    protected float coolDown;
+    protected Player target;
     public override void OnInits(Character enemy)
     {
         base.OnInits(enemy);
@@ -34,10 +34,14 @@ public class EnemyAttack : EnemyComponent
         Attacktarget();
     }
 
+    public virtual void OnAttackDone()
+    {
+        control.DisableEnemy(false);
+    }
     public virtual void Attacktarget()
     {
         if (!target) return;
-    
+
         float dodge = target.stat.dodge;
 
         if (Random.value <= dodge)
@@ -58,18 +62,23 @@ public class EnemyAttack : EnemyComponent
         target = null;
     }
 
+    protected virtual void SetTarget(Player target)
+    {
+        this.target = target;
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!target)
-            target = collision.GetComponent<Player>();
+            SetTarget(collision.GetComponent<Player>());
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (target && target == collision.GetComponent<Player>())
         {
-            target = null;
+            SetTarget(null);
         }
     }
 

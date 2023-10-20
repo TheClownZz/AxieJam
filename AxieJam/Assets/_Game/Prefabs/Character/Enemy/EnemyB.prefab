@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6534a273b37f1469fa5539d8b9c88667, type: 2}
+  - {fileID: 2100000, guid: a94cd25f8658b4602b12fdaf73502c12, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: 945fae320c9074c0c80309e56fb5de6a, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: 9279d68476a5c4ff8981a6a6bc4d8672, type: 2}
   initialSkinName: 
   initialFlipX: 0
   initialFlipY: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
   meshRender: {fileID: 122133757037643575}
   anim: {fileID: 4939214693512892344}
   Hit: defense/hit-by-normal
-  Attack: attack/melee/goo-split
+  Attack: battle/get-buff
   attackTime: 0.8
 --- !u!1 &3142598655126586280
 GameObject:
@@ -153,9 +153,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8015173986889032469}
   - component: {fileID: 4296611049263242454}
-  - component: {fileID: 6004482664581828030}
+  - component: {fileID: 6465875842576101454}
   m_Layer: 10
-  m_Name: EnemyAttack
+  m_Name: EnemyShoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,7 +173,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.304, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4308540288866846867}
   m_Father: {fileID: 8911379269055794545}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &4296611049263242454
@@ -210,8 +211,8 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.25713706}
   serializedVersion: 2
-  m_Radius: 1
---- !u!114 &6004482664581828030
+  m_Radius: 5
+--- !u!114 &6465875842576101454
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,11 +221,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3142598655126586280}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7813b394d3f49946a616b96ffdff5ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 38d45aeea13b65440806d31005ea93e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   control: {fileID: 0}
-  circleCollider: {fileID: 4296611049263242454}
+  gun: {fileID: 9204217921828880337}
 --- !u!1 &6947929414499229399
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,7 +273,7 @@ GameObject:
   - component: {fileID: -5443143430796421240}
   - component: {fileID: 257800880118908662}
   m_Layer: 8
-  m_Name: EnemyC
+  m_Name: EnemyB
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -327,7 +328,7 @@ MonoBehaviour:
   - {fileID: 8163886571578138403}
   - {fileID: 9074905401213251309}
   - {fileID: -5443143430796421240}
-  - {fileID: 6004482664581828030}
+  - {fileID: 6465875842576101454}
   asset: {fileID: 11400000, guid: 501f0e6fb7d1d498384d1b43bcb7b56d, type: 2}
   waveStat:
     hpRate: 1
@@ -410,3 +411,54 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!1 &9008533705369191762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4308540288866846867}
+  - component: {fileID: 9204217921828880337}
+  m_Layer: 10
+  m_Name: Gun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4308540288866846867
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9008533705369191762}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.227, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8015173986889032469}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9204217921828880337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9008533705369191762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc86cff4a1ee81949919feee1bc5b95f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackClip: {fileID: 0}
+  effectDataList: []
+  target: {fileID: 0}
+  bulletPf: {fileID: 7012365634277497229, guid: 4ca6ba680148f294eba9e2a4d292664b, type: 3}
+  shooter: {fileID: 4308540288866846867}
+  butlletSpeed: 10
+  bulletSprite: {fileID: 21300000, guid: 5532bdf36c5de9a488be10b8b90c15c7, type: 3}
