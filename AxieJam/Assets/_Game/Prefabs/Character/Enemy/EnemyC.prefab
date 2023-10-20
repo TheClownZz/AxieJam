@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fbb4edc344fb848d5bd4b71ba01a02d8, type: 2}
+  - {fileID: 2100000, guid: 6534a273b37f1469fa5539d8b9c88667, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: 1d6eb067ba60547e3b2f10def4a9850c, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: 945fae320c9074c0c80309e56fb5de6a, type: 2}
   initialSkinName: 
   initialFlipX: 0
   initialFlipY: 0
@@ -119,7 +119,7 @@ MonoBehaviour:
     materialsInsideMask: []
     materialsOutsideMask: []
   disableRenderingOnOverride: 1
-  _animationName: 
+  _animationName: action/idle/normal
   loop: 1
   timeScale: 1
 --- !u!114 &8387529452460821212
@@ -141,6 +141,7 @@ MonoBehaviour:
   meshRender: {fileID: 122133757037643575}
   anim: {fileID: 4939214693512892344}
   Hit: defense/hit-by-normal
+  Attack: attack/melee/goo-split
 --- !u!1 &3142598655126586280
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,8 +151,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8015173986889032469}
-  - component: {fileID: 1166197220741666335}
   - component: {fileID: 4296611049263242454}
+  - component: {fileID: 6004482664581828030}
   m_Layer: 10
   m_Name: EnemyAttack
   m_TagString: Untagged
@@ -174,19 +175,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8911379269055794545}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1166197220741666335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3142598655126586280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c7862c20e47220488c71941533e6b78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  control: {fileID: 0}
 --- !u!58 &4296611049263242454
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -221,7 +209,20 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.25713706}
   serializedVersion: 2
-  m_Radius: 0.44286287
+  m_Radius: 1
+--- !u!114 &6004482664581828030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3142598655126586280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7813b394d3f49946a616b96ffdff5ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  control: {fileID: 0}
 --- !u!1 &6947929414499229399
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,7 +270,7 @@ GameObject:
   - component: {fileID: -5443143430796421240}
   - component: {fileID: 257800880118908662}
   m_Layer: 8
-  m_Name: EnemyA
+  m_Name: EnemyC
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -324,7 +325,7 @@ MonoBehaviour:
   - {fileID: 8163886571578138403}
   - {fileID: 9074905401213251309}
   - {fileID: -5443143430796421240}
-  - {fileID: 1166197220741666335}
+  - {fileID: 6004482664581828030}
   asset: {fileID: 11400000, guid: 501f0e6fb7d1d498384d1b43bcb7b56d, type: 2}
   waveStat:
     hpRate: 1

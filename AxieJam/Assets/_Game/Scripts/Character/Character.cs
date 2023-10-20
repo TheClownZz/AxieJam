@@ -3,16 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimKey
-{
-    public const string Die = "Die";
-    public const string Run = "Run";
-    public const string Idle = "Idle";
-    public const string Alive = "Alive";
-    public const string Speed = "Speed";
-    public const string Attack = "Attack";
-}
-
 public enum CharacterState
 {
     None,

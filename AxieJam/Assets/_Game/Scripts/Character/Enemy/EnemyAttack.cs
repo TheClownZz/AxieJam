@@ -1,3 +1,4 @@
+
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
@@ -30,7 +31,13 @@ public class EnemyAttack : EnemyComponent
     public virtual void OnAttack()
     {
         timeAttack = Time.time;
+        Attacktarget();
+    }
 
+    public virtual void Attacktarget()
+    {
+        if (!target) return;
+    
         float dodge = target.stat.dodge;
 
         if (Random.value <= dodge)
@@ -45,12 +52,12 @@ public class EnemyAttack : EnemyComponent
             damage += damage * control.stat.critDamage;
         target.GetPCom<PlayerHp>().TakeDamage(damage, isCrit);
     }
-
     public override void OnDead()
     {
         base.OnDead();
         target = null;
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
