@@ -17,7 +17,7 @@ public class ScreenGame : ScreenBase
 
     public void UpdateWave(int current, int max)
     {
-        tmpWave.SetText("Wave:{0}/{1}", current, max);
+        tmpWave.SetText("Wave: {0}/{1}", current, max);
     }
 
 

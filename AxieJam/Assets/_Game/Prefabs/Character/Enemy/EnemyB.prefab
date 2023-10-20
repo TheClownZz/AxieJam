@@ -211,7 +211,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.25713706}
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 4
 --- !u!114 &6465875842576101454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control: {fileID: 0}
+  target: {fileID: 0}
   gun: {fileID: 9204217921828880337}
 --- !u!1 &6947929414499229399
 GameObject:
@@ -268,10 +269,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8911379269055794545}
   - component: {fileID: 6424210748062074210}
-  - component: {fileID: 8163886571578138403}
   - component: {fileID: 9074905401213251309}
   - component: {fileID: -5443143430796421240}
   - component: {fileID: 257800880118908662}
+  - component: {fileID: 5211071208203465144}
   m_Layer: 8
   m_Name: EnemyB
   m_TagString: Untagged
@@ -325,29 +326,14 @@ MonoBehaviour:
     dodge: 0
   spineController: {fileID: 8387529452460821212}
   componentList:
-  - {fileID: 8163886571578138403}
   - {fileID: 9074905401213251309}
   - {fileID: -5443143430796421240}
+  - {fileID: 5211071208203465144}
   - {fileID: 6465875842576101454}
   asset: {fileID: 11400000, guid: 501f0e6fb7d1d498384d1b43bcb7b56d, type: 2}
   waveStat:
     hpRate: 1
     damageRate: 1
---- !u!114 &8163886571578138403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8911379269055794558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63ce3bb05ded4a541bebdb1050a7150f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  control: {fileID: 0}
-  baseSpeed: 0
-  currentSpeed: 0
 --- !u!114 &9074905401213251309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,6 +397,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &5211071208203465144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8911379269055794558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c15db0f01123a409eaaf1ecf96ebba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  control: {fileID: 0}
+  baseSpeed: 0
+  currentSpeed: 0
+  allowMove: 0
 --- !u!1 &9008533705369191762
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,7 +459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackClip: {fileID: 0}
   effectDataList: []
-  target: {fileID: 0}
+  targetPos: {x: 0, y: 0, z: 0}
   bulletPf: {fileID: 7012365634277497229, guid: 4ca6ba680148f294eba9e2a4d292664b, type: 3}
   shooter: {fileID: 4308540288866846867}
   butlletSpeed: 10

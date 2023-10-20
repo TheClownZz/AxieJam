@@ -9,7 +9,7 @@ public class EnemyAttack : EnemyComponent
 {
     protected float timeAttack;
     protected float coolDown;
-    protected Player target;
+    public Player target;
     public override void OnInits(Character enemy)
     {
         base.OnInits(enemy);

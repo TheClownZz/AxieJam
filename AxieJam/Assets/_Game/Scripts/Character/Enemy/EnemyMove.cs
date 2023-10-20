@@ -6,8 +6,8 @@ public class EnemyMove : EnemyComponent
 {
     const float minDistance = 0.15f;
     const float runDistance = 0.35f;
-    [SerializeField] float baseSpeed;
-    [SerializeField] float currentSpeed;
+    [SerializeField] protected float baseSpeed;
+    [SerializeField] protected float currentSpeed;
     protected Vector3 direction;
 
     protected Vector3 forceDir;
@@ -50,16 +50,17 @@ public class EnemyMove : EnemyComponent
         CheckLimit();
     }
 
-    private void Move(float dt)
+    protected virtual void Move(float dt)
     {
         float distance = Vector2.Distance(transform.position, GetTarget().transform.position);
 
         Vector3 dir = Vector3.zero;
-        if(direction == Vector3.zero)
+        if (direction == Vector3.zero)
         {
-            if(distance > runDistance)
+            if (distance > runDistance)
                 dir = (GetTarget().transform.position - transform.position).normalized;
-        }else
+        }
+        else
         {
             if (distance >= minDistance)
                 dir = (GetTarget().transform.position - transform.position).normalized;
@@ -93,7 +94,7 @@ public class EnemyMove : EnemyComponent
         forceDrag = forceStr * GameManager.Instance.gameConfig.forceDrag;
     }
 
-    private void Facing(Vector3 dir)
+    protected void Facing(Vector3 dir)
     {
         if (direction.x * dir.x <= 0 && dir.x != 0)
         {
@@ -102,7 +103,7 @@ public class EnemyMove : EnemyComponent
         }
     }
 
-    private void UpdateState()
+    protected void UpdateState()
     {
         if (direction == Vector3.zero)
         {

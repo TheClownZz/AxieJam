@@ -11,7 +11,6 @@ public class LevelController : MonoBehaviour
     Tween bossTween;
     GameLevelAsset asset;
     WaveConfig waveConfig;
-    Coroutine spawnCoroutine;
 
     float spawnRadius = 7.5f;
     float delaySpawn = 1f;
@@ -34,29 +33,31 @@ public class LevelController : MonoBehaviour
     {
         waveIndex = 0;
         waveConfig = asset.GetConfig(waveIndex);
-        spawnCoroutine = StartCoroutine(ISpawn());
+        //spawnCoroutine = StartCoroutine(SpawnWave());
+        SpawnWave();
+        UIManager.Instance.GetScreen<ScreenGame>().UpdateWave(waveIndex + 1, asset.dataList.Count);
+
     }
 
     private void LoadNextWave()
     {
         waveIndex += 1;
+
         if (waveIndex == asset.dataList.Count)
         {
             SpawnBoss();
         }
         else
         {
-            spawnCoroutine = StartCoroutine(ISpawn());
+            waveConfig = asset.GetConfig(waveIndex);
+            SpawnWave();
+            UIManager.Instance.GetScreen<ScreenGame>().UpdateWave(waveIndex + 1, asset.dataList.Count);
         }
     }
 
     public void OnLose()
     {
-        if (spawnCoroutine != null)
-        {
-            StopCoroutine(spawnCoroutine);
-            spawnCoroutine = null; ;
-        }
+       
         foreach (var e in enemyList)
             e.OnLose();
     }
@@ -70,9 +71,9 @@ public class LevelController : MonoBehaviour
         if (bossTween != null)
             bossTween.Kill();
     }
-    public IEnumerator ISpawn()
+    public void SpawnWave()
     {
-        float time = waveConfig.waveTime;
+       // float time = waveConfig.waveTime;
         List<EnemyWaveConfig> enemyConfigList = waveConfig.enemyConfigList;
 
         for (int i = 0; i < enemyConfigList.Count; i++)
@@ -82,8 +83,7 @@ public class LevelController : MonoBehaviour
                 SpawnEnemy(enemyConfigList[i].type, waveConfig.waveProterties);
             }
         }
-        yield return new WaitForSeconds(time);
-        LoadNextWave();
+
     }
     public Enemy SpawnEnemy(Transform pf)
     {

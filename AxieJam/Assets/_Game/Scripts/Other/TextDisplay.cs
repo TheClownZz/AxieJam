@@ -11,7 +11,6 @@ public class TextDisplay : MonoBehaviour
     [SerializeField] Sprite oneHit;
 
     [SerializeField] TextMeshPro tmp;
-    [SerializeField] SpriteRenderer render;
 
     public void ShowDamage(float damage, bool isCrit)
     {
@@ -19,13 +18,10 @@ public class TextDisplay : MonoBehaviour
         {
             tmp.color = GameManager.Instance.gameConfig.critColor;
             tmp.transform.localScale = Vector3.one * 1.5f;
-            render.sprite = crit;
-            render.enabled = true;
         }
         else
         {
             tmp.color = Color.white;
-            render.enabled = false;
             tmp.transform.localScale = Vector3.one;
         }
 
@@ -36,7 +32,6 @@ public class TextDisplay : MonoBehaviour
     {
         tmp.SetText(MISS);
         tmp.color = Color.white;
-        render.enabled = false;
         tmp.transform.localScale = Vector3.one;
     }
 
@@ -44,8 +39,6 @@ public class TextDisplay : MonoBehaviour
     {
         tmp.SetText(ONE_HIT);
         tmp.color = Color.red;
-        render.sprite = oneHit;
-        render.enabled = true;
         tmp.transform.localScale = Vector3.one * 1.5f;
     }
 
