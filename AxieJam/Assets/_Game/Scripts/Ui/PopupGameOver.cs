@@ -6,23 +6,26 @@ using UnityEngine;
 public class PopupGameOver : PopupBase
 {
     [SerializeField] SkeletonGraphic anim;
-
+    [SerializeField] string animName;
     public void OnBtnBackClick()
     {
         OnHide();
+        GameManager.Instance.ClearLevel();
         UIManager.Instance.HideScreen<ScreenGame>();
         UIManager.Instance.ShowScreen<ScreenHome>();
     }
 
-    public override void OnHide(float fadeTime = 0)
+    public void SetAnim(SkeletonDataAsset asset)
     {
-        base.OnHide(fadeTime);
-      //  anim.AnimationState.SetAnimation(0, SpineKey.Idle, true);
+        anim.skeletonDataAsset = asset;
+        anim.Initialize(true);
+        anim.AnimationState.SetAnimation(0, animName, true);
+
     }
+
     public override void OnShow(float fadeTime = 0)
     {
         base.OnShow(fadeTime);
         AudioManager.Instance.PlayOnceShot(AudioType.LOSE);
-      //  anim.AnimationState.SetAnimation(0, SpineKey.Die, false);
     }
 }

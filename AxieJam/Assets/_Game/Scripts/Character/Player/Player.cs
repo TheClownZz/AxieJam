@@ -97,10 +97,13 @@ public class Player : Character
     public void SetData(PlayerConfig data)
     {
         config = data;
+        GetCom<PlayerAttack>().SetConfig(
+            config.GetSkillConfig(DataManager.Instance.GetData<DataUser>().GetLevel(type)));
     }
 
     public void SetItemAvt(ItemAvt itemAvt)
     {
         GetCom<PlayerHp>().SetItem(itemAvt);
+        GetCom<PlayerAttack>().SetItem(itemAvt);
     }
 }

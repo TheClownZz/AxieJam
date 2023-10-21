@@ -45,8 +45,8 @@ public class PlayerHp : PlayerComponent, ITakeDamage
     {
         base.OnSelect();
         allowTakeDamge = true;
-        regenCoroutine = StartCoroutine(IRegen());
-
+        if (regen > 0)
+            regenCoroutine = StartCoroutine(IRegen());
     }
 
     public override void OnUnSelect()
@@ -130,7 +130,8 @@ public class PlayerHp : PlayerComponent, ITakeDamage
 
     public void Regen(float hp)
     {
-        Sethp(Mathf.Min(currentHp + hp, maxHp));
+        if (currentHp < maxHp)
+            Sethp(Mathf.Min(currentHp + hp, maxHp));
     }
     public void SetItem(ItemAvt item)
     {

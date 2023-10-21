@@ -15,11 +15,11 @@ MonoBehaviour:
   data:
     type: 0
     avatar: {fileID: 21300000, guid: 4b8c41cf5c198e44b9794979862fc5ad, type: 3}
-    hp: 200
+    hp: 20
     damage: 10
     attackSpeed: 4
     moveSpeed: 5
-    critRate: 0.05
+    critRate: 0.15
     critDamage: 2
     armor: 0
     levelConfiglist:

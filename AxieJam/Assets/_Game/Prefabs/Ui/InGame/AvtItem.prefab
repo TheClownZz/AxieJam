@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 2134026812892535450}
   - component: {fileID: 2317193995190160476}
   m_Layer: 5
-  m_Name: hp (1)
+  m_Name: slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 5001409834194371943}
   - component: {fileID: 1883591369524999200}
   m_Layer: 5
-  m_Name: cd
+  m_Name: mana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -350,7 +350,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24.701986, y: -1}
+  m_AnchoredPosition: {x: 72.09988, y: -1}
   m_SizeDelta: {x: 349.4, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5001409834194371943
@@ -426,7 +426,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24.702, y: 20}
+  m_AnchoredPosition: {x: 72.1, y: 20}
   m_SizeDelta: {x: 349.4, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7378479033614278996
@@ -479,7 +479,7 @@ GameObject:
   - component: {fileID: 7345957234688198265}
   - component: {fileID: 5635023736311885412}
   m_Layer: 5
-  m_Name: cd (1)
+  m_Name: slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

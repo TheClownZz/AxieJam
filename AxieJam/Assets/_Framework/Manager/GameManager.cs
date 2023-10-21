@@ -20,6 +20,8 @@ public class GameManager : MonoSingleton<GameManager>
 
     [SerializeField] GameLevelAsset asset;
     [SerializeField] GameObject objMap;
+
+    Vector3 outPos = new Vector3(9999, 9999, 9999);
     public bool isPause { get { return Time.timeScale == 0; } }
     protected override void Initiate()
     {
@@ -61,8 +63,7 @@ public class GameManager : MonoSingleton<GameManager>
         {
             var asset = assetList.GetAsset(item.playerType);
             Player p = Instantiate(asset.prefab).GetComponent<Player>();
-            p.transform.position = Vector3.zero;
-            p.gameObject.SetActive(false);
+            p.transform.position = outPos;
             p.SetData(asset.data);
             p.OnInit();
             p.transform.SetParent(objMap.transform);
@@ -70,7 +71,7 @@ public class GameManager : MonoSingleton<GameManager>
         }
 
         currentPlayer = playerList[0];
-        currentPlayer.gameObject.SetActive(true);
+        currentPlayer.transform.position = Vector3.zero;
     }
 
 
@@ -78,10 +79,7 @@ public class GameManager : MonoSingleton<GameManager>
     {
         Vector3 pos = currentPlayer.transform.position;
         currentPlayer.OnUnSelect();
-        currentPlayer.gameObject.SetActive(false);
-
         currentPlayer = playerList[index];
-        currentPlayer.gameObject.SetActive(true);
         currentPlayer.transform.position = pos;
         currentPlayer.OnSelect();
 
@@ -90,8 +88,6 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void StartLevel()
     {
-        ShowMap(true);
-        ClearLevel();
         currentPlayer.OnSelect();
         SetGameState(GameState.Playing);
         levelController.LoadLevel();
@@ -118,7 +114,7 @@ public class GameManager : MonoSingleton<GameManager>
         currentPlayer.OnLose();
         levelController.OnLose();
         SetGameState(GameState.Ready);
-        UIManager.Instance.ShowPopup<PopupGameOver>();
+        UIManager.Instance.ShowPopup<PopupGameOver>().SetAnim(currentPlayer.spineController.GetAsset());
     }
 
     public void SetGameState(GameState gameState)

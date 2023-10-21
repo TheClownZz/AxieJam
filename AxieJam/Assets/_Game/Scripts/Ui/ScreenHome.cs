@@ -28,6 +28,7 @@ public class ScreenHome : ScreenBase
     public void OnBtnPlayClick()
     {
         OnHide();
+        GameManager.Instance.ShowMap(true);
         GameManager.Instance.UpdatePlayerList(itemSelectedList);
         GameManager.Instance.StartLevel();
         UIManager.Instance.ShowScreen<ScreenGame>();

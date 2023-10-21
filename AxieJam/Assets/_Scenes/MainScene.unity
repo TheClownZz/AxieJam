@@ -857,10 +857,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1869715470938481927, guid: 4ea75e35e49f3c14daf7f25e4f72b6ce, type: 3}
-      propertyPath: m_Alpha
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1869715470938481929, guid: 4ea75e35e49f3c14daf7f25e4f72b6ce, type: 3}
       propertyPath: m_Name
       value: ScreenGame
@@ -868,6 +864,10 @@ PrefabInstance:
     - target: {fileID: 3626670605581106785, guid: 4ea75e35e49f3c14daf7f25e4f72b6ce, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626670605581106785, guid: 4ea75e35e49f3c14daf7f25e4f72b6ce, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -51.699997
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1316,10 +1316,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5352395258753099476, guid: f583ede272640504089fd90efa2b54d5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5352395258753099479, guid: f583ede272640504089fd90efa2b54d5, type: 3}
-      propertyPath: m_Alpha
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5352395258753099481, guid: f583ede272640504089fd90efa2b54d5, type: 3}

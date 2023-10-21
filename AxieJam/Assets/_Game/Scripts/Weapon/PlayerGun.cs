@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerGun : Weapon
@@ -38,5 +39,15 @@ public class PlayerGun : Weapon
         b.SetHitClip(hitClip);
         b.SetDamageRate(1);
         return b;
+    }
+
+    public virtual void ActiveSKill()
+    {
+        Debug.LogError("ActiveSKill");
+    }    
+
+    public virtual void UnAvtiveSkill()
+    {
+        Debug.LogError("UnAvtiveSkill");
     }
 }

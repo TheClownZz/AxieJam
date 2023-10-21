@@ -78,4 +78,9 @@ public class SpineController : MonoBehaviour
     {
         anim.timeScale = timeScale;
     }
+
+    public SkeletonDataAsset GetAsset()
+    {
+        return anim.skeletonDataAsset;
+    }
 }
