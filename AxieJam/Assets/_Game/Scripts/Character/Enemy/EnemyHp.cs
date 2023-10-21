@@ -26,11 +26,6 @@ public class EnemyHp : EnemyComponent, ITakeDamage
         {
             control.OnDead();
         }
-        else
-        {
-            control.SetState(CharacterState.Hit);
-            control.DisableEnemy(true);
-        }
         return damage;
     }
 

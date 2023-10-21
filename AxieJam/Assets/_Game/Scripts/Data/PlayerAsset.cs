@@ -20,7 +20,7 @@ public enum SkillType
     NumberBullet,
     AtkSpeed,
     Range,
-    ActiveTime,
+    Cooldown,
     ActiveValue,
     Size,
     ExtraBullet,

@@ -107,7 +107,14 @@ public class Enemy : Character
 
     public override float TakeDamage(float damage, bool isCrit)
     {
+        SetState(CharacterState.Hit);
+        DisableEnemy(true);
         return GetECom<EnemyHp>().TakeDamage(damage, isCrit);
+    }
+
+    public void TakePosionDamage(float damage)
+    {
+        GetECom<EnemyHp>().TakeDamage(damage, false);
     }
     public override void OnLose()
     {

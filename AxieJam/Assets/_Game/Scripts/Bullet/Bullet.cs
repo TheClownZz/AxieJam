@@ -5,20 +5,21 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour, ICreateDamage
 {
+    const int maxHit = 1;
     protected Vector3 dir;
     protected float timePlaySound;
     protected float damageRate = 1;
-
     [SerializeField] protected AudioClip hitClip;
     [SerializeField] protected SpriteRenderer bulletRender;
 
     [HideInInspector] public Weapon weapon;
 
+    int hitCount;
     public virtual void OnInits(Weapon weapon, float speed, Vector3 dir)
     {
         this.weapon = weapon;
         this.dir = dir * speed;
-
+        hitCount = 0;
     }
 
     public void SetDamageRate(float value)
@@ -62,7 +63,8 @@ public class Bullet : MonoBehaviour, ICreateDamage
     }
     public virtual void CreateDamage(Character character)
     {
-
+        if (hitCount >= maxHit) return;
+        hitCount += 1;
         PreHit(character);
         HitCharacter(character);
         AfterHit(character);

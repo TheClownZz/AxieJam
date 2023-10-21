@@ -46,7 +46,6 @@ public class PlayerGun : Weapon
     {
         isActive = true;
         cachedDamageRate = damageRate;
-        damageRate *= config.GetSkillValue(SkillType.Damage, 1f);
         DOVirtual.DelayedCall(config.defaultValue.duration, DeAvtiveSkill);
     }
 

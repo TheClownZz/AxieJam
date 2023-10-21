@@ -9,6 +9,7 @@ public class PinkGun : PlayerGun
     {
         base.ActiveSKill(config);
         scale *= config.GetSkillValue(SkillType.Size, 1.5f);
+        damageRate *= config.GetSkillValue(SkillType.Damage, 1f);
     }
 
     protected override Bullet SpawnBullet()

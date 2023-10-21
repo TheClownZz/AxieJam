@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerAttack : PlayerComponent
@@ -12,8 +13,8 @@ public class PlayerAttack : PlayerComponent
     ItemAvt item;
     Camera mainCamera;
     WaitForSeconds delay;
+    float cooldown;
     float currentCooldown;
-
     Coroutine updateCoroutine;
     [SerializeField] PlayerSkillConfig config;
 
@@ -29,7 +30,8 @@ public class PlayerAttack : PlayerComponent
     public void SetConfig(PlayerSkillConfig config)
     {
         this.config = config;
-        SetCooldown(config.defaultValue.cooldown);
+        cooldown = config.defaultValue.cooldown;
+        SetCurrentCooldown(config.defaultValue.cooldown);
     }
 
     public void SetItem(ItemAvt item)
@@ -40,7 +42,8 @@ public class PlayerAttack : PlayerComponent
     public override void OnSelect()
     {
         base.OnSelect();
-        SetCooldown(Mathf.Min(currentCooldown, spawnCooldown));
+        cooldown = Mathf.Max(cooldown, spawnCooldown);
+        SetCurrentCooldown(Mathf.Max(currentCooldown, spawnCooldown));
     }
 
     public override void OnUnSelect()
@@ -53,7 +56,6 @@ public class PlayerAttack : PlayerComponent
     {
         base.OnLose();
         StopCoroutine(updateCoroutine);
-        Debug.LogError("stop update");
     }
 
 
@@ -65,14 +67,15 @@ public class PlayerAttack : PlayerComponent
             setcursor.SetAim();
             weapon.OnUpdate(dt);
         }
-        else 
+        else
         {
             setcursor.SetNormal();
         }
         if (Input.GetKeyDown(KeyCode.F) && currentCooldown <= 0)
         {
             weapon.ActiveSKill(config);
-            SetCooldown(config.defaultValue.cooldown);
+            cooldown = Mathf.Max(cooldown, spawnCooldown);
+            SetCurrentCooldown(config.defaultValue.cooldown);
         }
 
     }
@@ -98,13 +101,13 @@ public class PlayerAttack : PlayerComponent
             yield return delay;
             if (currentCooldown > 0)
             {
-                SetCooldown(currentCooldown - updateTime);
-                item.UpdateMana(1 - currentCooldown / config.defaultValue.cooldown);
+                SetCurrentCooldown(currentCooldown - updateTime);
+                item.UpdateMana(1 - currentCooldown / cooldown);
             }
         }
     }
 
-    private void SetCooldown(float value)
+    private void SetCurrentCooldown(float value)
     {
         currentCooldown = value;
     }

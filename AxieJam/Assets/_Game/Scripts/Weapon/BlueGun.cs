@@ -30,6 +30,7 @@ public class BlueGun : PlayerGun
     public override void ActiveSKill(PlayerSkillConfig config)
     {
         base.ActiveSKill(config);
+        damageRate *= config.GetSkillValue(SkillType.Damage, 1f);
         numberBullet = (int)config.GetSkillValue(SkillType.NumberBullet, 1);
     }
 

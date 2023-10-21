@@ -62,7 +62,7 @@ public class LevelController : MonoBehaviour
             e.OnLose();
     }
 
-    public void DestroyCurrentLevel()
+    public void ClearCurrentLevel()
     {
         StopAllCoroutines();
         foreach (var enemy in enemyList)

@@ -133,6 +133,12 @@ public class PlayerHp : PlayerComponent, ITakeDamage
         if (currentHp < maxHp)
             Sethp(Mathf.Min(currentHp + hp, maxHp));
     }
+    public void RegenPercen(float percen)
+    {
+        float hp = maxHp * percen;
+        if (currentHp < maxHp)
+            Sethp(Mathf.Min(currentHp + hp, maxHp));
+    }
     public void SetItem(ItemAvt item)
     {
         itemAvt = item;

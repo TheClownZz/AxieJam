@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: abf3e88e13d34a9438d0198f24c71414
+guid: 08e0494afbd4b41418b9d8d451ac455e
 SpriteAtlasImporter:
   externalObjects: {}
   textureSettings:
@@ -19,8 +19,8 @@ SpriteAtlasImporter:
     padding: 4
     blockOffset: 1
     allowAlphaSplitting: 0
-    enableRotation: 0
-    enableTightPacking: 0
+    enableRotation: 1
+    enableTightPacking: 1
     enableAlphaDilation: 0
   secondaryTextureSettings: {}
   variantMultiplier: 1

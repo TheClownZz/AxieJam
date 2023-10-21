@@ -46,7 +46,6 @@ public class ItemSelect : MonoBehaviour
 
     void OnBtnSelectClick()
     {
-        Debug.LogError("OnBtnSelectClick");
         SetSelect(true);
         UIManager.Instance.GetScreen<ScreenHome>().OnSelect(this);
         AudioManager.Instance.PlayOnceShot(AudioType.CLICK);

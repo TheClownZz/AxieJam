@@ -55,7 +55,6 @@ public class ScreenHome : ScreenBase
     }
     public void OnSelect(ItemSelect item)
     {
-        Debug.LogError("OnSelect");
         itemSelectedList[itemSelectedList.Count - 1].SetSelect(false);
         itemSelectedList.RemoveAt(itemSelectedList.Count - 1);
         itemSelectedList.Insert(0, item);

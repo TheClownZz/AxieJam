@@ -15,11 +15,11 @@ public class GameManager : MonoSingleton<GameManager>
     public LevelController levelController;
 
     public bool isCheat;
+    public GameObject objMap;
     public Player currentPlayer;
     public List<Player> playerList;
 
     [SerializeField] GameLevelAsset asset;
-    [SerializeField] GameObject objMap;
 
     Vector3 outPos = new Vector3(9999, 9999, 9999);
     public bool isPause { get { return Time.timeScale == 0; } }
@@ -52,11 +52,6 @@ public class GameManager : MonoSingleton<GameManager>
     }
     public void UpdatePlayerList(List<ItemSelect> itemSelectList)
     {
-        foreach (var p in playerList)
-        {
-            Destroy(p.gameObject);
-        }
-        playerList.Clear();
         var assetList = DataManager.Instance.GetAsset<PlayerListAsset>();
 
         foreach (var item in itemSelectList)
@@ -96,8 +91,17 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void ClearLevel()
     {
-        levelController.DestroyCurrentLevel();
+        foreach (var p in playerList)
+        {
+            Destroy(p.gameObject);
+        }
+        playerList.Clear();
+        levelController.ClearCurrentLevel();
         ClearBullet();
+        foreach(GameObject obj in objMap.transform.GetChild(0))
+        {
+            Destroy(obj);
+        }
     }
 
     private void ClearBullet()
