@@ -6,13 +6,14 @@ public class PlayerGun : Weapon
     [SerializeField] protected Bullet bulletPf;
     [SerializeField] protected Transform shooter;
     [SerializeField] protected float butlletSpeed = 22f;
-    [SerializeField] Sprite bulletSprite;
-    [SerializeField] AudioClip hitClip;
-    [SerializeField] float force = 300;
+    [SerializeField] protected Sprite bulletSprite;
+    [SerializeField] protected AudioClip hitClip;
+    [SerializeField] protected float force = 300;
 
     CameraShake cameraShake;
 
     protected float damageRate = 1;
+    protected float cachedDamageRate;
 
     protected bool isActive = false;
     public override void OnInits(Character characterControl)
@@ -34,7 +35,7 @@ public class PlayerGun : Weapon
         b.transform.SetParent(GameManager.Instance.bulletSpawner, false);
         b.transform.position = shooter.transform.position;
         b.transform.rotation = shooter.transform.rotation;
-        b.OnInits(this, butlletSpeed, -transform.right);
+        b.OnInits(this, butlletSpeed, -b.transform.right);
         b.SetSprite(bulletSprite);
         b.SetHitClip(hitClip);
         b.SetDamageRate(damageRate);
@@ -44,11 +45,14 @@ public class PlayerGun : Weapon
     public virtual void ActiveSKill(PlayerSkillConfig config)
     {
         isActive = true;
+        cachedDamageRate = damageRate;
+        damageRate *= config.GetSkillValue(SkillType.Damage, 1f);
         DOVirtual.DelayedCall(config.defaultValue.duration, DeAvtiveSkill);
     }
 
     public virtual void DeAvtiveSkill()
     {
         isActive = false;
+        damageRate = cachedDamageRate;
     }
 }

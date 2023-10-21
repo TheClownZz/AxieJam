@@ -13,9 +13,10 @@ public class PlayerAttack : PlayerComponent
     Camera mainCamera;
     WaitForSeconds delay;
     float currentCooldown;
-    PlayerSkillConfig config;
 
     Coroutine updateCoroutine;
+    [SerializeField] PlayerSkillConfig config;
+
     public override void OnInits(Character control)
     {
         base.OnInits(control);

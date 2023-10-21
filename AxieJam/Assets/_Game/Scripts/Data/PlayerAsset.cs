@@ -88,14 +88,14 @@ public class PlayerConfig
     [TableList(ShowIndexLabels = true)]
     public List<PlayerSkillConfig> skillConfiglist;
 
-    public PlayerLevelConfig GetLevelConfig(int lvIndex)
+    public PlayerLevelConfig GetLevelConfig(int lv)
     {
-        return levelConfiglist[Mathf.Min(lvIndex, levelConfiglist.Count - 1)];
+        return levelConfiglist[Mathf.Min(lv - 1, levelConfiglist.Count - 1)];
     }
 
-    public PlayerSkillConfig GetSkillConfig(int lvIndex)
+    public PlayerSkillConfig GetSkillConfig(int lv)
     {
-        return skillConfiglist[Mathf.Min(lvIndex, levelConfiglist.Count - 1)];
+        return skillConfiglist[Mathf.Min(lv - 1, skillConfiglist.Count - 1)];
     }
 
 }

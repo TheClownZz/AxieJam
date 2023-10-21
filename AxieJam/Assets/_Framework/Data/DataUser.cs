@@ -113,6 +113,12 @@ public class DataUser : GameData
         DataSavePlayer player = GetDataPlayer(type);
         return player.level;
     }
+    public int GetLevelSkill(PlayerType type)
+    {
+        DataSavePlayer player = GetDataPlayer(type);
+        return player.levelSkill;
+    }
+
 
     public List<PlayerType> GetTeam()
     {

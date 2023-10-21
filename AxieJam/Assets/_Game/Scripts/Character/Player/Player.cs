@@ -71,7 +71,7 @@ public class Player : Character
         int level = DataManager.Instance.GetData<DataUser>().GetLevel(type);
         for (int i = 1; i < level; i++)
         {
-            PlayerLevelConfig lvConfig = config.GetLevelConfig(i - 1);
+            PlayerLevelConfig lvConfig = config.GetLevelConfig(i);
             stat.SetHp(lvConfig.hp + stat.hp)
                 .Setarmor(lvConfig.armor + stat.armor)
                 .SetDamage(lvConfig.damage + stat.damage)
@@ -97,8 +97,8 @@ public class Player : Character
     public void SetData(PlayerConfig data)
     {
         config = data;
-        GetCom<PlayerAttack>().SetConfig(
-            config.GetSkillConfig(DataManager.Instance.GetData<DataUser>().GetLevel(type)));
+        int levelSKill = DataManager.Instance.GetData<DataUser>().GetLevelSkill(type);
+        GetCom<PlayerAttack>().SetConfig(config.GetSkillConfig(levelSKill));
     }
 
     public void SetItemAvt(ItemAvt itemAvt)

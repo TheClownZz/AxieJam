@@ -1,0 +1,41 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.U2D;
+
+public class BlueGun : PlayerGun
+{
+    float angleRate = 10;
+    int numberBullet = 1;
+    protected override Bullet SpawnBullet()
+    {
+        int offset = (numberBullet - 1) / 2;
+        for (int i = 1; i <= numberBullet; i++)
+        {
+            float angle = angleRate * (i - offset);
+            Bullet b = PoolManager.Instance.SpawnObject(bulletPf.transform).GetComponent<Bullet>();
+            b.transform.SetParent(GameManager.Instance.bulletSpawner, false);
+            b.transform.position = shooter.transform.position;
+            b.transform.rotation = Quaternion.Euler(0, 0, transform.eulerAngles.z + angle);
+            b.OnInits(this, butlletSpeed, -b.transform.right);
+            b.SetSprite(bulletSprite);
+            b.SetHitClip(hitClip);
+            b.SetDamageRate(damageRate);
+        }
+        return null;
+
+    }
+
+    public override void ActiveSKill(PlayerSkillConfig config)
+    {
+        base.ActiveSKill(config);
+        numberBullet = (int)config.GetSkillValue(SkillType.NumberBullet, 1);
+    }
+
+    public override void DeAvtiveSkill()
+    {
+        base.DeAvtiveSkill();
+        numberBullet = 1;
+    }
+}

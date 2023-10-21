@@ -28,8 +28,8 @@ public class ItemSelect : MonoBehaviour
 
         var listAsset = DataManager.Instance.GetAsset<PlayerListAsset>().GetAsset(playerType);
 
-        var levelConfig = listAsset.data.GetLevelConfig(data.level - 1);
-        var skillConfig = listAsset.data.GetSkillConfig(data.levelSkill - 1);
+        var levelConfig = listAsset.data.GetLevelConfig(data.level);
+        var skillConfig = listAsset.data.GetSkillConfig(data.levelSkill);
 
         tmpLevel.SetText("lv.{0}", data.level);
         tmpSkill.SetText("lv.{0}", data.levelSkill);
