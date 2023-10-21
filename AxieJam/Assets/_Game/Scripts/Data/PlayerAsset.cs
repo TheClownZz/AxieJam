@@ -47,6 +47,15 @@ public class PlayerSkillConfig
     public PlayerSkillDefaultProperties defaultValue;
     [TableList(ShowIndexLabels = true)]
     public List<PlayerSkillProperties> propertieList;
+    public float GetSkillValue(SkillType type, float defaultValue = 0)
+    {
+        var propertie = propertieList.Find(x => x.type == type);
+
+        if (propertie != null)
+            return propertie.value;
+        return defaultValue;
+    }
+
 }
 
 [System.Serializable]
@@ -89,15 +98,6 @@ public class PlayerConfig
         return skillConfiglist[Mathf.Min(lvIndex, levelConfiglist.Count - 1)];
     }
 
-    public float GetSkillValue(SkillType type, int level, float defaultValue = 0)
-    {
-        var config = GetSkillConfig(level);
-        var propertie = config.propertieList.Find(x => x.type == type);
-
-        if (propertie != null)
-            return propertie.value;
-        return defaultValue;
-    }
 }
 
 

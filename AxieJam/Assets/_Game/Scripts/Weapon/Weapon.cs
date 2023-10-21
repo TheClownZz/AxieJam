@@ -10,7 +10,7 @@ public class Weapon : MonoBehaviour
     protected float attackTime;
     protected Character characterControl;
 
-    protected float coolDown = 1;
+    protected float cooldown = 1;
 
     [SerializeField] protected AudioClip attackClip;
     public List<EffectData> effectDataList;
@@ -25,7 +25,7 @@ public class Weapon : MonoBehaviour
 
     protected virtual void UpdateStat()
     {
-        coolDown = 1 / GetCharacterStat().attackSpeed;
+        cooldown = 1 / GetCharacterStat().attackSpeed;
     }
 
     public virtual void OnUpdate(float dt)
@@ -61,7 +61,7 @@ public class Weapon : MonoBehaviour
 
     private bool CheckAttack()
     {
-        return Time.time - attackTime > coolDown;
+        return Time.time - attackTime > cooldown;
     }
 
 }

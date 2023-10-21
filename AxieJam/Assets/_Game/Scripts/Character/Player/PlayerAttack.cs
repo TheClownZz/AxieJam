@@ -45,7 +45,7 @@ public class PlayerAttack : PlayerComponent
     public override void OnUnSelect()
     {
         base.OnUnSelect();
-        weapon.UnAvtiveSkill();
+        weapon.DeAvtiveSkill();
     }
 
     public override void OnLose()
@@ -54,18 +54,23 @@ public class PlayerAttack : PlayerComponent
         StopCoroutine(updateCoroutine);
         Debug.LogError("stop update");
     }
-    
+
 
     public override void OnUpdate(float dt)
     {
         Facing();
         if (Input.GetMouseButton(0))
         {
+            setcursor.SetAim();
             weapon.OnUpdate(dt);
+        }
+        else 
+        {
+            setcursor.SetNormal();
         }
         if (Input.GetKeyDown(KeyCode.F) && currentCooldown <= 0)
         {
-            weapon.ActiveSKill();
+            weapon.ActiveSKill(config);
             SetCooldown(config.defaultValue.cooldown);
         }
 

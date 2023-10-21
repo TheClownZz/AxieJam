@@ -39,7 +39,7 @@ public class Bullet : MonoBehaviour, ICreateDamage
     protected virtual void HitCharacter(Character character)
     {
         CharacterStat stat = weapon.GetCharacterStat();
-        float damage = stat.damage;
+        float damage = stat.damage* damageRate;
         float critDamage = stat.critDamage;
 
         float critRate = stat.critRate;

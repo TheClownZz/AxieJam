@@ -1,20 +1,20 @@
 using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerGun : Weapon
 {
     [SerializeField] protected Bullet bulletPf;
     [SerializeField] protected Transform shooter;
-    [SerializeField] protected float butlletSpeed = 10f;
+    [SerializeField] protected float butlletSpeed = 22f;
     [SerializeField] Sprite bulletSprite;
     [SerializeField] AudioClip hitClip;
-    [SerializeField] float force = 50;
+    [SerializeField] float force = 300;
 
     CameraShake cameraShake;
 
+    protected float damageRate = 1;
+
+    protected bool isActive = false;
     public override void OnInits(Character characterControl)
     {
         base.OnInits(characterControl);
@@ -31,23 +31,24 @@ public class PlayerGun : Weapon
     protected virtual Bullet SpawnBullet()
     {
         Bullet b = PoolManager.Instance.SpawnObject(bulletPf.transform).GetComponent<Bullet>();
-        b.transform.SetParent(GameManager.Instance.bulletSpawner);
+        b.transform.SetParent(GameManager.Instance.bulletSpawner, false);
         b.transform.position = shooter.transform.position;
         b.transform.rotation = shooter.transform.rotation;
         b.OnInits(this, butlletSpeed, -transform.right);
         b.SetSprite(bulletSprite);
         b.SetHitClip(hitClip);
-        b.SetDamageRate(1);
+        b.SetDamageRate(damageRate);
         return b;
     }
 
-    public virtual void ActiveSKill()
+    public virtual void ActiveSKill(PlayerSkillConfig config)
     {
-        Debug.LogError("ActiveSKill");
-    }    
+        isActive = true;
+        DOVirtual.DelayedCall(config.defaultValue.duration, DeAvtiveSkill);
+    }
 
-    public virtual void UnAvtiveSkill()
+    public virtual void DeAvtiveSkill()
     {
-        Debug.LogError("UnAvtiveSkill");
+        isActive = false;
     }
 }

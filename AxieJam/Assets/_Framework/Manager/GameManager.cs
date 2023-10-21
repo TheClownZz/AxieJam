@@ -78,6 +78,7 @@ public class GameManager : MonoSingleton<GameManager>
     public void SetPlayer(int index)
     {
         Vector3 pos = currentPlayer.transform.position;
+        currentPlayer.transform.position = outPos;
         currentPlayer.OnUnSelect();
         currentPlayer = playerList[index];
         currentPlayer.transform.position = pos;

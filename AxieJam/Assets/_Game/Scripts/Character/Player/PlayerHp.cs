@@ -52,7 +52,7 @@ public class PlayerHp : PlayerComponent, ITakeDamage
     public override void OnUnSelect()
     {
         base.OnUnSelect();
-        if (regenCoroutine == null)
+        if (regenCoroutine != null)
             StopCoroutine(regenCoroutine);
         if (hitCoroutine != null)
             StopCoroutine(hitCoroutine);

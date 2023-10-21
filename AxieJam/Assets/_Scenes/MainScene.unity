@@ -861,13 +861,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScreenGame
       objectReference: {fileID: 0}
+    - target: {fileID: 3191914332775338280, guid: 4ea75e35e49f3c14daf7f25e4f72b6ce, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3626670605581106785, guid: 4ea75e35e49f3c14daf7f25e4f72b6ce, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3626670605581106785, guid: 4ea75e35e49f3c14daf7f25e4f72b6ce, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -51.699997
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -972,7 +972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6363111038152696894, guid: d779c3066cb0b1c44a539300a92682e9, type: 3}
       propertyPath: m_Alpha
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6793422412575818824, guid: d779c3066cb0b1c44a539300a92682e9, type: 3}
       propertyPath: m_text

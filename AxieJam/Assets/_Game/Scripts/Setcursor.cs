@@ -8,6 +8,7 @@ public class Setcursor : MonoBehaviour
     [SerializeField] Texture2D aimTexture;
     [SerializeField] Texture2D normalTexture;
 
+    bool isNormal = false;
 
     private void Start()
     {
@@ -15,11 +16,15 @@ public class Setcursor : MonoBehaviour
     }
     public void SetAim()
     {
+        if (!isNormal) return;
+        isNormal = false;
         Cursor.SetCursor(aimTexture, Vector2.zero, CursorMode.Auto);
     }
 
     public void SetNormal()
     {
+        if (isNormal) return;
+        isNormal = true;
         Cursor.SetCursor(normalTexture, Vector2.zero, CursorMode.Auto);
     }
 

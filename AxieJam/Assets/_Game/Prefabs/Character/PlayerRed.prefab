@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 327087890184204588}
-  - component: {fileID: 971523775939189850}
+  - component: {fileID: 1539431017096141239}
   m_Layer: 0
   m_Name: bow
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   - {fileID: 6968806356762508417}
   m_Father: {fileID: 8915905001403885882}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &971523775939189850
+--- !u!114 &1539431017096141239
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,10 +43,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4307356870232946831}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 911e82f158735bd41b86e8783013c1c2, type: 3}
+  m_Script: {fileID: 11500000, guid: b76d7afe644c05049852c584c2d511c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackClip: {fileID: 8300000, guid: 46cbecaefe7b1d548bace43d304bb33d, type: 3}
+  attackClip: {fileID: 0}
   effectDataList: []
   bulletPf: {fileID: 2348296573303739742, guid: f046c42e323bd1b4b94c44944e4ac80f, type: 3}
   shooter: {fileID: 6968806356762508417}
@@ -188,13 +188,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86698c15c82918f4ca59ec175a1aecbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshRender: {fileID: 960789738622743250}
   runScale: 1.75
-  anim: {fileID: 7190225595301632731}
   Run: action/run
   Idle: action/idle/normal
   Die: activity/prepare
-  Hit: die
+  meshRender: {fileID: 960789738622743250}
+  anim: {fileID: 7190225595301632731}
 --- !u!1 &5118584193262292840
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,8 +455,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control: {fileID: 0}
-  itemAvt: {fileID: 0}
+  hitTime: 0.2
   currentHp: 0
+  itemAvt: {fileID: 0}
 --- !u!114 &8915905001403885886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -490,7 +490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control: {fileID: 0}
-  weapon: {fileID: 971523775939189850}
+  weapon: {fileID: 1539431017096141239}
   setcursor: {fileID: 3338595176116409183}
 --- !u!114 &3338595176116409183
 MonoBehaviour:
