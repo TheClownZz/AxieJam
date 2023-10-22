@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyShootMove : EnemyMove
 {
     const float stopMoveTime = 0.2f;
-    bool allowMove;
+    [SerializeField] bool allowMove;
 
     Tween stopMoveTween;
     public override void OnInits(Character e)
@@ -34,6 +34,7 @@ public class EnemyShootMove : EnemyMove
                     stopMoveTween = DOVirtual.DelayedCall(stopMoveTime, () =>
                     {
                         allowMove = false;
+                        dir = Vector3.zero;
                         stopMoveTween = null;
                     });
                 }
@@ -43,10 +44,14 @@ public class EnemyShootMove : EnemyMove
 
         Facing(dir);
 
-        direction = dir;
         if (allowMove)
         {
             UpdatePostion(dt);
+            direction = dir;
+        }
+        else
+        {
+            direction = Vector3.zero;
         }
         UpdateState();
 

@@ -5,21 +5,24 @@ using UnityEngine;
 public class BossGun : EnemyGun
 {
     [SerializeField] int skillIndex = 0;
+    [SerializeField] int numberBullet = 1;
 
     float damageRate = 1;
     float angleRate = 10;
-    int numberBullet = 1;
     public override Bullet SpawnBullet()
     {
+        Vector3 dir = (targetPos - shooter.transform.position).normalized;
         int offset = (numberBullet - 1) / 2;
         for (int i = 1; i <= numberBullet; i++)
         {
+
             float angle = angleRate * (i - offset);
+            Vector3 _dir = Quaternion.AngleAxis(angle, Vector3.forward) * dir;
+
             Bullet b = PoolManager.Instance.SpawnObject(bulletPf.transform).GetComponent<Bullet>();
             b.transform.SetParent(GameManager.Instance.bulletSpawner, false);
             b.transform.position = shooter.transform.position;
-            b.transform.rotation = Quaternion.Euler(0, 0, transform.eulerAngles.z + angle);
-            b.OnInits(this, butlletSpeed, -b.transform.right);
+            b.OnInits(this, butlletSpeed, _dir);
             b.SetSprite(bulletSprite);
             b.SetDamageRate(damageRate);
         }

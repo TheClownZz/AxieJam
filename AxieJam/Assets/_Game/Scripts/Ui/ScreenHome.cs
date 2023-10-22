@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ScreenHome : ScreenBase
 {
+    [SerializeField] GameObject panelContent;
+    [SerializeField] GameObject panelLoad;
     [SerializeField] Button btnPlay;
     [SerializeField] List<ItemSelect> itemList;
     public List<ItemSelect> itemSelectedList = new List<ItemSelect>();

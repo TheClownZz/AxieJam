@@ -4,9 +4,25 @@ using UnityEngine;
 
 public class Boss : Enemy
 {
+    [SerializeField] List<string> atkAnimList;
+    [SerializeField] List<float> atkTimeList;
+
+    int skillIndex = 0;
+    public override void OnInit()
+    {
+        base.OnInit();
+        ((EnemySpineController)spineController).SetAttack(atkAnimList[skillIndex], atkTimeList[skillIndex]);
+    }
     public override float TakeDamage(float damage, bool isCrit)
     {
-        return GetECom<EnemyHp>().TakeDamage(damage, isCrit);
+        EnemyHp eHp = GetECom<EnemyHp>();
+        float hpLost = eHp.TakeDamage(damage, isCrit);
+        if (skillIndex < atkAnimList.Count - 1 && eHp.currentHp < 0.5f * stat.hp)
+        {
+            skillIndex += 1;
+            ((EnemySpineController)spineController).SetAttack(atkAnimList[skillIndex], atkTimeList[skillIndex]);
+        }
+        return hpLost;
     }
 
     public override void SetStat()

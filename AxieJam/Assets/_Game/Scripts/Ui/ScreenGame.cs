@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime;
 
 public class ScreenGame : ScreenBase
 {
@@ -30,19 +31,23 @@ public class ScreenGame : ScreenBase
         mainItem.SetAvt(assetList.GetAsset(currentPlayer.type).data.avatar);
         currentPlayer.SetItemAvt(mainItem);
         int index = 0;
-        foreach(var p in playerList)
+        for (int i = 0; i < playerList.Count; i++)
         {
-            if (p == currentPlayer)
-                continue;
-            itemAvtList[index].SetAvt(assetList.GetAsset(p.type).data.avatar);
-            p.SetItemAvt(itemAvtList[index]);
-            index += 1;
+            if (playerList[i] != currentPlayer)
+            {
+                itemAvtList[index].SetAvt(assetList.GetAsset(playerList[i].type).data.avatar);
+                playerList[i].SetItemAvt(itemAvtList[index]);
+                index += 1;
+                if (index == playerList.Count)
+                    break;
+            }
         }
+
     }
 
     private void Update()
     {
-        if (isShowing && Input.GetKeyDown(KeyCode.Space) && 
+        if (isShowing && Input.GetKeyDown(KeyCode.D) &&
             !UIManager.Instance.GetPopup<PopupSelect>().isShowing
             && GameManager.Instance.gameState == GameState.Playing)
         {

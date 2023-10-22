@@ -42,7 +42,7 @@ public class EnemyMove : EnemyComponent
 
     public override void OnUpdate(float dt)
     {
-        if (GetTarget().isDead && control.isDisable) return;
+        if (GetTarget().isDead || control.isDisable) return;
         if (!eControl.isKnockBack)
             Move(dt);
         else

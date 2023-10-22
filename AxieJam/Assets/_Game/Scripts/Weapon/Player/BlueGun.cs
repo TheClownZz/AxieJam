@@ -10,7 +10,7 @@ public class BlueGun : PlayerGun
     int numberBullet = 1;
     protected override Bullet SpawnBullet()
     {
-        int offset = (numberBullet - 1) / 2;
+        int offset = (numberBullet + 1) / 2;
         for (int i = 1; i <= numberBullet; i++)
         {
             float angle = angleRate * (i - offset);
@@ -22,6 +22,7 @@ public class BlueGun : PlayerGun
             b.SetSprite(bulletSprite);
             b.SetHitClip(hitClip);
             b.SetDamageRate(damageRate);
+
         }
         return null;
 

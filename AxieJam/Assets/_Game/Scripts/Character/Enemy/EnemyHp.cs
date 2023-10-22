@@ -6,7 +6,7 @@ using TMPro;
 
 public class EnemyHp : EnemyComponent, ITakeDamage
 {
-    [SerializeField] float currentHp;
+    public float currentHp;
     public override void OnInits(Character enemy)
     {
         base.OnInits(enemy);

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2593693923264475315}
   - component: {fileID: 7500814093568494133}
   - component: {fileID: 724379711993735569}
+  - component: {fileID: 8088282507422291023}
   m_Layer: 8
   m_Name: Boss
   m_TagString: Untagged
@@ -116,10 +117,16 @@ MonoBehaviour:
   - {fileID: 6496105134956954400}
   - {fileID: 2593693923264475315}
   - {fileID: 724379711993735569}
-  - {fileID: 3928613965281482873}
+  - {fileID: 0}
   waveStat:
     hpRate: 1
     damageRate: 1
+  atkAnimList:
+  - attack/ranged/cast-high
+  - attack/melee/jump-scatch-attack
+  atkTimeList:
+  - 0.4
+  - 0.7
 --- !u!114 &4663038807184831406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,11 +219,29 @@ MonoBehaviour:
   control: {fileID: 0}
   baseSpeed: 0
   currentSpeed: 0
+  allowMove: 0
   anim: {fileID: 8400244866098227185}
   runAnim: action/move-forward
   moveEvent: jump
   jumpTime: 0.35
   isJump: 0
+--- !u!114 &8088282507422291023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501980575361081423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f744a9fcf71206e48b2b6af8a3290649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  control: {fileID: 0}
+  coolDown: 0
+  target: {fileID: 0}
+  gun: {fileID: 8342530175396194733}
+  skillIndex: 0
 --- !u!1 &2018800196224680825
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,9 +340,8 @@ GameObject:
   - component: {fileID: 1628631332440846147}
   - component: {fileID: 2005808103889279792}
   - component: {fileID: 8342530175396194733}
-  - component: {fileID: 3928613965281482873}
   m_Layer: 10
-  m_Name: BossSHoot
+  m_Name: BossGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -388,27 +412,12 @@ MonoBehaviour:
   attackClip: {fileID: 0}
   effectDataList: []
   targetPos: {x: 0, y: 0, z: 0}
-  bulletPf: {fileID: 0}
-  shooter: {fileID: 5061255608990394047, guid: 4ca6ba680148f294eba9e2a4d292664b, type: 3}
+  bulletPf: {fileID: 7012365634277497229, guid: 4ca6ba680148f294eba9e2a4d292664b, type: 3}
+  shooter: {fileID: 1628631332440846147}
   butlletSpeed: 15
   bulletSprite: {fileID: 21300000, guid: 576cc4d08297fa549a3f96a16f972675, type: 3}
   skillIndex: 0
---- !u!114 &3928613965281482873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4447802915667506931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f744a9fcf71206e48b2b6af8a3290649, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  control: {fileID: 0}
-  target: {fileID: 0}
-  gun: {fileID: 8342530175396194733}
-  skillIndex: 0
+  numberBullet: 1
 --- !u!1 &6559631164190530980
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,4 +560,4 @@ MonoBehaviour:
   anim: {fileID: 8400244866098227185}
   Hit: defense/hit-by-normal
   Attack: attack/ranged/cast-high
-  attackTime: 1
+  attackTime: 0.4

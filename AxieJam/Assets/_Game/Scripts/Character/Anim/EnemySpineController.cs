@@ -17,7 +17,6 @@ public class EnemySpineController : SpineController
         base.OnInits(control);
         anim.AnimationState.Complete += delegate (TrackEntry trackEntry)
         {
-            Debug.LogError(Attack + " " + trackEntry.Animation.Name);
             if (trackEntry.Animation.Name == Hit)
             {
                 control.OnHitDone();
