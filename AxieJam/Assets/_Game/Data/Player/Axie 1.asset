@@ -33,7 +33,7 @@ MonoBehaviour:
       armor: 0
     skillConfiglist:
     - defaultValue:
-        itemRequire: 0
+        itemRequire: 15
         duration: 3
         cooldown: 20
       propertieList:
@@ -42,7 +42,7 @@ MonoBehaviour:
       - type: 0
         value: 0.5
     - defaultValue:
-        itemRequire: 15
+        itemRequire: 25
         duration: 3.5
         cooldown: 18
       propertieList:
@@ -51,7 +51,7 @@ MonoBehaviour:
       - type: 0
         value: 0.5
     - defaultValue:
-        itemRequire: 25
+        itemRequire: 50
         duration: 3.5
         cooldown: 17
       propertieList:
@@ -60,7 +60,7 @@ MonoBehaviour:
       - type: 0
         value: 0.5
     - defaultValue:
-        itemRequire: 50
+        itemRequire: 100
         duration: 3.5
         cooldown: 15
       propertieList:
@@ -73,7 +73,7 @@ MonoBehaviour:
       - type: 8
         value: 0.5
     - defaultValue:
-        itemRequire: 100
+        itemRequire: 150
         duration: 3.5
         cooldown: 13
       propertieList:

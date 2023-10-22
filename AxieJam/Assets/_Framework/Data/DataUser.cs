@@ -79,14 +79,14 @@ public class DataUser : GameData
         return dataSave.playerSaveList.Find(x => x.type == type);
     }
 
-    public void UpdateLevellItem(PlayerType type, int number = 1)
+    public void UpdateFoodItem(PlayerType type, int number = 1)
     {
         DataSavePlayer player = GetDataPlayer(type);
         player.itemLevelCount += number;
         SaveData();
     }
 
-    public void UpdateSkillItem(PlayerType type, int number = 1)
+    public void UpdatePotionItem(PlayerType type, int number = 1)
     {
         DataSavePlayer player = GetDataPlayer(type);
         player.itemSkillCount += number;

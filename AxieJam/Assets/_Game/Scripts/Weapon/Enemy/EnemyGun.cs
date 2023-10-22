@@ -8,14 +8,14 @@ public class EnemyGun : Weapon
     [SerializeField] protected Bullet bulletPf;
     [SerializeField] protected Transform shooter;
     [SerializeField] protected float butlletSpeed = 10f;
-    [SerializeField] Sprite bulletSprite;
+    [SerializeField] protected Sprite bulletSprite;
 
     public override void OnAttack()
     {
         base.OnAttack();
         SpawnBullet();
     }
-    public Bullet SpawnBullet()
+    public virtual Bullet SpawnBullet()
     {
         Vector3 dir = (targetPos - shooter.transform.position).normalized;
         Bullet b = PoolManager.Instance.SpawnObject(bulletPf.transform).GetComponent<Bullet>();

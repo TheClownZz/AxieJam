@@ -273,6 +273,7 @@ GameObject:
   - component: {fileID: -5443143430796421240}
   - component: {fileID: 257800880118908662}
   - component: {fileID: 5211071208203465144}
+  - component: {fileID: 5394943965421945067}
   m_Layer: 8
   m_Name: EnemyB
   m_TagString: Untagged
@@ -330,7 +331,6 @@ MonoBehaviour:
   - {fileID: -5443143430796421240}
   - {fileID: 5211071208203465144}
   - {fileID: 6465875842576101454}
-  asset: {fileID: 11400000, guid: 501f0e6fb7d1d498384d1b43bcb7b56d, type: 2}
   waveStat:
     hpRate: 1
     damageRate: 1
@@ -413,6 +413,19 @@ MonoBehaviour:
   baseSpeed: 0
   currentSpeed: 0
   allowMove: 0
+--- !u!114 &5394943965421945067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8911379269055794558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28404f47a47877148b04f35a96f2eaf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asset: {fileID: 11400000, guid: e16c6f202aeaa3d4a84ac4ec1a248607, type: 2}
 --- !u!1 &9008533705369191762
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,7 @@ public class EnemySpineController : SpineController
         base.OnInits(control);
         anim.AnimationState.Complete += delegate (TrackEntry trackEntry)
         {
+            Debug.LogError(Attack + " " + trackEntry.Animation.Name);
             if (trackEntry.Animation.Name == Hit)
             {
                 control.OnHitDone();
@@ -44,7 +45,7 @@ public class EnemySpineController : SpineController
     public override void OnDead()
     {
         base.OnDead();
-        if(attackTween != null)
+        if (attackTween != null)
         {
             attackTween.Kill();
             attackTween = null;
@@ -69,5 +70,10 @@ public class EnemySpineController : SpineController
         base.SetAnim(state);
     }
 
+    public void SetAttack(string anim, float attackTime)
+    {
+        Attack = anim;
+        this.attackTime = attackTime;
+    }
 
 }

@@ -2,6 +2,8 @@ public enum PoolType
 {
     None = 0,
     SpawnFx = 1,
+    FoodItem,
+    PotionItem,
 
     Enemy_A = 100,
     Enemy_B,
@@ -11,4 +13,5 @@ public enum PoolType
 
     TextDisplay = 300,
     IconDisplay,
+
 }

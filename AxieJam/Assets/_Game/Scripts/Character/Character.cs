@@ -167,6 +167,7 @@ public class Character : MonoBehaviour
 
     public void DisableEnemy(bool isDisable)
     {
+        Debug.LogError("DisableEnemy");
         if (isDead)
             return;
         this.isDisable = isDisable;

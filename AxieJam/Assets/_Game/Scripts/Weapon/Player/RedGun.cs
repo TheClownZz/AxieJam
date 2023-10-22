@@ -6,7 +6,7 @@ public class RedGun : PlayerGun
 {
     float cachedCooldown;
 
-    public override void ActiveSKill(PlayerSkillConfig config)
+    public override void ActiveSKill(SkillConfig config)
     {
         base.ActiveSKill(config);
         cachedCooldown = cooldown;

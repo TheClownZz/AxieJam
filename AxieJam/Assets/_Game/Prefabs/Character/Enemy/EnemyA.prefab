@@ -141,6 +141,8 @@ MonoBehaviour:
   meshRender: {fileID: 122133757037643575}
   anim: {fileID: 4939214693512892344}
   Hit: defense/hit-by-normal
+  Attack: die
+  attackTime: 1
 --- !u!1 &3142598655126586280
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,6 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control: {fileID: 0}
+  target: {fileID: 0}
 --- !u!58 &4296611049263242454
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -268,6 +271,7 @@ GameObject:
   - component: {fileID: 9074905401213251309}
   - component: {fileID: -5443143430796421240}
   - component: {fileID: 257800880118908662}
+  - component: {fileID: 6802532825363761386}
   m_Layer: 8
   m_Name: EnemyA
   m_TagString: Untagged
@@ -325,7 +329,6 @@ MonoBehaviour:
   - {fileID: 9074905401213251309}
   - {fileID: -5443143430796421240}
   - {fileID: 1166197220741666335}
-  asset: {fileID: 11400000, guid: 501f0e6fb7d1d498384d1b43bcb7b56d, type: 2}
   waveStat:
     hpRate: 1
     damageRate: 1
@@ -407,3 +410,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &6802532825363761386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8911379269055794558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28404f47a47877148b04f35a96f2eaf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asset: {fileID: 11400000, guid: 501f0e6fb7d1d498384d1b43bcb7b56d, type: 2}

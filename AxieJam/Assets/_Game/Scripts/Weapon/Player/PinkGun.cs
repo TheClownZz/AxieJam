@@ -5,7 +5,7 @@ using UnityEngine;
 public class PinkGun : PlayerGun
 {
     float scale = 1f;
-    public override void ActiveSKill(PlayerSkillConfig config)
+    public override void ActiveSKill(SkillConfig config)
     {
         base.ActiveSKill(config);
         scale *= config.GetSkillValue(SkillType.Size, 1.5f);

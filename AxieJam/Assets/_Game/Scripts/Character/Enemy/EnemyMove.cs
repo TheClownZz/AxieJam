@@ -42,7 +42,7 @@ public class EnemyMove : EnemyComponent
 
     public override void OnUpdate(float dt)
     {
-        if (GetTarget().isDead || eControl.isDisable) return;
+        if (GetTarget().isDead && control.isDisable) return;
         if (!eControl.isKnockBack)
             Move(dt);
         else
@@ -69,11 +69,14 @@ public class EnemyMove : EnemyComponent
         Facing(dir);
 
         direction = dir;
-        transform.position += direction * currentSpeed * dt;
-
+        UpdatePostion(dt);
         UpdateState();
     }
 
+    protected virtual void UpdatePostion(float dt)
+    {
+        transform.position += direction * currentSpeed * dt;
+    }
     protected virtual void Force(float dt)
     {
         transform.position += forceStr * forceDir * dt;

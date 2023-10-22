@@ -16,7 +16,7 @@ public class PlayerAttack : PlayerComponent
     float cooldown;
     float currentCooldown;
     Coroutine updateCoroutine;
-    [SerializeField] PlayerSkillConfig config;
+    [SerializeField] SkillConfig config;
 
     public override void OnInits(Character control)
     {
@@ -27,7 +27,7 @@ public class PlayerAttack : PlayerComponent
         updateCoroutine = StartCoroutine(IUpdateCoolDown());
     }
 
-    public void SetConfig(PlayerSkillConfig config)
+    public void SetConfig(SkillConfig config)
     {
         this.config = config;
         cooldown = config.defaultValue.cooldown;

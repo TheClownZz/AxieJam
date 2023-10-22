@@ -189,4 +189,4 @@ MonoBehaviour:
     waveStat:
       hpRate: 1
       damageRate: 1
-    pf: {fileID: 3133285046682895124, guid: 6aa00139801504149b112ae5da403448, type: 3}
+    pf: {fileID: 8840170584174963856, guid: 0cd0ad77e42eee841aaefaf032cb6853, type: 3}

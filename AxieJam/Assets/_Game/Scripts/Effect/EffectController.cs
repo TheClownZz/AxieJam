@@ -40,13 +40,13 @@ public class StunEffect : EffectBase
     public override void Active(Character c)
     {
         base.Active(c);
-        c.DisableEnemy(true);
+       // c.DisableEnemy(true);
     }
 
     public override void Deactive(Character c)
     {
         base.Deactive(c);
-        c.DisableEnemy(false);
+      //  c.DisableEnemy(false);
     }
 }
 

@@ -9,7 +9,6 @@ public class Enemy : Character
     static float timePlayHit;
     const float delayPlayHit = 0.1f;
     const float timeDelayDespawn = 1;
-    [SerializeField] EnemyAsset asset;
     [HideInInspector] public WaveStat waveStat;
 
     Transform spawnFx;
@@ -68,6 +67,7 @@ public class Enemy : Character
         base.OnDead();
         foreach (var comp in componentList)
             comp.OnDead();
+
         if (Time.time - timePlayHit > delayPlayHit)
         {
             timePlayHit = Time.time;
@@ -77,8 +77,36 @@ public class Enemy : Character
         clearTween = DOVirtual.DelayedCall(timeDelayDespawn, () =>
         {
             Clear();
+
             GameManager.Instance.levelController.RemoveEnemy(this);
         });
+
+        float foodRandom = Random.value;
+        float potionRandom = Random.value;
+        EnemyAsset enemyAsset = GetComponent<SetupEnemyData>().asset;
+
+        if (foodRandom < enemyAsset.data.foodDropRate)
+        {
+            PlayerType type = (PlayerType)Random.Range(0, (int)PlayerType.None);
+            FoodConfig config = DataManager.Instance.GetAsset<FoodAsset>().GetConfig(type);
+            
+            Transform item = PoolManager.Instance.SpawnObject(PoolType.FoodItem);
+            item.transform.position = transform.position + (Vector3)Random.insideUnitCircle;
+            item.transform.SetParent(GameManager.Instance.objMap.transform.GetChild(1));
+            item.GetComponent<FoodItem>().SetConfig(config);
+        }
+
+        if (potionRandom < enemyAsset.data.potionDropRate)
+        {
+            PlayerType type = (PlayerType)Random.Range(0, (int)PlayerType.None);
+            PotionConfig config = DataManager.Instance.GetAsset<PotionAsset>().GetConfig(type);
+            
+            Transform item = PoolManager.Instance.SpawnObject(PoolType.PotionItem);
+            item.transform.position = transform.position + (Vector3)Random.insideUnitCircle;
+            item.transform.SetParent(GameManager.Instance.objMap.transform.GetChild(1));
+            item.GetComponent<PotionItem>().SetConfig(config);
+
+        }
     }
 
     public void Clear()
@@ -92,7 +120,7 @@ public class Enemy : Character
 
     public override void SetStat()
     {
-        var data = asset.data;
+        var data = GetComponent<SetupEnemyData>().asset.data;
         stat.SetHp(data.hp)
             .Setarmor(data.armor)
             .SetDamage(data.damage)

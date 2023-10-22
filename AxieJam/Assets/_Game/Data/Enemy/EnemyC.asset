@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eaa04639f8fef584eab814e24d64d2af, type: 3}
-  m_Name: Boss
+  m_Name: EnemyC
   m_EditorClassIdentifier: 
   data:
-    hp: 3000
-    damage: 10
-    moveSpeed: 1.2
+    hp: 50
+    damage: 15
+    moveSpeed: 1
     attackSpeed: -1
     armor: 0
+    foodDropRate: 0.2
+    potionDropRate: 0.1

@@ -5,7 +5,7 @@ using UnityEngine;
 public class GreenGun : PlayerGun
 {
     [SerializeField] HealingWard ward;
-    public override void ActiveSKill(PlayerSkillConfig config)
+    public override void ActiveSKill(SkillConfig config)
     {
         base.ActiveSKill(config);
 

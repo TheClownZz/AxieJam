@@ -42,7 +42,7 @@ public class PlayerGun : Weapon
         return b;
     }
 
-    public virtual void ActiveSKill(PlayerSkillConfig config)
+    public virtual void ActiveSKill(SkillConfig config)
     {
         isActive = true;
         cachedDamageRate = damageRate;

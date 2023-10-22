@@ -27,14 +27,14 @@ public enum SkillType
     ExtraDamage,
 }
 [System.Serializable]
-public class PlayerSkillProperties
+public class SkillProperties
 {
     public SkillType type;
     public float value;
 }
 [System.Serializable]
 
-public class PlayerSkillDefaultProperties
+public class SkillDefaultProperties
 {
     public int itemRequire = 15;
     public float duration = 3;
@@ -42,11 +42,11 @@ public class PlayerSkillDefaultProperties
 }
 
 [System.Serializable]
-public class PlayerSkillConfig
+public class SkillConfig
 {
-    public PlayerSkillDefaultProperties defaultValue;
+    public SkillDefaultProperties defaultValue;
     [TableList(ShowIndexLabels = true)]
-    public List<PlayerSkillProperties> propertieList;
+    public List<SkillProperties> propertieList;
     public float GetSkillValue(SkillType type, float defaultValue = 0)
     {
         var propertie = propertieList.Find(x => x.type == type);
@@ -86,14 +86,14 @@ public class PlayerConfig
     [TableList(ShowIndexLabels = true)]
     public List<PlayerLevelConfig> levelConfiglist;
     [TableList(ShowIndexLabels = true)]
-    public List<PlayerSkillConfig> skillConfiglist;
+    public List<SkillConfig> skillConfiglist;
 
     public PlayerLevelConfig GetLevelConfig(int lv)
     {
         return levelConfiglist[Mathf.Min(lv - 1, levelConfiglist.Count - 1)];
     }
 
-    public PlayerSkillConfig GetSkillConfig(int lv)
+    public SkillConfig GetSkillConfig(int lv)
     {
         return skillConfiglist[Mathf.Min(lv - 1, skillConfiglist.Count - 1)];
     }

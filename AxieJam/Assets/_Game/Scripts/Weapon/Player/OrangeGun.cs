@@ -12,7 +12,7 @@ public class OrangeGun : PlayerGun
     [SerializeField] List<Bullet> bulletList;
     [SerializeField] Transform circleBulletPrefab;
     Coroutine coroutine;
-    public override void ActiveSKill(PlayerSkillConfig config)
+    public override void ActiveSKill(SkillConfig config)
     {
         base.ActiveSKill(config);
 
