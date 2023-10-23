@@ -7,13 +7,14 @@ using static UnityEngine.GraphicsBuffer;
 public class EnemyTouch : EnemyComponent
 {
     const float damgeRate = 3;
-    const string touched = "attack/ranged/goo-destruct";
-
+    [SerializeField] string touched = "attack/ranged/goo-destruct";
+    [SerializeField] float spawnItemTime = 1f;
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         Player p = collision.GetComponent<Player>();
         if (p)
         {
+            control.GetComponent<Enemy>().currspawItemTime = spawnItemTime;
             control.spineController.SetDieAnim(touched);
             control.OnDead();
             AttackPlayer(p);

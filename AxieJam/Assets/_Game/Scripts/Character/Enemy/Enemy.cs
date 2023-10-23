@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using Sirenix.OdinInspector;
+using Unity.VisualScripting;
 
 public class Enemy : Character
 {
-    static float timePlayHit;
-    const float delayPlayHit = 0.1f;
+    [SerializeField] float spawItemTime = 1f;
     const float timeDelayDespawn = 1;
-    [HideInInspector] public WaveStat waveStat;
 
     Transform spawnFx;
     Tween spawnTween;
     Tween clearTween;
+    Tween itemTween;
+    [HideInInspector] public WaveStat waveStat;
+    [HideInInspector] public float currspawItemTime;
     public override void OnInit()
     {
         base.OnInit();
         SetState(CharacterState.Alive);
+        currspawItemTime = spawItemTime;
     }
     public void DelaySpawn(float time, Vector3 pos)
     {
@@ -68,21 +71,16 @@ public class Enemy : Character
         foreach (var comp in componentList)
             comp.OnDead();
 
-        //if (Time.time - timePlayHit > delayPlayHit)
-        //{
-        //    timePlayHit = Time.time;
-        //    AudioManager.Instance.PlayOnceShot(AudioType.EnemyDead);
-        //}
-
         clearTween = DOVirtual.DelayedCall(timeDelayDespawn, () =>
         {
             Clear();
-            SpawnItem();
             GameManager.Instance.levelController.RemoveEnemy(this);
         });
 
+        itemTween = DOVirtual.DelayedCall(currspawItemTime, SpawnItem);
 
-        
+
+
     }
 
     private void SpawnItem()
@@ -113,11 +111,13 @@ public class Enemy : Character
             item.GetComponent<PotionItem>().SetConfig(config);
 
         }
-    }    
+    }
     public void Clear()
     {
         if (clearTween != null)
             clearTween.Kill();
+        if (itemTween != null)
+            itemTween.Kill();
         foreach (var comp in componentList)
             comp.Clear();
         PoolManager.Instance.DespawnObject(transform);

@@ -340,6 +340,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control: {fileID: 0}
+  touched: action/die
+  spawnItemTime: 0.25
 --- !u!1 &8911379269055794558
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,9 +416,11 @@ MonoBehaviour:
   - {fileID: 5211071208203465144}
   - {fileID: 6465875842576101454}
   - {fileID: 4862453717967239322}
+  spawItemTime: 0.25
   waveStat:
     hpRate: 1
     damageRate: 1
+  currspawItemTime: 0
 --- !u!114 &9074905401213251309
 MonoBehaviour:
   m_ObjectHideFlags: 0
