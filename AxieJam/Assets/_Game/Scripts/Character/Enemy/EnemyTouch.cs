@@ -6,6 +6,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class EnemyTouch : EnemyComponent
 {
+    const float damgeRate = 3;
     const string touched = "attack/ranged/goo-destruct";
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
@@ -15,23 +16,26 @@ public class EnemyTouch : EnemyComponent
         {
             control.spineController.SetDieAnim(touched);
             control.OnDead();
-            float dodge = p.stat.dodge;
-
-            if (Random.value <= dodge)
-            {
-                SpawnText();
-                return;
-
-            }
-            float damage = control.stat.damage;
-            bool isCrit = Random.value <= control.stat.critRate;
-            if (isCrit)
-                damage += damage * control.stat.critDamage;
-            p.GetPCom<PlayerHp>().TakeDamage(damage, isCrit);
+            AttackPlayer(p);
         }
     }
 
+    protected void AttackPlayer(Player p)
+    {
+        float dodge = p.stat.dodge;
 
+        if (Random.value <= dodge)
+        {
+            SpawnText();
+            return;
+
+        }
+        float damage = control.stat.damage * damgeRate;
+        bool isCrit = Random.value <= control.stat.critRate;
+        if (isCrit)
+            damage += damage * control.stat.critDamage;
+        p.GetPCom<PlayerHp>().TakeDamage(damage, isCrit);
+    }
 
     protected void SpawnText()
     {
