@@ -15,7 +15,7 @@ MonoBehaviour:
   data:
     hp: 3000
     damage: 10
-    moveSpeed: 2.4
+    moveSpeed: 4
     attackSpeed: -1
     armor: 0
     foodDropRate: 0

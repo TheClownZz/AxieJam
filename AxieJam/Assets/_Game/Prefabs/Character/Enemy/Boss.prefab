@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 2593693923264475315}
   - component: {fileID: 7500814093568494133}
   - component: {fileID: 724379711993735569}
-  - component: {fileID: 8088282507422291023}
   m_Layer: 8
   m_Name: Boss
   m_TagString: Untagged
@@ -117,16 +116,16 @@ MonoBehaviour:
   - {fileID: 6496105134956954400}
   - {fileID: 2593693923264475315}
   - {fileID: 724379711993735569}
-  - {fileID: 0}
   waveStat:
     hpRate: 1
     damageRate: 1
-  atkAnimList:
-  - attack/ranged/cast-high
-  - attack/melee/jump-scatch-attack
-  atkTimeList:
-  - 0.4
-  - 0.7
+  bossSkillInfoList:
+  - controller: {fileID: 3114130508093879891}
+    animName: attack/melee/Jump-scratch-attack
+    attackTime: 0.7
+  - controller: {fileID: 7156181891859124827}
+    animName: attack/ranged/cast-high
+    attackTime: 0.4
 --- !u!114 &4663038807184831406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,23 +224,94 @@ MonoBehaviour:
   moveEvent: jump
   jumpTime: 0.35
   isJump: 0
---- !u!114 &8088282507422291023
+--- !u!1 &526643085497045172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3068841062967767853}
+  - component: {fileID: 719442602245962375}
+  - component: {fileID: 3114130508093879891}
+  m_Layer: 10
+  m_Name: BossJump
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &3068841062967767853
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526643085497045172}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.24, y: -0.3, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 3936449474071518496}
+  m_Father: {fileID: 243863109198179766}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &719442602245962375
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526643085497045172}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
+--- !u!114 &3114130508093879891
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 501980575361081423}
+  m_GameObject: {fileID: 526643085497045172}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f744a9fcf71206e48b2b6af8a3290649, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ec172cde1b72054bbc2f441b91af6cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   control: {fileID: 0}
-  coolDown: 0
   target: {fileID: 0}
-  gun: {fileID: 8342530175396194733}
-  skillIndex: 0
+  skillIndex: 1
+  jumpPower: 2.5
+  jumptime: 0.6
+  attackAoe: 2
+  fxSlam: {fileID: 4272155943399309086}
 --- !u!1 &2018800196224680825
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,6 +376,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1628631332440846147}
+  - {fileID: 3068841062967767853}
   m_Father: {fileID: 3581130864806128365}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2900799839229604706
@@ -340,13 +411,14 @@ GameObject:
   - component: {fileID: 1628631332440846147}
   - component: {fileID: 2005808103889279792}
   - component: {fileID: 8342530175396194733}
+  - component: {fileID: 7156181891859124827}
   m_Layer: 10
   m_Name: BossGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1628631332440846147
 Transform:
   m_ObjectHideFlags: 0
@@ -418,6 +490,22 @@ MonoBehaviour:
   bulletSprite: {fileID: 21300000, guid: 576cc4d08297fa549a3f96a16f972675, type: 3}
   skillIndex: 0
   numberBullet: 1
+--- !u!114 &7156181891859124827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4447802915667506931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f744a9fcf71206e48b2b6af8a3290649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  control: {fileID: 0}
+  target: {fileID: 0}
+  gun: {fileID: 8342530175396194733}
+  skillIndex: 0
 --- !u!1 &6559631164190530980
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,7 +625,7 @@ MonoBehaviour:
     materialsInsideMask: []
     materialsOutsideMask: []
   disableRenderingOnOverride: 1
-  _animationName: 
+  _animationName: attack/melee/Jump-scratch-attack
   loop: 1
   timeScale: 1
 --- !u!114 &8506085741951476735
@@ -561,3 +649,94 @@ MonoBehaviour:
   Hit: defense/hit-by-normal
   Attack: attack/ranged/cast-high
   attackTime: 0.4
+--- !u!1001 &993827168617250942
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3068841062967767853}
+    m_Modifications:
+    - target: {fileID: 3928114937774473056, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2222222
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2222222
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2222222
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.431
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.044
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9646545
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.25847846
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.013274874
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.049542487
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5223227330238410271, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
+      propertyPath: m_Name
+      value: BossSlam
+      objectReference: {fileID: 0}
+    - target: {fileID: 5223227330238410271, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
+--- !u!4 &3936449474071518496 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
+  m_PrefabInstance: {fileID: 993827168617250942}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4272155943399309086 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3928114937774473056, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
+  m_PrefabInstance: {fileID: 993827168617250942}
+  m_PrefabAsset: {fileID: 0}

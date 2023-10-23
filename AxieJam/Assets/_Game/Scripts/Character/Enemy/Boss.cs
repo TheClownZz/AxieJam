@@ -2,25 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class BossSkillInfo
+{
+    public EnemyAttack controller;
+    public string animName;
+    public float attackTime;
+}
 public class Boss : Enemy
 {
-    [SerializeField] List<string> atkAnimList;
-    [SerializeField] List<float> atkTimeList;
+    [SerializeField] List<BossSkillInfo> bossSkillInfoList;
 
-    int skillIndex = 0;
+    int skillIndex;
     public override void OnInit()
     {
         base.OnInit();
-        ((EnemySpineController)spineController).SetAttack(atkAnimList[skillIndex], atkTimeList[skillIndex]);
+        skillIndex = 0;
+        ((EnemySpineController)spineController).SetAttack(bossSkillInfoList[skillIndex].animName, bossSkillInfoList[skillIndex].attackTime);
+        foreach(var skill in bossSkillInfoList)
+        {
+            componentList.Remove(skill.controller);
+        }
+        componentList.Add(bossSkillInfoList[skillIndex].controller);
+        bossSkillInfoList[skillIndex].controller.gameObject.SetActive(true);
+        bossSkillInfoList[skillIndex].controller.OnInits(this);
     }
     public override float TakeDamage(float damage, bool isCrit)
     {
         EnemyHp eHp = GetECom<EnemyHp>();
         float hpLost = eHp.TakeDamage(damage, isCrit);
-        if (skillIndex < atkAnimList.Count - 1 && eHp.currentHp < 0.5f * stat.hp)
+        if (skillIndex < bossSkillInfoList.Count - 1 && eHp.currentHp < 0.5f * stat.hp)
         {
+            componentList.Remove(bossSkillInfoList[skillIndex].controller);
+            bossSkillInfoList[skillIndex].controller.gameObject.SetActive(false);
             skillIndex += 1;
-            ((EnemySpineController)spineController).SetAttack(atkAnimList[skillIndex], atkTimeList[skillIndex]);
+            ((EnemySpineController)spineController).SetAttack(bossSkillInfoList[skillIndex].animName, bossSkillInfoList[skillIndex].attackTime);
+            componentList.Add(bossSkillInfoList[skillIndex].controller);
+            bossSkillInfoList[skillIndex].controller.OnInits(this);
+            bossSkillInfoList[skillIndex].controller.gameObject.SetActive(true);
+
         }
         return hpLost;
     }

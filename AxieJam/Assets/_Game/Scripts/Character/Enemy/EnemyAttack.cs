@@ -68,13 +68,13 @@ public class EnemyAttack : EnemyComponent
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (!target)
             SetTarget(collision.GetComponent<Player>());
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    protected virtual void OnTriggerExit2D(Collider2D collision)
     {
         if (target && target == collision.GetComponent<Player>())
         {
@@ -84,7 +84,7 @@ public class EnemyAttack : EnemyComponent
 
 
 
-    private void SpawnText()
+    protected void SpawnText()
     {
         float height = GameManager.Instance.gameConfig.textHeight;
         var dd = PoolManager.Instance.SpawnObject(PoolType.TextDisplay).GetComponent<TextDisplay>();

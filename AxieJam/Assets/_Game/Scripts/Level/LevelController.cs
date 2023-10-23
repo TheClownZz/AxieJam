@@ -33,7 +33,7 @@ public class LevelController : MonoBehaviour
     {
         waveIndex = 0;
         waveConfig = asset.GetConfig(waveIndex);
-        //SpawnBoss();
+        SpawnWave();
         UIManager.Instance.GetScreen<ScreenGame>().UpdateWave(waveIndex + 1, asset.dataList.Count);
 
     }
