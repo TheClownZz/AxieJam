@@ -5,17 +5,21 @@ using UnityEngine;
 
 public class PlayerAttack : PlayerComponent
 {
+    const float attackRate = 0.15f;
+
+    float attackTime;
+    float cooldown;
+    float currentCooldown;
     float updateTime = 0.1f;
     float spawnCooldown = 10;
-    [SerializeField] PlayerGun weapon;
-    [SerializeField] Setcursor setcursor;
+
+
 
     ItemAvt item;
     Camera mainCamera;
     WaitForSeconds delay;
-    float cooldown;
-    float currentCooldown;
     Coroutine updateCoroutine;
+    [SerializeField] PlayerGun weapon;
     [SerializeField] SkillConfig config;
 
     public override void OnInits(Character control)
@@ -62,13 +66,13 @@ public class PlayerAttack : PlayerComponent
     public override void OnUpdate(float dt)
     {
         Facing();
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) ||
+            (Input.GetMouseButton(0) && Time.time - attackTime > attackRate))
         {
+            attackTime = Time.time;
             weapon.OnAttack();
         }
-        else
-        {
-        }
+
         if (Input.GetKeyDown(KeyCode.F) && currentCooldown <= 0)
         {
             weapon.ActiveSKill(config);

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Master : MonoSingleton<Master>
 {
     #region CONST
@@ -14,8 +13,8 @@ public class Master : MonoSingleton<Master>
 
     #region PARAMS
     public bool isMasterReady;
-    #endregion
 
+    #endregion
     #region PROPERTIES
     #endregion
 
