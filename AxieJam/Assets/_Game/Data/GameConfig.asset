@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a95c4c7e2e5ec4f923c9ef2e965488, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: 
-  forceBackTime: 0.5
+  forceBackTime: 0.2
   forceDrag: 2
-  speedFactor: 0.6
   textHeight: 0.5
   iconHeight: 0.5
   spawnRadius: 6
   critColor: {r: 1, g: 0.47418147, b: 0.033018887, a: 1}
+  forceValue: 3

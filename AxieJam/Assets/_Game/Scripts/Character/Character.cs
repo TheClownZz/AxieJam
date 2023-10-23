@@ -179,7 +179,6 @@ public class Character : MonoBehaviour
 
     public virtual void KnockBack(Vector2 dir, float force)
     {
-        return; // not use
         if (isKnockBack || force <=0)
             return;
         isKnockBack = true;
