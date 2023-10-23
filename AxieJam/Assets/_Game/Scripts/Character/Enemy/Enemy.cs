@@ -89,9 +89,9 @@ public class Enemy : Character
         {
             PlayerType type = (PlayerType)Random.Range(0, (int)PlayerType.None);
             FoodConfig config = DataManager.Instance.GetAsset<FoodAsset>().GetConfig(type);
-            
+
             Transform item = PoolManager.Instance.SpawnObject(PoolType.FoodItem);
-            item.transform.position = transform.position + (Vector3)Random.insideUnitCircle;
+            item.transform.position = transform.position + (Vector3)Random.insideUnitCircle * 0.5f;
             item.transform.SetParent(GameManager.Instance.objMap.transform.GetChild(1));
             item.GetComponent<FoodItem>().SetConfig(config);
         }
@@ -100,9 +100,9 @@ public class Enemy : Character
         {
             PlayerType type = (PlayerType)Random.Range(0, (int)PlayerType.None);
             PotionConfig config = DataManager.Instance.GetAsset<PotionAsset>().GetConfig(type);
-            
+
             Transform item = PoolManager.Instance.SpawnObject(PoolType.PotionItem);
-            item.transform.position = transform.position + (Vector3)Random.insideUnitCircle;
+            item.transform.position = transform.position + (Vector3)Random.insideUnitCircle * 0.5f;
             item.transform.SetParent(GameManager.Instance.objMap.transform.GetChild(1));
             item.GetComponent<PotionItem>().SetConfig(config);
 
