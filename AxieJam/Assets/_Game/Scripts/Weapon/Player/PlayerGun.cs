@@ -9,6 +9,7 @@ public class PlayerGun : Weapon
     [SerializeField] protected Sprite bulletSprite;
     [SerializeField] protected AudioClip hitClip;
     [SerializeField] protected float force = 300;
+    [SerializeField] protected Color color;
 
     CameraShake cameraShake;
 
@@ -39,6 +40,7 @@ public class PlayerGun : Weapon
         b.SetSprite(bulletSprite);
         b.SetHitClip(hitClip);
         b.SetDamageRate(damageRate);
+        b.SetColor(color);
         return b;
     }
 

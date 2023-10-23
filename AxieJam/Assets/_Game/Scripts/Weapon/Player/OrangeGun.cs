@@ -37,6 +37,7 @@ public class OrangeGun : PlayerGun
                 b.SetSprite(bulletSprite);
                 b.SetHitClip(hitClip);
                 b.SetDamageRate(damageRate);
+                b.SetColor(color);
                 bulletList.Add(b);
             }
         }
@@ -56,6 +57,7 @@ public class OrangeGun : PlayerGun
                 b.SetSprite(bulletSprite);
                 b.SetHitClip(hitClip);
                 b.SetDamageRate(extraDamgeRate);
+                b.SetColor(color);
                 bulletList.Add(b);
             }
         }

@@ -120,5 +120,9 @@ public class Bullet : MonoBehaviour, ICreateDamage
         CreateDamage(e);
     }
 
+    public virtual void SetColor(Color color)
+    {
+
+    }
 
 }

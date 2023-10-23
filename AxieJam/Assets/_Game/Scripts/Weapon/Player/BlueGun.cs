@@ -21,6 +21,7 @@ public class BlueGun : PlayerGun
             b.OnInits(this, butlletSpeed, -b.transform.right);
             b.SetSprite(bulletSprite);
             b.SetHitClip(hitClip);
+            b.SetColor(color);
             b.SetDamageRate(damageRate);
 
         }

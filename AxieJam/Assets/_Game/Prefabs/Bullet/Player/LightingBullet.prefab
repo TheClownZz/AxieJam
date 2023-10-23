@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5061255608990394047}
   - component: {fileID: 5428996259317369374}
-  - component: {fileID: 2348296573303739742}
   - component: {fileID: 5281557314086171214}
+  - component: {fileID: 6161039371015719557}
   m_Layer: 9
-  m_Name: BlueBullet
+  m_Name: LightingBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,21 +71,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.125
---- !u!114 &2348296573303739742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1472598788504646041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe63b084a77ffa94f958a322b04412bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitClip: {fileID: 0}
-  bulletRender: {fileID: 269696961282190388}
-  weapon: {fileID: 0}
 --- !u!50 &5281557314086171214
 Rigidbody2D:
   serializedVersion: 4
@@ -113,6 +98,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6161039371015719557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472598788504646041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0660731530dbcd428875a4a363e38f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitClip: {fileID: 0}
+  bulletRender: {fileID: 269696961282190388}
+  weapon: {fileID: 0}
+  particleList:
+  - {fileID: 2235299763593608044}
+  trailparticleList:
+  - {fileID: 2235299763593586342}
 --- !u!1 &2211749122086857404
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,5 +316,10 @@ ParticleSystem:
 --- !u!198 &2235299763593586342 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 19862864, guid: 153ff601b9ac43240921bf65f009e220, type: 3}
+  m_PrefabInstance: {fileID: 2235299763579630582}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2235299763593608044 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19875994, guid: 153ff601b9ac43240921bf65f009e220, type: 3}
   m_PrefabInstance: {fileID: 2235299763579630582}
   m_PrefabAsset: {fileID: 0}
