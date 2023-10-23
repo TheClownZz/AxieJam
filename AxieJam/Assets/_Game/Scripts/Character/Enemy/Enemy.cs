@@ -77,14 +77,20 @@ public class Enemy : Character
         clearTween = DOVirtual.DelayedCall(timeDelayDespawn, () =>
         {
             Clear();
-
+            SpawnItem();
             GameManager.Instance.levelController.RemoveEnemy(this);
         });
+
+
+        
+    }
+
+    private void SpawnItem()
+    {
 
         float foodRandom = Random.value;
         float potionRandom = Random.value;
         EnemyAsset enemyAsset = GetComponent<SetupEnemyData>().asset;
-
         if (foodRandom < enemyAsset.data.foodDropRate)
         {
             PlayerType type = (PlayerType)Random.Range(0, (int)PlayerType.None);
@@ -107,8 +113,7 @@ public class Enemy : Character
             item.GetComponent<PotionItem>().SetConfig(config);
 
         }
-    }
-
+    }    
     public void Clear()
     {
         if (clearTween != null)
