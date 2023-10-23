@@ -83,7 +83,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 9
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &4939214693512892344
 MonoBehaviour:
@@ -137,11 +137,11 @@ MonoBehaviour:
   runScale: 1
   Run: action/move-forward
   Idle: action/idle/normal
-  Die: action/die
+  Die: attack/ranged/goo-destruct
   meshRender: {fileID: 122133757037643575}
   anim: {fileID: 4939214693512892344}
   Hit: defense/hit-by-normal
-  Attack: die
+  Attack: action/die
   attackTime: 1
 --- !u!1 &3142598655126586280
 GameObject:
@@ -152,8 +152,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8015173986889032469}
-  - component: {fileID: 1166197220741666335}
   - component: {fileID: 4296611049263242454}
+  - component: {fileID: 1849572806768552419}
   m_Layer: 10
   m_Name: EnemyAttack
   m_TagString: Untagged
@@ -176,20 +176,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8911379269055794545}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1166197220741666335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3142598655126586280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c7862c20e47220488c71941533e6b78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  control: {fileID: 0}
-  target: {fileID: 0}
 --- !u!58 &4296611049263242454
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -225,6 +211,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.25713706}
   serializedVersion: 2
   m_Radius: 0.44286287
+--- !u!114 &1849572806768552419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3142598655126586280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c968ae0aa5f94d64ca41b879657b0da8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  control: {fileID: 0}
 --- !u!1 &6947929414499229399
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +327,7 @@ MonoBehaviour:
   - {fileID: 8163886571578138403}
   - {fileID: 9074905401213251309}
   - {fileID: -5443143430796421240}
-  - {fileID: 1166197220741666335}
+  - {fileID: 1849572806768552419}
   waveStat:
     hpRate: 1
     damageRate: 1
@@ -409,7 +408,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.75
 --- !u!114 &6802532825363761386
 MonoBehaviour:
   m_ObjectHideFlags: 0

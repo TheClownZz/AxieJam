@@ -53,7 +53,7 @@ MonoBehaviour:
   butlletSpeed: 22
   bulletSprite: {fileID: 21300000, guid: a401f9a842b071f45a15885001c3341e, type: 3}
   hitClip: {fileID: 0}
-  force: 300
+  force: 500
 --- !u!1 &2978818438145362108
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +221,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &7190225595301632731
 MonoBehaviour:
@@ -492,6 +492,12 @@ MonoBehaviour:
   control: {fileID: 0}
   weapon: {fileID: 8574318380821813124}
   setcursor: {fileID: 3338595176116409183}
+  config:
+    defaultValue:
+      itemRequire: 15
+      duration: 3
+      cooldown: 20
+    propertieList: []
 --- !u!114 &3338595176116409183
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,14 +3,15 @@ using Spine.Unity;
 
 public class SpineController : MonoBehaviour
 {
-    [SerializeField] float runScale = 1.5f;
-    [SerializeField] string Run = "run";
-    [SerializeField] string Idle = "idle";
-    [SerializeField] string Die = "die";
+    [SerializeField] protected float runScale = 1.5f;
+    [SerializeField] protected string Run = "run";
+    [SerializeField] protected string Idle = "idle";
+    [SerializeField] protected string Die = "die";
     [SerializeField] protected MeshRenderer meshRender;
     [SerializeField] protected SkeletonAnimation anim;
 
     protected Character control;
+    protected string dieAnim;
 
 #if UNITY_EDITOR
     protected virtual void OnValidate()
@@ -24,6 +25,7 @@ public class SpineController : MonoBehaviour
     {
         this.control = control;
         SetTimeScale(1);
+        dieAnim = Die;
 
     }
 
@@ -46,7 +48,7 @@ public class SpineController : MonoBehaviour
                 break;
             case CharacterState.Die:
                 OnDead();
-                anim.state.SetAnimation(0, Die, false);
+                anim.state.SetAnimation(0, dieAnim, false);
                 SetTimeScale(1);
 
                 break;
@@ -78,5 +80,10 @@ public class SpineController : MonoBehaviour
     public SkeletonDataAsset GetAsset()
     {
         return anim.skeletonDataAsset;
+    }
+
+    public void SetDieAnim(string anim)
+    {
+        dieAnim = anim;
     }
 }

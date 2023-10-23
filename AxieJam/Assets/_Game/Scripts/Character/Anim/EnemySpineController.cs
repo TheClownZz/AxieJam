@@ -7,11 +7,11 @@ using UnityEngine;
 
 public class EnemySpineController : SpineController
 {
-
     [SerializeField] string Hit = "die";
     [SerializeField] string Attack = "die";
     [SerializeField] float attackTime = 1f;
     Tween attackTween;
+
     public override void OnInits(Character control)
     {
         base.OnInits(control);

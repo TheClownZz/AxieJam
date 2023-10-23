@@ -4,8 +4,8 @@ using UnityEngine;
 using DG.Tweening;
 public class EnemyMove : EnemyComponent
 {
-    const float minDistance = 0.15f;
-    const float runDistance = 0.35f;
+    const float minDistance = 0.35f;
+    const float runDistance = 0.5f;
     [SerializeField] protected float baseSpeed;
     [SerializeField] protected float currentSpeed;
     protected Vector3 direction;

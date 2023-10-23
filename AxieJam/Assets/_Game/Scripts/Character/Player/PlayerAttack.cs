@@ -64,12 +64,10 @@ public class PlayerAttack : PlayerComponent
         Facing();
         if (Input.GetMouseButtonDown(0))
         {
-         //   setcursor.SetAim();
             weapon.OnAttack();
         }
         else
         {
-          //  setcursor.SetNormal();
         }
         if (Input.GetKeyDown(KeyCode.F) && currentCooldown <= 0)
         {

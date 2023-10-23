@@ -15,7 +15,6 @@ public class FoodItem : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.LogError("OnTriggerEnter2D");
 
         Player player = collision.GetComponent<Player>();
         if (player)
