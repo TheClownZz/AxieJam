@@ -72,7 +72,8 @@ public class OrangeGun : PlayerGun
     public override void DeAvtiveSkill()
     {
         base.DeAvtiveSkill();
-        StopCoroutine(coroutine);
+        if (coroutine != null)
+            StopCoroutine(coroutine);
         foreach (Transform circle in circleList)
         {
             circle.DOScale(Vector3.zero, animTime).OnComplete(() =>
