@@ -555,6 +555,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8075246613483648049}
     m_Modifications:
+    - target: {fileID: 112746, guid: 153ff601b9ac43240921bf65f009e220, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 163948, guid: 153ff601b9ac43240921bf65f009e220, type: 3}
       propertyPath: m_Name
       value: LightningMissileBlue
