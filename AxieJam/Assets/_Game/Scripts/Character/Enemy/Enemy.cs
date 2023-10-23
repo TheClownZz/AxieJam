@@ -68,11 +68,11 @@ public class Enemy : Character
         foreach (var comp in componentList)
             comp.OnDead();
 
-        if (Time.time - timePlayHit > delayPlayHit)
-        {
-            timePlayHit = Time.time;
-            AudioManager.Instance.PlayOnceShot(AudioType.EnemyDead);
-        }
+        //if (Time.time - timePlayHit > delayPlayHit)
+        //{
+        //    timePlayHit = Time.time;
+        //    AudioManager.Instance.PlayOnceShot(AudioType.EnemyDead);
+        //}
 
         clearTween = DOVirtual.DelayedCall(timeDelayDespawn, () =>
         {
