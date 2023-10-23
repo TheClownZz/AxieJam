@@ -62,14 +62,14 @@ public class PlayerAttack : PlayerComponent
     public override void OnUpdate(float dt)
     {
         Facing();
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            setcursor.SetAim();
-            weapon.OnUpdate(dt);
+         //   setcursor.SetAim();
+            weapon.OnAttack();
         }
         else
         {
-            setcursor.SetNormal();
+          //  setcursor.SetNormal();
         }
         if (Input.GetKeyDown(KeyCode.F) && currentCooldown <= 0)
         {
