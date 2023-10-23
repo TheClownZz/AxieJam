@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6037f1d68bc50d4aa2122e0c5f3d44c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runScale: 1
+  runScale: 1.25
   Run: action/move-forward
   Idle: action/idle/normal
   Die: action/die

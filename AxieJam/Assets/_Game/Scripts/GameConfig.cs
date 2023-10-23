@@ -13,6 +13,8 @@ public class GameConfig : ScriptableObject
     public float forceBackTime = 0.5f;
     [SerializeField, Range(0, 5)]
     public float forceDrag = 1f;
+    public float forceValue = 50;
+
     [Space(5)]
     public float textHeight = 0.5f;
     public float iconHeight = 0.5f;
@@ -21,5 +23,6 @@ public class GameConfig : ScriptableObject
     [Space(5)]
     public Color critColor;
 
-    public float forceValue = 50;
+    public float normalAnimSacle = 1.5f;
+    public float deadAnimScale = 2f;
 }

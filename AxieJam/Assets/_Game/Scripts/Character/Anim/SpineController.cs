@@ -1,5 +1,6 @@
 using UnityEngine;
 using Spine.Unity;
+using Unity.VisualScripting.FullSerializer;
 
 public class SpineController : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class SpineController : MonoBehaviour
     protected Character control;
     protected string dieAnim;
 
+    protected GameConfig gameConfig;
 #if UNITY_EDITOR
     protected virtual void OnValidate()
     {
@@ -26,7 +28,7 @@ public class SpineController : MonoBehaviour
         this.control = control;
         SetTimeScale(1);
         dieAnim = Die;
-
+        gameConfig = GameManager.Instance.gameConfig;
     }
 
     public virtual void OnDead()
@@ -44,12 +46,12 @@ public class SpineController : MonoBehaviour
             case CharacterState.Alive:
             case CharacterState.Idle:
                 anim.state.SetAnimation(0, Idle, true);
-                SetTimeScale(1);
+                SetTimeScale(gameConfig.normalAnimSacle);
                 break;
             case CharacterState.Die:
                 OnDead();
                 anim.state.SetAnimation(0, dieAnim, false);
-                SetTimeScale(1);
+                SetTimeScale(gameConfig.deadAnimScale);
 
                 break;
             case CharacterState.Run:

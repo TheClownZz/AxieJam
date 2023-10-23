@@ -58,10 +58,11 @@ public class EnemySpineController : SpineController
         {
             case CharacterState.Hit:
                 anim.state.SetAnimation(0, Hit, false);
-                SetTimeScale(1);
+                SetTimeScale(gameConfig.normalAnimSacle);
                 break;
             case CharacterState.Attack:
                 anim.state.SetAnimation(0, Attack, false);
+                SetTimeScale(1f);
                 break;
             default:
                 break;
