@@ -19,6 +19,7 @@ public class PotionItem : MonoBehaviour
         if (player)
         {
             DataManager.Instance.GetData<DataUser>().UpdatePotionItem(config.type, 1);
+            AudioManager.Instance.PlayOnceShot(AudioType.Item);
             PoolManager.Instance.DespawnObject(transform);
         }
     }

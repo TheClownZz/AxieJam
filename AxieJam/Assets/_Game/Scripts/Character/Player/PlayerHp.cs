@@ -125,7 +125,7 @@ public class PlayerHp : PlayerComponent, ITakeDamage
         currentHp = hp;
         currentHp = Mathf.Clamp(currentHp, 0, maxHp);
         float percen = currentHp / maxHp;
-        itemAvt.UpdateHealth(percen);
+        itemAvt.UpdateHealth((int)currentHp, (int)maxHp, percen);
     }
 
     public void Regen(float hp)
@@ -144,7 +144,7 @@ public class PlayerHp : PlayerComponent, ITakeDamage
         itemAvt = item;
         currentHp = Mathf.Clamp(currentHp, 0, maxHp);
         float percen = currentHp / maxHp;
-        itemAvt.UpdateHealth(percen, 0);
+        itemAvt.UpdateHealth((int)currentHp, (int)maxHp, percen, 0);
     }
 }
 

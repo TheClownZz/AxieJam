@@ -33,6 +33,7 @@ public class Master : MonoSingleton<Master>
 
     private IEnumerator I_Initiate()
     {
+        Screen.fullScreen = false;
         isMasterReady = false;
 
         yield return new WaitUntil(() => DataManager.Instance != null);

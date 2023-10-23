@@ -26,6 +26,6 @@ public class PopupGameOver : PopupBase
     public override void OnShow(float fadeTime = 0)
     {
         base.OnShow(fadeTime);
-        AudioManager.Instance.PlayOnceShot(AudioType.LOSE);
+        AudioManager.Instance.PlayOnceShot(AudioType.GAME_OVER);
     }
 }

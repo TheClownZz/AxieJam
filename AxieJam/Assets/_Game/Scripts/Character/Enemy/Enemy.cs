@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 
 public class Enemy : Character
 {
+    [SerializeField] AudioClip deadClip;
     [SerializeField] float spawItemTime = 1f;
     const float timeDelayDespawn = 1;
 
@@ -14,6 +15,8 @@ public class Enemy : Character
     Tween spawnTween;
     Tween clearTween;
     Tween itemTween;
+
+    
     [HideInInspector] public WaveStat waveStat;
     [HideInInspector] public float currspawItemTime;
     public override void OnInit()
@@ -85,7 +88,10 @@ public class Enemy : Character
 
     private void SpawnItem()
     {
-
+        if(deadClip)
+        {
+            AudioManager.Instance.PlaySound(deadClip);
+        }
         float foodRandom = Random.value;
         float potionRandom = Random.value;
         EnemyAsset enemyAsset = GetComponent<SetupEnemyData>().asset;

@@ -124,6 +124,7 @@ public class GameManager : MonoSingleton<GameManager>
         currentPlayer.OnLose();
         levelController.OnLose();
         SetGameState(GameState.Ready);
+        AudioManager.Instance.PlayOnceShot(AudioType.GAME_OVER);
         UIManager.Instance.ShowPopup<PopupGameOver>().SetAnim(currentPlayer.spineController.GetAsset());
     }
 

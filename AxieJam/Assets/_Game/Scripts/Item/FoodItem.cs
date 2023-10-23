@@ -20,6 +20,7 @@ public class FoodItem : MonoBehaviour
         if (player)
         {
             DataManager.Instance.GetData<DataUser>().UpdateFoodItem(config.type, 1);
+            AudioManager.Instance.PlayOnceShot(AudioType.Item);
             PoolManager.Instance.DespawnObject(transform);
         }
     }

@@ -135,7 +135,6 @@ public class AudioManager : MonoSingleton<AudioManager>
 
     public void PlaySound(AudioClip clip)
     {
-        Debug.LogError("PlaySound:" + clip.ToString());
         if (!isInit)
             return;
 

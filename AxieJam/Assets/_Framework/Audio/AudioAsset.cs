@@ -4,16 +4,11 @@ using UnityEngine;
 public enum AudioType
 {
     BG_MUSIC = 1,
-    LOSE,
+    GAME_OVER,
     WIN,
     CLICK,
-    ADS,
     Hit,
-    CountDown,
-    EnemyDead,
-    EndTime,
-    CoolDown,
-
+    Item,
 }
 
 [CreateAssetMenu]

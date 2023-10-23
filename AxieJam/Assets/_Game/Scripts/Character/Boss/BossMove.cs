@@ -35,4 +35,9 @@ public class BossMove : EnemyShootMove
         if (!isJump) return;
         base.UpdatePostion(dt);
     }
+
+    protected override void Force(float dt)
+    {
+       
+    }
 }

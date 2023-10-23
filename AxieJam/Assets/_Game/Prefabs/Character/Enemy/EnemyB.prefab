@@ -416,6 +416,7 @@ MonoBehaviour:
   - {fileID: 5211071208203465144}
   - {fileID: 6465875842576101454}
   - {fileID: 4862453717967239322}
+  deadClip: {fileID: 8300000, guid: 6f1be2915b1d1ed488800be78f7e97c8, type: 3}
   spawItemTime: 0.25
   waveStat:
     hpRate: 1

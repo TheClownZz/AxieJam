@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control: {fileID: 0}
+  touched: attack/ranged/goo-destruct
   spawnItemTime: 1
 --- !u!1 &6947929414499229399
 GameObject:
@@ -329,6 +330,7 @@ MonoBehaviour:
   - {fileID: 9074905401213251309}
   - {fileID: -5443143430796421240}
   - {fileID: 1849572806768552419}
+  deadClip: {fileID: 8300000, guid: 6f1be2915b1d1ed488800be78f7e97c8, type: 3}
   spawItemTime: 0.5
   waveStat:
     hpRate: 1

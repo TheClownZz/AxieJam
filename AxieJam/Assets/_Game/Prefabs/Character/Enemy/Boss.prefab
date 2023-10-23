@@ -116,9 +116,12 @@ MonoBehaviour:
   - {fileID: 6496105134956954400}
   - {fileID: 2593693923264475315}
   - {fileID: 724379711993735569}
+  - {fileID: 4628347129519685165}
+  spawItemTime: 1
   waveStat:
     hpRate: 1
     damageRate: 1
+  currspawItemTime: 0
   bossSkillInfoList:
   - controller: {fileID: 3114130508093879891}
     animName: attack/melee/Jump-scratch-attack
@@ -159,9 +162,11 @@ MonoBehaviour:
   - {fileID: 2593693923264475315}
   - {fileID: 0}
   - {fileID: 0}
+  spawItemTime: 1
   waveStat:
     hpRate: 1
     damageRate: 1
+  currspawItemTime: 0
 --- !u!114 &6496105134956954400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,7 +327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4327549405067502360}
   - component: {fileID: 7318981827590799483}
-  - component: {fileID: 4368942314191230538}
+  - component: {fileID: 4628347129519685165}
   m_Layer: 10
   m_Name: BossTouch
   m_TagString: Untagged
@@ -390,7 +395,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.1557064, y: 1.8547698}
   m_EdgeRadius: 0
---- !u!114 &4368942314191230538
+--- !u!114 &4628347129519685165
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -399,10 +404,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 557055957288851807}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c968ae0aa5f94d64ca41b879657b0da8, type: 3}
+  m_Script: {fileID: 11500000, guid: dd48526d97f9f9e40b1601cb8206c8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   control: {fileID: 0}
+  touched: attack/ranged/goo-destruct
+  spawnItemTime: 1
 --- !u!1 &2018800196224680825
 GameObject:
   m_ObjectHideFlags: 0

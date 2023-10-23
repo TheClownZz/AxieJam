@@ -40,6 +40,8 @@ public class ScreenHome : ScreenBase
             team.Add(item.playerType);
         }
         DataManager.Instance.GetData<DataUser>().SetTeam(team);
+        AudioManager.Instance.PlayOnceShot(AudioType.CLICK);
+
     }
 
     private void SetupSelectedList()
