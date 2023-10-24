@@ -117,18 +117,21 @@ MonoBehaviour:
   - {fileID: 2593693923264475315}
   - {fileID: 724379711993735569}
   - {fileID: 4628347129519685165}
+  deadClip: {fileID: 0}
   spawItemTime: 1
   waveStat:
     hpRate: 1
     damageRate: 1
   currspawItemTime: 0
   bossSkillInfoList:
-  - controller: {fileID: 3114130508093879891}
-    animName: attack/melee/Jump-scratch-attack
-    attackTime: 0.7
-  - controller: {fileID: 7156181891859124827}
+  - hpRate: 0.5
+    controller: {fileID: 7156181891859124827}
     animName: attack/ranged/cast-high
     attackTime: 0.4
+  - hpRate: 0
+    controller: {fileID: 3114130508093879891}
+    animName: attack/melee/Jump-scratch-attack
+    attackTime: 0.7
 --- !u!114 &4663038807184831406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,6 +165,7 @@ MonoBehaviour:
   - {fileID: 2593693923264475315}
   - {fileID: 0}
   - {fileID: 0}
+  deadClip: {fileID: 0}
   spawItemTime: 1
   waveStat:
     hpRate: 1
@@ -410,6 +414,7 @@ MonoBehaviour:
   control: {fileID: 0}
   touched: attack/ranged/goo-destruct
   spawnItemTime: 1
+  attackRate: 1.5
 --- !u!1 &2018800196224680825
 GameObject:
   m_ObjectHideFlags: 0

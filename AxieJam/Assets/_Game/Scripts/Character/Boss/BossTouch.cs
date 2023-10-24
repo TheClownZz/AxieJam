@@ -10,6 +10,10 @@ public class BossTouch : EnemyTouch
     {
         attackTime = 0;
     }
+
+    protected override void OnTriggerEnter2D(Collider2D collision)
+    {
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         Player p = collision.GetComponent<Player>();

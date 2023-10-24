@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class BossSkillInfo
 {
+    public float hpRate;
     public EnemyAttack controller;
     public string animName;
     public float attackTime;
@@ -31,7 +32,7 @@ public class Boss : Enemy
     {
         EnemyHp eHp = GetECom<EnemyHp>();
         float hpLost = eHp.TakeDamage(damage, isCrit);
-        if (skillIndex < bossSkillInfoList.Count - 1 && eHp.currentHp < 0.5f * stat.hp)
+        if (skillIndex < bossSkillInfoList.Count - 1 && eHp.currentHp < bossSkillInfoList[skillIndex].hpRate * stat.hp)
         {
             componentList.Remove(bossSkillInfoList[skillIndex].controller);
             bossSkillInfoList[skillIndex].controller.gameObject.SetActive(false);
