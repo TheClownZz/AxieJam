@@ -13,7 +13,7 @@ public class EnemyHp : EnemyComponent, ITakeDamage
         currentHp = control.stat.hp;
     }
 
-    public float TakeDamage(float damage, bool isCrit)
+    public virtual float TakeDamage(float damage, bool isCrit)
     {
         if (damage == 0 || control.isDead)
             return 0;

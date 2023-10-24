@@ -1,3 +1,4 @@
+using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,8 +7,8 @@ using UnityEngine.UI;
 
 public class PopupSelect : PopupBase
 {
-    [SerializeField] List<Image> iconList;
     [SerializeField] List<Button> buttonList;
+    [SerializeField] TeamAvtController teamAvtController;
     public override void OnInit()
     {
         base.OnInit();
@@ -26,6 +27,8 @@ public class PopupSelect : PopupBase
     {
         base.OnShow(fadeTime);
         UpdateUi();
+        List<PlayerType> team = DataManager.Instance.GetData<DataUser>().GetTeam();
+        teamAvtController.UpdateTeam(team);
         Time.timeScale = 0;
     }
 
@@ -48,7 +51,6 @@ public class PopupSelect : PopupBase
 
         for (int i = 0; i < playerList.Count; i++)
         {
-            iconList[i].sprite = DataManager.Instance.GetAsset<PlayerListAsset>().GetAsset(playerList[i].type).data.avatar;
             bool isSelected = playerList[i] == currentPlayer;
 
             buttonList[i].interactable = !isSelected;
@@ -57,4 +59,6 @@ public class PopupSelect : PopupBase
 
         }
     }
+
+   
 }

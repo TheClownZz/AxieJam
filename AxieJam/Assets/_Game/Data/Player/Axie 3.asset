@@ -87,4 +87,5 @@ MonoBehaviour:
         value: 0.5
       - type: 5
         value: 0.15
+    dataAsset: {fileID: 11400000, guid: 7d1ef9104d38443a4b39cf8906cc277d, type: 2}
   prefab: {fileID: 8915905001403885883, guid: 58d55a6873ba85b4d8ec737967622eef, type: 3}

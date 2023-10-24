@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
@@ -87,7 +88,7 @@ public class PlayerConfig
     public List<PlayerLevelConfig> levelConfiglist;
     [TableList(ShowIndexLabels = true)]
     public List<SkillConfig> skillConfiglist;
-
+    public SkeletonDataAsset dataAsset;
     public PlayerLevelConfig GetLevelConfig(int lv)
     {
         return levelConfiglist[Mathf.Min(lv - 1, levelConfiglist.Count - 1)];
