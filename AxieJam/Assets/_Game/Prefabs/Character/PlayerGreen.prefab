@@ -562,6 +562,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: healingWard
       objectReference: {fileID: 0}
+    - target: {fileID: 336267759900283745, guid: c6307d4f86937e54b850a0c461703656, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1700266625724750466, guid: c6307d4f86937e54b850a0c461703656, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

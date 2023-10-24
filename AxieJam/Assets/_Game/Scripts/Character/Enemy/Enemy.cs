@@ -16,7 +16,7 @@ public class Enemy : Character
     Tween clearTween;
     Tween itemTween;
 
-    
+
     [HideInInspector] public WaveStat waveStat;
     [HideInInspector] public float currspawItemTime;
     public override void OnInit()
@@ -88,12 +88,11 @@ public class Enemy : Character
 
     private void SpawnItem()
     {
-        if(deadClip)
+        if (deadClip)
         {
             AudioManager.Instance.PlaySound(deadClip);
         }
         float foodRandom = Random.value;
-        float potionRandom = Random.value;
         EnemyAsset enemyAsset = GetComponent<SetupEnemyData>().asset;
         if (foodRandom < enemyAsset.data.foodDropRate)
         {
@@ -105,18 +104,23 @@ public class Enemy : Character
             item.transform.SetParent(GameManager.Instance.objMap.transform.GetChild(1));
             item.GetComponent<FoodItem>().SetConfig(config);
         }
-
-        if (potionRandom < enemyAsset.data.potionDropRate)
+        else
         {
-            PlayerType type = (PlayerType)Random.Range(0, (int)PlayerType.None);
-            PotionConfig config = DataManager.Instance.GetAsset<PotionAsset>().GetConfig(type);
+            float potionRandom = Random.value;
+            if (potionRandom < enemyAsset.data.potionDropRate)
+            {
+                PlayerType type = (PlayerType)Random.Range(0, (int)PlayerType.None);
+                PotionConfig config = DataManager.Instance.GetAsset<PotionAsset>().GetConfig(type);
 
-            Transform item = PoolManager.Instance.SpawnObject(PoolType.PotionItem);
-            item.transform.position = transform.position + (Vector3)Random.insideUnitCircle * 0.5f;
-            item.transform.SetParent(GameManager.Instance.objMap.transform.GetChild(1));
-            item.GetComponent<PotionItem>().SetConfig(config);
+                Transform item = PoolManager.Instance.SpawnObject(PoolType.PotionItem);
+                item.transform.position = transform.position + (Vector3)Random.insideUnitCircle * 0.5f;
+                item.transform.SetParent(GameManager.Instance.objMap.transform.GetChild(1));
+                item.GetComponent<PotionItem>().SetConfig(config);
+
+            }
 
         }
+
     }
     public void Clear()
     {
