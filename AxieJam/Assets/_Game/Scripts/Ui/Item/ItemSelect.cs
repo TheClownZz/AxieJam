@@ -10,13 +10,9 @@ public class ItemSelect : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI tmpLevel;
     [SerializeField] TextMeshProUGUI tmpSkill;
-    [SerializeField] TextMeshProUGUI tmpFood;
-    [SerializeField] TextMeshProUGUI tmpPotion;
     [SerializeField] TextMeshProUGUI tmpSelect;
     [SerializeField] Image imgSelected;
     [SerializeField] Image imgIcon;
-    [SerializeField] Image imgFood;
-    [SerializeField] Image imgPotion;
     [SerializeField] Button btnSelect;
     private void Awake()
     {
@@ -28,19 +24,10 @@ public class ItemSelect : MonoBehaviour
 
         var listAsset = DataManager.Instance.GetAsset<PlayerListAsset>().GetAsset(playerType);
 
-        var levelConfig = listAsset.data.GetLevelConfig(data.level);
-        var skillConfig = listAsset.data.GetSkillConfig(data.levelSkill);
-
         tmpLevel.SetText("lv.{0}", data.level);
         tmpSkill.SetText("lv.{0}", data.levelSkill);
 
-
-        tmpFood.SetText("{0}/{1}", data.itemLevelCount, levelConfig.item);
-        tmpPotion.SetText("{0}/{1}", data.itemSkillCount, skillConfig.defaultValue.itemRequire);
         imgIcon.sprite = listAsset.data.avatar;
-
-        imgFood.sprite = DataManager.Instance.GetAsset<FoodAsset>().GetConfig(playerType).sprite;
-        imgPotion.sprite = DataManager.Instance.GetAsset<PotionAsset>().GetConfig(playerType).sprite;
 
     }
 
