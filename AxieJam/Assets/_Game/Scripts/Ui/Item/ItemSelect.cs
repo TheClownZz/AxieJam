@@ -11,7 +11,6 @@ public class ItemSelect : MonoBehaviour
     [SerializeField] TextMeshProUGUI tmpLevel;
     [SerializeField] TextMeshProUGUI tmpSkill;
     [SerializeField] TextMeshProUGUI tmpSelect;
-    [SerializeField] Image imgSelected;
     [SerializeField] Image imgIcon;
     [SerializeField] Button btnSelect;
     private void Awake()
@@ -34,7 +33,7 @@ public class ItemSelect : MonoBehaviour
     void OnBtnSelectClick()
     {
         SetSelect(true);
-        UIManager.Instance.GetScreen<ScreenHome>().OnSelect(this);
+        UIManager.Instance.GetScreen<ScreenTeam>().OnSelect(this);
         AudioManager.Instance.PlayOnceShot(AudioType.CLICK);
     }
 
@@ -42,6 +41,5 @@ public class ItemSelect : MonoBehaviour
     {
         tmpSelect.SetText(value ? "Selected" : "Select");
         btnSelect.interactable = !value;
-        imgSelected.enabled = value;
     }
 }

@@ -50,13 +50,14 @@ public class GameManager : MonoSingleton<GameManager>
             levelController.OnUpdate(Time.deltaTime);
         }
     }
-    public void UpdatePlayerList(List<ItemSelect> itemSelectList)
+    public void UpdatePlayerList()
     {
+        List<PlayerType> team = DataManager.Instance.GetData<DataUser>().GetTeam();
         var assetList = DataManager.Instance.GetAsset<PlayerListAsset>();
 
-        foreach (var item in itemSelectList)
+        foreach (var playerType in team)
         {
-            var asset = assetList.GetAsset(item.playerType);
+            var asset = assetList.GetAsset(playerType);
             Player p = Instantiate(asset.prefab).GetComponent<Player>();
             p.transform.position = outPos;
             p.SetData(asset.data);

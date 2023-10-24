@@ -27,6 +27,7 @@ public class PopupSelect : PopupBase
     {
         base.OnShow(fadeTime);
         UpdateUi();
+
         List<PlayerType> team = DataManager.Instance.GetData<DataUser>().GetTeam();
         teamAvtController.UpdateTeam(team);
         Time.timeScale = 0;
