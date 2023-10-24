@@ -11,6 +11,7 @@ public class HealingWard : MonoBehaviour
     WaitForSeconds delay;
     protected float cooldown;
     protected float activeValue;
+    [SerializeField] Transform fxHeal;
     public void OnInits(float activeValue, float cooldown, float duarion)
     {
         gameObject.SetActive(true);
@@ -40,6 +41,12 @@ public class HealingWard : MonoBehaviour
     {
         if (target)
         {
+            Transform clone = PoolManager.Instance.SpawnObject(fxHeal);
+            clone.position = target.transform.position;
+            DOVirtual.DelayedCall(0.5f, () =>
+            {
+                PoolManager.Instance.DespawnObject(clone);
+            });
             target.GetCom<PlayerHp>().RegenPercen(activeValue);
         }
     }
