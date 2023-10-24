@@ -29,9 +29,13 @@ public class HealingWard : MonoBehaviour
             OnActive();
             time += cooldown;
         }
-        gameObject.SetActive(false);
+        OnDeActive();
     }
 
+    protected virtual void OnDeActive()
+    {
+        gameObject.SetActive(false);
+    }
     protected virtual void OnActive()
     {
         if (target)

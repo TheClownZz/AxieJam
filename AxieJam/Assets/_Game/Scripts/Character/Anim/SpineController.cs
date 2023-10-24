@@ -88,4 +88,15 @@ public class SpineController : MonoBehaviour
     {
         dieAnim = anim;
     }
+    float cachedTimeScale;
+    public void Pause()
+    {
+        cachedTimeScale = anim.timeScale;
+        anim.timeScale = 0;
+    }
+
+    public void Resume()
+    {
+        anim.timeScale = cachedTimeScale;
+    }
 }

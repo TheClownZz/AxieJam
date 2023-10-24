@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class BossTouch : EnemyTouch
 {
-    protected override void OnTriggerEnter2D(Collider2D collision)
+    [SerializeField] float attackRate = 0.5f;
+    float attackTime;
+    private void OnEnable()
+    {
+        attackTime = 0;
+    }
+    private void OnTriggerStay2D(Collider2D collision)
     {
         Player p = collision.GetComponent<Player>();
-        if (p)
+        if (p && Time.time - attackTime > attackRate)
         {
+            attackTime = Time.time;
             AttackPlayer(p);
         }
     }
+
+
+    
 }

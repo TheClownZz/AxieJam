@@ -202,4 +202,6 @@ public class Character : MonoBehaviour
         foreach (var comp in componentList)
             comp.OnLose();
     }
+
+   
 }

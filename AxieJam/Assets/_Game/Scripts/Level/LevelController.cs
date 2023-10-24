@@ -97,7 +97,7 @@ public class LevelController : MonoBehaviour
         pos.y = Mathf.Clamp(pos.y, bot.position.y, top.position.y);
 
         Enemy e = PoolManager.Instance.SpawnObject((PoolType)enemyType).GetComponent<Enemy>();
-
+        e.transform.SetParent(transform);
         e.SetStat();
         e.SetWaveStat(stat);
         e.DelaySpawn(delaySpawn, pos);
@@ -127,6 +127,7 @@ public class LevelController : MonoBehaviour
         pos.y = Mathf.Clamp(pos.y, bot.position.y, top.position.y);
 
         Enemy e = PoolManager.Instance.SpawnObject(asset.bossSpawnConfig.pf).GetComponent<Enemy>();
+        e.transform.SetParent(transform);
 
         e.SetStat();
         e.SetWaveStat(asset.bossSpawnConfig.waveStat);

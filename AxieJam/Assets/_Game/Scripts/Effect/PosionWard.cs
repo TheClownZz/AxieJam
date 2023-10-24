@@ -1,13 +1,11 @@
 using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
-using static UnityEngine.GraphicsBuffer;
 
 public class PosionWard : HealingWard
 {
     [SerializeField] Collider2D col2d;
+    [SerializeField] float slowTime = 0.5f;
+    [SerializeField] float slowRate = 0.5f;
     protected override void OnActive()
     {
         col2d.enabled = true;
@@ -18,10 +16,12 @@ public class PosionWard : HealingWard
     }
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        Enemy enemy = collision.GetComponent<Enemy>();
-        if (enemy)
+        Enemy e = collision.GetComponent<Enemy>();
+        if (e)
         {
-            enemy.TakePosionDamage(activeValue);
+            SlowEffect effect = new SlowEffect(slowTime, slowRate);
+            e.GetCom<EffectController>().AddEffect(effect);
+            e.TakePosionDamage(activeValue);
         }
     }
 

@@ -268,7 +268,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7790942795777881233}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -558,10 +558,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4976190676931461984}
     m_Modifications:
-    - target: {fileID: 4196780753536416397, guid: dd8459a9e0b74b04f9d6d306f480eea6, type: 3}
-      propertyPath: m_Color.a
-      value: 0.49019608
-      objectReference: {fileID: 0}
     - target: {fileID: 7799813976895212220, guid: dd8459a9e0b74b04f9d6d306f480eea6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -604,7 +600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8462168467382498541, guid: dd8459a9e0b74b04f9d6d306f480eea6, type: 3}
       propertyPath: m_Name
-      value: posionWard
+      value: BlackHold
       objectReference: {fileID: 0}
     - target: {fileID: 8462168467382498541, guid: dd8459a9e0b74b04f9d6d306f480eea6, type: 3}
       propertyPath: m_IsActive
