@@ -9,7 +9,7 @@ public class LevelController : MonoBehaviour
 
     int waveIndex;
     Tween bossTween;
-    GameLevelAsset asset;
+    LevelAsset asset;
     WaveConfig waveConfig;
 
     float spawnRadius = 7.5f;
@@ -25,7 +25,7 @@ public class LevelController : MonoBehaviour
     {
         spawnRadius = GameManager.Instance.gameConfig.spawnRadius;
     }
-    public void SetAsset(GameLevelAsset asset)
+    public void SetAsset(LevelAsset asset)
     {
         this.asset = asset;
     }

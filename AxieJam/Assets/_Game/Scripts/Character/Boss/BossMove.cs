@@ -1,10 +1,6 @@
 using DG.Tweening;
 using Spine;
 using Spine.Unity;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Burst.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class BossMove : EnemyShootMove

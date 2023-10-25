@@ -4,10 +4,9 @@ using UnityEngine;
 using DG.Tweening;
 public class EnemyMove : EnemyComponent
 {
-    const float minDistance = 0.35f;
-    const float runDistance = 0.5f;
-    [SerializeField] protected float baseSpeed;
-    [SerializeField] protected float currentSpeed;
+    protected const float minDistance = 0.35f;
+    protected const float runDistance = 0.5f;
+
     protected Vector3 direction;
 
     protected Vector3 forceDir;
@@ -15,7 +14,8 @@ public class EnemyMove : EnemyComponent
     protected float forceStr;
 
     protected Enemy eControl;
-
+    [SerializeField] protected float baseSpeed;
+    [SerializeField] protected float currentSpeed;
     Transform top, bot, left, right;
 
     public override void OnInits(Character e)
@@ -92,7 +92,7 @@ public class EnemyMove : EnemyComponent
     }
 
 
-    public void SetForceDir(Vector3 forceDir, float forceStr)
+    public virtual void SetForceDir(Vector3 forceDir, float forceStr)
     {
         this.forceDir = forceDir;
         this.forceStr = forceStr;
@@ -109,7 +109,7 @@ public class EnemyMove : EnemyComponent
         }
     }
 
-    protected void UpdateState()
+    protected virtual void UpdateState()
     {
         if (direction == Vector3.zero)
         {
