@@ -100,7 +100,7 @@ public class ItemAxie : MonoBehaviour
         DataManager.Instance.GetData<DataUser>().
             UpLevel(playerType, require);
         UpdateUI();
-        AudioManager.Instance.PlayOnceShot(AudioType.CLICK);
+        AudioManager.Instance.PlayOnceShot(AudioType.LvUp);
     }
 
     public void OnBtnSkillClick()
@@ -110,9 +110,9 @@ public class ItemAxie : MonoBehaviour
         int require = asset.data.GetSkillConfig(data.level).defaultValue.potionRequire;
 
         DataManager.Instance.GetData<DataUser>().
-            UpLevel(playerType, require);
+            UpSkill(playerType, require);
         UpdateUI();
-        AudioManager.Instance.PlayOnceShot(AudioType.CLICK);
+        AudioManager.Instance.PlayOnceShot(AudioType.LvUp);
     }
 
 }
