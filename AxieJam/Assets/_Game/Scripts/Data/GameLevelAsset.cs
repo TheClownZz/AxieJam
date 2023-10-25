@@ -35,19 +35,12 @@ public class WaveConfig
 }
 
  
-[System.Serializable]
-public class BossSpawnConfig
-{
-    public WaveStat waveStat;
-    public Transform pf;
-}
 
 [CreateAssetMenu(menuName = "Game/GameLevelAsset", fileName = "GameLevelAsset")]
 public class GameLevelAsset : GameAsset
 {
     [TableList(ShowIndexLabels = true)]
     public List<WaveConfig> dataList = new List<WaveConfig>();
-    public BossSpawnConfig bossSpawnConfig;
     public WaveConfig GetConfig(int wave)
     {
         return dataList[wave];

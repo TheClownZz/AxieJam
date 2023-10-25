@@ -42,21 +42,21 @@ public class LevelController : MonoBehaviour
     {
         waveIndex += 1;
 
-        if (waveIndex == asset.dataList.Count)
-        {
-            SpawnBoss();
-        }
-        else
+        if (waveIndex < asset.dataList.Count)
         {
             waveConfig = asset.GetConfig(waveIndex);
             SpawnWave();
             UIManager.Instance.GetScreen<ScreenGame>().UpdateWave(waveIndex + 1, asset.dataList.Count);
         }
+        else
+        {
+            Debug.LogError("Comlete");
+        }
     }
 
     public void OnLose()
     {
-       
+
         foreach (var e in enemyList)
             e.OnLose();
     }
@@ -72,7 +72,7 @@ public class LevelController : MonoBehaviour
     }
     public void SpawnWave()
     {
-       // float time = waveConfig.waveTime;
+        // float time = waveConfig.waveTime;
         List<EnemyWaveConfig> enemyConfigList = waveConfig.enemyConfigList;
 
         for (int i = 0; i < enemyConfigList.Count; i++)
@@ -120,23 +120,6 @@ public class LevelController : MonoBehaviour
             LoadNextWave();
         }
     }
-    private void SpawnBoss()
-    {
-        Vector2 pos = Quaternion.Euler(0f, 0f, Random.Range(0, 360)) * Vector2.right * spawnRadius;
-        pos.x = Mathf.Clamp(pos.x, left.position.x, right.position.x);
-        pos.y = Mathf.Clamp(pos.y, bot.position.y, top.position.y);
-
-        Enemy e = PoolManager.Instance.SpawnObject(asset.bossSpawnConfig.pf).GetComponent<Enemy>();
-        e.transform.SetParent(transform);
-
-        e.SetStat();
-        e.SetWaveStat(asset.bossSpawnConfig.waveStat);
-        e.DelaySpawn(1, pos);
-        enemyList.Add(e);
-    }
-    public List<Enemy> GetEnemyList()
-    {
-        return enemyList;
-    }
+   
 
 }

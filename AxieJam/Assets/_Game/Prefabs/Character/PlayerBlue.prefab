@@ -137,7 +137,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &4424165598337138926
@@ -357,7 +357,6 @@ GameObject:
   - component: {fileID: 4173694845247501963}
   - component: {fileID: 8915905001403885886}
   - component: {fileID: 2093326263687780720}
-  - component: {fileID: 3338595176116409183}
   - component: {fileID: 2837831664808693144}
   m_Layer: 7
   m_Name: PlayerBlue
@@ -495,24 +494,10 @@ MonoBehaviour:
   weapon: {fileID: 8574318380821813124}
   config:
     defaultValue:
-      itemRequire: 15
+      potionRequire: 15
       duration: 3
       cooldown: 20
     propertieList: []
---- !u!114 &3338595176116409183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8915905001403885877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83500e788d945564eb28e236f7542afe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aimTexture: {fileID: 2800000, guid: a803fd1e62c216a4c80c86f4ac13c47f, type: 3}
-  normalTexture: {fileID: 2800000, guid: 9b47be37bfa9a8b47bda383543682528, type: 3}
 --- !u!58 &2837831664808693144
 CircleCollider2D:
   m_ObjectHideFlags: 0
