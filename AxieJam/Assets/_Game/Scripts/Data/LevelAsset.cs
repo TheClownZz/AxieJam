@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,17 +35,38 @@ public class WaveConfig
     public List<EnemyWaveConfig> enemyConfigList;
 }
 
- 
+[System.Serializable]
+public class EnemyAssetType
+{
+    public EnemyAsset asset;
+    public EnemyType enemyType;
+}
+[System.Serializable]
+public class BossAssetType
+{
+    public BossAsset asset;
+    public EnemyType enemyType;
+}
 
-[CreateAssetMenu(menuName = "Game/GameLevelAsset", fileName = "GameLevelAsset")]
-public class GameLevelAsset : GameAsset
+[CreateAssetMenu(menuName = "Game/LevelAsset", fileName = "LevelAsset")]
+public class LevelAsset : GameAsset
 {
     [TableList(ShowIndexLabels = true)]
     public List<WaveConfig> dataList = new List<WaveConfig>();
+    public List<EnemyAssetType> enemyDataSetupList;
+    public List<BossAssetType> bossDataSetupList;
     public WaveConfig GetConfig(int wave)
     {
         return dataList[wave];
-
     }
 
+    public BossAsset GetBossAsset(EnemyType enemyType)
+    {
+        return bossDataSetupList.Find(x => x.enemyType == enemyType).asset;
+    }
+
+    public EnemyAsset GetEnemyAsset(EnemyType enemyType)
+    {
+        return enemyDataSetupList.Find(x => x.enemyType == enemyType).asset;
+    }
 }

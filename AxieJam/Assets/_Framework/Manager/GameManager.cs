@@ -19,7 +19,7 @@ public class GameManager : MonoSingleton<GameManager>
     public Player currentPlayer;
     public List<Player> playerList;
 
-    [SerializeField] GameLevelAsset asset;
+    [SerializeField] LevelAsset asset;
 
     Vector3 outPos = new Vector3(9999, 9999, 9999);
     public bool isPause { get { return Time.timeScale == 0; } }
