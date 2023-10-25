@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 828a51c7586177b4f963063d8d9a14fb, type: 3}
   m_Name: Axie 4
   m_EditorClassIdentifier: 
+  avatar: {fileID: 21300000, guid: ac3f823ba5b615d4c9d9a8efae63392f, type: 3}
+  skillIcon: {fileID: 0}
+  axieName: Purple
+  skillName: Poison gas
+  discription: Create poison gas that cause damage to enemy
+  prefab: {fileID: 8915905001403885883, guid: 54a22edf982095c4ab4dc647a53611c2, type: 3}
   data:
     type: 4
-    avatar: {fileID: 21300000, guid: ac3f823ba5b615d4c9d9a8efae63392f, type: 3}
     hp: 200
     damage: 10
     attackSpeed: 1
@@ -23,7 +28,7 @@ MonoBehaviour:
     critDamage: 2
     armor: 0
     levelConfiglist:
-    - item: 5
+    - foodRequire: 5
       hp: 50
       damage: 5
       attackSpeed: 0.5
@@ -33,7 +38,7 @@ MonoBehaviour:
       armor: 0
     skillConfiglist:
     - defaultValue:
-        itemRequire: 15
+        potionRequire: 15
         duration: 3
         cooldown: 20
       propertieList:
@@ -44,7 +49,7 @@ MonoBehaviour:
       - type: 5
         value: 0.1
     - defaultValue:
-        itemRequire: 25
+        potionRequire: 15
         duration: 3
         cooldown: 18
       propertieList:
@@ -55,7 +60,7 @@ MonoBehaviour:
       - type: 5
         value: 0.15
     - defaultValue:
-        itemRequire: 50
+        potionRequire: 15
         duration: 3
         cooldown: 17
       propertieList:
@@ -66,7 +71,7 @@ MonoBehaviour:
       - type: 5
         value: 0.15
     - defaultValue:
-        itemRequire: 100
+        potionRequire: 15
         duration: 3
         cooldown: 15
       propertieList:
@@ -77,7 +82,7 @@ MonoBehaviour:
       - type: 5
         value: 0.15
     - defaultValue:
-        itemRequire: 150
+        potionRequire: 15
         duration: 3
         cooldown: 13
       propertieList:
@@ -88,4 +93,3 @@ MonoBehaviour:
       - type: 5
         value: 0.15
     dataAsset: {fileID: 11400000, guid: 5e6bc02efa6c543a68cb6e2ed6d78347, type: 2}
-  prefab: {fileID: 8915905001403885883, guid: 54a22edf982095c4ab4dc647a53611c2, type: 3}

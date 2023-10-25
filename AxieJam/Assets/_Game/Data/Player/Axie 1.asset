@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 828a51c7586177b4f963063d8d9a14fb, type: 3}
   m_Name: Axie 1
   m_EditorClassIdentifier: 
+  avatar: {fileID: 21300000, guid: 6b559386aad4b8244816ac611dfa68df, type: 3}
+  skillIcon: {fileID: 0}
+  axieName: Orange
+  skillName: Magic circle
+  discription: 'Creates magic circles arround axie that cause damage to enemy '
+  prefab: {fileID: 8915905001403885883, guid: 7cc54d19a1ab2d744b8b80f2ad10b22c, type: 3}
   data:
     type: 1
-    avatar: {fileID: 21300000, guid: 6b559386aad4b8244816ac611dfa68df, type: 3}
     hp: 200
     damage: 10
     attackSpeed: 1
@@ -23,7 +28,7 @@ MonoBehaviour:
     critDamage: 2
     armor: 0
     levelConfiglist:
-    - item: 5
+    - foodRequire: 5
       hp: 50
       damage: 5
       attackSpeed: 0.5
@@ -33,7 +38,7 @@ MonoBehaviour:
       armor: 0
     skillConfiglist:
     - defaultValue:
-        itemRequire: 15
+        potionRequire: 15
         duration: 3
         cooldown: 20
       propertieList:
@@ -42,7 +47,7 @@ MonoBehaviour:
       - type: 0
         value: 0.5
     - defaultValue:
-        itemRequire: 25
+        potionRequire: 15
         duration: 3.5
         cooldown: 18
       propertieList:
@@ -51,7 +56,7 @@ MonoBehaviour:
       - type: 0
         value: 0.5
     - defaultValue:
-        itemRequire: 50
+        potionRequire: 15
         duration: 3.5
         cooldown: 17
       propertieList:
@@ -60,7 +65,7 @@ MonoBehaviour:
       - type: 0
         value: 0.5
     - defaultValue:
-        itemRequire: 100
+        potionRequire: 15
         duration: 3.5
         cooldown: 15
       propertieList:
@@ -73,7 +78,7 @@ MonoBehaviour:
       - type: 8
         value: 0.5
     - defaultValue:
-        itemRequire: 150
+        potionRequire: 15
         duration: 3.5
         cooldown: 13
       propertieList:
@@ -86,4 +91,3 @@ MonoBehaviour:
       - type: 8
         value: 0.5
     dataAsset: {fileID: 11400000, guid: b49379cb4c0ea41ad8687d360ccaa72b, type: 2}
-  prefab: {fileID: 8915905001403885883, guid: 7cc54d19a1ab2d744b8b80f2ad10b22c, type: 3}
