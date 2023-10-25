@@ -9,6 +9,7 @@ public enum AudioType
     CLICK,
     Hit,
     Item,
+    LvUp,
 }
 
 [CreateAssetMenu]
