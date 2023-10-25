@@ -69,4 +69,11 @@ public class ScreenHome : ScreenBase
         UIManager.Instance.ShowScreen<ScreenTeam>();
         AudioManager.Instance.PlayOnceShot(AudioType.CLICK);
     }
+
+    public void OnBtnAxieClick()
+    {
+        OnHide();
+        UIManager.Instance.ShowScreen<ScreenAxie>();
+        AudioManager.Instance.PlayOnceShot(AudioType.CLICK);
+    }
 }

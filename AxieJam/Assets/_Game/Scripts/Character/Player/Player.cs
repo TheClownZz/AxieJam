@@ -71,7 +71,7 @@ public class Player : Character
         int level = DataManager.Instance.GetData<DataUser>().GetLevel(type);
         for (int i = 1; i < level; i++)
         {
-            PlayerLevelConfig lvConfig = config.GetLevelConfig(i);
+            PlayerStatConfig lvConfig = config.GetLevelConfig(i);
             stat.SetHp(lvConfig.hp + stat.hp)
                 .Setarmor(lvConfig.armor + stat.armor)
                 .SetDamage(lvConfig.damage + stat.damage)

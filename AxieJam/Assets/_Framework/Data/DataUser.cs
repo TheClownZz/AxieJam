@@ -8,13 +8,13 @@ public class DataSavePlayer
     public PlayerType type;
     public int level;
     public int levelSkill;
-    public int itemLevelCount;
-    public int itemSkillCount;
+    public int foodCount;
+    public int potionCount;
     public DataSavePlayer(PlayerType type)
     {
         this.type = type;
         level = levelSkill = 1;
-        itemSkillCount = itemLevelCount = 0;
+        potionCount = foodCount = 0;
     }
 }
 
@@ -77,20 +77,20 @@ public class DataUser : GameData
     public void UpdateFoodItem(PlayerType type, int number = 1)
     {
         DataSavePlayer player = GetDataPlayer(type);
-        player.itemLevelCount += number;
+        player.foodCount += number;
         SaveData();
     }
 
     public void UpdatePotionItem(PlayerType type, int number = 1)
     {
         DataSavePlayer player = GetDataPlayer(type);
-        player.itemSkillCount += number;
+        player.potionCount += number;
         SaveData();
     }
     public void UpLevel(PlayerType type, int itemCount)
     {
         DataSavePlayer player = GetDataPlayer(type);
-        player.itemLevelCount -= itemCount;
+        player.foodCount -= itemCount;
         player.level += 1;
         SaveData();
     }
@@ -98,7 +98,7 @@ public class DataUser : GameData
     public void UpSkill(PlayerType type, int itemCount)
     {
         DataSavePlayer player = GetDataPlayer(type);
-        player.itemSkillCount -= itemCount;
+        player.potionCount -= itemCount;
         player.levelSkill += 1;
         SaveData();
     }

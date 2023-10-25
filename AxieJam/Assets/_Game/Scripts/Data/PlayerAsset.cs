@@ -1,9 +1,7 @@
-using Sirenix.OdinInspector;
 using Spine.Unity;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
+using Sirenix.OdinInspector;
+using System.Collections.Generic;
 
 public enum PlayerType
 {
@@ -37,7 +35,7 @@ public class SkillProperties
 
 public class SkillDefaultProperties
 {
-    public int itemRequire = 15;
+    public int potionRequire = 15;
     public float duration = 3;
     public float cooldown = 20;
 }
@@ -60,9 +58,9 @@ public class SkillConfig
 }
 
 [System.Serializable]
-public class PlayerLevelConfig
+public class PlayerStatConfig
 {
-    public int item = 5;
+    public int foodRequire = 5;
     public float hp = 50;
     public float damage = 5;
     public float attackSpeed = 0.5f;
@@ -75,7 +73,6 @@ public class PlayerLevelConfig
 public class PlayerConfig
 {
     public PlayerType type;
-    public Sprite avatar;
 
     public float hp = 200;
     public float damage = 10;
@@ -85,11 +82,11 @@ public class PlayerConfig
     public float critDamage = 2;
     public float armor = 0;
     [TableList(ShowIndexLabels = true)]
-    public List<PlayerLevelConfig> levelConfiglist;
+    public List<PlayerStatConfig> levelConfiglist;
     [TableList(ShowIndexLabels = true)]
     public List<SkillConfig> skillConfiglist;
     public SkeletonDataAsset dataAsset;
-    public PlayerLevelConfig GetLevelConfig(int lv)
+    public PlayerStatConfig GetLevelConfig(int lv)
     {
         return levelConfiglist[Mathf.Min(lv - 1, levelConfiglist.Count - 1)];
     }
@@ -105,6 +102,13 @@ public class PlayerConfig
 [CreateAssetMenu(menuName = "Game/PlayerAsset", fileName = "PlayerAsset")]
 public class PlayerAsset : GameAsset
 {
-    public PlayerConfig data;
+    public Sprite avatar;
+    public Sprite skillIcon;
+
+    public string axieName;
+    public string skillName;
+    public string discription;
     public Player prefab;
+    public PlayerConfig data;
+
 }

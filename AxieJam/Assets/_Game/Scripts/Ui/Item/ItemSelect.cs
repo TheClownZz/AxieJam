@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,7 +24,7 @@ public class ItemSelect : MonoBehaviour
         tmpLevel.SetText("lv.{0}", data.level);
         tmpSkill.SetText("lv.{0}", data.levelSkill);
 
-        imgIcon.sprite = listAsset.data.avatar;
+        imgIcon.sprite = listAsset.avatar;
 
     }
 

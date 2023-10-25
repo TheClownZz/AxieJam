@@ -28,14 +28,14 @@ public class ScreenGame : ScreenBase
         var currentPlayer = GameManager.Instance.currentPlayer;
 
         var assetList = DataManager.Instance.GetAsset<PlayerListAsset>();
-        mainItem.SetAvt(assetList.GetAsset(currentPlayer.type).data.avatar);
+        mainItem.SetAvt(assetList.GetAsset(currentPlayer.type).avatar);
         currentPlayer.SetItemAvt(mainItem);
         int index = 0;
         for (int i = 0; i < playerList.Count; i++)
         {
             if (playerList[i] != currentPlayer)
             {
-                itemAvtList[index].SetAvt(assetList.GetAsset(playerList[i].type).data.avatar);
+                itemAvtList[index].SetAvt(assetList.GetAsset(playerList[i].type).avatar);
                 playerList[i].SetItemAvt(itemAvtList[index]);
                 index += 1;
                 if (index == playerList.Count)
