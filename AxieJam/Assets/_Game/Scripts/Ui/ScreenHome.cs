@@ -22,7 +22,8 @@ public class ScreenHome : ScreenBase
     public override void OnShow()
     {
         base.OnShow();
-
+        panelLoad.SetActive(false);
+        panelContent.SetActive(true);
         imgLoad.fillAmount = 0;
         tmpLoad.SetText("");
         textAnimation.PlayAnim();

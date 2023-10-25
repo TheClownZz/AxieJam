@@ -99,9 +99,9 @@ public class GameManager : MonoSingleton<GameManager>
         playerList.Clear();
         levelController.ClearCurrentLevel();
         ClearBullet();
-        foreach(GameObject obj in objMap.transform.GetChild(0)) // 0 is destroy
+        foreach(Transform obj in objMap.transform.GetChild(0)) // 0 is destroy
         {
-            Destroy(obj);
+            Destroy(obj.gameObject);
         }
 
         foreach (Transform tf in objMap.transform.GetChild(1)) // 1 is pool
