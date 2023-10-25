@@ -8,8 +8,14 @@ public enum EnemyType
     Enemy_A = 100,
     Enemy_B,
     Enemy_C,
+    Enemy_D,
+    Enemy_E,
+    Enemy_F,
+    Enemy_G,
 
     Boss_1 = 200,
+    Boss_2,
+    Boss_3,
 }
 
 [System.Serializable]
@@ -38,14 +44,16 @@ public class WaveConfig
 [System.Serializable]
 public class EnemyAssetType
 {
-    public EnemyAsset asset;
     public EnemyType enemyType;
+    public EnemyAsset asset;
+
 }
 [System.Serializable]
 public class BossAssetType
 {
-    public BossAsset asset;
     public EnemyType enemyType;
+    public BossAsset asset;
+
 }
 
 [CreateAssetMenu(menuName = "Game/LevelAsset", fileName = "LevelAsset")]
