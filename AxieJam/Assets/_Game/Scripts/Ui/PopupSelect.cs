@@ -43,6 +43,7 @@ public class PopupSelect : PopupBase
         GameManager.Instance.SetPlayer(index);
         UpdateUi();
         UIManager.Instance.GetScreen<ScreenGame>().UpdateAvt();
+        OnHide(0);
     }
 
     private void UpdateUi()
@@ -55,7 +56,7 @@ public class PopupSelect : PopupBase
             bool isSelected = playerList[i] == currentPlayer;
 
             buttonList[i].interactable = !isSelected;
-            buttonList[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = isSelected? "Selected": "Select";
+            buttonList[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = isSelected? "SELECTED": "SELECT";
 
 
         }
