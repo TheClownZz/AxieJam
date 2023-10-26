@@ -14,18 +14,27 @@ public class Bullet : MonoBehaviour, ICreateDamage
 
     [HideInInspector] public Weapon weapon;
 
+    Collider2D col;
+
     int hitCount;
     public virtual void OnInits(Weapon weapon, float speed, Vector3 dir)
     {
         this.weapon = weapon;
         this.dir = dir * speed;
         hitCount = 0;
+        col = GetComponent<Collider2D>();
+        SetCol(true);
     }
 
     public void SetDamageRate(float value)
     {
         damageRate = value;
     }
+
+    public void SetCol(bool value)
+    {
+        col.enabled = value;
+    }    
 
     protected virtual void Update()
     {
