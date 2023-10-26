@@ -15,8 +15,8 @@ MonoBehaviour:
   avatar: {fileID: 21300000, guid: 281873d82febec540ac3cdffb14a91e2, type: 3}
   skillIcon: {fileID: 21300000, guid: 0ca45eee3d5654491ae561a2e1492f2a, type: 3}
   axieName: Red
-  skillName: Unknow
-  discription: Unknow
+  skillName: BIG BANG
+  discription: Creates large explosions that damage monsters
   prefab: {fileID: 8915905001403885883, guid: 0413da3a91604214a8c24e8b66b7a058, type: 3}
   data:
     type: 2

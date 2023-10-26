@@ -15,7 +15,7 @@ MonoBehaviour:
   avatar: {fileID: 21300000, guid: 888f069d62a8b024ca1d63a706135105, type: 3}
   skillIcon: {fileID: 21300000, guid: 6b0b7b0aafc5d4ab8be431110a048ecc, type: 3}
   axieName: Green
-  skillName: Healing
+  skillName: HEALING
   discription: Creates a circle that restores vitality
   prefab: {fileID: 8915905001403885883, guid: 58d55a6873ba85b4d8ec737967622eef, type: 3}
   data:
