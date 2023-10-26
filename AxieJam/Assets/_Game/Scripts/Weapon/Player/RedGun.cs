@@ -27,23 +27,25 @@ public class RedGun : PlayerGun
             yield return new WaitForSeconds(explosionRate);
             for (int i = 0; i < number; i++)
             {
-                Bullet b = PoolManager.Instance.SpawnObject(exposionPrefab.transform).GetComponent<Bullet>();
-                b.transform.SetParent(GameManager.Instance.bulletSpawner, false);
-                b.transform.position = characterControl.transform.position + (Vector3)Random.insideUnitCircle * Random.Range(0.8f * range, range);
-                b.transform.rotation = Quaternion.identity;
-                b.transform.localScale = Vector3.one * size;
-                b.OnInits(this, 0, Vector3.zero);
-                b.SetHitClip(hitClip);
-                b.SetDamageRate(damage);
+                Bullet bullet = PoolManager.Instance.SpawnObject(exposionPrefab).GetComponent<Bullet>();
+                bullet.transform.SetParent(GameManager.Instance.bulletSpawner, false);
+                bullet.transform.position = characterControl.transform.position + (Vector3)Random.insideUnitCircle * Random.Range(0.8f * range, range);
+                bullet.transform.rotation = Quaternion.identity;
+                bullet.transform.localScale = Vector3.one * size;
+                bullet.OnInits(this, 0, Vector3.zero);
+                bullet.SetHitClip(hitClip);
+                bullet.SetDamageRate(damage);
                 DOVirtual.DelayedCall(0.2f, () =>
                 {
-                    b.SetCol(false);
+                    bullet.SetCol(false);
                 });
-                DOVirtual.DelayedCall(3f, () =>
+                DOVirtual.DelayedCall(1f, () =>
                 {
-                    if (b.gameObject.activeInHierarchy)
-                        PoolManager.Instance.DespawnObject(b.transform);
+                    if (bullet.gameObject.activeInHierarchy)
+                        PoolManager.Instance.DespawnObject(bullet.transform);
                 });
+
+                Debug.LogError(bullet.name, bullet.gameObject);
             }
         }
     }
