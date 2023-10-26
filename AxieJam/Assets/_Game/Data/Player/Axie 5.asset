@@ -15,7 +15,7 @@ MonoBehaviour:
   avatar: {fileID: 21300000, guid: 8dc1c8644dd02f7409996e2cea2f2aeb, type: 3}
   skillIcon: {fileID: 21300000, guid: 999686ec0adb144fe8d0da1586d8bfce, type: 3}
   axieName: Pink
-  skillName: BIG BULLET
+  skillName: Big bullet
   discription: Releases a big bullet with more damage per attack
   prefab: {fileID: 8915905001403885883, guid: 13fac01dc75567840a53f00bb162b15b, type: 3}
   data:
