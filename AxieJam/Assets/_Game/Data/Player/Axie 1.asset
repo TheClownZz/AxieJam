@@ -15,7 +15,7 @@ MonoBehaviour:
   avatar: {fileID: 21300000, guid: 6b559386aad4b8244816ac611dfa68df, type: 3}
   skillIcon: {fileID: 21300000, guid: 12352288c83a84382bcba34c8806e86c, type: 3}
   axieName: Orange
-  skillName: MAGIC CIRCLE
+  skillName: Magic circle
   discription: 'Creates magic circles arround axie that cause damage to enemy '
   prefab: {fileID: 8915905001403885883, guid: 7cc54d19a1ab2d744b8b80f2ad10b22c, type: 3}
   data:
