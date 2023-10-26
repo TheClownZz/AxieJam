@@ -30,7 +30,7 @@ public class Enemy : Character
         spawnFx = PoolManager.Instance.SpawnObject(PoolType.SpawnFx);
         spawnFx.position = pos;
         gameObject.SetActive(false);
-        spawnTween = DOVirtual.DelayedCall(time, () =>
+        spawnTween = GameManager.Instance.DelayedCall(time, () =>
         {
             PoolManager.Instance.DespawnObject(spawnFx);
             spawnFx = null;
@@ -74,13 +74,13 @@ public class Enemy : Character
         foreach (var comp in componentList)
             comp.OnDead();
 
-        clearTween = DOVirtual.DelayedCall(timeDelayDespawn, () =>
+        clearTween = GameManager.Instance.DelayedCall(timeDelayDespawn, () =>
         {
             Clear();
             GameManager.Instance.levelController.RemoveEnemy(this);
         });
 
-        itemTween = DOVirtual.DelayedCall(currspawItemTime, SpawnItem);
+        itemTween = GameManager.Instance.DelayedCall(currspawItemTime, SpawnItem);
 
 
 

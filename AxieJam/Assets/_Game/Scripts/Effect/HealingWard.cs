@@ -43,7 +43,7 @@ public class HealingWard : MonoBehaviour
         {
             Transform clone = PoolManager.Instance.SpawnObject(fxHeal);
             clone.position = target.transform.position;
-            DOVirtual.DelayedCall(0.5f, () =>
+            GameManager.Instance.DelayedCall(0.5f, () =>
             {
                 PoolManager.Instance.DespawnObject(clone);
             });

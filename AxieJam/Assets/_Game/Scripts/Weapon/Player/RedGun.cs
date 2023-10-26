@@ -35,17 +35,17 @@ public class RedGun : PlayerGun
                 bullet.OnInits(this, 0, Vector3.zero);
                 bullet.SetHitClip(hitClip);
                 bullet.SetDamageRate(damage);
-                DOVirtual.DelayedCall(0.2f, () =>
+                GameManager.Instance.DelayedCall(0.2f, () =>
                 {
                     bullet.SetCol(false);
                 });
-                DOVirtual.DelayedCall(1f, () =>
+
+                GameManager.Instance.DelayedCall(1f, () =>
                 {
                     if (bullet.gameObject.activeInHierarchy)
                         PoolManager.Instance.DespawnObject(bullet.transform);
                 });
 
-                Debug.LogError(bullet.name, bullet.gameObject);
             }
         }
     }

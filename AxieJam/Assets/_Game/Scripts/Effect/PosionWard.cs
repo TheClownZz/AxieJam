@@ -9,7 +9,7 @@ public class PosionWard : HealingWard
     protected override void OnActive()
     {
         col2d.enabled = true;
-        DOVirtual.DelayedCall(cooldown / 2, () =>
+        GameManager.Instance.DelayedCall(cooldown / 2, () =>
         {
             col2d.enabled = false;
         });

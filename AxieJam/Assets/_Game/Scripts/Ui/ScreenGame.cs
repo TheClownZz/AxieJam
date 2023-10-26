@@ -55,4 +55,12 @@ public class ScreenGame : ScreenBase
         }
     }
 
+    public void OnBtnHomeClick()
+    {
+        OnHide();
+        GameManager.Instance.ClearLevel();
+        GameManager.Instance.SetGameState(GameState.Ready);
+        UIManager.Instance.ShowScreen<ScreenHome>();
+        AudioManager.Instance.PlayOnceShot(AudioType.CLICK);
+    }
 }

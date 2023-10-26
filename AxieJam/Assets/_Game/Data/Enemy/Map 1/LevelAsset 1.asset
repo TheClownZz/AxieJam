@@ -18,8 +18,8 @@ MonoBehaviour:
       hpRate: 1.1
       damageRate: 1.1
     enemyConfigList:
-    - type: 100
-      numberSpawn: 5
+    - type: 201
+      numberSpawn: 1
   - waveTime: 60
     waveProterties:
       hpRate: 1.1
@@ -105,12 +105,12 @@ MonoBehaviour:
     - type: 200
       numberSpawn: 1
   enemyDataSetupList:
-  - asset: {fileID: 11400000, guid: 501f0e6fb7d1d498384d1b43bcb7b56d, type: 2}
-    enemyType: 100
-  - asset: {fileID: 11400000, guid: e16c6f202aeaa3d4a84ac4ec1a248607, type: 2}
-    enemyType: 101
-  - asset: {fileID: 11400000, guid: 8ed95c7dbf400dd43995a4f99f809c2c, type: 2}
-    enemyType: 102
+  - enemyType: 100
+    asset: {fileID: 11400000, guid: 501f0e6fb7d1d498384d1b43bcb7b56d, type: 2}
+  - enemyType: 101
+    asset: {fileID: 11400000, guid: e16c6f202aeaa3d4a84ac4ec1a248607, type: 2}
+  - enemyType: 102
+    asset: {fileID: 11400000, guid: 8ed95c7dbf400dd43995a4f99f809c2c, type: 2}
   bossDataSetupList:
-  - asset: {fileID: 11400000, guid: bb8336c32ff15114198c38e923647cdd, type: 2}
-    enemyType: 200
+  - enemyType: 201
+    asset: {fileID: 11400000, guid: 32f3d108eae92384188bce1c5c3a770e, type: 2}

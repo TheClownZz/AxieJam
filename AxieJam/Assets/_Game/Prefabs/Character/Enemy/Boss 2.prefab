@@ -125,13 +125,13 @@ MonoBehaviour:
   currspawItemTime: 0
   bossSkillInfoList:
   - hpRate: 0.5
-    controller: {fileID: 3013252643557124550}
+    controller: {fileID: 2710644296287537210}
     animName: attack/melee/normal-attack
     attackTime: 0.6
   - hpRate: 0
-    controller: {fileID: 3114130508093879891}
-    animName: attack/melee/Jump-scratch-attack
-    attackTime: 0.7
+    controller: {fileID: 2710644296287537210}
+    animName: attack/melee/normal-attack
+    attackTime: 0.6
 --- !u!114 &2593693923264475315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,6 +174,7 @@ MonoBehaviour:
   control: {fileID: 0}
   baseSpeed: 0
   currentSpeed: 0
+  direction: {x: 0, y: 0, z: 0}
   allowMove: 0
   anim: {fileID: 8400244866098227185}
   runAnim: action/move-forward
@@ -195,95 +196,6 @@ MonoBehaviour:
   control: {fileID: 0}
   currentHp: 0
   hpSlider: {fileID: 7253026776384328066}
---- !u!1 &526643085497045172
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3068841062967767853}
-  - component: {fileID: 719442602245962375}
-  - component: {fileID: 3114130508093879891}
-  m_Layer: 10
-  m_Name: BossJump
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &3068841062967767853
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 526643085497045172}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.24, y: -0.3, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
-  m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 3936449474071518496}
-  m_Father: {fileID: 243863109198179766}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &719442602245962375
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 526643085497045172}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
---- !u!114 &3114130508093879891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 526643085497045172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ec172cde1b72054bbc2f441b91af6cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  control: {fileID: 0}
-  target: {fileID: 0}
-  clip: {fileID: 0}
-  skillIndex: 1
-  jumpPower: 2.5
-  jumptime: 0.6
-  attackAoe: 2
-  fxSlam: {fileID: 4272155943399309086}
 --- !u!1 &557055957288851807
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,9 +355,114 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1628631332440846147}
-  - {fileID: 3068841062967767853}
+  - {fileID: 7717344596925003755}
   m_Father: {fileID: 3581130864806128365}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3106767347624806870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7717344596925003755}
+  - component: {fileID: 900980482260168582}
+  - component: {fileID: 2710644296287537210}
+  - component: {fileID: 1210573686577001020}
+  m_Layer: 10
+  m_Name: BossSlam
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7717344596925003755
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3106767347624806870}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 243863109198179766}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &900980482260168582
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3106767347624806870}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 5.5
+--- !u!114 &2710644296287537210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3106767347624806870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e80065ee5aff14aa23fcea7854a1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  control: {fileID: 0}
+  target: {fileID: 0}
+  weapon: {fileID: 1210573686577001020}
+  skillIndex: 1
+  attackSize: 2
+  fxSlam: {fileID: 3368135418938137261}
+  furry: {fileID: 6227039527359344021}
+  exposionPrefab: {fileID: 3334494085358144767, guid: 5bc227c2a45a7e44ea8521ddb446b620, type: 3}
+  attackClip: {fileID: 8300000, guid: 4e9bff56ee93c6f42b214141e44e763d, type: 3}
+  explosionClip: {fileID: 8300000, guid: 32aeeae89807bf949bb5620bb8724879, type: 3}
+--- !u!114 &1210573686577001020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3106767347624806870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d25de2a36ac9cf4fb59b65d6794686c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackClip: {fileID: 0}
+  effectDataList: []
 --- !u!1 &4447802915667506931
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,7 +475,7 @@ GameObject:
   - component: {fileID: 2005808103889279792}
   - component: {fileID: 3013252643557124550}
   m_Layer: 10
-  m_Name: BossSlam
+  m_Name: BossSurfing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -513,7 +530,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 4
+  m_Radius: 6
 --- !u!114 &3013252643557124550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,12 +545,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: {fileID: 0}
   target: {fileID: 0}
-  clip: {fileID: 8300000, guid: 4e9bff56ee93c6f42b214141e44e763d, type: 3}
-  jumpAnim: action/move-forward
+  buffAnim: action/idle/counter-state
   skillIndex: 0
-  jumpPower: 1.5
-  jumptime: 0.7
+  moveSpeed: 10
   attackSize: 2
+  clip: {fileID: 8300000, guid: 4e9bff56ee93c6f42b214141e44e763d, type: 3}
   fxSlam: {fileID: 3368135418938137261}
   furry: {fileID: 6227039527359344021}
 --- !u!1 &4489752843629510763
@@ -920,7 +936,7 @@ MonoBehaviour:
     materialsOutsideMask: []
   disableRenderingOnOverride: 1
   _animationName: attack/melee/normal-attack
-  loop: 1
+  loop: 0
   timeScale: 1
 --- !u!114 &8506085741951476735
 MonoBehaviour:
@@ -1018,97 +1034,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 5
---- !u!1001 &993827168617250942
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 3068841062967767853}
-    m_Modifications:
-    - target: {fileID: 3928114937774473056, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.2222222
-      objectReference: {fileID: 0}
-    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.2222222
-      objectReference: {fileID: 0}
-    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.2222222
-      objectReference: {fileID: 0}
-    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.431
-      objectReference: {fileID: 0}
-    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.044
-      objectReference: {fileID: 0}
-    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9646545
-      objectReference: {fileID: 0}
-    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.25847846
-      objectReference: {fileID: 0}
-    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.013274874
-      objectReference: {fileID: 0}
-    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.049542487
-      objectReference: {fileID: 0}
-    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5223227330238410271, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
-      propertyPath: m_Name
-      value: BossSlam
-      objectReference: {fileID: 0}
-    - target: {fileID: 5223227330238410271, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
---- !u!4 &3936449474071518496 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4281757194688273758, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
-  m_PrefabInstance: {fileID: 993827168617250942}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &4272155943399309086 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3928114937774473056, guid: 2d50578f0c24d064b84a571803b41c46, type: 3}
-  m_PrefabInstance: {fileID: 993827168617250942}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3368135418919202733
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -183,7 +183,7 @@ public class Character : MonoBehaviour
             return;
         isKnockBack = true;
 
-        knockBackTween = DOVirtual.DelayedCall(GameManager.Instance.gameConfig.forceBackTime, StopKnockBack);
+        knockBackTween = GameManager.Instance.DelayedCall(GameManager.Instance.gameConfig.forceBackTime, StopKnockBack);
     }
 
     public virtual void StopKnockBack()

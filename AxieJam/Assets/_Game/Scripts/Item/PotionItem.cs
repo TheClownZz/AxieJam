@@ -1,6 +1,4 @@
 using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PotionItem : MonoBehaviour
@@ -25,7 +23,7 @@ public class PotionItem : MonoBehaviour
             PoolManager.Instance.DespawnObject(transform);
             Transform clone = PoolManager.Instance.SpawnObject(fx);
             clone.position = transform.position;
-            DOVirtual.DelayedCall(0.5f, () =>
+            GameManager.Instance.DelayedCall(0.5f, () =>
             {
                 PoolManager.Instance.DespawnObject(clone);
             });

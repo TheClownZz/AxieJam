@@ -34,7 +34,8 @@ public class BossJumpAttack : EnemyAttack
     {
         fxSlam.Play();
         AudioManager.Instance.PlaySound(clip);
-        DOVirtual.DelayedCall(0.1f, () =>
+
+        GameManager.Instance.DelayedCall(0.1f, () =>
         {
             Player player = GameManager.Instance.currentPlayer;
             if (Vector3.Distance(transform.position, player.transform.position) <= attackAoe)

@@ -26,7 +26,7 @@ public class FoodItem : MonoBehaviour
             PoolManager.Instance.DespawnObject(transform);
             Transform clone = PoolManager.Instance.SpawnObject(fx);
             clone.position = transform.position;
-            DOVirtual.DelayedCall(0.5f, () =>
+            GameManager.Instance.DelayedCall(0.5f, () =>
             {
                 PoolManager.Instance.DespawnObject(clone);
             });

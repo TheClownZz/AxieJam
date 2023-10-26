@@ -23,7 +23,7 @@ public class BossMove : EnemyShootMove
         if (e.Data.Name == moveEvent)
         {
             isJump = true;
-            DOVirtual.DelayedCall(jumpTime, () => { isJump = false; });
+            GameManager.Instance.DelayedCall(jumpTime, () => { isJump = false; });
         }
     }
     protected override void UpdatePostion(float dt)

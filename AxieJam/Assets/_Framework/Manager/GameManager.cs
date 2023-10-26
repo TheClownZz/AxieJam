@@ -99,7 +99,7 @@ public class GameManager : MonoSingleton<GameManager>
         playerList.Clear();
         levelController.ClearCurrentLevel();
         ClearBullet();
-        foreach(Transform obj in objMap.transform.GetChild(0)) // 0 is destroy
+        foreach (Transform obj in objMap.transform.GetChild(0)) // 0 is destroy
         {
             Destroy(obj.gameObject);
         }
@@ -145,4 +145,13 @@ public class GameManager : MonoSingleton<GameManager>
     }
 
 
+    public Tween DelayedCall(float time, TweenCallback callback)
+    {
+
+        return DOVirtual.DelayedCall(time, () =>
+        {
+            if (gameState == GameState.Playing)
+                callback();
+        });
+    }
 }

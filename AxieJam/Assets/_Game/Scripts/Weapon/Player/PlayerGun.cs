@@ -48,7 +48,7 @@ public class PlayerGun : Weapon
     {
         isActive = true;
         cachedDamageRate = damageRate;
-        DOVirtual.DelayedCall(config.defaultValue.duration, DeAvtiveSkill);
+        GameManager.Instance.DelayedCall(config.defaultValue.duration, DeAvtiveSkill);
     }
 
     public virtual void DeAvtiveSkill()

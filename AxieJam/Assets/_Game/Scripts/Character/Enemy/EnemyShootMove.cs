@@ -31,7 +31,7 @@ public class EnemyShootMove : EnemyMove
             {
                 if (stopMoveTween == null)
                 {
-                    stopMoveTween = DOVirtual.DelayedCall(stopMoveTime, () =>
+                    stopMoveTween = GameManager.Instance.DelayedCall(stopMoveTime, () =>
                     {
                         allowMove = false;
                         dir = Vector3.zero;

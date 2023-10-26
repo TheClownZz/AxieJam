@@ -31,7 +31,7 @@ public class EnemySpineController : SpineController
         {
             if (trackEntry.Animation.Name == Attack)
             {
-                attackTween = DOVirtual.DelayedCall(attackTime, () =>
+                attackTween = GameManager.Instance.DelayedCall(attackTime, () =>
                 {
                     control.GetCom<EnemyAttack>().Attacktarget();
                 });
