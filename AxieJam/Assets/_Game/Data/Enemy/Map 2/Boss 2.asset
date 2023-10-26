@@ -28,12 +28,12 @@ MonoBehaviour:
         value: 3
       - type: 3
         value: 5
-      - type: 1
-        value: 3
     - skillPropertieList:
       - type: 0
         value: 2
       - type: 4
         value: 5
       - type: 3
+        value: 5
+      - type: 1
         value: 5
