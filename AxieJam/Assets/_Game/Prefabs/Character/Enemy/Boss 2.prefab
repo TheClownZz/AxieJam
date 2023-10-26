@@ -11,13 +11,12 @@ GameObject:
   - component: {fileID: 8840170584174963856}
   - component: {fileID: 2518912744251604098}
   - component: {fileID: 265889982521668301}
-  - component: {fileID: 4663038807184831406}
   - component: {fileID: 2593693923264475315}
   - component: {fileID: 7500814093568494133}
   - component: {fileID: 724379711993735569}
   - component: {fileID: 7398335165243421424}
   m_Layer: 8
-  m_Name: Boss_1
+  m_Name: Boss 2
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -72,7 +71,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.13591999, y: 0.6838159}
+  m_Offset: {x: -0.042892694, y: 1.3206958}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -83,7 +82,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.1557064, y: 1.8547698}
+  m_Size: {x: 2.9696517, y: 3.1285298}
   m_EdgeRadius: 0
 --- !u!114 &265889982521668301
 MonoBehaviour:
@@ -133,45 +132,6 @@ MonoBehaviour:
     controller: {fileID: 3114130508093879891}
     animName: attack/melee/Jump-scratch-attack
     attackTime: 0.7
---- !u!114 &4663038807184831406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 501980575361081423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ff834006e62b7544977371889b9252f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isDead: 0
-  isDisable: 0
-  isKnockBack: 0
-  body: {fileID: 3581130864806128365}
-  stat:
-    hp: 0
-    regen: 0
-    armor: 0
-    damage: 0
-    critRate: 0
-    critDamage: 0
-    attackSpeed: 0
-    moveSpeed: 0
-    lifeSteal: 0
-    dodge: 0
-  spineController: {fileID: 8506085741951476735}
-  componentList:
-  - {fileID: 0}
-  - {fileID: 2593693923264475315}
-  - {fileID: 0}
-  - {fileID: 0}
-  deadClip: {fileID: 0}
-  spawItemTime: 1
-  waveStat:
-    hpRate: 1
-    damageRate: 1
-  currspawItemTime: 0
 --- !u!114 &2593693923264475315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4fbd2540a9f3364482b236b2e7a1d9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asset: {fileID: 11400000, guid: bb8336c32ff15114198c38e923647cdd, type: 2}
+  asset: {fileID: 11400000, guid: 32f3d108eae92384188bce1c5c3a770e, type: 2}
 --- !u!114 &724379711993735569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,7 +178,7 @@ MonoBehaviour:
   anim: {fileID: 8400244866098227185}
   runAnim: action/move-forward
   moveEvent: jump
-  jumpTime: 0.35
+  jumpTime: 0.6
   isJump: 0
 --- !u!114 &7398335165243421424
 MonoBehaviour:
@@ -388,7 +348,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.13591999, y: 0.6838159}
+  m_Offset: {x: -0.042892694, y: 1.3206958}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -399,7 +359,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.1557064, y: 1.8547698}
+  m_Size: {x: 2.9696517, y: 3.1285298}
   m_EdgeRadius: 0
 --- !u!114 &4628347129519685165
 MonoBehaviour:
@@ -724,7 +684,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 2.5}
+  m_AnchoredPosition: {x: 0.3, y: 3.46}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8569009018608179202
@@ -853,7 +813,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 04b40ce521aee43348177fc4a6ac2dd0, type: 2}
+  - {fileID: 2100000, guid: 3207002d98f0044e7b688d9689e63f05, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -887,7 +847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: a50118a816670490f9edd1e600c0edd2, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: 9c5f971d81c5b4ca88949ad1d9548f71, type: 2}
   initialSkinName: 
   initialFlipX: 0
   initialFlipY: 0
@@ -927,7 +887,7 @@ MonoBehaviour:
   runScale: 1
   Run: action/move-forward
   Idle: action/idle/normal
-  Die: action/die
+  Die: defense/hit-die
   meshRender: {fileID: 1917792919758756133}
   anim: {fileID: 8400244866098227185}
   Hit: defense/hit-by-normal
