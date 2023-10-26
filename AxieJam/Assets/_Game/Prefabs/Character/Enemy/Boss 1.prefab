@@ -278,6 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: {fileID: 0}
   target: {fileID: 0}
+  clip: {fileID: 8300000, guid: 3fb856f9843426e4d9c7ef7864aa17ff, type: 3}
   skillIndex: 1
   jumpPower: 2.5
   jumptime: 0.6

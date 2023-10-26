@@ -101,7 +101,7 @@ public class Enemy : Character
 
             Transform item = PoolManager.Instance.SpawnObject(PoolType.FoodItem);
             item.transform.position = transform.position + (Vector3)Random.insideUnitCircle * 0.5f;
-            item.transform.SetParent(GameManager.Instance.objMap.transform.GetChild(1));
+            item.transform.SetParent(GameManager.Instance.GetMapTf().GetChild(1));
             item.GetComponent<FoodItem>().SetConfig(config);
         }
         else
@@ -114,7 +114,7 @@ public class Enemy : Character
 
                 Transform item = PoolManager.Instance.SpawnObject(PoolType.PotionItem);
                 item.transform.position = transform.position + (Vector3)Random.insideUnitCircle * 0.5f;
-                item.transform.SetParent(GameManager.Instance.objMap.transform.GetChild(1));
+                item.transform.SetParent(GameManager.Instance.GetMapTf().GetChild(1));
                 item.GetComponent<PotionItem>().SetConfig(config);
 
             }

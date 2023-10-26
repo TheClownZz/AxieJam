@@ -9,7 +9,7 @@ public class BossMove : EnemyShootMove
     [SerializeField] string runAnim;
     [SerializeField] string moveEvent;
     [SerializeField] float jumpTime = 1f;
-    [SerializeField] bool isJump = false;
+    public bool isJump = false;
 
     public override void OnInits(Character e)
     {
@@ -32,8 +32,12 @@ public class BossMove : EnemyShootMove
         base.UpdatePostion(dt);
     }
 
-    protected override void Force(float dt)
+
+    public override void OnUpdate(float dt)
     {
-       
+        if (GetTarget().isDead) return;
+        if (!control.isDisable)
+            Move(dt);
+        CheckLimit();
     }
 }

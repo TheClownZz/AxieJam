@@ -63,6 +63,11 @@ public class SpineController : MonoBehaviour
         }
     }
 
+    public void SetAnim(string animName, bool isloop = false)
+    {
+        anim.state.SetAnimation(0, animName, isloop);
+
+    }
     public void FlipX(float flip)
     {
         anim.skeleton.ScaleX = flip;

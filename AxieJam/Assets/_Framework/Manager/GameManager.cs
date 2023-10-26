@@ -62,7 +62,7 @@ public class GameManager : MonoSingleton<GameManager>
             p.transform.position = outPos;
             p.SetData(asset.data);
             p.OnInit();
-            p.transform.SetParent(objMap.transform);
+            p.transform.SetParent(GetMapTf());
             playerList.Add(p);
         }
 
@@ -137,6 +137,11 @@ public class GameManager : MonoSingleton<GameManager>
     public void ShowMap(bool isShow)
     {
         objMap.SetActive(isShow);
+    }
+
+    public Transform GetMapTf()
+    {
+        return objMap.transform;
     }
 
 

@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class BossJumpAttack : EnemyAttack
 {
+    [SerializeField] AudioClip clip;
+
     [SerializeField] int skillIndex = 1;
     [SerializeField] float jumpPower;
     [SerializeField] float jumptime;
@@ -17,10 +19,11 @@ public class BossJumpAttack : EnemyAttack
         coolDown = config.GetSkillValue(SkillType.Cooldown, 1);
         damageRate = config.GetSkillValue(SkillType.Damage, 1);
         transform.localScale = Vector3.one * (config.GetSkillValue(SkillType.Range, 10));
-
     }
     public override void OnAttack()
     {
+        if (control.GetCom<BossMove>().isJump) return;
+
         timeAttack = Time.time;
         control.DisableEnemy(true);
         control.SetState(CharacterState.Attack);
@@ -30,6 +33,7 @@ public class BossJumpAttack : EnemyAttack
     public override void Attacktarget()
     {
         fxSlam.Play();
+        AudioManager.Instance.PlaySound(clip);
         DOVirtual.DelayedCall(0.1f, () =>
         {
             Player player = GameManager.Instance.currentPlayer;
@@ -49,7 +53,7 @@ public class BossJumpAttack : EnemyAttack
                 player.GetPCom<PlayerHp>().TakeDamage(damage, isCrit);
             }
         });
-       
+
 
 
     }

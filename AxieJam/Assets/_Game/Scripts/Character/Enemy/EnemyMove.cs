@@ -7,7 +7,6 @@ public class EnemyMove : EnemyComponent
     protected const float minDistance = 0.35f;
     protected const float runDistance = 0.5f;
 
-    protected Vector3 direction;
 
     protected Vector3 forceDir;
     protected float forceDrag;
@@ -16,6 +15,7 @@ public class EnemyMove : EnemyComponent
     protected Enemy eControl;
     [SerializeField] protected float baseSpeed;
     [SerializeField] protected float currentSpeed;
+    [SerializeField] protected Vector3 direction;
     Transform top, bot, left, right;
 
     public override void OnInits(Character e)
@@ -126,7 +126,7 @@ public class EnemyMove : EnemyComponent
         currentSpeed = baseSpeed * rate;
     }
 
-    private void CheckLimit()
+    protected void CheckLimit()
     {
         Vector3 pos = transform.position;
         if (pos.x < left.position.x || pos.x > right.position.x || pos.y < bot.position.y || pos.y > top.position.y)

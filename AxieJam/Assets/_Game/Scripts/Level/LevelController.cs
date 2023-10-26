@@ -94,7 +94,7 @@ public class LevelController : MonoBehaviour
     {
         Vector2 pos = Quaternion.Euler(0f, 0f, Random.Range(0, 360)) * Vector2.right * spawnRadius;
         pos.x = Mathf.Clamp(pos.x, left.position.x, right.position.x);
-        pos.y = Mathf.Clamp(pos.y, bot.position.y, top.position.y);
+        pos.y = Mathf.Clamp(pos.y, bot.position.y, top.position.y - 2f);
 
         Enemy e = PoolManager.Instance.SpawnObject((PoolType)enemyType).GetComponent<Enemy>();
         e.transform.SetParent(transform);
@@ -120,6 +120,6 @@ public class LevelController : MonoBehaviour
             LoadNextWave();
         }
     }
-   
+
 
 }

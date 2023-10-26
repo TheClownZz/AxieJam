@@ -13,7 +13,7 @@ public class GreenGun : PlayerGun
         float coolDown = config.GetSkillValue(SkillType.Cooldown, 0.5f);
         float activeValue = config.GetSkillValue(SkillType.ActiveValue, 0.05f);
 
-        ward.transform.SetParent(GameManager.Instance.objMap.transform.GetChild(0), false); // map chid 0 is destroyler
+        ward.transform.SetParent(GameManager.Instance.GetMapTf().GetChild(0), false); // map chid 0 is destroyler
 
         ward.transform.position = transform.position;
         ward.transform.localScale = Vector3.one * range;
