@@ -8,6 +8,8 @@ public class PotionConfig
 {
     public PlayerType type;
     public Sprite sprite;
+    public Sprite uiSprite;
+
 }
 [CreateAssetMenu(menuName = "Game/PotionAsset", fileName = "PotionAsset")]
 

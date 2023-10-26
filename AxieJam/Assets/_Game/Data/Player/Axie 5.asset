@@ -33,7 +33,7 @@ MonoBehaviour:
       damage: 5
       attackSpeed: 0.5
       moveSpeed: 0.5
-      critRate: 0.2
+      critRate: 0.05
       critDamage: 0
       armor: 0
     skillConfiglist:

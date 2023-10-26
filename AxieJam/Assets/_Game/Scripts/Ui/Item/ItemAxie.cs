@@ -71,8 +71,8 @@ public class ItemAxie : MonoBehaviour
 
         imgIcon.sprite = asset.avatar;
         imgSkill.sprite = asset.skillIcon;
-        imgFood.sprite = footConfig.sprite;
-        imgPotion.sprite = potionConfig.sprite;
+        imgFood.sprite = footConfig.uiSprite;
+        imgPotion.sprite = potionConfig.uiSprite;
 
         tmpLevel.SetText("LV.{0}", data.level);
         tmpAtk.SetText(Mathf.CeilToInt(damage).ToString());
@@ -100,7 +100,7 @@ public class ItemAxie : MonoBehaviour
         DataManager.Instance.GetData<DataUser>().
             UpLevel(playerType, require);
         UpdateUI();
-        AudioManager.Instance.PlayOnceShot(AudioType.CLICK);
+        AudioManager.Instance.PlayOnceShot(AudioType.LvUp);
     }
 
     public void OnBtnSkillClick()
@@ -110,9 +110,9 @@ public class ItemAxie : MonoBehaviour
         int require = asset.data.GetSkillConfig(data.level).defaultValue.potionRequire;
 
         DataManager.Instance.GetData<DataUser>().
-            UpLevel(playerType, require);
+            UpSkill(playerType, require);
         UpdateUI();
-        AudioManager.Instance.PlayOnceShot(AudioType.CLICK);
+        AudioManager.Instance.PlayOnceShot(AudioType.LvUp);
     }
 
 }
