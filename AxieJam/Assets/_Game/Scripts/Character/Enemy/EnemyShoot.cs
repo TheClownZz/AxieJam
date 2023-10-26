@@ -15,6 +15,7 @@ public class EnemyShoot : EnemyAttack
 
     public override void OnAttack()
     {
+        Debug.LogError("OnAttack");
         timeAttack = Time.time;
         control.DisableEnemy(true);
         control.SetState(CharacterState.Attack);
@@ -34,5 +35,4 @@ public class EnemyShoot : EnemyAttack
             gun.targetPos = target.transform.position;
         gun.SpawnBullet();
     }
-
 }

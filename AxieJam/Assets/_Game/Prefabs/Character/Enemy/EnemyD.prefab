@@ -239,6 +239,7 @@ MonoBehaviour:
   control: {fileID: 0}
   baseSpeed: 0
   currentSpeed: 0
+  direction: {x: 0, y: 0, z: 0}
 --- !u!114 &5507233453395388850
 MonoBehaviour:
   m_ObjectHideFlags: 0

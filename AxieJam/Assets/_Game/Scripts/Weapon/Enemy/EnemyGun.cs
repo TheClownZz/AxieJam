@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyGun : Weapon
 {
-    public Vector3 targetPos;
+    [HideInInspector] public Vector3 targetPos;
     [SerializeField] protected Bullet bulletPf;
     [SerializeField] protected Transform shooter;
     [SerializeField] protected float butlletSpeed = 10f;

@@ -10,8 +10,9 @@ public class EnemyAttack : EnemyComponent
     public override void OnInits(Character enemy)
     {
         base.OnInits(enemy);
-        timeAttack = 0;
         coolDown = 1f / control.stat.attackSpeed;
+        timeAttack = Time.time;
+
     }
 
 

@@ -9,7 +9,7 @@ public class Enemy : Character
 {
     [SerializeField] AudioClip deadClip;
     [SerializeField] float spawItemTime = 1f;
-    const float timeDelayDespawn = 1;
+    const float timeDelayDespawn = 1.5f;
 
     Transform spawnFx;
     Tween spawnTween;

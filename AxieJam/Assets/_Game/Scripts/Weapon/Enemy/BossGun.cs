@@ -9,6 +9,12 @@ public class BossGun : EnemyGun
 
     float damageRate = 1;
     float angleRate = 10;
+
+    public override void OnInits(Character characterControl)
+    {
+        base.OnInits(characterControl);
+        UpdateStat();
+    }
     public override Bullet SpawnBullet()
     {
         Vector3 dir = (targetPos - shooter.transform.position).normalized;
@@ -29,7 +35,7 @@ public class BossGun : EnemyGun
         return null;
 
     }
-    protected override void UpdateStat()
+    protected void UpdateStat()
     {
         BossSkillConfig config = characterControl.GetComponent<SetupBossData>().asset.data.skilldDataList[skillIndex];
         damageRate = config.GetSkillValue(SkillType.Damage, 1);

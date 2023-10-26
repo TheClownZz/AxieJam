@@ -14,11 +14,12 @@ public class Bullet : MonoBehaviour, ICreateDamage
 
     [HideInInspector] public Weapon weapon;
 
-    Collider2D col;
+    protected Collider2D col;
 
     int hitCount;
     public virtual void OnInits(Weapon weapon, float speed, Vector3 dir)
     {
+        Debug.LogError("OnInits 2");
         this.weapon = weapon;
         this.dir = dir * speed;
         hitCount = 0;
@@ -34,7 +35,7 @@ public class Bullet : MonoBehaviour, ICreateDamage
     public void SetCol(bool value)
     {
         col.enabled = value;
-    }    
+    }
 
     protected virtual void Update()
     {
@@ -44,12 +45,13 @@ public class Bullet : MonoBehaviour, ICreateDamage
 
     public virtual void Clear()
     {
+        Debug.LogError("Clear 1");
         PoolManager.Instance.DespawnObject(transform);
     }
     protected virtual void HitCharacter(Character character)
     {
         CharacterStat stat = weapon.GetCharacterStat();
-        float damage = stat.damage* damageRate;
+        float damage = stat.damage * damageRate;
         float critDamage = stat.critDamage;
 
         float critRate = stat.critRate;
