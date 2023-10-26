@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Axie
   m_EditorClassIdentifier: 
   avatar: {fileID: 21300000, guid: 4b8c41cf5c198e44b9794979862fc5ad, type: 3}
-  skillIcon: {fileID: 0}
+  skillIcon: {fileID: 21300000, guid: 121f65ec7bc794bb097021a8d9e32a9a, type: 3}
   axieName: Blue
   skillName: Multishoot
   discription: Releases a flurry of bullets  per attack

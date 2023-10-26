@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Axie 3
   m_EditorClassIdentifier: 
   avatar: {fileID: 21300000, guid: 888f069d62a8b024ca1d63a706135105, type: 3}
-  skillIcon: {fileID: 0}
+  skillIcon: {fileID: 21300000, guid: 6b0b7b0aafc5d4ab8be431110a048ecc, type: 3}
   axieName: Green
   skillName: Healing
   discription: Creates a circle that restores vitality

@@ -74,7 +74,7 @@ public class ItemAxie : MonoBehaviour
         imgFood.sprite = footConfig.sprite;
         imgPotion.sprite = potionConfig.sprite;
 
-        tmpLevel.SetText("Lv.{0}", data.level);
+        tmpLevel.SetText("LV.{0}", data.level);
         tmpAtk.SetText(Mathf.CeilToInt(damage).ToString());
         tmpHp.SetText(Mathf.CeilToInt(hp).ToString());
         tmpSpeed.SetText(moveSpeed.ToString());
@@ -82,10 +82,10 @@ public class ItemAxie : MonoBehaviour
         tmpFood.SetText("{0}/{1}", data.foodCount, footRequire);
         tmpPotion.SetText("{0}/{1}", data.potionCount, potionRequire);
         tmpSkillName.SetText(asset.skillName);
-        tmpSkillLevel.SetText("Lv.{0}", data.levelSkill);
+        tmpSkillLevel.SetText("LV.{0}", data.levelSkill);
         tmpDiscription.SetText(asset.discription);
-        tmpCooldown.SetText("Cooldown:{0}s", cooldown);
-        tmpDuration.SetText("Duration:{0}s", duration);
+        tmpCooldown.SetText("Cooldown: {0}s", cooldown);
+        tmpDuration.SetText("Duration: {0}s", duration);
 
         btnLevel.interactable = data.foodCount >= footRequire;
         btnSkill.interactable = data.potionCount >= potionRequire;

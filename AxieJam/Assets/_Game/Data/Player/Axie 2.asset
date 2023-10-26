@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Axie 2
   m_EditorClassIdentifier: 
   avatar: {fileID: 21300000, guid: 281873d82febec540ac3cdffb14a91e2, type: 3}
-  skillIcon: {fileID: 0}
+  skillIcon: {fileID: 21300000, guid: 0ca45eee3d5654491ae561a2e1492f2a, type: 3}
   axieName: Red
   skillName: Unknow
   discription: Unknow
