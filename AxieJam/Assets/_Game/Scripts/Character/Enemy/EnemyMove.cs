@@ -4,8 +4,8 @@ using UnityEngine;
 using DG.Tweening;
 public class EnemyMove : EnemyComponent
 {
-    protected const float minDistance = 0.35f;
-    protected const float runDistance = 0.5f;
+    protected const float minDistance = 0.8f;
+    protected const float runDistance = 1.25f;
 
 
     protected Vector3 forceDir;

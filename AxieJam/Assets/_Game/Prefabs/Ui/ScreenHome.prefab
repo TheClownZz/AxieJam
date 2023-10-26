@@ -5289,237 +5289,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057346486062705586}
   m_CullTransparentMesh: 1
---- !u!1 &1409547263348273223
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6794115392090380127}
-  - component: {fileID: 2472520851480844760}
-  - component: {fileID: 6793422412575818824}
-  - component: {fileID: 4770157498248835449}
-  m_Layer: 5
-  m_Name: tmpTtile
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &6794115392090380127
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1409547263348273223}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7231018888529649256}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 277, y: -250}
-  m_SizeDelta: {x: 830, y: 69.60501}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &2472520851480844760
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1409547263348273223}
-  m_CullTransparentMesh: 1
---- !u!114 &6793422412575818824
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1409547263348273223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 'AXIES MASTER
-
-'
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ae4e8a032799c0c46866facf08ba60c8, type: 2}
-  m_sharedMaterial: {fileID: 7088616491052775458, guid: ae4e8a032799c0c46866facf08ba60c8, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 1
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &4770157498248835449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1409547263348273223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b91132341bbeae4b91b9374ab5e8a2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _TimeSource: 0
-  _OnEnable_PlayAnim: 0
-  _AnimationSlots:
-  - _LocalSerializedData: "<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<SE_Animation
-      xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
-      Name=\"Custom\" _Playback=\"Single\" _Backwards=\"false\" _PlaybackTimes=\"-1\"
-      _ExtraTimeFinal=\"0\" _ExtraTimePerLoop=\"0\">\r\n  <_Sequences>\r\n    <SE_AnimSequence
-      xsi:type=\"SE_AnimSequence_Alpha\">\r\n      <_Name />\r\n      <_StartType>OnAnimStart</_StartType>\r\n     
-      <_StartDelay>0</_StartDelay>\r\n      <_Separation>0.28</_Separation>\r\n     
-      <_RandomStart>0</_RandomStart>\r\n      <_DurationType>TotalTime</_DurationType>\r\n     
-      <_Duration>1</_Duration>\r\n      <_DurationRandom_Slower>0</_DurationRandom_Slower>\r\n     
-      <_DurationRandom_Faster>0</_DurationRandom_Faster>\r\n      <_Playback>Single</_Playback>\r\n     
-      <_Backwards>false</_Backwards>\r\n      <_PlaybackTimes>1</_PlaybackTimes>\r\n     
-      <_EasingCurve>\r\n        <keys>\r\n          <Keyframe>\r\n            <time>0</time>\r\n           
-      <value>0</value>\r\n            <inTangent>0</inTangent>\r\n            <outTangent>0</outTangent>\r\n           
-      <inWeight>0</inWeight>\r\n            <outWeight>0</outWeight>\r\n           
-      <weightedMode>None</weightedMode>\r\n          </Keyframe>\r\n          <Keyframe>\r\n           
-      <time>1</time>\r\n            <value>1</value>\r\n            <inTangent>0</inTangent>\r\n           
-      <outTangent>0</outTangent>\r\n            <inWeight>0</inWeight>\r\n           
-      <outWeight>0</outWeight>\r\n            <weightedMode>None</weightedMode>\r\n         
-      </Keyframe>\r\n        </keys>\r\n        <preWrapMode>ClampForever</preWrapMode>\r\n       
-      <postWrapMode>ClampForever</postWrapMode>\r\n      </_EasingCurve>\r\n     
-      <_TargetType>Letters</_TargetType>\r\n      <_TargetRangeType>All</_TargetRangeType>\r\n     
-      <_TargetRangeStart>0</_TargetRangeStart>\r\n      <_TargetRangeAmount>0</_TargetRangeAmount>\r\n     
-      <_InitAllElements>true</_InitAllElements>\r\n      <_Enabled>true</_Enabled>\r\n     
-      <_From>0</_From>\r\n      <_FromRandom>0</_FromRandom>\r\n      <_To>1</_To>\r\n     
-      <_ToRandom>0</_ToRandom>\r\n      <_AnimBlend_From>Replace</_AnimBlend_From>\r\n     
-      <_AnimBlend_To>Replace</_AnimBlend_To>\r\n      <_OnFinish_SetAlphaToFinalValue>false</_OnFinish_SetAlphaToFinalValue>\r\n   
-      </SE_AnimSequence>\r\n    <SE_AnimSequence xsi:type=\"SE_AnimSequence_Position\">\r\n     
-      <_Name />\r\n      <_StartType>OnAnimStart</_StartType>\r\n      <_StartDelay>0</_StartDelay>\r\n     
-      <_Separation>0.08</_Separation>\r\n      <_RandomStart>0</_RandomStart>\r\n     
-      <_DurationType>TotalTime</_DurationType>\r\n      <_Duration>1</_Duration>\r\n     
-      <_DurationRandom_Slower>0</_DurationRandom_Slower>\r\n      <_DurationRandom_Faster>0</_DurationRandom_Faster>\r\n     
-      <_Playback>Single</_Playback>\r\n      <_Backwards>false</_Backwards>\r\n     
-      <_PlaybackTimes>1</_PlaybackTimes>\r\n      <_EasingCurve>\r\n        <keys>\r\n         
-      <Keyframe>\r\n            <time>0</time>\r\n            <value>0</value>\r\n           
-      <inTangent>0.9910884</inTangent>\r\n            <outTangent>0.9910884</outTangent>\r\n           
-      <inWeight>0</inWeight>\r\n            <outWeight>0</outWeight>\r\n           
-      <weightedMode>None</weightedMode>\r\n          </Keyframe>\r\n          <Keyframe>\r\n           
-      <time>0.671867132</time>\r\n            <value>0.9933881</value>\r\n           
-      <inTangent>2.967217</inTangent>\r\n            <outTangent>-0.57365793</outTangent>\r\n           
-      <inWeight>0</inWeight>\r\n            <outWeight>0</outWeight>\r\n           
-      <weightedMode>None</weightedMode>\r\n          </Keyframe>\r\n          <Keyframe>\r\n           
-      <time>1</time>\r\n            <value>1</value>\r\n            <inTangent>1.57479751</inTangent>\r\n           
-      <outTangent>1.57479751</outTangent>\r\n            <inWeight>0</inWeight>\r\n           
-      <outWeight>0</outWeight>\r\n            <weightedMode>None</weightedMode>\r\n         
-      </Keyframe>\r\n        </keys>\r\n        <preWrapMode>ClampForever</preWrapMode>\r\n       
-      <postWrapMode>ClampForever</postWrapMode>\r\n      </_EasingCurve>\r\n     
-      <_TargetType>Letters</_TargetType>\r\n      <_TargetRangeType>All</_TargetRangeType>\r\n     
-      <_TargetRangeStart>0</_TargetRangeStart>\r\n      <_TargetRangeAmount>0</_TargetRangeAmount>\r\n     
-      <_InitAllElements>true</_InitAllElements>\r\n      <_Enabled>true</_Enabled>\r\n     
-      <_From>\r\n        <x>0</x>\r\n        <y>2</y>\r\n        <z>0</z>\r\n     
-      </_From>\r\n      <_To>\r\n        <x>0</x>\r\n        <y>0</y>\r\n       
-      <z>0</z>\r\n      </_To>\r\n      <_FromRandom>\r\n        <x>0</x>\r\n       
-      <y>0</y>\r\n        <z>0</z>\r\n      </_FromRandom>\r\n      <_ToRandom>\r\n       
-      <x>0</x>\r\n        <y>0</y>\r\n        <z>0</z>\r\n      </_ToRandom>\r\n     
-      <_AnimBlend_From>Offset</_AnimBlend_From>\r\n      <_AnimBlend_To>Offset</_AnimBlend_To>\r\n     
-      <_ApplyX>true</_ApplyX>\r\n      <_ApplyY>true</_ApplyY>\r\n      <_ApplyZ>true</_ApplyZ>\r\n     
-      <_UseAxisEasingCurves>false</_UseAxisEasingCurves>\r\n      <_EasingCurveY>\r\n       
-      <keys>\r\n          <Keyframe>\r\n            <time>0</time>\r\n           
-      <value>0</value>\r\n            <inTangent>0</inTangent>\r\n            <outTangent>0</outTangent>\r\n           
-      <inWeight>0</inWeight>\r\n            <outWeight>0</outWeight>\r\n           
-      <weightedMode>None</weightedMode>\r\n          </Keyframe>\r\n          <Keyframe>\r\n           
-      <time>1</time>\r\n            <value>1</value>\r\n            <inTangent>0</inTangent>\r\n           
-      <outTangent>0</outTangent>\r\n            <inWeight>0</inWeight>\r\n           
-      <outWeight>0</outWeight>\r\n            <weightedMode>None</weightedMode>\r\n         
-      </Keyframe>\r\n        </keys>\r\n        <preWrapMode>ClampForever</preWrapMode>\r\n       
-      <postWrapMode>ClampForever</postWrapMode>\r\n      </_EasingCurveY>\r\n     
-      <_EasingCurveZ>\r\n        <keys>\r\n          <Keyframe>\r\n            <time>0</time>\r\n           
-      <value>0</value>\r\n            <inTangent>0</inTangent>\r\n            <outTangent>0</outTangent>\r\n           
-      <inWeight>0</inWeight>\r\n            <outWeight>0</outWeight>\r\n           
-      <weightedMode>None</weightedMode>\r\n          </Keyframe>\r\n          <Keyframe>\r\n           
-      <time>1</time>\r\n            <value>1</value>\r\n            <inTangent>0</inTangent>\r\n           
-      <outTangent>0</outTangent>\r\n            <inWeight>0</inWeight>\r\n           
-      <outWeight>0</outWeight>\r\n            <weightedMode>None</weightedMode>\r\n         
-      </Keyframe>\r\n        </keys>\r\n        <preWrapMode>ClampForever</preWrapMode>\r\n       
-      <postWrapMode>ClampForever</postWrapMode>\r\n      </_EasingCurveZ>\r\n   
-      </SE_AnimSequence>\r\n  </_Sequences>\r\n</SE_Animation>"
-    _Preset: {fileID: 11400000, guid: ec31acc1350df244d8ecf9061086721b, type: 2}
-  _OnAnimation_Finished:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1470089913205915839
 GameObject:
   m_ObjectHideFlags: 0
@@ -6163,15 +5932,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: THE MASTER
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c1482dbce654844b9ba1c753cbea5d80, type: 2}
-  m_sharedMaterial: {fileID: 7374927986402738804, guid: c1482dbce654844b9ba1c753cbea5d80, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ae4e8a032799c0c46866facf08ba60c8, type: 2}
+  m_sharedMaterial: {fileID: 7088616491052775458, guid: ae4e8a032799c0c46866facf08ba60c8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -6245,7 +6014,128 @@ MonoBehaviour:
   _TimeSource: 0
   _OnEnable_PlayAnim: 0
   _AnimationSlots:
-  - _LocalSerializedData: 
+  - _LocalSerializedData: "<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<SE_Animation
+      xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+      Name=\"Custom\" _Playback=\"Single\" _Backwards=\"false\" _PlaybackTimes=\"-1\"
+      _ExtraTimeFinal=\"0\" _ExtraTimePerLoop=\"0\">\r\n  <_Sequences>\r\n    <SE_AnimSequence
+      xsi:type=\"SE_AnimSequence_Alpha\">\r\n      <_Name />\r\n      <_StartType>OnAnimStart</_StartType>\r\n     
+      <_StartDelay>0</_StartDelay>\r\n      <_Separation>0.14</_Separation>\r\n     
+      <_RandomStart>0</_RandomStart>\r\n      <_DurationType>TotalTime</_DurationType>\r\n     
+      <_Duration>1</_Duration>\r\n      <_DurationRandom_Slower>0</_DurationRandom_Slower>\r\n     
+      <_DurationRandom_Faster>0</_DurationRandom_Faster>\r\n      <_Playback>Single</_Playback>\r\n     
+      <_Backwards>false</_Backwards>\r\n      <_PlaybackTimes>1</_PlaybackTimes>\r\n     
+      <_EasingCurve>\r\n        <keys>\r\n          <Keyframe>\r\n            <time>0</time>\r\n           
+      <value>0</value>\r\n            <inTangent>0</inTangent>\r\n            <outTangent>0</outTangent>\r\n           
+      <inWeight>0</inWeight>\r\n            <outWeight>0</outWeight>\r\n           
+      <weightedMode>None</weightedMode>\r\n          </Keyframe>\r\n          <Keyframe>\r\n           
+      <time>1</time>\r\n            <value>1</value>\r\n            <inTangent>0</inTangent>\r\n           
+      <outTangent>0</outTangent>\r\n            <inWeight>0</inWeight>\r\n           
+      <outWeight>0</outWeight>\r\n            <weightedMode>None</weightedMode>\r\n         
+      </Keyframe>\r\n        </keys>\r\n        <preWrapMode>ClampForever</preWrapMode>\r\n       
+      <postWrapMode>ClampForever</postWrapMode>\r\n      </_EasingCurve>\r\n     
+      <_TargetType>Letters</_TargetType>\r\n      <_TargetRangeType>All</_TargetRangeType>\r\n     
+      <_TargetRangeStart>0</_TargetRangeStart>\r\n      <_TargetRangeAmount>0</_TargetRangeAmount>\r\n     
+      <_InitAllElements>true</_InitAllElements>\r\n      <_Enabled>true</_Enabled>\r\n     
+      <_From>0</_From>\r\n      <_FromRandom>0</_FromRandom>\r\n      <_To>1</_To>\r\n     
+      <_ToRandom>0</_ToRandom>\r\n      <_AnimBlend_From>Replace</_AnimBlend_From>\r\n     
+      <_AnimBlend_To>Replace</_AnimBlend_To>\r\n      <_OnFinish_SetAlphaToFinalValue>true</_OnFinish_SetAlphaToFinalValue>\r\n   
+      </SE_AnimSequence>\r\n    <SE_AnimSequence xsi:type=\"SE_AnimSequence_Scale\">\r\n     
+      <_Name />\r\n      <_StartType>OnAnimStart</_StartType>\r\n      <_StartDelay>0</_StartDelay>\r\n     
+      <_Separation>0.13</_Separation>\r\n      <_RandomStart>0</_RandomStart>\r\n     
+      <_DurationType>TotalTime</_DurationType>\r\n      <_Duration>1</_Duration>\r\n     
+      <_DurationRandom_Slower>0</_DurationRandom_Slower>\r\n      <_DurationRandom_Faster>0</_DurationRandom_Faster>\r\n     
+      <_Playback>Single</_Playback>\r\n      <_Backwards>false</_Backwards>\r\n     
+      <_PlaybackTimes>1</_PlaybackTimes>\r\n      <_EasingCurve>\r\n        <keys>\r\n         
+      <Keyframe>\r\n            <time>0</time>\r\n            <value>0</value>\r\n           
+      <inTangent>0</inTangent>\r\n            <outTangent>0</outTangent>\r\n           
+      <inWeight>0</inWeight>\r\n            <outWeight>0</outWeight>\r\n           
+      <weightedMode>None</weightedMode>\r\n          </Keyframe>\r\n          <Keyframe>\r\n           
+      <time>0.7972128</time>\r\n            <value>1.02123177</value>\r\n           
+      <inTangent>-1.19594443</inTangent>\r\n            <outTangent>-1.19594443</outTangent>\r\n           
+      <inWeight>0</inWeight>\r\n            <outWeight>0</outWeight>\r\n           
+      <weightedMode>None</weightedMode>\r\n          </Keyframe>\r\n          <Keyframe>\r\n           
+      <time>1</time>\r\n            <value>1</value>\r\n            <inTangent>7.887679E-07</inTangent>\r\n           
+      <outTangent>7.887679E-07</outTangent>\r\n            <inWeight>0</inWeight>\r\n           
+      <outWeight>0</outWeight>\r\n            <weightedMode>None</weightedMode>\r\n         
+      </Keyframe>\r\n        </keys>\r\n        <preWrapMode>ClampForever</preWrapMode>\r\n       
+      <postWrapMode>ClampForever</postWrapMode>\r\n      </_EasingCurve>\r\n     
+      <_TargetType>Letters</_TargetType>\r\n      <_TargetRangeType>All</_TargetRangeType>\r\n     
+      <_TargetRangeStart>0</_TargetRangeStart>\r\n      <_TargetRangeAmount>0</_TargetRangeAmount>\r\n     
+      <_InitAllElements>true</_InitAllElements>\r\n      <_Enabled>true</_Enabled>\r\n     
+      <_From>\r\n        <x>2</x>\r\n        <y>2</y>\r\n        <z>2</z>\r\n     
+      </_From>\r\n      <_To>\r\n        <x>1</x>\r\n        <y>1</y>\r\n       
+      <z>1</z>\r\n      </_To>\r\n      <_FromRandom>\r\n        <x>0</x>\r\n       
+      <y>0</y>\r\n        <z>0</z>\r\n      </_FromRandom>\r\n      <_ToRandom>\r\n       
+      <x>0</x>\r\n        <y>0</y>\r\n        <z>0</z>\r\n      </_ToRandom>\r\n     
+      <_AnimBlend_From>Replace</_AnimBlend_From>\r\n      <_AnimBlend_To>Replace</_AnimBlend_To>\r\n     
+      <_ApplyX>true</_ApplyX>\r\n      <_ApplyY>true</_ApplyY>\r\n      <_ApplyZ>true</_ApplyZ>\r\n     
+      <_UseAxisEasingCurves>false</_UseAxisEasingCurves>\r\n      <_EasingCurveY>\r\n       
+      <keys>\r\n          <Keyframe>\r\n            <time>0</time>\r\n           
+      <value>0</value>\r\n            <inTangent>0</inTangent>\r\n            <outTangent>0</outTangent>\r\n           
+      <inWeight>0</inWeight>\r\n            <outWeight>0</outWeight>\r\n           
+      <weightedMode>None</weightedMode>\r\n          </Keyframe>\r\n          <Keyframe>\r\n           
+      <time>1</time>\r\n            <value>1</value>\r\n            <inTangent>0</inTangent>\r\n           
+      <outTangent>0</outTangent>\r\n            <inWeight>0</inWeight>\r\n           
+      <outWeight>0</outWeight>\r\n            <weightedMode>None</weightedMode>\r\n         
+      </Keyframe>\r\n        </keys>\r\n        <preWrapMode>ClampForever</preWrapMode>\r\n       
+      <postWrapMode>ClampForever</postWrapMode>\r\n      </_EasingCurveY>\r\n     
+      <_EasingCurveZ>\r\n        <keys>\r\n          <Keyframe>\r\n            <time>0</time>\r\n           
+      <value>0</value>\r\n            <inTangent>0</inTangent>\r\n            <outTangent>0</outTangent>\r\n           
+      <inWeight>0</inWeight>\r\n            <outWeight>0</outWeight>\r\n           
+      <weightedMode>None</weightedMode>\r\n          </Keyframe>\r\n          <Keyframe>\r\n           
+      <time>1</time>\r\n            <value>1</value>\r\n            <inTangent>0</inTangent>\r\n           
+      <outTangent>0</outTangent>\r\n            <inWeight>0</inWeight>\r\n           
+      <outWeight>0</outWeight>\r\n            <weightedMode>None</weightedMode>\r\n         
+      </Keyframe>\r\n        </keys>\r\n        <preWrapMode>ClampForever</preWrapMode>\r\n       
+      <postWrapMode>ClampForever</postWrapMode>\r\n      </_EasingCurveZ>\r\n     
+      <_Pivot>\r\n        <x>0.5</x>\r\n        <y>0.5</y>\r\n        <z>0</z>\r\n     
+      </_Pivot>\r\n      <_PivotType>Relative_All</_PivotType>\r\n    </SE_AnimSequence>\r\n   
+      <SE_AnimSequence xsi:type=\"SE_AnimSequence_Position\">\r\n      <_Name />\r\n     
+      <_StartType>OnAnimStart</_StartType>\r\n      <_StartDelay>0</_StartDelay>\r\n     
+      <_Separation>0.16</_Separation>\r\n      <_RandomStart>0</_RandomStart>\r\n     
+      <_DurationType>TotalTime</_DurationType>\r\n      <_Duration>1</_Duration>\r\n     
+      <_DurationRandom_Slower>0</_DurationRandom_Slower>\r\n      <_DurationRandom_Faster>0</_DurationRandom_Faster>\r\n     
+      <_Playback>Single</_Playback>\r\n      <_Backwards>false</_Backwards>\r\n     
+      <_PlaybackTimes>1</_PlaybackTimes>\r\n      <_EasingCurve>\r\n        <keys>\r\n         
+      <Keyframe>\r\n            <time>0</time>\r\n            <value>0</value>\r\n           
+      <inTangent>0</inTangent>\r\n            <outTangent>0</outTangent>\r\n           
+      <inWeight>0</inWeight>\r\n            <outWeight>0</outWeight>\r\n           
+      <weightedMode>None</weightedMode>\r\n          </Keyframe>\r\n          <Keyframe>\r\n           
+      <time>1</time>\r\n            <value>1</value>\r\n            <inTangent>0</inTangent>\r\n           
+      <outTangent>0</outTangent>\r\n            <inWeight>0</inWeight>\r\n           
+      <outWeight>0</outWeight>\r\n            <weightedMode>None</weightedMode>\r\n         
+      </Keyframe>\r\n        </keys>\r\n        <preWrapMode>ClampForever</preWrapMode>\r\n       
+      <postWrapMode>ClampForever</postWrapMode>\r\n      </_EasingCurve>\r\n     
+      <_TargetType>Letters</_TargetType>\r\n      <_TargetRangeType>All</_TargetRangeType>\r\n     
+      <_TargetRangeStart>0</_TargetRangeStart>\r\n      <_TargetRangeAmount>0</_TargetRangeAmount>\r\n     
+      <_InitAllElements>false</_InitAllElements>\r\n      <_Enabled>true</_Enabled>\r\n     
+      <_From>\r\n        <x>0</x>\r\n        <y>0</y>\r\n        <z>10</z>\r\n     
+      </_From>\r\n      <_To>\r\n        <x>0</x>\r\n        <y>0</y>\r\n       
+      <z>0</z>\r\n      </_To>\r\n      <_FromRandom>\r\n        <x>0</x>\r\n       
+      <y>0</y>\r\n        <z>0</z>\r\n      </_FromRandom>\r\n      <_ToRandom>\r\n       
+      <x>0</x>\r\n        <y>0</y>\r\n        <z>0</z>\r\n      </_ToRandom>\r\n     
+      <_AnimBlend_From>Offset</_AnimBlend_From>\r\n      <_AnimBlend_To>Offset</_AnimBlend_To>\r\n     
+      <_ApplyX>true</_ApplyX>\r\n      <_ApplyY>true</_ApplyY>\r\n      <_ApplyZ>true</_ApplyZ>\r\n     
+      <_UseAxisEasingCurves>false</_UseAxisEasingCurves>\r\n      <_EasingCurveY>\r\n       
+      <keys>\r\n          <Keyframe>\r\n            <time>0</time>\r\n           
+      <value>0</value>\r\n            <inTangent>0</inTangent>\r\n            <outTangent>0</outTangent>\r\n           
+      <inWeight>0</inWeight>\r\n            <outWeight>0</outWeight>\r\n           
+      <weightedMode>None</weightedMode>\r\n          </Keyframe>\r\n          <Keyframe>\r\n           
+      <time>1</time>\r\n            <value>1</value>\r\n            <inTangent>0</inTangent>\r\n           
+      <outTangent>0</outTangent>\r\n            <inWeight>0</inWeight>\r\n           
+      <outWeight>0</outWeight>\r\n            <weightedMode>None</weightedMode>\r\n         
+      </Keyframe>\r\n        </keys>\r\n        <preWrapMode>ClampForever</preWrapMode>\r\n       
+      <postWrapMode>ClampForever</postWrapMode>\r\n      </_EasingCurveY>\r\n     
+      <_EasingCurveZ>\r\n        <keys>\r\n          <Keyframe>\r\n            <time>0</time>\r\n           
+      <value>0</value>\r\n            <inTangent>0</inTangent>\r\n            <outTangent>0</outTangent>\r\n           
+      <inWeight>0</inWeight>\r\n            <outWeight>0</outWeight>\r\n           
+      <weightedMode>None</weightedMode>\r\n          </Keyframe>\r\n          <Keyframe>\r\n           
+      <time>1</time>\r\n            <value>1</value>\r\n            <inTangent>0</inTangent>\r\n           
+      <outTangent>0</outTangent>\r\n            <inWeight>0</inWeight>\r\n           
+      <outWeight>0</outWeight>\r\n            <weightedMode>None</weightedMode>\r\n         
+      </Keyframe>\r\n        </keys>\r\n        <preWrapMode>ClampForever</preWrapMode>\r\n       
+      <postWrapMode>ClampForever</postWrapMode>\r\n      </_EasingCurveZ>\r\n   
+      </SE_AnimSequence>\r\n  </_Sequences>\r\n</SE_Animation>"
     _Preset: {fileID: 11400000, guid: 4b4b6b64235f2ca4cb8b4071a81baede, type: 2}
   _OnAnimation_Finished:
     m_PersistentCalls:
@@ -12267,7 +12157,6 @@ RectTransform:
   - {fileID: 416348174203740059}
   - {fileID: 8534186305141915750}
   - {fileID: 7386665996444683893}
-  - {fileID: 6794115392090380127}
   - {fileID: 8090768972004013617}
   - {fileID: 2669576869341244301}
   m_Father: {fileID: 0}
@@ -12312,7 +12201,7 @@ MonoBehaviour:
   cvGroup: {fileID: 6363111038152696894}
   uiAnimator: {fileID: 0}
   isShowing: 0
-  textAnimation: {fileID: 4770157498248835449}
+  textAnimation: {fileID: 5635096077581086089}
   tmpLoad: {fileID: 1177326841148025243}
   panelContent: {fileID: 3130305560797299311}
   panelLoad: {fileID: 1057346486062705586}

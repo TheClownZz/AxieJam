@@ -75,6 +75,7 @@ public class Bullet : MonoBehaviour, ICreateDamage
     public virtual void CreateDamage(Character character)
     {
         if (hitCount >= maxHit) return;
+        Debug.LogError("CreateDamage");
         hitCount += 1;
         PreHit(character);
         HitCharacter(character);
