@@ -33,7 +33,7 @@ public class BlueGun : PlayerGun
     {
         base.ActiveSKill(config);
         damageRate *= config.GetSkillValue(SkillType.Damage, 1f);
-        numberBullet = (int)config.GetSkillValue(SkillType.NumberBullet, 1);
+        numberBullet = (int)config.GetSkillValue(SkillType.Number, 1);
     }
 
     public override void DeAvtiveSkill()

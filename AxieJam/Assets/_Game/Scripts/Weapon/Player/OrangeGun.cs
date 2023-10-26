@@ -17,8 +17,8 @@ public class OrangeGun : PlayerGun
         base.ActiveSKill(config);
 
 
-        int numberBullet = (int)config.GetSkillValue(SkillType.NumberBullet, 0);
-        int numberExtraBullet = (int)config.GetSkillValue(SkillType.ExtraBullet, 0);
+        int numberBullet = (int)config.GetSkillValue(SkillType.Number, 0);
+        int numberExtraBullet = (int)config.GetSkillValue(SkillType.ExtraNumber, 0);
         float damageRate = config.GetSkillValue(SkillType.Damage, 1f);
         float extraDamgeRate = config.GetSkillValue(SkillType.ExtraDamage, 1f);
 

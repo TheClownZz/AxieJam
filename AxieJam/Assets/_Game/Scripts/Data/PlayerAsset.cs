@@ -16,13 +16,13 @@ public enum PlayerType
 public enum SkillType
 {
     Damage,
-    NumberBullet,
+    Number,
     AtkSpeed,
     Range,
     Cooldown,
     ActiveValue,
     Size,
-    ExtraBullet,
+    ExtraNumber,
     ExtraDamage,
 }
 [System.Serializable]

@@ -55,6 +55,7 @@ MonoBehaviour:
   hitClip: {fileID: 0}
   force: 500
   color: {r: 1, g: 0.101960786, b: 0, a: 1}
+  exposionPrefab: {fileID: 4558091446817699207, guid: f90b600ebec1e08409551f6c3f990643, type: 3}
 --- !u!1 &4424165598337138926
 GameObject:
   m_ObjectHideFlags: 0

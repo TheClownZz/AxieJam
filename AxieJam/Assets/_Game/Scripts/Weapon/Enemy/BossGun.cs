@@ -33,7 +33,7 @@ public class BossGun : EnemyGun
     {
         BossSkillConfig config = characterControl.GetComponent<SetupBossData>().asset.data.skilldDataList[skillIndex];
         damageRate = config.GetSkillValue(SkillType.Damage, 1);
-        numberBullet = (int)config.GetSkillValue(SkillType.NumberBullet, 1);
+        numberBullet = (int)config.GetSkillValue(SkillType.Number, 1);
         transform.localScale = Vector3.one * (config.GetSkillValue(SkillType.Range, 10));
     }
 }

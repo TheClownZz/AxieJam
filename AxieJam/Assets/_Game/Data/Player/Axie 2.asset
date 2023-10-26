@@ -42,44 +42,74 @@ MonoBehaviour:
         duration: 3
         cooldown: 20
       propertieList:
-      - type: 5
-        value: 3
+      - type: 1
+        value: 1
       - type: 0
+        value: 0.8
+      - type: 4
         value: 0.5
+      - type: 6
+        value: 2
+      - type: 3
+        value: 2
     - defaultValue:
         potionRequire: 15
         duration: 3.5
         cooldown: 18
       propertieList:
-      - type: 5
-        value: 4
+      - type: 1
+        value: 2
       - type: 0
-        value: 0.4
+        value: 1
+      - type: 4
+        value: 0.5
+      - type: 6
+        value: 2
+      - type: 3
+        value: 2
     - defaultValue:
         potionRequire: 15
         duration: 3.5
         cooldown: 17
       propertieList:
-      - type: 5
-        value: 5
+      - type: 1
+        value: 3
       - type: 0
-        value: 0.4
+        value: 1.2
+      - type: 4
+        value: 0.5
+      - type: 6
+        value: 2
+      - type: 3
+        value: 2
     - defaultValue:
         potionRequire: 15
         duration: 3.5
         cooldown: 15
       propertieList:
-      - type: 5
-        value: 6
+      - type: 1
+        value: 4
       - type: 0
-        value: 0.4
+        value: 1.4
+      - type: 4
+        value: 0.5
+      - type: 6
+        value: 2
+      - type: 3
+        value: 2
     - defaultValue:
         potionRequire: 15
         duration: 3.5
         cooldown: 13
       propertieList:
-      - type: 5
-        value: 7
+      - type: 1
+        value: 5
       - type: 0
-        value: 0.4
+        value: 1.6
+      - type: 4
+        value: 0.5
+      - type: 6
+        value: 2
+      - type: 3
+        value: 2
     dataAsset: {fileID: 11400000, guid: aae79832a3f22487ab29ca5bad687273, type: 2}
