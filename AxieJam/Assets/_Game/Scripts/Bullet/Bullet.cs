@@ -19,7 +19,6 @@ public class Bullet : MonoBehaviour, ICreateDamage
     int hitCount;
     public virtual void OnInits(Weapon weapon, float speed, Vector3 dir)
     {
-        Debug.LogError("OnInits 2");
         this.weapon = weapon;
         this.dir = dir * speed;
         hitCount = 0;
@@ -45,7 +44,6 @@ public class Bullet : MonoBehaviour, ICreateDamage
 
     public virtual void Clear()
     {
-        Debug.LogError("Clear 1");
         PoolManager.Instance.DespawnObject(transform);
     }
     protected virtual void HitCharacter(Character character)
@@ -75,7 +73,6 @@ public class Bullet : MonoBehaviour, ICreateDamage
     public virtual void CreateDamage(Character character)
     {
         if (hitCount >= maxHit) return;
-        Debug.LogError("CreateDamage");
         hitCount += 1;
         PreHit(character);
         HitCharacter(character);

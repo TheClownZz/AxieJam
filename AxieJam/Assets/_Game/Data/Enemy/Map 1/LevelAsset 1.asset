@@ -18,8 +18,8 @@ MonoBehaviour:
       hpRate: 1.1
       damageRate: 1.1
     enemyConfigList:
-    - type: 201
-      numberSpawn: 1
+    - type: 100
+      numberSpawn: 5
   - waveTime: 60
     waveProterties:
       hpRate: 1.1

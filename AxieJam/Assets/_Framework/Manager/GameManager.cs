@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using UnityEditor.VersionControl;
 using UnityEngine;
 public enum GameState
 {
@@ -17,9 +18,11 @@ public class GameManager : MonoSingleton<GameManager>
     public bool isCheat;
     public GameObject objMap;
     public Player currentPlayer;
-    public List<Player> playerList;
+    [HideInInspector] public List<Player> playerList;
 
-    [SerializeField] LevelAsset asset;
+    [SerializeField] List<LevelAsset> assetList;
+
+    int mapIndex = 0;
 
     Vector3 outPos = new Vector3(9999, 9999, 9999);
     public bool isPause { get { return Time.timeScale == 0; } }
@@ -37,7 +40,6 @@ public class GameManager : MonoSingleton<GameManager>
     void OnInit()
     {
         levelController.OnInits();
-        levelController.SetAsset(asset);
         SetGameState(GameState.Ready);
         UIManager.Instance.ShowScreen<ScreenHome>();
     }
@@ -85,11 +87,26 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void StartLevel()
     {
+        mapIndex = 0;
         currentPlayer.OnSelect();
         SetGameState(GameState.Playing);
+        levelController.SetAsset(assetList[mapIndex]);
         levelController.LoadLevel();
     }
 
+    public void LoadNextMap()
+    {
+        mapIndex += 1;
+        if (mapIndex >= assetList.Count)
+        {
+            Debug.LogError("Win");
+        }
+        else
+        {
+            levelController.SetAsset(assetList[mapIndex]);
+            levelController.LoadLevel();
+        }
+    }
     public void ClearLevel()
     {
         foreach (var p in playerList)

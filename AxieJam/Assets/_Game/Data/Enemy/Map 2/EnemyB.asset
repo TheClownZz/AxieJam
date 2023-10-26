@@ -16,7 +16,7 @@ MonoBehaviour:
     hp: 30
     damage: 10
     moveSpeed: 1
-    attackSpeed: 2
+    attackSpeed: 0.5
     armor: 0
     foodDropRate: 0.15
     potionDropRate: 0.15

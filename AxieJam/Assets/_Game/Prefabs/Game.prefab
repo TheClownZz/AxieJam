@@ -238,7 +238,10 @@ MonoBehaviour:
   objMap: {fileID: 1945581464236972957}
   currentPlayer: {fileID: 0}
   playerList: []
-  asset: {fileID: 11400000, guid: 161658685fe8ffe40a531633da29f9ed, type: 2}
+  assetList:
+  - {fileID: 11400000, guid: 78a6cf93f30c26f498a642d12ab74a62, type: 2}
+  - {fileID: 11400000, guid: fe1a09459095a6a4b8fa11c005673203, type: 2}
+  - {fileID: 11400000, guid: 161658685fe8ffe40a531633da29f9ed, type: 2}
 --- !u!1 &3047324130391617660
 GameObject:
   m_ObjectHideFlags: 0

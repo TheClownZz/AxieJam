@@ -224,7 +224,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control: {fileID: 0}
-  touched: attack/ranged/goo-destruct
+  damgeRate: 3
+  touched: 
   spawnItemTime: 1
   attackRate: 1.5
 --- !u!1 &6947929414499229399

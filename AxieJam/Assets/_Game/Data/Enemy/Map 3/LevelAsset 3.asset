@@ -226,7 +226,7 @@ MonoBehaviour:
       hpRate: 1
       damageRate: 1
     enemyConfigList:
-    - type: 202
+    - type: 201
       numberSpawn: 1
   enemyDataSetupList:
   - enemyType: 103
@@ -238,7 +238,7 @@ MonoBehaviour:
   - enemyType: 106
     asset: {fileID: 11400000, guid: 9674ce2a76ab4654084484080880df73, type: 2}
   bossDataSetupList:
-  - enemyType: 200
-    asset: {fileID: 11400000, guid: 7e27546474c1ce74997b28fa30e11ca0, type: 2}
   - enemyType: 201
-    asset: {fileID: 11400000, guid: 32f3d108eae92384188bce1c5c3a770e, type: 2}
+    asset: {fileID: 11400000, guid: 8b8f1ea1052a1d64b8f40033601ef488, type: 2}
+  - enemyType: 202
+    asset: {fileID: 11400000, guid: 0a1af3fd1e1a4f843a5659fe8e20ac03, type: 2}
