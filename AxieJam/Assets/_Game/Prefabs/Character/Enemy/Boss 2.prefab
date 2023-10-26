@@ -117,7 +117,7 @@ MonoBehaviour:
   - {fileID: 724379711993735569}
   - {fileID: 7398335165243421424}
   - {fileID: 4628347129519685165}
-  deadClip: {fileID: 0}
+  deadClip: {fileID: 8300000, guid: a36c0d4fe500082469a8359da5d3fec5, type: 3}
   spawItemTime: 1
   waveStat:
     hpRate: 1
@@ -287,6 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control: {fileID: 0}
+  damgeRate: 3
   touched: attack/ranged/goo-destruct
   spawnItemTime: 1
   attackRate: 1.5
