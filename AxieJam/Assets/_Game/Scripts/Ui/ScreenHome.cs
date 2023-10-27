@@ -34,6 +34,8 @@ public class ScreenHome : ScreenBase
         GameManager.Instance.ShowMap(false);
     }
 
+    
+
 
    
     public void OnBtnPlayClick()
