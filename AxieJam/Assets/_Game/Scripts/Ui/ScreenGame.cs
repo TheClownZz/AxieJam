@@ -3,13 +3,14 @@ using TMPro;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime;
+using Sirenix.OdinInspector;
 
 public class ScreenGame : ScreenBase
 {
     [SerializeField] TextMeshProUGUI tmpWave;
     [SerializeField] ItemAvt mainItem;
     [SerializeField] List<ItemAvt> itemAvtList;
-
+    [SerializeField] TextMeshProUGUI tmpMap;
     public override void OnShow()
     {
         base.OnShow();
@@ -20,7 +21,10 @@ public class ScreenGame : ScreenBase
     {
         tmpWave.SetText("{0}/{1}", current, max);
     }
-
+    public void SetMap(int lv)
+    {
+        tmpMap.SetText("Map {0}", lv);
+    }
 
     public void UpdateAvt()
     {

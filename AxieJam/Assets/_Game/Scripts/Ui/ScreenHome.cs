@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class ScreenHome : ScreenBase
 {
-    const string firstPlay = "first";
+    const string showGuide = "showGuide";
 
     [SerializeField] TextAnimation textAnimation;
     [SerializeField] TextMeshProUGUI tmpLoad;
@@ -22,11 +22,11 @@ public class ScreenHome : ScreenBase
     public override void OnShow()
     {
         base.OnShow();
-        panelLoad.SetActive(false);
-        panelContent.SetActive(true);
-        imgLoad.fillAmount = 0;
         tmpLoad.SetText("");
+        imgLoad.fillAmount = 0;
         textAnimation.PlayAnim();
+        panelContent.SetActive(true);
+
         List<PlayerType> team = DataManager.Instance.GetData<DataUser>().GetTeam();
         teamAvtController.UpdateTeam(team);
         panelContent.gameObject.SetActive(true);
@@ -34,22 +34,44 @@ public class ScreenHome : ScreenBase
         GameManager.Instance.ShowMap(false);
     }
 
-    
+
+    public void OnBtnOkClick()
+    {
+        StartLoading();
+        PlayerPrefs.SetInt(showGuide, 1);
+        AudioManager.Instance.PlayOnceShot(AudioType.CLICK);
+    }
 
 
-   
     public void OnBtnPlayClick()
     {
-        tmpLoad.SetText("Loading...");
-        panelLoad.SetActive(true);
-        panelContent.SetActive(false);
-        imgLoad.fillAmount = 0;
-        int loadTime = 3;
-        if (PlayerPrefs.GetInt(firstPlay, 0) == 0)
+
+        if (PlayerPrefs.GetInt(showGuide, 0) == 0)
         {
-            loadTime = 8;
-            PlayerPrefs.SetInt(firstPlay, 1);
+            panelLoad.SetActive(true);
         }
+        else if(GameManager.Instance.CheckMaxLevel())
+        {
+            UIManager.Instance.ShowPopup<PopupContinue>();
+        }else
+        {
+            StartLoading();
+
+        }
+
+
+
+        AudioManager.Instance.PlayOnceShot(AudioType.CLICK);
+
+    }
+
+    private void StartLoading()
+    {
+        int loadTime = 3;
+
+        panelLoad.SetActive(false);
+        tmpLoad.SetText("Loading...");
+        imgLoad.fillAmount = 0;
         imgLoad.DOFillAmount(1, loadTime).OnComplete(() =>
         {
             OnHide();
@@ -57,12 +79,8 @@ public class ScreenHome : ScreenBase
             GameManager.Instance.UpdatePlayerList();
             GameManager.Instance.StartLevel();
             UIManager.Instance.ShowScreen<ScreenGame>();
-         
+
         });
-
-      
-        AudioManager.Instance.PlayOnceShot(AudioType.CLICK);
-
     }
 
     public void OnBtnTeamClick()

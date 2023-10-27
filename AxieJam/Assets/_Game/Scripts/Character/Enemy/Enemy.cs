@@ -3,7 +3,7 @@ using DG.Tweening;
 
 public class Enemy : Character
 {
-    protected const float timeDelayDespawn = 1.5f;
+    const float timeDelayDespawn = 1.5f;
     [SerializeField] protected AudioClip deadClip;
     [SerializeField] float spawItemTime = 1f;
 

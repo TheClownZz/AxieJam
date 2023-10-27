@@ -123,6 +123,7 @@ MonoBehaviour:
     hpRate: 1
     damageRate: 1
   currspawItemTime: 0
+  deadTime: 1.5
   bossSkillInfoList:
   - hpRate: 0.5
     controller: {fileID: 7156181891859124827}
@@ -280,7 +281,6 @@ MonoBehaviour:
   control: {fileID: 0}
   target: {fileID: 0}
   clip: {fileID: 8300000, guid: 3fb856f9843426e4d9c7ef7864aa17ff, type: 3}
-  skillIndex: 1
   jumpPower: 2.5
   jumptime: 0.6
   attackAoe: 2
@@ -574,7 +574,6 @@ MonoBehaviour:
   control: {fileID: 0}
   target: {fileID: 0}
   gun: {fileID: 8342530175396194733}
-  skillIndex: 0
 --- !u!1 &6008692780142271998
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ public class BossSkillInfo
 }
 public class Boss : Enemy
 {
+    [SerializeField] float deadTime = 1f;
     [SerializeField] List<BossSkillInfo> bossSkillInfoList;
 
     int skillIndex;
@@ -61,22 +62,18 @@ public class Boss : Enemy
 
     public override void OnDead()
     {
-        base.OnDead();
+        SetState(CharacterState.Die);
+        isDead = true;
         foreach (var comp in componentList)
             comp.OnDead();
 
-        clearTween = GameManager.Instance.DelayedCall(timeDelayDespawn, () =>
+        clearTween = GameManager.Instance.DelayedCall(deadTime, () =>
         {
             Clear();
             GameManager.Instance.levelController.RemoveEnemy(this);
         });
 
-        itemTween = GameManager.Instance.DelayedCall(currspawItemTime, () =>
-        {
-            SpawnItem(null);
-        });
-
-        if(deadClip != null)
+        if (deadClip != null)
             AudioManager.Instance.PlaySound(deadClip);
     }
 }

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6de5320b01a852248b5cfba96901c775, type: 3}
+  m_Name: boss 3 test
+  m_EditorClassIdentifier: 
+  dataList:
+  - waveTime: 60
+    waveProterties:
+      hpRate: 1
+      damageRate: 1
+    enemyConfigList:
+    - type: 202
+      numberSpawn: 1
+  enemyDataSetupList:
+  - enemyType: 103
+    asset: {fileID: 11400000, guid: 7e2713768eba0b946b57272dba5e3c4d, type: 2}
+  - enemyType: 104
+    asset: {fileID: 11400000, guid: f7dc369a70fe16e4d8bf1be5d9e8ee5c, type: 2}
+  - enemyType: 105
+    asset: {fileID: 11400000, guid: b3835f8ffeb094141b45cf61987bbc30, type: 2}
+  - enemyType: 106
+    asset: {fileID: 11400000, guid: 9674ce2a76ab4654084484080880df73, type: 2}
+  bossDataSetupList:
+  - enemyType: 201
+    asset: {fileID: 11400000, guid: 8b8f1ea1052a1d64b8f40033601ef488, type: 2}
+  - enemyType: 202
+    asset: {fileID: 11400000, guid: 0a1af3fd1e1a4f843a5659fe8e20ac03, type: 2}

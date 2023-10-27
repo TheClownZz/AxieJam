@@ -21,7 +21,7 @@ MonoBehaviour:
   data:
     type: 0
     hp: 2000
-    damage: 10
+    damage: 1000
     attackSpeed: 4
     moveSpeed: 5
     critRate: 0.15

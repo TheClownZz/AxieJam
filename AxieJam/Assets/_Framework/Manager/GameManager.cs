@@ -89,7 +89,8 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void StartLevel()
     {
-        mapIndex = (DataManager.Instance.GetData<DataLevel>().CurrentLevelId - 1) % assetList.Count;
+        mapIndex = (DataManager.Instance.GetData<DataLevel>().CurrentLevelId - 1);
+        UIManager.Instance.GetScreen<ScreenGame>().SetMap(mapIndex + 1);
         currentPlayer.OnSelect();
         SetGameState(GameState.Playing);
         levelController.SetAsset(assetList[mapIndex]);
@@ -98,10 +99,10 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void OnWinMap()
     {
+        SetGameState(GameState.Ready);
         DataManager.Instance.GetData<DataLevel>().SetNextLevel();
-        mapIndex = (DataManager.Instance.GetData<DataLevel>().CurrentLevelId - 1) % assetList.Count;
-        levelController.SetAsset(assetList[mapIndex]);
-        levelController.LoadLevel();
+        UIManager.Instance.ShowPopup<PopupWin>().SetAnim(currentPlayer.spineController.GetAsset());
+        UIManager.Instance.ShowPopup<PopupWin>().SetNext(!CheckMaxLevel());
     }
     public void ClearLevel()
     {
@@ -168,5 +169,10 @@ public class GameManager : MonoSingleton<GameManager>
             if (gameState == GameState.Playing)
                 callback();
         });
+    }
+
+    public bool CheckMaxLevel()
+    {
+        return DataManager.Instance.GetData<DataLevel>().CurrentLevelId > assetList.Count;
     }
 }

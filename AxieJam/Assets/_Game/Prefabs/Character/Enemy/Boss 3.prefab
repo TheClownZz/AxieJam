@@ -123,6 +123,7 @@ MonoBehaviour:
     hpRate: 1
     damageRate: 1
   currspawItemTime: 0
+  deadTime: 4
   bossSkillInfoList:
   - hpRate: 0.5
     controller: {fileID: 362836685288174710}
