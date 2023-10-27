@@ -89,25 +89,19 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void StartLevel()
     {
-        mapIndex = 0;
+        mapIndex = (DataManager.Instance.GetData<DataLevel>().CurrentLevelId - 1) % assetList.Count;
         currentPlayer.OnSelect();
         SetGameState(GameState.Playing);
         levelController.SetAsset(assetList[mapIndex]);
         levelController.LoadLevel();
     }
 
-    public void LoadNextMap()
+    public void OnWinMap()
     {
-        mapIndex += 1;
-        if (mapIndex >= assetList.Count)
-        {
-            Debug.LogError("Win");
-        }
-        else
-        {
-            levelController.SetAsset(assetList[mapIndex]);
-            levelController.LoadLevel();
-        }
+        DataManager.Instance.GetData<DataLevel>().SetNextLevel();
+        mapIndex = (DataManager.Instance.GetData<DataLevel>().CurrentLevelId - 1) % assetList.Count;
+        levelController.SetAsset(assetList[mapIndex]);
+        levelController.LoadLevel();
     }
     public void ClearLevel()
     {

@@ -34,7 +34,7 @@ public class LevelController : MonoBehaviour
     }
     public void LoadLevel()
     {
-        waveIndex = asset.dataList.Count - 1;
+        waveIndex = 0;
         waveConfig = asset.GetConfig(waveIndex);
         SpawnWave();
         UIManager.Instance.GetScreen<ScreenGame>().UpdateWave(waveIndex + 1, asset.dataList.Count);
@@ -53,7 +53,7 @@ public class LevelController : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Comlete");
+            GameManager.Instance.OnWinMap();
         }
     }
 
