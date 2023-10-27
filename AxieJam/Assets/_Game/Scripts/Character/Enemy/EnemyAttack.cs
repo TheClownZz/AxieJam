@@ -6,7 +6,7 @@ public class EnemyAttack : EnemyComponent
 {
     protected float timeAttack;
     protected float coolDown;
-    public Player target;
+    [HideInInspector] public Player target;
 
     public override void OnInits(Character enemy)
     {

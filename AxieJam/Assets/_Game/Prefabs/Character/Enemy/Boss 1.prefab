@@ -280,6 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: {fileID: 0}
   target: {fileID: 0}
+  attackClip: {fileID: 8300000, guid: 3fb856f9843426e4d9c7ef7864aa17ff, type: 3}
   clip: {fileID: 8300000, guid: 3fb856f9843426e4d9c7ef7864aa17ff, type: 3}
   jumpPower: 2.5
   jumptime: 0.6
@@ -573,6 +574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: {fileID: 0}
   target: {fileID: 0}
+  attackClip: {fileID: 0}
   gun: {fileID: 8342530175396194733}
 --- !u!1 &6008692780142271998
 GameObject:

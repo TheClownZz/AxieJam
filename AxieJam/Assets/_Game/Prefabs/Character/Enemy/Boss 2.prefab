@@ -443,13 +443,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: {fileID: 0}
   target: {fileID: 0}
+  attackClip: {fileID: 8300000, guid: 4e9bff56ee93c6f42b214141e44e763d, type: 3}
   weapon: {fileID: 1210573686577001020}
   attackSize: 2
   fxSlam: {fileID: 3368135418938137261}
   wpTf: {fileID: 6227039527359344021}
   exposionPrefab: {fileID: 3334494085358144767, guid: 5bc227c2a45a7e44ea8521ddb446b620, type: 3}
-  attackClip: {fileID: 8300000, guid: 4e9bff56ee93c6f42b214141e44e763d, type: 3}
-  explosionClip: {fileID: 8300000, guid: 3e06c45e3372dd345b50a642fe86616d, type: 3}
+  explosionClip: {fileID: 8300000, guid: 32f565ba94f200f49adb407cce64e873, type: 3}
 --- !u!114 &1210573686577001020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -546,10 +546,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: {fileID: 0}
   target: {fileID: 0}
+  attackClip: {fileID: 8300000, guid: 4e9bff56ee93c6f42b214141e44e763d, type: 3}
   buffAnim: action/idle/counter-state
   moveSpeed: 10
   attackSize: 2
-  clip: {fileID: 8300000, guid: 4e9bff56ee93c6f42b214141e44e763d, type: 3}
   fxSlam: {fileID: 3368135418938137261}
   furry: {fileID: 6227039527359344021}
 --- !u!1 &4489752843629510763

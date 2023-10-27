@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterComponent : MonoBehaviour
 {
-     public Character control;
+    [HideInInspector] public Character control;
 
     public virtual void OnInits(Character control)
     {

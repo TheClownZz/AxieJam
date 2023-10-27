@@ -14,7 +14,6 @@ public class BossBigSlam : BossAttack
     [SerializeField] protected ParticleSystem fxSlam;
     [SerializeField] protected Transform wpTf;
     [SerializeField] protected Transform exposionPrefab;
-    [SerializeField] protected AudioClip attackClip;
     [SerializeField] protected AudioClip explosionClip;
     protected List<Transform> spawnList = new List<Transform>();
 
@@ -49,7 +48,8 @@ public class BossBigSlam : BossAttack
         fxSlam.Play();
         fxSlam.transform.position = wpTf.transform.position;
 
-        AudioManager.Instance.PlaySound(attackClip);
+        if (attackClip)
+            AudioManager.Instance.PlaySound(attackClip);
         GameManager.Instance.DelayedCall(0.1f, () =>
         {
             Player player = GameManager.Instance.GetCurrentPlayer();

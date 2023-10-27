@@ -19,6 +19,8 @@ public class BossShoot : BossAttack
         control.DisableEnemy(true);
         control.SetState(CharacterState.Attack);
         gun.targetPos = target.transform.position;
+        if (attackClip)
+            AudioManager.Instance.PlaySound(attackClip);
     }
 
     protected override void SetTarget(Player target)

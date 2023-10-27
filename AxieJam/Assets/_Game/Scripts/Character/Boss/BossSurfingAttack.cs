@@ -4,9 +4,8 @@ using UnityEngine;
 public class BossSurfingAttack : BossAttack
 {
     [SerializeField] string buffAnim;
-    [SerializeField] float moveSpeed =1f;
+    [SerializeField] float moveSpeed = 1f;
     [SerializeField] float attackSize = 2;
-    [SerializeField] AudioClip clip;
     [SerializeField] ParticleSystem fxSlam;
     [SerializeField] Transform furry;
     float damageRate;
@@ -42,7 +41,8 @@ public class BossSurfingAttack : BossAttack
         fxSlam.Play();
         fxSlam.transform.position = furry.transform.position;
 
-        AudioManager.Instance.PlaySound(clip);
+        if (attackClip)
+            AudioManager.Instance.PlaySound(attackClip);
         GameManager.Instance.DelayedCall(0.1f, () =>
         {
             Player player = GameManager.Instance.GetCurrentPlayer();

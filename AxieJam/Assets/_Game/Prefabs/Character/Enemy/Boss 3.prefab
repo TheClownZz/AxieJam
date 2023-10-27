@@ -457,12 +457,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: {fileID: 0}
   target: {fileID: 0}
+  attackClip: {fileID: 8300000, guid: 18e14009918ac9e4d92d5f09c7bde963, type: 3}
   weapon: {fileID: 1210573686577001020}
   attackSize: 2
   fxSlam: {fileID: 4910320527302246948}
   wpTf: {fileID: 6227039527359344021}
   exposionPrefab: {fileID: 3334494085358144767, guid: 1a2f902ef41f873409041cd590e6eadf, type: 3}
-  attackClip: {fileID: 8300000, guid: 18e14009918ac9e4d92d5f09c7bde963, type: 3}
   explosionClip: {fileID: 8300000, guid: 32aeeae89807bf949bb5620bb8724879, type: 3}
 --- !u!1 &4447802915667506931
 GameObject:
@@ -546,6 +546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: {fileID: 0}
   target: {fileID: 0}
+  attackClip: {fileID: 8300000, guid: f29a5c18969e60246b48808e07759961, type: 3}
   enemyType: 105
   clip: {fileID: 8300000, guid: f29a5c18969e60246b48808e07759961, type: 3}
 --- !u!1 &4489752843629510763

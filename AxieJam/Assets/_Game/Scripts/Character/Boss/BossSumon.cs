@@ -5,9 +5,9 @@ using UnityEngine;
 public class BossSumon : BossAttack
 {
     int maxEnemy = 5;
-    [SerializeField] EnemyType enemyType;
-    [SerializeField] AudioClip clip;
     int numberEnemy;
+    [SerializeField] EnemyType enemyType;
+
     public override void OnInits(Character enemy)
     {
         base.OnInits(enemy);
@@ -35,7 +35,8 @@ public class BossSumon : BossAttack
         {
             control.DisableEnemy(true);
             control.SetState(CharacterState.Attack);
-            AudioManager.Instance.PlaySound(clip);
+            if (attackClip)
+                AudioManager.Instance.PlaySound(attackClip);
         }
 
     }

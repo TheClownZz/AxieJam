@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class BossJumpAttack : BossAttack
 {
-    [SerializeField] AudioClip clip;
     [SerializeField] float jumpPower;
     [SerializeField] float jumptime;
     [SerializeField] float attackAoe = 2;
@@ -31,8 +30,8 @@ public class BossJumpAttack : BossAttack
     public override void Attacktarget()
     {
         fxSlam.Play();
-        AudioManager.Instance.PlaySound(clip);
-
+        if (attackClip)
+            AudioManager.Instance.PlaySound(attackClip);
         GameManager.Instance.DelayedCall(0.1f, () =>
         {
             Player player = GameManager.Instance.GetCurrentPlayer();
