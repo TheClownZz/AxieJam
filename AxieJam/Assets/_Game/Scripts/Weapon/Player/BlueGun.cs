@@ -10,14 +10,13 @@ public class BlueGun : PlayerGun
         for (int i = 1; i <= numberBullet; i++)
         {
             float angle = angleRate * (i - offset);
-            ParticleBullet b = PoolManager.Instance.SpawnObject(bulletPf.transform).GetComponent<ParticleBullet>();
+            Bullet b = PoolManager.Instance.SpawnObject(bulletPf.transform).GetComponent<Bullet>();
             b.transform.SetParent(GameManager.Instance.bulletSpawner, false);
             b.transform.position = shooter.transform.position;
             b.transform.rotation = Quaternion.Euler(0, 0, transform.eulerAngles.z + angle);
             b.OnInits(this, butlletSpeed, -b.transform.right);
             b.SetSprite(bulletSprite);
             b.SetHitClip(hitClip);
-            b.SetColor(color);
             b.SetDamageRate(damageRate);
 
         }

@@ -16,7 +16,6 @@ public class ScreenHome : ScreenBase
     [SerializeField] Image imgLoad;
 
     [SerializeField] TeamAvtController teamAvtController;
-
     public override void OnShow()
     {
         base.OnShow();
@@ -27,7 +26,6 @@ public class ScreenHome : ScreenBase
 
         List<PlayerType> team = DataManager.Instance.GetData<DataUser>().GetTeam();
         teamAvtController.UpdateTeam(team);
-        panelContent.gameObject.SetActive(true);
 
         GameManager.Instance.ShowMap(false);
     }
@@ -43,6 +41,7 @@ public class ScreenHome : ScreenBase
 
     public void OnBtnPlayClick()
     {
+        panelLoad.SetActive(false);
 
         if (PlayerPrefs.GetInt(showGuide, 0) == 0)
         {
@@ -62,12 +61,11 @@ public class ScreenHome : ScreenBase
         AudioManager.Instance.PlayOnceShot(AudioType.CLICK);
 
     }
-
     private void StartLoading()
     {
         int loadTime = 3;
 
-        panelLoad.SetActive(false);
+        panelContent.SetActive(false);
         tmpLoad.SetText("Loading...");
         imgLoad.fillAmount = 0;
         imgLoad.DOFillAmount(1, loadTime).OnComplete(() =>
