@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 namespace ETFXPEL
 {
 
-public enum ButtonTypes {
+    public enum ButtonTypes {
 	NotDefined,
 	Previous,
 	Next

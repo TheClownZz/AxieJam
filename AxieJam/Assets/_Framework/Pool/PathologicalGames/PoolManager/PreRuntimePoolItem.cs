@@ -5,8 +5,6 @@
 /// You may obtain a copy of the License at: http://licensing.path-o-logical.com
 /// </Licensing>
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
 
 namespace PathologicalGames

@@ -1,11 +1,3 @@
-using DG.Tweening;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
-using UnityEngine;
-
-
 public class MeleeWeapon : Weapon
 {
     //[SerializeField] protected Hitbox hitBox;

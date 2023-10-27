@@ -1,6 +1,4 @@
 using I2.TextAnimation;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PopupContinue : PopupBase

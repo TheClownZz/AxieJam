@@ -1,8 +1,4 @@
-using Sirenix.OdinInspector.Editor.Drawers;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.UI;
 

@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
-using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 
 namespace EpicToonFX
 {
-	public class ETFXEffectCycler : MonoBehaviour
+    public class ETFXEffectCycler : MonoBehaviour
 	{
 		public List<GameObject> listOfEffects;
 		int effectIndex = 0;

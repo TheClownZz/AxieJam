@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 using Sirenix.OdinInspector;
 
 public class CameraShake : MonoBehaviour

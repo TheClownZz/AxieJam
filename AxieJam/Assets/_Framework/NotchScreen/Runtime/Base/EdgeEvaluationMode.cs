@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace E7.NotchSolution
+﻿namespace E7.NotchSolution
 {
     /// <summary>
     /// How a component looks at a particular edge to take the edge's property.

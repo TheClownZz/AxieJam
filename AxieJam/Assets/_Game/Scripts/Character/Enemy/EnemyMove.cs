@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
 public class EnemyMove : EnemyComponent
 {
     protected const float minDistance = 0.8f;

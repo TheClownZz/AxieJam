@@ -1,9 +1,6 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
 using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime;
-using Sirenix.OdinInspector;
 
 public class ScreenGame : ScreenBase
 {

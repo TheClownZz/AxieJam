@@ -1,13 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using System.Collections;
-using System.Collections.Generic;
 
 namespace EpicToonFX
 {
 
-public class ETFXSceneManager : MonoBehaviour
+    public class ETFXSceneManager : MonoBehaviour
 {
 	public bool GUIHide = false;
 	public bool GUIHide2 = false;

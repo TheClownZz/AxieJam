@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace ETFXPEL
 {
 
-public class ParticleEffectsLibrary : MonoBehaviour {
+    public class ParticleEffectsLibrary : MonoBehaviour {
 	public static ParticleEffectsLibrary GlobalAccess;
 	void Awake () {
 		GlobalAccess = this;

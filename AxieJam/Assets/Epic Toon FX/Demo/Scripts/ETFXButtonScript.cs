@@ -1,13 +1,10 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.Collections;
-using System.Collections.Generic;
 
 namespace EpicToonFX
 {
 
-public class ETFXButtonScript : MonoBehaviour
+    public class ETFXButtonScript : MonoBehaviour
 {
 	public GameObject Button;
 	Text MyButtonText;

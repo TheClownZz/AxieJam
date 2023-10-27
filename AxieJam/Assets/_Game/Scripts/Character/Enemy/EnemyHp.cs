@@ -1,8 +1,5 @@
-using System.Collections.Generic;
-using System.Collections;
 using UnityEngine;
 using DG.Tweening;
-using TMPro;
 
 public class EnemyHp : EnemyComponent, ITakeDamage
 {

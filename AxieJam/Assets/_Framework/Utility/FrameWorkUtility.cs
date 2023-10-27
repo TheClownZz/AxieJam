@@ -5,9 +5,7 @@ using System.Globalization;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 using DG.Tweening;
-using UnityEngine.UI;
 
 public static class FrameWorkUtility
 {

@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
 
 namespace ETFXPEL
 {
 
-public class UICanvasManager : MonoBehaviour {
+    public class UICanvasManager : MonoBehaviour {
 	public static UICanvasManager GlobalAccess;
 	void Awake () {
 		GlobalAccess = this;
