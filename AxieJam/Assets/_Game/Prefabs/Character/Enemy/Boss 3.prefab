@@ -123,7 +123,7 @@ MonoBehaviour:
     hpRate: 1
     damageRate: 1
   currspawItemTime: 0
-  deadTime: 4
+  deadTime: 3.5
   bossSkillInfoList:
   - hpRate: 0.5
     controller: {fileID: 362836685288174710}
@@ -548,7 +548,6 @@ MonoBehaviour:
   target: {fileID: 0}
   attackClip: {fileID: 8300000, guid: f29a5c18969e60246b48808e07759961, type: 3}
   enemyType: 105
-  clip: {fileID: 8300000, guid: f29a5c18969e60246b48808e07759961, type: 3}
 --- !u!1 &4489752843629510763
 GameObject:
   m_ObjectHideFlags: 0

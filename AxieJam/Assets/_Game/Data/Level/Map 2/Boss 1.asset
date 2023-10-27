@@ -25,14 +25,14 @@ MonoBehaviour:
       - type: 0
         value: 1
       - type: 4
-        value: 3
+        value: 2
       - type: 3
         value: 5
       - type: 1
         value: 3
     - skillPropertieList:
       - type: 0
-        value: 2
+        value: 5
       - type: 4
         value: 5
       - type: 3

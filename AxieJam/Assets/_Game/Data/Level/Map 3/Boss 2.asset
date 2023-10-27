@@ -30,7 +30,7 @@ MonoBehaviour:
         value: 3.5
     - skillPropertieList:
       - type: 0
-        value: 3
+        value: 2
       - type: 4
         value: 5
       - type: 3

@@ -97,6 +97,8 @@ public class GameManager : MonoSingleton<GameManager>
         levelController.LoadLevel();
     }
 
+   
+
     public void OnWinMap()
     {
         SetGameState(GameState.Ready);
@@ -111,6 +113,10 @@ public class GameManager : MonoSingleton<GameManager>
             Destroy(p.gameObject);
         }
         playerList.Clear();
+        ClearMap();
+    }
+    public void ClearMap()
+    {
         levelController.ClearCurrentLevel();
         ClearBullet();
         foreach (Transform obj in objMap.transform.GetChild(0)) // 0 is destroy
@@ -123,7 +129,6 @@ public class GameManager : MonoSingleton<GameManager>
             PoolManager.Instance.DespawnObject(tf);
         }
     }
-
     private void ClearBullet()
     {
         for (int i = bulletSpawner.childCount - 1; i >= 0; i--)

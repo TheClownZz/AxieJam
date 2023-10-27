@@ -112,5 +112,5 @@ MonoBehaviour:
   - enemyType: 102
     asset: {fileID: 11400000, guid: 8ed95c7dbf400dd43995a4f99f809c2c, type: 2}
   bossDataSetupList:
-  - enemyType: 201
-    asset: {fileID: 11400000, guid: 32f3d108eae92384188bce1c5c3a770e, type: 2}
+  - enemyType: 200
+    asset: {fileID: 11400000, guid: bb8336c32ff15114198c38e923647cdd, type: 2}

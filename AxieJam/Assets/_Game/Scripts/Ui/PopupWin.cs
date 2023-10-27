@@ -38,7 +38,7 @@ public class PopupWin : PopupBase
     public void OnBtnNextClick()
     {
         OnHide();
-        GameManager.Instance.ClearLevel();
+        GameManager.Instance.ClearMap();
         GameManager.Instance.StartLevel();
 
         AudioManager.Instance.PlayOnceShot(AudioType.CLICK);
