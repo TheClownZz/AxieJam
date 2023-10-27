@@ -8,7 +8,7 @@ public class PlayerGun : Weapon
     [SerializeField] protected Sprite bulletSprite;
     [SerializeField] protected AudioClip hitClip;
     [SerializeField] protected float force = 300;
-    [SerializeField] protected Color color;
+    protected Color color;
 
     CameraShake cameraShake;
 

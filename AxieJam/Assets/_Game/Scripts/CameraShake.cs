@@ -1,5 +1,4 @@
 using UnityEngine;
-using Sirenix.OdinInspector;
 
 public class CameraShake : MonoBehaviour
 {
@@ -48,7 +47,6 @@ public class CameraShake : MonoBehaviour
     }
 
 
-    [Button]
     public void SmallShake(float time = 0.05f, float shakeAmount = 0.05f)
     {
         if (isBigShake)

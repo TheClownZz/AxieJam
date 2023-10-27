@@ -1,8 +1,11 @@
+using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScreenTeam : ScreenBase
 {
+    [SerializeField] ScrollRect scrollRect;
     [SerializeField] List<ItemSelect> itemList;
     [HideInInspector] public List<ItemSelect> itemSelectedList = new List<ItemSelect>();
     [SerializeField] TeamAvtController teamAvtController;
@@ -11,6 +14,7 @@ public class ScreenTeam : ScreenBase
     {
         base.OnShow();
         SetupSelectedList();
+        scrollRect.DOVerticalNormalizedPos(1, 1f).SetSpeedBased(true);
         foreach (var item in itemList)
         {
             item.UpdateUi();

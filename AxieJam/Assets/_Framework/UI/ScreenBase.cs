@@ -1,6 +1,4 @@
-using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.UI;
 
 [RequireComponent(typeof(CanvasGroup))]
 public class ScreenBase : MonoBehaviour
@@ -31,7 +29,6 @@ public class ScreenBase : MonoBehaviour
     }
 
 
-    [Button]
     public virtual void OnShow()
     {
         cvGroup.SetActive(true);
@@ -39,7 +36,6 @@ public class ScreenBase : MonoBehaviour
 
     }
 
-    [Button]
     public virtual void OnHide()
     {
         cvGroup.SetActive(false);

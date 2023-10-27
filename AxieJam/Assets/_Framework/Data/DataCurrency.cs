@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 public enum CurrencyType
@@ -36,10 +35,7 @@ public class DataCurrency : GameData
     #endregion
 
     #region METHODS
-    /*
-     * Cộng currency
-     */
-    [Button]
+
     public void Credit(CurrencyType type, int value, bool hasEffect = false, string source = "")
     {
         if (value == 0)
@@ -58,10 +54,6 @@ public class DataCurrency : GameData
         this.OnValueChange?.Invoke(type, this.saveData.dataList[index], hasEffect);
     }
 
-    /*
-     * Trừ currency
-     */
-    [Button]
     public bool Debit(CurrencyType type, int value, bool hasEffect = false, string reason = "")
     {
         if (Enough(type, value))

@@ -1,6 +1,5 @@
 using UnityEngine;
 using CI.QuickSave;
-using Sirenix.OdinInspector;
 using System.Collections.Generic;
 
 public class DataManager : MonoSingleton<DataManager>
@@ -78,7 +77,7 @@ public class DataManager : MonoSingleton<DataManager>
     }
 
 
-    [Button]
+  //  [Button]
     public void SaveAllData()
     {
         foreach (GameData data in gameDatasList)
@@ -87,7 +86,7 @@ public class DataManager : MonoSingleton<DataManager>
         }
     }
 
-    [Button]
+ //   [Button]
     public void ResetData()
     {
         foreach (GameData data in gameDatasList)

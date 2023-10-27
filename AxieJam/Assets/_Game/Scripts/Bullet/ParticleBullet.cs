@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightingBullet : Bullet
+public class ParticleBullet : Bullet
 {
     [SerializeField] List<ParticleSystem> particleList;
     [SerializeField] List<ParticleSystem> trailparticleList;

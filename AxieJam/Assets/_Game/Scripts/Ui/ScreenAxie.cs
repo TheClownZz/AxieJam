@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
-
-
+using UnityEngine.UI;
+using DG.Tweening;
 public class ScreenAxie : ScreenBase
 {
+    [SerializeField] ScrollRect scrollRect;
     [SerializeField] List<ItemAxie> itemList;
 
     public override void OnInit()
@@ -22,6 +23,8 @@ public class ScreenAxie : ScreenBase
         {
             itemList[i].UpdateUI();
         }
+        scrollRect.DOVerticalNormalizedPos(1, 1f).SetSpeedBased(true);
+
     }
     public void OnBtnBackClick()
     {
