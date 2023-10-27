@@ -17,10 +17,12 @@ public class GameManager : MonoSingleton<GameManager>
 
     public bool isCheat;
     public GameObject objMap;
-    public Player currentPlayer;
-    [HideInInspector] public List<Player> playerList;
 
     [SerializeField] List<LevelAsset> assetList;
+
+    protected Player currentPlayer;
+    [HideInInspector] public List<Player> playerList;
+    public Player GetCurrentPlayer() { return currentPlayer; }
 
     int mapIndex = 0;
 

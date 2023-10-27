@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class BossShoot : EnemyShoot
 {
     [SerializeField] int skillIndex = 0;

@@ -1,11 +1,9 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class BossJumpAttack : EnemyAttack
+public class BossJumpAttack : BossAttack
 {
     [SerializeField] AudioClip clip;
-
-    [SerializeField] int skillIndex = 1;
     [SerializeField] float jumpPower;
     [SerializeField] float jumptime;
     [SerializeField] float attackAoe = 2;
@@ -37,7 +35,7 @@ public class BossJumpAttack : EnemyAttack
 
         GameManager.Instance.DelayedCall(0.1f, () =>
         {
-            Player player = GameManager.Instance.currentPlayer;
+            Player player = GameManager.Instance.GetCurrentPlayer();
             if (Vector3.Distance(transform.position, player.transform.position) <= attackAoe)
             {
                 float dodge = player.stat.dodge;

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     hp: 5000
-    damage: 50
+    damage: 5
     moveSpeed: 4
     attackSpeed: -1
     armor: 0
@@ -27,11 +27,13 @@ MonoBehaviour:
       - type: 4
         value: 3
       - type: 3
-        value: 4
+        value: 3.5
     - skillPropertieList:
       - type: 0
-        value: 2
+        value: 3
       - type: 4
         value: 5
       - type: 3
+        value: 4
+      - type: 1
         value: 5

@@ -25,7 +25,7 @@ public class ScreenGame : ScreenBase
     public void UpdateAvt()
     {
         var playerList = GameManager.Instance.playerList;
-        var currentPlayer = GameManager.Instance.currentPlayer;
+        var currentPlayer = GameManager.Instance.GetCurrentPlayer();
 
         var assetList = DataManager.Instance.GetAsset<PlayerListAsset>();
         mainItem.SetAvt(assetList.GetAsset(currentPlayer.type).avatar);

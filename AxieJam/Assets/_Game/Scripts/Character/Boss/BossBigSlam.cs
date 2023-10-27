@@ -6,21 +6,20 @@ using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
 
-public class BossBigSlam : EnemyAttack
+public class BossBigSlam : BossAttack
 {
-    [SerializeField] Weapon weapon;
-    [SerializeField] int skillIndex = 1;
-    [SerializeField] float attackSize = 2;
+    [SerializeField] protected Weapon weapon;
+    [SerializeField] protected float attackSize = 2;
 
-    [SerializeField] ParticleSystem fxSlam;
-    [SerializeField] Transform furry;
-    [SerializeField] Transform exposionPrefab;
-    [SerializeField] AudioClip attackClip;
-    [SerializeField] AudioClip explosionClip;
-    List<Transform> spawnList = new List<Transform>();
+    [SerializeField] protected ParticleSystem fxSlam;
+    [SerializeField] protected Transform wpTf;
+    [SerializeField] protected Transform exposionPrefab;
+    [SerializeField] protected AudioClip attackClip;
+    [SerializeField] protected AudioClip explosionClip;
+    protected List<Transform> spawnList = new List<Transform>();
 
-    int numberExplosion;
-    float damageRate;
+    protected int numberExplosion;
+    protected float damageRate;
     public override void OnInits(Character enemy)
     {
         base.OnInits(enemy);
@@ -32,7 +31,7 @@ public class BossBigSlam : EnemyAttack
         attackSize = config.GetSkillValue(SkillType.Range, 2);
         numberExplosion = (int)config.GetSkillValue(SkillType.Number, 3);
 
-        furry.transform.localScale = attackSize * Vector3.one;
+        wpTf.transform.localScale = attackSize * Vector3.one;
         fxSlam.transform.SetParent(GameManager.Instance.GetMapTf().GetChild(1));
 
     }
@@ -48,13 +47,13 @@ public class BossBigSlam : EnemyAttack
     {
         spawnList.Clear();
         fxSlam.Play();
-        fxSlam.transform.position = furry.transform.position;
+        fxSlam.transform.position = wpTf.transform.position;
 
         AudioManager.Instance.PlaySound(attackClip);
         GameManager.Instance.DelayedCall(0.1f, () =>
         {
-            Player player = GameManager.Instance.currentPlayer;
-            if (Vector3.Distance(furry.transform.position, player.transform.position) <= attackSize)
+            Player player = GameManager.Instance.GetCurrentPlayer();
+            if (Vector3.Distance(wpTf.transform.position, player.transform.position) <= attackSize)
             {
                 float dodge = player.stat.dodge;
 
@@ -76,7 +75,7 @@ public class BossBigSlam : EnemyAttack
         float delayWarning = 0.5f;
         for (int i = 0; i < numberExplosion; i++)
         {
-            Vector3 spawnPos = GameManager.Instance.levelController.GetSpawnErea();
+            Vector3 spawnPos = GetSpawnPos();
             var spawnFx = PoolManager.Instance.SpawnObject(PoolType.SpawnFx);
             spawnFx.position = spawnPos;
             spawnList.Add(spawnFx);
@@ -108,5 +107,10 @@ public class BossBigSlam : EnemyAttack
                 });
             });
         }
+    }
+
+    public virtual Vector3 GetSpawnPos()
+    {
+        return GameManager.Instance.levelController.GetSpawnErea();
     }
 }

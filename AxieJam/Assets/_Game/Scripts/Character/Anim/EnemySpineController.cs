@@ -11,7 +11,7 @@ public class EnemySpineController : SpineController
     [SerializeField] string Attack = "die";
     [SerializeField] float attackTime = 1f;
     Tween attackTween;
-
+    string attackAnim;
     public override void OnInits(Character control)
     {
         base.OnInits(control);
@@ -21,7 +21,7 @@ public class EnemySpineController : SpineController
             {
                 control.OnHitDone();
             }
-            else if (trackEntry.Animation.Name == Attack)
+            else if (trackEntry.Animation.Name == attackAnim)
             {
                 control.GetCom<EnemyAttack>().OnAttackDone();
             }
@@ -29,7 +29,7 @@ public class EnemySpineController : SpineController
 
         anim.AnimationState.Start += delegate (TrackEntry trackEntry)
         {
-            if (trackEntry.Animation.Name == Attack)
+            if (trackEntry.Animation.Name == attackAnim)
             {
                 attackTween = GameManager.Instance.DelayedCall(attackTime, () =>
                 {
@@ -61,6 +61,7 @@ public class EnemySpineController : SpineController
                 SetTimeScale(gameConfig.normalAnimSacle);
                 break;
             case CharacterState.Attack:
+                attackAnim = Attack;
                 anim.state.SetAnimation(0, Attack, false);
                 SetTimeScale(1f);
                 break;

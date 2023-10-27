@@ -443,13 +443,12 @@ MonoBehaviour:
   control: {fileID: 0}
   target: {fileID: 0}
   weapon: {fileID: 1210573686577001020}
-  skillIndex: 1
   attackSize: 2
   fxSlam: {fileID: 3368135418938137261}
-  furry: {fileID: 6227039527359344021}
+  wpTf: {fileID: 6227039527359344021}
   exposionPrefab: {fileID: 3334494085358144767, guid: 5bc227c2a45a7e44ea8521ddb446b620, type: 3}
   attackClip: {fileID: 8300000, guid: 4e9bff56ee93c6f42b214141e44e763d, type: 3}
-  explosionClip: {fileID: 8300000, guid: 32aeeae89807bf949bb5620bb8724879, type: 3}
+  explosionClip: {fileID: 8300000, guid: 3e06c45e3372dd345b50a642fe86616d, type: 3}
 --- !u!114 &1210573686577001020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -547,7 +546,6 @@ MonoBehaviour:
   control: {fileID: 0}
   target: {fileID: 0}
   buffAnim: action/idle/counter-state
-  skillIndex: 0
   moveSpeed: 10
   attackSize: 2
   clip: {fileID: 8300000, guid: 4e9bff56ee93c6f42b214141e44e763d, type: 3}

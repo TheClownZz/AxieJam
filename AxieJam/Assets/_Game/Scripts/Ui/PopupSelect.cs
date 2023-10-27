@@ -49,7 +49,7 @@ public class PopupSelect : PopupBase
     private void UpdateUi()
     {
         var playerList = GameManager.Instance.playerList;
-        var currentPlayer = GameManager.Instance.currentPlayer;
+        var currentPlayer = GameManager.Instance.GetCurrentPlayer();
 
         for (int i = 0; i < playerList.Count; i++)
         {

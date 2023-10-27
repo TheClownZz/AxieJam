@@ -1,20 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using Sirenix.OdinInspector;
-using Unity.VisualScripting;
 
 public class Enemy : Character
 {
-    [SerializeField] AudioClip deadClip;
+    protected const float timeDelayDespawn = 1.5f;
+    [SerializeField] protected AudioClip deadClip;
     [SerializeField] float spawItemTime = 1f;
-    const float timeDelayDespawn = 1.5f;
 
-    Transform spawnFx;
-    Tween spawnTween;
-    Tween clearTween;
-    Tween itemTween;
+    protected Transform spawnFx;
+    protected Tween spawnTween;
+    protected Tween clearTween;
+    protected Tween itemTween;
 
 
     [HideInInspector] public WaveStat waveStat;
@@ -80,17 +76,17 @@ public class Enemy : Character
             GameManager.Instance.levelController.RemoveEnemy(this);
         });
 
-        itemTween = GameManager.Instance.DelayedCall(currspawItemTime, SpawnItem);
-
-
-
+        itemTween = GameManager.Instance.DelayedCall(currspawItemTime, () =>
+        {
+            SpawnItem(deadClip);
+        });
     }
 
-    private void SpawnItem()
+    protected void SpawnItem(AudioClip clip)
     {
-        if (deadClip)
+        if (clip)
         {
-            AudioManager.Instance.PlaySound(deadClip);
+            AudioManager.Instance.PlaySound(clip);
         }
         float foodRandom = Random.value;
         EnemyAsset enemyAsset = GetComponent<SetupEnemyData>().asset;

@@ -6,7 +6,7 @@ using UnityEngine;
 public class BossSkillInfo
 {
     public float hpRate;
-    public EnemyAttack controller;
+    public BossAttack controller;
     public string animName;
     public float attackTime;
 }
@@ -19,11 +19,14 @@ public class Boss : Enemy
     {
         base.OnInit();
         skillIndex = 0;
-        ((EnemySpineController)spineController).SetAttack(bossSkillInfoList[skillIndex].animName, bossSkillInfoList[skillIndex].attackTime);
-        foreach(var skill in bossSkillInfoList)
+        for (int i = 0; i < bossSkillInfoList.Count; i++)
         {
-            componentList.Remove(skill.controller);
+            bossSkillInfoList[i].controller.SetIndex(i);
+            componentList.Remove(bossSkillInfoList[i].controller);
         }
+
+        ((EnemySpineController)spineController).SetAttack(bossSkillInfoList[skillIndex].animName, bossSkillInfoList[skillIndex].attackTime);
+
         componentList.Add(bossSkillInfoList[skillIndex].controller);
         bossSkillInfoList[skillIndex].controller.gameObject.SetActive(true);
         bossSkillInfoList[skillIndex].controller.OnInits(this);
@@ -54,5 +57,26 @@ public class Boss : Enemy
             .SetDamage(data.damage)
             .SetAttackSpeed(data.attackSpeed)
             .SetMoveSpeed(data.moveSpeed);
+    }
+
+    public override void OnDead()
+    {
+        base.OnDead();
+        foreach (var comp in componentList)
+            comp.OnDead();
+
+        clearTween = GameManager.Instance.DelayedCall(timeDelayDespawn, () =>
+        {
+            Clear();
+            GameManager.Instance.levelController.RemoveEnemy(this);
+        });
+
+        itemTween = GameManager.Instance.DelayedCall(currspawItemTime, () =>
+        {
+            SpawnItem(null);
+        });
+
+        if(deadClip != null)
+            AudioManager.Instance.PlaySound(deadClip);
     }
 }

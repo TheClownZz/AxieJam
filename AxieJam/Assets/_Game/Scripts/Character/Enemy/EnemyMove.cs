@@ -88,7 +88,7 @@ public class EnemyMove : EnemyComponent
 
     public Player GetTarget()
     {
-        return GameManager.Instance.currentPlayer;
+        return GameManager.Instance.GetCurrentPlayer();
     }
 
 

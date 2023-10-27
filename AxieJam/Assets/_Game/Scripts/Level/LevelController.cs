@@ -14,12 +14,15 @@ public class LevelController : MonoBehaviour
 
     float spawnRadius = 7.5f;
     float delaySpawn = 1f;
-    [SerializeField] List<Enemy> enemyList;
+    [HideInInspector] public List<Enemy> enemyList;
 
     public void OnUpdate(float dt)
     {
-        foreach (var enemy in enemyList)
-            enemy.OnUpdate(dt);
+        int enemyCount = enemyList.Count;
+        for (int i = 0; i < enemyCount; i++)
+        {
+            enemyList[i].OnUpdate(dt);
+        }
     }
     public void OnInits()
     {
@@ -31,7 +34,7 @@ public class LevelController : MonoBehaviour
     }
     public void LoadLevel()
     {
-        waveIndex = 0;
+        waveIndex = asset.dataList.Count - 1;
         waveConfig = asset.GetConfig(waveIndex);
         SpawnWave();
         UIManager.Instance.GetScreen<ScreenGame>().UpdateWave(waveIndex + 1, asset.dataList.Count);
@@ -124,5 +127,10 @@ public class LevelController : MonoBehaviour
         pos.y = Mathf.Clamp(pos.y, bot.position.y, top.position.y - 2f);
         return pos;
     }
-
+    public Vector3 GetSpawnErea(Vector3 pos)
+    {
+        pos.x = Mathf.Clamp(pos.x, left.position.x, right.position.x);
+        pos.y = Mathf.Clamp(pos.y, bot.position.y, top.position.y - 2f);
+        return pos;
+    }
 }

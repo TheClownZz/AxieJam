@@ -42,10 +42,10 @@ public class ScreenHome : ScreenBase
         panelLoad.SetActive(true);
         panelContent.SetActive(false);
         imgLoad.fillAmount = 0;
-        int loadTime = 1;
+        int loadTime = 3;
         if (PlayerPrefs.GetInt(firstPlay, 0) == 0)
         {
-            loadTime = 10;
+            loadTime = 8;
             PlayerPrefs.SetInt(firstPlay, 1);
         }
         imgLoad.DOFillAmount(1, loadTime).OnComplete(() =>
