@@ -1,5 +1,3 @@
-using JetBrains.Annotations;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +5,7 @@ public class LightingBullet : Bullet
 {
     [SerializeField] List<ParticleSystem> particleList;
     [SerializeField] List<ParticleSystem> trailparticleList;
-    public override void SetColor(Color color)
+    public void SetColor(Color color)
     {
         foreach (var particle in particleList)
         {

@@ -1,6 +1,3 @@
-using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour, ICreateDamage
@@ -128,10 +125,4 @@ public class Bullet : MonoBehaviour, ICreateDamage
             return;
         CreateDamage(e);
     }
-
-    public virtual void SetColor(Color color)
-    {
-
-    }
-
 }

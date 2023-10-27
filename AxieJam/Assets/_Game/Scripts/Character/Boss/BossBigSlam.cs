@@ -1,9 +1,4 @@
-using DG.Tweening;
-using Game;
-using PathologicalGames;
-using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
 
 public class BossBigSlam : BossAttack

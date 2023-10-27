@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.U2D;
 
 public class BlueGun : PlayerGun
 {
@@ -14,7 +10,7 @@ public class BlueGun : PlayerGun
         for (int i = 1; i <= numberBullet; i++)
         {
             float angle = angleRate * (i - offset);
-            Bullet b = PoolManager.Instance.SpawnObject(bulletPf.transform).GetComponent<Bullet>();
+            LightingBullet b = PoolManager.Instance.SpawnObject(bulletPf.transform).GetComponent<LightingBullet>();
             b.transform.SetParent(GameManager.Instance.bulletSpawner, false);
             b.transform.position = shooter.transform.position;
             b.transform.rotation = Quaternion.Euler(0, 0, transform.eulerAngles.z + angle);

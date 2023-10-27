@@ -28,7 +28,7 @@ public class OrangeGun : PlayerGun
             for (int i = 0; i < numberBullet; i++)
             {
                 float angle = angleRate * i;
-                Bullet b = PoolManager.Instance.SpawnObject(circleBulletPrefab).GetComponent<Bullet>();
+                LightingBullet b = PoolManager.Instance.SpawnObject(circleBulletPrefab).GetComponent<LightingBullet>();
                 b.transform.position = SpawnInCircle(circleList[0].position, radiusList[0], angle);
                 b.transform.rotation = Quaternion.Euler(0, 0, 360 - angle);
                 b.transform.localScale = Vector3.one;
@@ -48,7 +48,7 @@ public class OrangeGun : PlayerGun
             for (int i = 0; i < numberExtraBullet; i++)
             {
                 float angle = angleRate * (i + 1);
-                Bullet b = PoolManager.Instance.SpawnObject(circleBulletPrefab).GetComponent<Bullet>();
+                LightingBullet b = PoolManager.Instance.SpawnObject(circleBulletPrefab).GetComponent<LightingBullet>();
                 b.transform.position = SpawnInCircle(circleList[1].position, radiusList[1], angle);
                 b.transform.rotation = Quaternion.Euler(0, 0, 360 - angle);
                 b.transform.localScale = Vector3.one;

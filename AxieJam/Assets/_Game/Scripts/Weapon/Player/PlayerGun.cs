@@ -40,7 +40,6 @@ public class PlayerGun : Weapon
         b.SetSprite(bulletSprite);
         b.SetHitClip(hitClip);
         b.SetDamageRate(damageRate);
-        b.SetColor(color);
         return b;
     }
 
