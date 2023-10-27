@@ -80,7 +80,6 @@ public class ItemAxie : MonoBehaviour
         tmpSpeed.SetText(moveSpeed.ToString());
         tmpCritRate.SetText("{0}%", Mathf.CeilToInt(critRate * 100));
         tmpFood.SetText("{0}/{1}", data.foodCount, footRequire);
-        tmpPotion.SetText("{0}/{1}", data.potionCount, potionRequire);
         tmpSkillName.SetText(asset.skillName);
         tmpSkillLevel.SetText("LV.{0}", data.levelSkill);
         tmpDiscription.SetText(asset.discription);
@@ -88,7 +87,21 @@ public class ItemAxie : MonoBehaviour
         tmpDuration.SetText("Duration: {0}s", duration);
 
         btnLevel.interactable = data.foodCount >= footRequire;
-        btnSkill.interactable = data.potionCount >= potionRequire;
+
+
+        if (data.levelSkill >= GameConfig.maxlevel)
+        {
+            btnSkill.interactable = false;
+            btnSkill.transform.GetChild(0).gameObject.SetActive(false);
+            btnSkill.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Max Level";
+        }else
+        {
+            btnSkill.interactable = data.potionCount >= potionRequire;
+            btnSkill.transform.GetChild(0).gameObject.SetActive(true);
+            tmpPotion.SetText("{0}/{1}", data.potionCount, potionRequire);
+            btnSkill.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "SKILL UP";
+        }
+
     }
 
     public void OnBtnLevelClick()

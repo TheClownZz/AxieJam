@@ -12,7 +12,7 @@ public class EnemyTouch : EnemyComponent
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         Player p = collision.GetComponent<Player>();
-        if (p)
+        if (p && !control.isDead)
         {
             control.GetComponent<Enemy>().currspawItemTime = spawnItemTime;
             control.spineController.SetDieAnim(touched);

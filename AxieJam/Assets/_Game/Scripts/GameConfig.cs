@@ -6,9 +6,7 @@ using UnityEngine;
 public class GameConfig : ScriptableObject
 {
     public const int maxPlayer = 3;
-    public const int maxTier = 5;
-    public const int slotUnLock = 3;
-    public const int maxSlot = 5;
+    public const int maxlevel = 5;
 
     public float forceBackTime = 0.5f;
     [SerializeField, Range(0, 5)]
