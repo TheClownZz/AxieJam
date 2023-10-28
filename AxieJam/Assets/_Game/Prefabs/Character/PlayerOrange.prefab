@@ -566,11 +566,11 @@ MonoBehaviour:
   force: 500
   gunFx: {fileID: 5088304390579951456}
   speedList:
-  - 200
-  - 150
+  - 175
+  - 225
   radiusList:
-  - 2.5
-  - 3.5
+  - 3
+  - 4
   circleList:
   - {fileID: 250009019095316228}
   - {fileID: 1122229493922996021}

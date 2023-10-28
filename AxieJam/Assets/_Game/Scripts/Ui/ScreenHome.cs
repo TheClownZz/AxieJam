@@ -2,6 +2,7 @@ using DG.Tweening;
 using I2.TextAnimation;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +15,7 @@ public class ScreenHome : ScreenBase
     [SerializeField] GameObject panelContent;
     [SerializeField] GameObject panelLoad;
     [SerializeField] Image imgLoad;
+    [SerializeField] GameObject objNoti;
 
     [SerializeField] TeamAvtController teamAvtController;
     public override void OnShow()
@@ -28,6 +30,7 @@ public class ScreenHome : ScreenBase
         teamAvtController.UpdateTeam(team);
 
         GameManager.Instance.ShowMap(false);
+        objNoti.SetActive(CheckNoti());
     }
 
 
@@ -47,10 +50,11 @@ public class ScreenHome : ScreenBase
         {
             panelLoad.SetActive(true);
         }
-        else if(GameManager.Instance.CheckMaxLevel())
+        else if (GameManager.Instance.CheckMaxLevel())
         {
             UIManager.Instance.ShowPopup<PopupContinue>();
-        }else
+        }
+        else
         {
             StartLoading();
 
@@ -78,6 +82,29 @@ public class ScreenHome : ScreenBase
 
         });
     }
+
+    private bool CheckNoti()
+    {
+        bool isUpdate = false;
+        for (int i = 0; i < (int)PlayerType.None; i++)
+        {
+            PlayerType playerType = (PlayerType)i;
+            var data = DataManager.Instance.GetData<DataUser>().GetDataPlayer(playerType);
+            var asset = DataManager.Instance.GetAsset<PlayerListAsset>().GetAsset(playerType);
+            var levelConfig = asset.data.GetLevelConfig(data.level);
+            var skillConfig = asset.data.GetSkillConfig(data.levelSkill);
+            int footRequire = levelConfig.foodRequire;
+            int potionRequire = skillConfig.defaultValue.potionRequire;
+
+            isUpdate = data.potionCount >= potionRequire || data.foodCount >= footRequire;
+
+            if (isUpdate)
+                break;
+        }
+
+        return isUpdate;
+    }
+
 
     public void OnBtnTeamClick()
     {

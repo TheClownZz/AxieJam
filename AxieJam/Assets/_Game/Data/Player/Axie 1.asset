@@ -21,7 +21,7 @@ MonoBehaviour:
   data:
     type: 1
     hp: 450
-    damage: 18
+    damage: 14
     moveSpeed: 6
     critRate: 0.1
     critDamage: 0.95
@@ -39,29 +39,29 @@ MonoBehaviour:
       - type: 1
         value: 3
       - type: 0
-        value: 0.5
+        value: 0.35
     - defaultValue:
         potionRequire: 20
         duration: 3.25
-        cooldown: 9
+        cooldown: 9.5
       propertieList:
       - type: 1
         value: 4
       - type: 0
-        value: 0.5
+        value: 0.4
     - defaultValue:
         potionRequire: 40
         duration: 4
-        cooldown: 8
+        cooldown: 9
       propertieList:
       - type: 1
         value: 5
       - type: 0
-        value: 0.5
+        value: 0.45
     - defaultValue:
         potionRequire: 80
         duration: 4.5
-        cooldown: 7
+        cooldown: 9
       propertieList:
       - type: 1
         value: 5
@@ -70,18 +70,18 @@ MonoBehaviour:
       - type: 7
         value: 3
       - type: 8
-        value: 0.5
+        value: 0.35
     - defaultValue:
         potionRequire: 150
         duration: 5
-        cooldown: 6
+        cooldown: 8.5
       propertieList:
       - type: 1
         value: 5
       - type: 0
         value: 0.5
       - type: 7
-        value: 5
+        value: 4
       - type: 8
-        value: 0.5
+        value: 0.75
     dataAsset: {fileID: 11400000, guid: b49379cb4c0ea41ad8687d360ccaa72b, type: 2}
