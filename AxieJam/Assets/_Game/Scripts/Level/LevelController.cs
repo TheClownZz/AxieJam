@@ -6,7 +6,7 @@ public class LevelController : MonoBehaviour
 
     public Transform top, bot, left, right;
 
-    int waveIndex;
+    [SerializeField] int waveIndex;
     Tween bossTween;
     LevelAsset asset;
     WaveConfig waveConfig;

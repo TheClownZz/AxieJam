@@ -39,6 +39,7 @@ public class PopupWin : PopupBase
     {
         OnHide();
         GameManager.Instance.ClearMap();
+        GameManager.Instance.ResetAllPlayer();
         GameManager.Instance.StartLevel();
 
         AudioManager.Instance.PlayOnceShot(AudioType.CLICK);

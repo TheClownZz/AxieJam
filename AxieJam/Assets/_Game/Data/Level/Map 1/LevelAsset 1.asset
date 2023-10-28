@@ -29,8 +29,8 @@ MonoBehaviour:
       numberSpawn: 12
   - waveTime: 60
     waveProterties:
-      hpRate: 1.1
-      damageRate: 1.1
+      hpRate: 1.2
+      damageRate: 1.2
     enemyConfigList:
     - type: 100
       numberSpawn: 8
@@ -38,8 +38,8 @@ MonoBehaviour:
       numberSpawn: 8
   - waveTime: 60
     waveProterties:
-      hpRate: 1.1
-      damageRate: 1.1
+      hpRate: 1.2
+      damageRate: 1.2
     enemyConfigList:
     - type: 100
       numberSpawn: 15
@@ -47,8 +47,8 @@ MonoBehaviour:
       numberSpawn: 8
   - waveTime: 60
     waveProterties:
-      hpRate: 1.1
-      damageRate: 1.1
+      hpRate: 1.3
+      damageRate: 1.3
     enemyConfigList:
     - type: 100
       numberSpawn: 20
@@ -61,8 +61,8 @@ MonoBehaviour:
       numberSpawn: 5
   - waveTime: 60
     waveProterties:
-      hpRate: 1.3
-      damageRate: 1.3
+      hpRate: 1.4
+      damageRate: 1.4
     enemyConfigList:
     - type: 101
       numberSpawn: 10
@@ -70,8 +70,8 @@ MonoBehaviour:
       numberSpawn: 8
   - waveTime: 60
     waveProterties:
-      hpRate: 1.3
-      damageRate: 1.3
+      hpRate: 1.4
+      damageRate: 1.4
     enemyConfigList:
     - type: 101
       numberSpawn: 12
@@ -79,8 +79,8 @@ MonoBehaviour:
       numberSpawn: 8
   - waveTime: 60
     waveProterties:
-      hpRate: 1.3
-      damageRate: 1.3
+      hpRate: 1.5
+      damageRate: 1.5
     enemyConfigList:
     - type: 100
       numberSpawn: 10
@@ -90,8 +90,8 @@ MonoBehaviour:
       numberSpawn: 7
   - waveTime: 60
     waveProterties:
-      hpRate: 1.3
-      damageRate: 1.3
+      hpRate: 1.5
+      damageRate: 1.5
     enemyConfigList:
     - type: 100
       numberSpawn: 13

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: EnemyD
   m_EditorClassIdentifier: 
   data:
-    hp: 100
+    hp: 150
     damage: 30
     moveSpeed: 1
-    attackSpeed: 0.5
+    attackSpeed: 0.33333334
     armor: 0
     foodDropRate: 0.25
     potionDropRate: 0.25

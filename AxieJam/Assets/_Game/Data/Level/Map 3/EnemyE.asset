@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: EnemyE
   m_EditorClassIdentifier: 
   data:
-    hp: 100
+    hp: 150
     damage: 50
     moveSpeed: 1
-    attackSpeed: -1
+    attackSpeed: 0.33333334
     armor: 0
     foodDropRate: 0.35
     potionDropRate: 0.15

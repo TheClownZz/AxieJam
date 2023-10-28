@@ -21,8 +21,8 @@ MonoBehaviour:
   data:
     type: 0
     hp: 330
-    damage: 20
-    moveSpeed: 6.5
+    damage: 18
+    moveSpeed: 6
     critRate: 0.175
     critDamage: 1.45
     levelConfiglist:

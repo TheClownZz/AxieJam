@@ -92,7 +92,13 @@ public class GameManager : MonoSingleton<GameManager>
 
     }
 
-
+    public void ResetAllPlayer()
+    {
+        foreach(var p in playerList)
+        {
+            p.GetCom<PlayerHp>().RegenPercen(1);
+        }
+    }
     public void StartLevel()
     {
         mapIndex = (DataManager.Instance.GetData<DataLevel>().CurrentLevelId - 1);

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     hp: 30
-    damage: 3
+    damage: 4
     moveSpeed: 1
     attackSpeed: 0.5
     armor: 0

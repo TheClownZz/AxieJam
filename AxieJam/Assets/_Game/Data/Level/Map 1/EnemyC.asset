@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: EnemyC
   m_EditorClassIdentifier: 
   data:
-    hp: 50
-    damage: 15
+    hp: 65
+    damage: 10
     moveSpeed: 1
     attackSpeed: -1
     armor: 0

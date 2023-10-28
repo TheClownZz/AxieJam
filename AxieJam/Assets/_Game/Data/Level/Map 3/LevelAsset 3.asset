@@ -33,8 +33,8 @@ MonoBehaviour:
       numberSpawn: 5
   - waveTime: 60
     waveProterties:
-      hpRate: 1.1
-      damageRate: 1.1
+      hpRate: 1.2
+      damageRate: 1.2
     enemyConfigList:
     - type: 103
       numberSpawn: 5
@@ -44,8 +44,8 @@ MonoBehaviour:
       numberSpawn: 5
   - waveTime: 60
     waveProterties:
-      hpRate: 1.1
-      damageRate: 1.1
+      hpRate: 1.2
+      damageRate: 1.2
     enemyConfigList:
     - type: 103
       numberSpawn: 10
@@ -73,8 +73,8 @@ MonoBehaviour:
       numberSpawn: 5
   - waveTime: 60
     waveProterties:
-      hpRate: 1.3
-      damageRate: 1.3
+      hpRate: 1.4
+      damageRate: 1.4
     enemyConfigList:
     - type: 104
       numberSpawn: 5
@@ -84,8 +84,8 @@ MonoBehaviour:
       numberSpawn: 5
   - waveTime: 60
     waveProterties:
-      hpRate: 1.3
-      damageRate: 1.3
+      hpRate: 1.4
+      damageRate: 1.4
     enemyConfigList:
     - type: 104
       numberSpawn: 10
@@ -95,8 +95,8 @@ MonoBehaviour:
       numberSpawn: 5
   - waveTime: 60
     waveProterties:
-      hpRate: 1.3
-      damageRate: 1.3
+      hpRate: 1.5
+      damageRate: 1.5
     enemyConfigList:
     - type: 103
       numberSpawn: 10
@@ -135,8 +135,8 @@ MonoBehaviour:
       numberSpawn: 5
   - waveTime: 60
     waveProterties:
-      hpRate: 1.5
-      damageRate: 1.5
+      hpRate: 1.6
+      damageRate: 1.6
     enemyConfigList:
     - type: 103
       numberSpawn: 10
@@ -146,8 +146,8 @@ MonoBehaviour:
       numberSpawn: 5
   - waveTime: 60
     waveProterties:
-      hpRate: 1.5
-      damageRate: 1.5
+      hpRate: 1.7
+      damageRate: 1.7
     enemyConfigList:
     - type: 103
       numberSpawn: 15
@@ -155,8 +155,8 @@ MonoBehaviour:
       numberSpawn: 5
   - waveTime: 60
     waveProterties:
-      hpRate: 1.5
-      damageRate: 1.5
+      hpRate: 1.8
+      damageRate: 1.8
     enemyConfigList:
     - type: 105
       numberSpawn: 5
@@ -164,8 +164,8 @@ MonoBehaviour:
       numberSpawn: 5
   - waveTime: 60
     waveProterties:
-      hpRate: 1.5
-      damageRate: 1.5
+      hpRate: 1.9
+      damageRate: 1.9
     enemyConfigList:
     - type: 104
       numberSpawn: 5
