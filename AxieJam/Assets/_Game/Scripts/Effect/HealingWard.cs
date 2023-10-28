@@ -43,6 +43,7 @@ public class HealingWard : MonoBehaviour
             {
                 PoolManager.Instance.DespawnObject(clone);
             });
+            AudioManager.Instance.PlayOnceShot(AudioType.Healing);
             target.GetCom<PlayerHp>().RegenPercen(activeValue);
         }
     }

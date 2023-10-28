@@ -24,7 +24,7 @@ MonoBehaviour:
     damage: 20
     moveSpeed: 5
     critRate: 0.125
-    critDamage: 1.55
+    critDamage: 1.05
     levelConfiglist:
     - foodRequire: 5
       hp: 40
@@ -32,9 +32,9 @@ MonoBehaviour:
       critRate: 0.01
     skillConfiglist:
     - defaultValue:
-        potionRequire: 5
+        potionRequire: 10
         duration: 3
-        cooldown: 20
+        cooldown: 25
       propertieList:
       - type: 3
         value: 10
@@ -43,9 +43,9 @@ MonoBehaviour:
       - type: 5
         value: 0.33333334
     - defaultValue:
-        potionRequire: 10
+        potionRequire: 28
         duration: 3.5
-        cooldown: 19
+        cooldown: 23.5
       propertieList:
       - type: 3
         value: 12
@@ -54,9 +54,9 @@ MonoBehaviour:
       - type: 5
         value: 0.5
     - defaultValue:
-        potionRequire: 15
+        potionRequire: 26
         duration: 4
-        cooldown: 18
+        cooldown: 21.5
       propertieList:
       - type: 3
         value: 12
@@ -65,9 +65,9 @@ MonoBehaviour:
       - type: 5
         value: 0.6666667
     - defaultValue:
-        potionRequire: 20
+        potionRequire: 24
         duration: 4.5
-        cooldown: 17
+        cooldown: 20
       propertieList:
       - type: 3
         value: 12
@@ -76,9 +76,9 @@ MonoBehaviour:
       - type: 5
         value: 1
     - defaultValue:
-        potionRequire: 25
+        potionRequire: 22
         duration: 5
-        cooldown: 16
+        cooldown: 18
       propertieList:
       - type: 3
         value: 12
