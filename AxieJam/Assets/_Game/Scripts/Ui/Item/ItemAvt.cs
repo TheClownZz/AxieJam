@@ -24,6 +24,7 @@ public class ItemAvt : MonoBehaviour
 
     public void UpdateMana(float percen)
     {
+        percen = Mathf.Clamp(percen, 0, 1);
         imgMana.fillAmount = percen;
         tmpMana.SetText(((int)(percen * 100)).ToString() + "%");
     }
