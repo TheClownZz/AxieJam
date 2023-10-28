@@ -5,7 +5,7 @@ using UnityEngine;
 public class ClearParticle : MonoBehaviour
 {
     [SerializeField] List<ParticleSystem> particleList;
-    private void OnEnable()
+    public void Clear()
     {
         foreach (ParticleSystem p in particleList)
         {

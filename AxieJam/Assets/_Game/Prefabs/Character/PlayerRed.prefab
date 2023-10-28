@@ -54,6 +54,7 @@ MonoBehaviour:
   bulletSprite: {fileID: 21300000, guid: a401f9a842b071f45a15885001c3341e, type: 3}
   hitClip: {fileID: 0}
   force: 500
+  gunFx: {fileID: 3883062032405191634}
   exposionPrefab: {fileID: 4558091446817699207, guid: f90b600ebec1e08409551f6c3f990643, type: 3}
 --- !u!1 &4424165598337138926
 GameObject:
@@ -541,6 +542,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 118070519520916897}
     m_Modifications:
+    - target: {fileID: 139634, guid: 07f89bdb820892e49bcd5c32bf299006, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 193170, guid: 07f89bdb820892e49bcd5c32bf299006, type: 3}
       propertyPath: m_Name
       value: MagicMissileFire
@@ -590,6 +595,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07f89bdb820892e49bcd5c32bf299006, type: 3}
+--- !u!1 &3883062032405191634 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 193170, guid: 07f89bdb820892e49bcd5c32bf299006, type: 3}
+  m_PrefabInstance: {fileID: 3883062032405342528}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3883062032405377988 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 498308, guid: 07f89bdb820892e49bcd5c32bf299006, type: 3}

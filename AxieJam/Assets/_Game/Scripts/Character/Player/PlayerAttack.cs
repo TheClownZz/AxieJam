@@ -44,6 +44,7 @@ public class PlayerAttack : PlayerComponent
     public override void OnSelect()
     {
         base.OnSelect();
+        weapon.OnSelect();
         cooldown = Mathf.Max(cooldown, spawnCooldown);
         SetCurrentCooldown(Mathf.Max(currentCooldown, spawnCooldown));
     }

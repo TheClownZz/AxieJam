@@ -117,7 +117,7 @@ public class ItemAxie : MonoBehaviour
     {
         var data = DataManager.Instance.GetData<DataUser>().GetDataPlayer(playerType);
         var asset = DataManager.Instance.GetAsset<PlayerListAsset>().GetAsset(playerType);
-        int require = asset.data.GetSkillConfig(data.level).defaultValue.potionRequire;
+        int require = asset.data.GetSkillConfig(data.levelSkill).defaultValue.potionRequire;
 
         DataManager.Instance.GetData<DataUser>().
             UpSkill(playerType, require);

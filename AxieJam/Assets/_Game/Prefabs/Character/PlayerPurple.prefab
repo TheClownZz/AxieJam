@@ -86,6 +86,7 @@ MonoBehaviour:
   bulletSprite: {fileID: 21300000, guid: a401f9a842b071f45a15885001c3341e, type: 3}
   hitClip: {fileID: 0}
   force: 500
+  gunFx: {fileID: 5760324485410994115}
   ward: {fileID: 692242841867866559}
 --- !u!1 &4424165598337138926
 GameObject:
@@ -548,7 +549,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 181984, guid: eaf9728a2b7aafb4b822e2708a38fe70, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 420052, guid: eaf9728a2b7aafb4b822e2708a38fe70, type: 3}
       propertyPath: m_LocalPosition.x
@@ -595,6 +596,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaf9728a2b7aafb4b822e2708a38fe70, type: 3}
+--- !u!1 &5760324485410994115 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 174218, guid: eaf9728a2b7aafb4b822e2708a38fe70, type: 3}
+  m_PrefabInstance: {fileID: 5760324485411151689}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5760324485411305373 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 420052, guid: eaf9728a2b7aafb4b822e2708a38fe70, type: 3}

@@ -8,6 +8,7 @@ public class PlayerGun : Weapon
     [SerializeField] protected Sprite bulletSprite;
     [SerializeField] protected AudioClip hitClip;
     [SerializeField] protected float force = 300;
+    [SerializeField] GameObject gunFx;
 
     CameraShake cameraShake;
 
@@ -53,5 +54,15 @@ public class PlayerGun : Weapon
     {
         isActive = false;
         damageRate = cachedDamageRate;
+    }
+
+    public override void OnSelect()
+    {
+        base.OnSelect();
+        gunFx.SetActive(false);
+        GameManager.Instance.DelayedCall(0.1f, () =>
+        {
+            gunFx.SetActive(true);
+        });
     }
 }

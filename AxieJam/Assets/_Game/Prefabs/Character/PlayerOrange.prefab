@@ -564,6 +564,7 @@ MonoBehaviour:
   bulletSprite: {fileID: 21300000, guid: a401f9a842b071f45a15885001c3341e, type: 3}
   hitClip: {fileID: 0}
   force: 500
+  gunFx: {fileID: 5088304390579951456}
   speedList:
   - 200
   - 150
@@ -668,6 +669,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6623957783738951238}
     m_Modifications:
+    - target: {fileID: 126572, guid: 3b671081e44be1c4aa4355e8ba6e8a5e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 147436, guid: 3b671081e44be1c4aa4355e8ba6e8a5e, type: 3}
       propertyPath: m_Name
       value: FireballMissileFire
@@ -741,5 +746,10 @@ PrefabInstance:
 --- !u!4 &5088304390579760642 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 460430, guid: 3b671081e44be1c4aa4355e8ba6e8a5e, type: 3}
+  m_PrefabInstance: {fileID: 5088304390580086924}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5088304390579951456 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147436, guid: 3b671081e44be1c4aa4355e8ba6e8a5e, type: 3}
   m_PrefabInstance: {fileID: 5088304390580086924}
   m_PrefabAsset: {fileID: 0}

@@ -43,5 +43,10 @@ public class Weapon : MonoBehaviour
         return characterControl.stat;
     }
 
+    public virtual void OnSelect()
+    {
+
+    }
+
 }
 

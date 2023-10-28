@@ -53,7 +53,7 @@ MonoBehaviour:
   bulletSprite: {fileID: 21300000, guid: a401f9a842b071f45a15885001c3341e, type: 3}
   hitClip: {fileID: 0}
   force: 500
-  color: {r: 0, g: 0.85882354, b: 1, a: 1}
+  gunFx: {fileID: 6854920065914183792}
 --- !u!1 &2978818438145362108
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,6 +545,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 143338, guid: 153ff601b9ac43240921bf65f009e220, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 163948, guid: 153ff601b9ac43240921bf65f009e220, type: 3}
       propertyPath: m_Name
       value: LightningMissileBlue
@@ -612,6 +616,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 153ff601b9ac43240921bf65f009e220, type: 3}
+--- !u!1 &6854920065914183792 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 163948, guid: 153ff601b9ac43240921bf65f009e220, type: 3}
+  m_PrefabInstance: {fileID: 6854920065914085404}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6854920065914457310 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 453826, guid: 153ff601b9ac43240921bf65f009e220, type: 3}

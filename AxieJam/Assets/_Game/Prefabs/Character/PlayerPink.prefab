@@ -54,6 +54,7 @@ MonoBehaviour:
   bulletSprite: {fileID: 21300000, guid: a401f9a842b071f45a15885001c3341e, type: 3}
   hitClip: {fileID: 0}
   force: 500
+  gunFx: {fileID: 5863068596339456524}
 --- !u!1 &4424165598337138926
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,5 +609,10 @@ PrefabInstance:
 --- !u!4 &5863068596339031178 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 470252, guid: dc45d356f9cc39149a47bc7e96bf12c4, type: 3}
+  m_PrefabInstance: {fileID: 5863068596339347558}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5863068596339456524 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 109162, guid: dc45d356f9cc39149a47bc7e96bf12c4, type: 3}
   m_PrefabInstance: {fileID: 5863068596339347558}
   m_PrefabAsset: {fileID: 0}
