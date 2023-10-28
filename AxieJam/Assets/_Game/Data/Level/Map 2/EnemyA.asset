@@ -18,5 +18,5 @@ MonoBehaviour:
     moveSpeed: 1
     attackSpeed: 0.5
     armor: 0
-    foodDropRate: 0.1
-    potionDropRate: 0.1
+    foodDropRate: 0.25
+    potionDropRate: 0.25
