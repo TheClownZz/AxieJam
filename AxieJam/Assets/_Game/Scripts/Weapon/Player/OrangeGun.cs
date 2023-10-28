@@ -29,7 +29,7 @@ public class OrangeGun : PlayerGun
             {
                 float angle = angleRate * i;
                 Bullet b = PoolManager.Instance.SpawnObject(circleBulletPrefab).GetComponent<Bullet>();
-                b.transform.position = SpawnInCircle(circleList[0].position, radiusList[0], angle);
+                b.transform.position = FrameWorkUtility.SpawnInCircle(circleList[0].position, radiusList[0], angle);
                 b.transform.rotation = Quaternion.Euler(0, 0, 360 - angle);
                 b.transform.localScale = Vector3.one;
                 b.transform.SetParent(circleList[0], true);
@@ -48,7 +48,7 @@ public class OrangeGun : PlayerGun
             {
                 float angle = angleRate * (i + 1);
                 Bullet b = PoolManager.Instance.SpawnObject(circleBulletPrefab).GetComponent<Bullet>();
-                b.transform.position = SpawnInCircle(circleList[1].position, radiusList[1], angle);
+                b.transform.position = FrameWorkUtility.SpawnInCircle(circleList[1].position, radiusList[1], angle);
                 b.transform.rotation = Quaternion.Euler(0, 0, 360 - angle);
                 b.transform.localScale = Vector3.one;
                 b.transform.SetParent(circleList[1], true);
@@ -102,14 +102,5 @@ public class OrangeGun : PlayerGun
         }
     }
 
-    Vector3 SpawnInCircle(Vector3 center, float radius, float angle)
-    {
-        Vector3 pos;
-        pos.x = center.x + radius * Mathf.Sin(angle * Mathf.Deg2Rad);
-        pos.y = center.y + radius * Mathf.Cos(angle * Mathf.Deg2Rad);
-        pos.z = center.z;
-        return pos;
-    }
 
-   
 }

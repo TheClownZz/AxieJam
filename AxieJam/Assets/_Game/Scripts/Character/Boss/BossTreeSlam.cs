@@ -3,10 +3,9 @@ using UnityEngine;
 
 public class BossTreeSlam : BossBigSlam
 {
-    float radius = 3f;
     public override Vector3 GetSpawnPos()
     {
-        Vector3 spawnPos = GameManager.Instance.GetCurrentPlayer().transform.position + (Vector3)(radius * Random.insideUnitCircle);
+        Vector3 spawnPos = FrameWorkUtility.SpawnInCircle(GameManager.Instance.GetCurrentPlayer().transform.position, radius, Random.Range(0, 359));
         return GameManager.Instance.levelController.GetSpawnErea(spawnPos);
 
     }

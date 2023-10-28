@@ -16,7 +16,7 @@ MonoBehaviour:
   - waveTime: 60
     waveProterties:
       hpRate: 1
-      damageRate: 1
+      damageRate: 0
     enemyConfigList:
     - type: 201
       numberSpawn: 1

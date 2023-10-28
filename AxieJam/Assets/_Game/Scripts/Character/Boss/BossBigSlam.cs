@@ -4,7 +4,6 @@ using UnityEngine;
 public class BossBigSlam : BossAttack
 {
     [SerializeField] protected Weapon weapon;
-    [SerializeField] protected float attackSize = 2;
 
     [SerializeField] protected ParticleSystem fxSlam;
     [SerializeField] protected Transform wpTf;
@@ -12,8 +11,12 @@ public class BossBigSlam : BossAttack
     [SerializeField] protected AudioClip explosionClip;
     protected List<Transform> spawnList = new List<Transform>();
 
-    protected int numberExplosion;
+    [SerializeField] protected float radius = 3f;
+    [SerializeField] float explosionTime = 1f;
+    protected float attackSize = 2;
     protected float damageRate;
+    protected int numberExplosion;
+
     public override void OnInits(Character enemy)
     {
         base.OnInits(enemy);
@@ -95,7 +98,7 @@ public class BossBigSlam : BossAttack
                     bullet.SetCol(false);
                 });
 
-                GameManager.Instance.DelayedCall(1f, () =>
+                GameManager.Instance.DelayedCall(explosionTime, () =>
                 {
                     if (bullet.gameObject.activeInHierarchy)
                         PoolManager.Instance.DespawnObject(bullet.transform);
@@ -106,6 +109,6 @@ public class BossBigSlam : BossAttack
 
     public virtual Vector3 GetSpawnPos()
     {
-        return GameManager.Instance.levelController.GetSpawnErea();
+        return FrameWorkUtility.SpawnInCircle(control.transform.position, radius, Random.Range(0, 359));
     }
 }

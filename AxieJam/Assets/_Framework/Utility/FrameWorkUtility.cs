@@ -546,4 +546,13 @@ public static class FrameWorkUtility
         }
         return String.Format("{0}:{1:00}:{2:00}", hours, minutes, secondsRemainder);
     }
+
+    public static Vector3 SpawnInCircle(Vector3 center, float radius, float angle)
+    {
+        Vector3 pos;
+        pos.x = center.x + radius * Mathf.Sin(angle * Mathf.Deg2Rad);
+        pos.y = center.y + radius * Mathf.Cos(angle * Mathf.Deg2Rad);
+        pos.z = center.z;
+        return pos;
+    }
 }
