@@ -9,7 +9,7 @@ public class PlayerAttack : PlayerComponent
     float cooldown;
     float currentCooldown;
     float updateTime = 0.1f;
-    float spawnCooldown = 10;
+    float spawnCooldown = 6;
 
 
 

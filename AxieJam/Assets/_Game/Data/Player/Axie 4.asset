@@ -20,12 +20,12 @@ MonoBehaviour:
   prefab: {fileID: 8915905001403885883, guid: 54a22edf982095c4ab4dc647a53611c2, type: 3}
   data:
     type: 4
-    hp: 200
-    damage: 10
+    hp: 400
+    damage: 20
     attackSpeed: 1
     moveSpeed: 5
     critRate: 0.05
-    critDamage: 2
+    critDamage: 1.75
     armor: 0
     levelConfiglist:
     - foodRequire: 5
