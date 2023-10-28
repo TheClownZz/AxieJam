@@ -21,7 +21,7 @@ MonoBehaviour:
   data:
     type: 3
     hp: 400
-    damage: 16
+    damage: 12
     moveSpeed: 5
     critRate: 0.1
     critDamage: 0.95
@@ -41,7 +41,7 @@ MonoBehaviour:
       - type: 4
         value: 0.5
       - type: 5
-        value: 0.04
+        value: 0.02
     - defaultValue:
         potionRequire: 20
         duration: 3.25
@@ -52,7 +52,7 @@ MonoBehaviour:
       - type: 4
         value: 0.5
       - type: 5
-        value: 0.06
+        value: 0.04
     - defaultValue:
         potionRequire: 40
         duration: 3.5
@@ -63,7 +63,7 @@ MonoBehaviour:
       - type: 4
         value: 0.5
       - type: 5
-        value: 0.08
+        value: 0.06
     - defaultValue:
         potionRequire: 80
         duration: 3.75
@@ -74,7 +74,7 @@ MonoBehaviour:
       - type: 4
         value: 0.5
       - type: 5
-        value: 0.1
+        value: 0.08
     - defaultValue:
         potionRequire: 150
         duration: 4
@@ -85,5 +85,5 @@ MonoBehaviour:
       - type: 4
         value: 0.5
       - type: 5
-        value: 0.15
+        value: 0.1
     dataAsset: {fileID: 11400000, guid: 7d1ef9104d38443a4b39cf8906cc277d, type: 2}
