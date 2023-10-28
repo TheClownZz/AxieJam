@@ -16,7 +16,7 @@ public class BossTouch : EnemyTouch
     private void OnTriggerStay2D(Collider2D collision)
     {
         Player p = collision.GetComponent<Player>();
-        if (p && !control.isDead && Time.time - attackTime > attackRate)
+        if (p && !control.isDead && p.GetCom<PlayerHp>().allowTakeDamge && Time.time - attackTime > attackRate)
         {
             attackTime = Time.time;
             AttackPlayer(p);
@@ -24,5 +24,5 @@ public class BossTouch : EnemyTouch
     }
 
 
-    
+
 }

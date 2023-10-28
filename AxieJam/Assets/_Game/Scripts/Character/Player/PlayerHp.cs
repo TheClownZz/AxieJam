@@ -9,7 +9,7 @@ public class PlayerHp : PlayerComponent, ITakeDamage
 
     float maxHp;
     float regen;
-    bool allowTakeDamge;
+    public bool allowTakeDamge;
 
     Player pControl;
     WaitForSeconds delay;

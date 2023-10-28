@@ -14,7 +14,7 @@ public class DataSavePlayer
     {
         this.type = type;
         level = levelSkill = 1;
-        potionCount = foodCount = Random.Range(30,69);
+        potionCount = foodCount = 0;
     }
 }
 
@@ -61,7 +61,6 @@ public class DataUser : GameData
     public override void LoadData()
     {
         dataSave = DataManager.Instance.LoadData<DataSaveUser>(GetName());
-        dataSave.NewData();
     }
 
     public override void NewData()

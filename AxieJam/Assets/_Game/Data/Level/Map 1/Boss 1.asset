@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Boss 1
   m_EditorClassIdentifier: 
   data:
-    hp: 3000
-    damage: 30
+    hp: 3500
+    damage: 35
     moveSpeed: 4
     attackSpeed: -1
     armor: 0
