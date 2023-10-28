@@ -28,7 +28,7 @@ MonoBehaviour:
     levelConfiglist:
     - foodRequire: 5
       hp: 70
-      damage: 5
+      damage: 4
       critRate: 0.01
     skillConfiglist:
     - defaultValue:

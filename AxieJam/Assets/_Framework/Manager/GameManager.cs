@@ -96,7 +96,7 @@ public class GameManager : MonoSingleton<GameManager>
         levelController.LoadLevel();
     }
 
-   
+
 
     public void OnWinMap()
     {
@@ -118,14 +118,17 @@ public class GameManager : MonoSingleton<GameManager>
     {
         levelController.ClearCurrentLevel();
         ClearBullet();
-        foreach (Transform obj in objMap.transform.GetChild(0)) // 0 is destroy
+
+        int index = 0;
+        for (int i = objMap.transform.GetChild(index).childCount - 1; i >= 0; i--)
         {
-            Destroy(obj.gameObject);
+            Destroy(objMap.transform.GetChild(index).GetChild(i).gameObject);
         }
 
-        foreach (Transform tf in objMap.transform.GetChild(1)) // 1 is pool
+        index = 1;
+        for (int i = objMap.transform.GetChild(index).childCount - 1; i >= 0; i--)
         {
-            PoolManager.Instance.DespawnObject(tf);
+            PoolManager.Instance.DespawnObject(objMap.transform.GetChild(index).GetChild(i).transform);
         }
     }
     private void ClearBullet()

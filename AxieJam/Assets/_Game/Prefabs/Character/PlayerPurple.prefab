@@ -546,6 +546,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoulMissilePurple
       objectReference: {fileID: 0}
+    - target: {fileID: 181984, guid: eaf9728a2b7aafb4b822e2708a38fe70, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 420052, guid: eaf9728a2b7aafb4b822e2708a38fe70, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -199,7 +199,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'F: <color="red">Use skill'
+  m_text: 'F: <color="red">Active skill'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ae4e8a032799c0c46866facf08ba60c8, type: 2}
   m_sharedMaterial: {fileID: 7088616491052775458, guid: ae4e8a032799c0c46866facf08ba60c8, type: 2}
@@ -5278,8 +5278,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.3}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -10, y: -40}
+  m_AnchoredPosition: {x: -0.71209717, y: 0.37350082}
+  m_SizeDelta: {x: -30.1574, y: -43.3357}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8590488399988814608
 CanvasRenderer:
@@ -5575,13 +5575,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1981914311394407728}
-  m_LocalRotation: {x: 0, y: 0, z: 0.02102964, w: 0.99977887}
+  m_LocalRotation: {x: 0, y: 0, z: 0.012391558, w: 0.9999232}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4173044963616261386}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2.41}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.42}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -40.8}
@@ -11941,7 +11941,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'D: <color="red">Change charcter'
+  m_text: 'D: <color="red">Switch charcter'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ae4e8a032799c0c46866facf08ba60c8, type: 2}
   m_sharedMaterial: {fileID: 7088616491052775458, guid: ae4e8a032799c0c46866facf08ba60c8, type: 2}

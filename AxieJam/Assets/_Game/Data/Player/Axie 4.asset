@@ -21,9 +21,9 @@ MonoBehaviour:
   data:
     type: 4
     hp: 380
-    damage: 22
+    damage: 20
     moveSpeed: 5
-    critRate: 0.1
+    critRate: 0.125
     critDamage: 1.55
     levelConfiglist:
     - foodRequire: 5

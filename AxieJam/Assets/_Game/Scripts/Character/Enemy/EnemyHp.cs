@@ -13,7 +13,11 @@ public class EnemyHp : EnemyComponent, ITakeDamage
     public virtual float TakeDamage(float damage, bool isCrit)
     {
         if (damage == 0 || control.isDead)
+        {
+            if (damage == 0)
+                Debug.LogError("Damage zero");
             return 0;
+        }
         float damageRate = damage / (damage + control.stat.armor);
         damage = damage * damageRate;
         damage = Mathf.Max(damage, 1);

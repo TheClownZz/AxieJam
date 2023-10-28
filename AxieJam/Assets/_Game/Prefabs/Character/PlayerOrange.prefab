@@ -565,11 +565,11 @@ MonoBehaviour:
   hitClip: {fileID: 0}
   force: 500
   speedList:
+  - 200
   - 150
-  - 100
   radiusList:
-  - 2
-  - 3
+  - 2.5
+  - 3.5
   circleList:
   - {fileID: 250009019095316228}
   - {fileID: 1122229493922996021}
@@ -672,17 +672,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireballMissileFire
       objectReference: {fileID: 0}
+    - target: {fileID: 166048, guid: 3b671081e44be1c4aa4355e8ba6e8a5e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 460430, guid: 3b671081e44be1c4aa4355e8ba6e8a5e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 460430, guid: 3b671081e44be1c4aa4355e8ba6e8a5e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 460430, guid: 3b671081e44be1c4aa4355e8ba6e8a5e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.5
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 460430, guid: 3b671081e44be1c4aa4355e8ba6e8a5e, type: 3}
       propertyPath: m_LocalPosition.x

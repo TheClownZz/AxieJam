@@ -19,6 +19,7 @@ public class PlayerGun : Weapon
     {
         base.OnInits(characterControl);
         cameraShake = Camera.main.GetComponent<CameraShake>();
+        cachedDamageRate = damageRate;
     }
     public override void OnAttack()
     {

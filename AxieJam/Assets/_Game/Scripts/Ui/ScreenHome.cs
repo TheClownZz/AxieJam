@@ -34,6 +34,7 @@ public class ScreenHome : ScreenBase
     public void OnBtnOkClick()
     {
         StartLoading();
+        panelLoad.SetActive(false);
         PlayerPrefs.SetInt(showGuide, 1);
         AudioManager.Instance.PlayOnceShot(AudioType.CLICK);
     }
@@ -41,7 +42,6 @@ public class ScreenHome : ScreenBase
 
     public void OnBtnPlayClick()
     {
-        panelLoad.SetActive(false);
 
         if (PlayerPrefs.GetInt(showGuide, 0) == 0)
         {

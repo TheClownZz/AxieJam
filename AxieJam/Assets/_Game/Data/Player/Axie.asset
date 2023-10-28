@@ -20,8 +20,8 @@ MonoBehaviour:
   prefab: {fileID: 8915905001403885883, guid: 1f20aad660854d345800d09714c01fa9, type: 3}
   data:
     type: 0
-    hp: 300
-    damage: 30
+    hp: 330
+    damage: 25
     moveSpeed: 6.5
     critRate: 0.175
     critDamage: 1.95

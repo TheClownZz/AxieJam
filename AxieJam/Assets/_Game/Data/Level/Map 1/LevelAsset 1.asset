@@ -19,14 +19,14 @@ MonoBehaviour:
       damageRate: 1.1
     enemyConfigList:
     - type: 100
-      numberSpawn: 5
+      numberSpawn: 8
   - waveTime: 60
     waveProterties:
       hpRate: 1.1
       damageRate: 1.1
     enemyConfigList:
     - type: 100
-      numberSpawn: 10
+      numberSpawn: 12
   - waveTime: 60
     waveProterties:
       hpRate: 1.1
