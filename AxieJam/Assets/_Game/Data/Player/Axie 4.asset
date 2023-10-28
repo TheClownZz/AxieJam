@@ -20,76 +20,70 @@ MonoBehaviour:
   prefab: {fileID: 8915905001403885883, guid: 54a22edf982095c4ab4dc647a53611c2, type: 3}
   data:
     type: 4
-    hp: 400
-    damage: 20
-    attackSpeed: 1
+    hp: 380
+    damage: 22
     moveSpeed: 5
-    critRate: 0.05
-    critDamage: 1.75
-    armor: 0
+    critRate: 0.1
+    critDamage: 1.55
     levelConfiglist:
     - foodRequire: 5
-      hp: 50
-      damage: 5
-      attackSpeed: 0.5
-      moveSpeed: 0.5
-      critRate: 0.05
-      critDamage: 0
-      armor: 0
+      hp: 40
+      damage: 6
+      critRate: 0.01
     skillConfiglist:
     - defaultValue:
-        potionRequire: 15
+        potionRequire: 5
         duration: 3
         cooldown: 20
       propertieList:
       - type: 3
         value: 10
       - type: 4
-        value: 0.2
+        value: 0.15
       - type: 5
-        value: 0.1
+        value: 0.33333334
+    - defaultValue:
+        potionRequire: 10
+        duration: 3.5
+        cooldown: 19
+      propertieList:
+      - type: 3
+        value: 12
+      - type: 4
+        value: 0.15
+      - type: 5
+        value: 0.5
     - defaultValue:
         potionRequire: 15
-        duration: 3
+        duration: 4
         cooldown: 18
       propertieList:
       - type: 3
         value: 12
       - type: 4
-        value: 0.2
-      - type: 5
         value: 0.15
+      - type: 5
+        value: 0.6666667
     - defaultValue:
-        potionRequire: 15
-        duration: 3
+        potionRequire: 20
+        duration: 4.5
         cooldown: 17
       propertieList:
       - type: 3
         value: 12
       - type: 4
-        value: 0.2
-      - type: 5
         value: 0.15
+      - type: 5
+        value: 1
     - defaultValue:
-        potionRequire: 15
-        duration: 3
-        cooldown: 15
+        potionRequire: 25
+        duration: 5
+        cooldown: 16
       propertieList:
       - type: 3
         value: 12
       - type: 4
-        value: 0.2
-      - type: 5
         value: 0.15
-    - defaultValue:
-        potionRequire: 15
-        duration: 3
-        cooldown: 13
-      propertieList:
-      - type: 3
-        value: 12
-      - type: 4
-        value: 0.2
       - type: 5
-        value: 0.15
+        value: 1.5
     dataAsset: {fileID: 11400000, guid: 5e6bc02efa6c543a68cb6e2ed6d78347, type: 2}

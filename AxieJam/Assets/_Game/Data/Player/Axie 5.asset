@@ -20,25 +20,19 @@ MonoBehaviour:
   prefab: {fileID: 8915905001403885883, guid: 13fac01dc75567840a53f00bb162b15b, type: 3}
   data:
     type: 5
-    hp: 400
-    damage: 20
-    attackSpeed: 1
-    moveSpeed: 5
-    critRate: 0.05
-    critDamage: 1.75
-    armor: 0
+    hp: 320
+    damage: 26
+    moveSpeed: 5.25
+    critRate: 0.15
+    critDamage: 2.25
     levelConfiglist:
     - foodRequire: 5
-      hp: 50
-      damage: 5
-      attackSpeed: 0.5
-      moveSpeed: 0.5
+      hp: 30
+      damage: 8
       critRate: 0.05
-      critDamage: 0
-      armor: 0
     skillConfiglist:
     - defaultValue:
-        potionRequire: 15
+        potionRequire: 5
         duration: 3
         cooldown: 20
       propertieList:
@@ -47,21 +41,12 @@ MonoBehaviour:
       - type: 0
         value: 2
     - defaultValue:
-        potionRequire: 15
-        duration: 3.5
-        cooldown: 18
-      propertieList:
-      - type: 6
-        value: 2.5
-      - type: 0
-        value: 2.5
-    - defaultValue:
-        potionRequire: 15
-        duration: 3.5
+        potionRequire: 10
+        duration: 3.25
         cooldown: 17
       propertieList:
       - type: 6
-        value: 3
+        value: 2.5
       - type: 0
         value: 2.5
     - defaultValue:
@@ -70,13 +55,22 @@ MonoBehaviour:
         cooldown: 15
       propertieList:
       - type: 6
+        value: 3
+      - type: 0
+        value: 2.5
+    - defaultValue:
+        potionRequire: 20
+        duration: 3.75
+        cooldown: 13
+      propertieList:
+      - type: 6
         value: 4.5
       - type: 0
         value: 3
     - defaultValue:
-        potionRequire: 15
-        duration: 3.5
-        cooldown: 13
+        potionRequire: 25
+        duration: 4
+        cooldown: 10
       propertieList:
       - type: 6
         value: 5

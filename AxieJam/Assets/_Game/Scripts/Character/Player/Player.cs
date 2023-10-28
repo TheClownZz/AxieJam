@@ -56,12 +56,11 @@ public class Player : Character
     public override void SetStat()
     {
         stat.SetHp(config.hp)
-            .Setarmor(config.armor)
+          //  .Setarmor(config.armor)
             .SetDamage(config.damage)
             .SetCritRate(config.critRate)
             .SetMoveSpeed(config.moveSpeed)
-            .SetCritDamage(config.critDamage)
-            .SetAttackSpeed(config.attackSpeed);
+            .SetCritDamage(config.critDamage);
 
 
         int level = DataManager.Instance.GetData<DataUser>().GetLevel(type);
@@ -69,12 +68,12 @@ public class Player : Character
         {
             PlayerStatConfig lvConfig = config.GetLevelConfig(i);
             stat.SetHp(lvConfig.hp + stat.hp)
-                .Setarmor(lvConfig.armor + stat.armor)
+               // .Setarmor(lvConfig.armor + stat.armor)
                 .SetDamage(lvConfig.damage + stat.damage)
                 .SetCritRate(lvConfig.critRate + stat.critRate)
-                .SetMoveSpeed(lvConfig.moveSpeed + stat.moveSpeed)
-                .SetCritDamage(lvConfig.critDamage + stat.critDamage)
-                .SetAttackSpeed(lvConfig.attackSpeed + stat.attackSpeed);
+              //  .SetMoveSpeed(lvConfig.moveSpeed + stat.moveSpeed)
+              //  .SetCritDamage(lvConfig.critDamage + stat.critDamage)
+              ;
 
         }
 

@@ -20,66 +20,60 @@ MonoBehaviour:
   prefab: {fileID: 8915905001403885883, guid: 1f20aad660854d345800d09714c01fa9, type: 3}
   data:
     type: 0
-    hp: 400
-    damage: 20
-    attackSpeed: 4
-    moveSpeed: 5
-    critRate: 0.15
-    critDamage: 1.75
-    armor: 0
+    hp: 300
+    damage: 30
+    moveSpeed: 6.5
+    critRate: 0.175
+    critDamage: 1.95
     levelConfiglist:
     - foodRequire: 5
-      hp: 50
-      damage: 5
-      attackSpeed: 0.5
-      moveSpeed: 0.5
-      critRate: 0.05
-      critDamage: 0
-      armor: 0
+      hp: 30
+      damage: 8
+      critRate: 0.025
     skillConfiglist:
     - defaultValue:
-        potionRequire: 15
+        potionRequire: 5
         duration: 3
         cooldown: 20
       propertieList:
       - type: 1
         value: 2
       - type: 0
-        value: 0.6
+        value: 0.9
     - defaultValue:
-        potionRequire: 15
-        duration: 3.5
+        potionRequire: 10
+        duration: 3.25
         cooldown: 18
       propertieList:
       - type: 1
         value: 3
       - type: 0
-        value: 0.6
+        value: 1
     - defaultValue:
         potionRequire: 15
         duration: 3.5
-        cooldown: 17
+        cooldown: 16
       propertieList:
       - type: 1
         value: 4
       - type: 0
-        value: 0.6
+        value: 1.1
     - defaultValue:
-        potionRequire: 15
-        duration: 3.5
-        cooldown: 15
+        potionRequire: 20
+        duration: 3.75
+        cooldown: 14
       propertieList:
       - type: 1
         value: 5
       - type: 0
-        value: 0.6
+        value: 1.2
     - defaultValue:
-        potionRequire: 15
-        duration: 3.5
-        cooldown: 13
+        potionRequire: 25
+        duration: 4
+        cooldown: 12
       propertieList:
       - type: 1
         value: 6
       - type: 0
-        value: 0.6
+        value: 1.25
     dataAsset: {fileID: 11400000, guid: 17b8d394a4a3048c6b388872700353a8, type: 2}

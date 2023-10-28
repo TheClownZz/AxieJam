@@ -63,11 +63,7 @@ public class PlayerStatConfig
     public int foodRequire = 5;
     public float hp = 50;
     public float damage = 5;
-    public float attackSpeed = 0.5f;
-    public float moveSpeed = 0.5f;
     public float critRate = 0.2f;
-    public float critDamage = 0;
-    public float armor = 0;
 }
 [System.Serializable]
 public class PlayerConfig
@@ -76,11 +72,10 @@ public class PlayerConfig
 
     public float hp = 200;
     public float damage = 10;
-    public float attackSpeed = 1;
     public float moveSpeed = 5;
     public float critRate = 0.05f;
     public float critDamage = 2;
-    public float armor = 0;
+  //  public float armor = 0;
     [TableList(ShowIndexLabels = true)]
     public List<PlayerStatConfig> levelConfiglist;
     [TableList(ShowIndexLabels = true)]

@@ -55,7 +55,7 @@ public class ItemAxie : MonoBehaviour
             PlayerStatConfig lvConfig = asset.data.GetLevelConfig(i);
             damage += lvConfig.damage;
             hp += lvConfig.hp;
-            moveSpeed += lvConfig.moveSpeed;
+            //  moveSpeed += lvConfig.moveSpeed;
             critRate += lvConfig.critRate;
         }
 
@@ -74,7 +74,7 @@ public class ItemAxie : MonoBehaviour
         tmpAtk.SetText(Mathf.CeilToInt(damage).ToString());
         tmpHp.SetText(Mathf.CeilToInt(hp).ToString());
         tmpSpeed.SetText(moveSpeed.ToString());
-        tmpCritRate.SetText("{0}%", Mathf.CeilToInt(critRate * 100));
+        tmpCritRate.SetText("{0}%", Mathf.Min(Mathf.CeilToInt(critRate * 100), 100));
         tmpFood.SetText("{0}/{1}", data.foodCount, footRequire);
         tmpSkillName.SetText(asset.skillName);
         tmpSkillLevel.SetText("LV.{0}", data.levelSkill);
@@ -90,7 +90,8 @@ public class ItemAxie : MonoBehaviour
             btnSkill.interactable = false;
             btnSkill.transform.GetChild(0).gameObject.SetActive(false);
             btnSkill.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Max Level";
-        }else
+        }
+        else
         {
             btnSkill.interactable = data.potionCount >= potionRequire;
             btnSkill.transform.GetChild(0).gameObject.SetActive(true);
