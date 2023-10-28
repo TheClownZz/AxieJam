@@ -340,6 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control: {fileID: 0}
+  damgeRate: 2
   touched: action/die
   spawnItemTime: 0.25
 --- !u!1 &8911379269055794558
@@ -500,6 +501,7 @@ MonoBehaviour:
   control: {fileID: 0}
   baseSpeed: 0
   currentSpeed: 0
+  direction: {x: 0, y: 0, z: 0}
   allowMove: 0
 --- !u!114 &5394943965421945067
 MonoBehaviour:

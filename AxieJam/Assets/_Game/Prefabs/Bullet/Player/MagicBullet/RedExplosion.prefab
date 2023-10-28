@@ -265,6 +265,26 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 199419555383610722, guid: 70142c574eda8c946afcd53b4ac828d8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 199516726361932834, guid: 70142c574eda8c946afcd53b4ac828d8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 199803454817424124, guid: 70142c574eda8c946afcd53b4ac828d8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 199922442617840762, guid: 70142c574eda8c946afcd53b4ac828d8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 199965996128782606, guid: 70142c574eda8c946afcd53b4ac828d8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 108724315285832388, guid: 70142c574eda8c946afcd53b4ac828d8, type: 3}
     - {fileID: 114297119657385916, guid: 70142c574eda8c946afcd53b4ac828d8, type: 3}

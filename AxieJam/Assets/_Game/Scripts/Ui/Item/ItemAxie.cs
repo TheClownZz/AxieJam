@@ -26,6 +26,9 @@ public class ItemAxie : MonoBehaviour
     [SerializeField] Button btnLevel;
     [SerializeField] Button btnSkill;
 
+    [SerializeField] GameObject objNotiFood;
+    [SerializeField] GameObject objNotiPotion;
+
     private void Awake()
     {
         btnLevel.onClick.AddListener(OnBtnLevelClick);
@@ -82,18 +85,23 @@ public class ItemAxie : MonoBehaviour
         tmpCooldown.SetText("Cooldown: {0}s", cooldown);
         tmpDuration.SetText("Duration: {0}s", duration);
 
-        btnLevel.interactable = data.foodCount >= footRequire;
-
+        bool isUplv = data.foodCount >= footRequire;
+        btnLevel.interactable = isUplv;
+        objNotiFood.SetActive(isUplv);
 
         if (data.levelSkill >= GameConfig.maxlevel)
         {
+            objNotiPotion.SetActive(false);
             btnSkill.interactable = false;
             btnSkill.transform.GetChild(0).gameObject.SetActive(false);
             btnSkill.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Max Level";
         }
         else
         {
-            btnSkill.interactable = data.potionCount >= potionRequire;
+            bool isUpSkill = data.potionCount >= potionRequire;
+
+            objNotiPotion.SetActive(isUpSkill);
+            btnSkill.interactable = isUpSkill;
             btnSkill.transform.GetChild(0).gameObject.SetActive(true);
             tmpPotion.SetText("{0}/{1}", data.potionCount, potionRequire);
             btnSkill.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "SKILL UP";

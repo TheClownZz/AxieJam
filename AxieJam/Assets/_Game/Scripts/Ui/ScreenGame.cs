@@ -20,7 +20,7 @@ public class ScreenGame : ScreenBase
     }
     public void SetMap(int lv)
     {
-        tmpMap.SetText("Map {0}", lv);
+        tmpMap.SetText("lv. {0}", lv);
     }
 
     public void UpdateAvt()
@@ -61,7 +61,12 @@ public class ScreenGame : ScreenBase
         OnHide();
         GameManager.Instance.ClearLevel();
         GameManager.Instance.SetGameState(GameState.Ready);
-        UIManager.Instance.ShowScreen<ScreenHome>();
         AudioManager.Instance.PlayOnceShot(AudioType.CLICK);
+        UIManager.Instance.ShowScreen<ScreenHome>();
+    }
+
+    public void OnBtnGuideClick()
+    {
+        UIManager.Instance.ShowPopup<PopupGuide>();
     }
 }

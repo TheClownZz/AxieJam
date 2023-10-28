@@ -8,12 +8,10 @@ using UnityEngine.UI;
 
 public class ScreenHome : ScreenBase
 {
-    const string showGuide = "showGuide";
 
     [SerializeField] TextAnimation textAnimation;
     [SerializeField] TextMeshProUGUI tmpLoad;
     [SerializeField] GameObject panelContent;
-    [SerializeField] GameObject panelLoad;
     [SerializeField] Image imgLoad;
     [SerializeField] GameObject objNoti;
 
@@ -33,22 +31,11 @@ public class ScreenHome : ScreenBase
         objNoti.SetActive(CheckNoti());
     }
 
-
-    public void OnBtnOkClick()
-    {
-        StartLoading();
-        panelLoad.SetActive(false);
-        PlayerPrefs.SetInt(showGuide, 1);
-        AudioManager.Instance.PlayOnceShot(AudioType.CLICK);
-    }
-
-
     public void OnBtnPlayClick()
     {
-
-        if (PlayerPrefs.GetInt(showGuide, 0) == 0)
+        if (PlayerPrefs.GetInt(GameConfig.showGuide, 0) == 0)
         {
-            panelLoad.SetActive(true);
+            UIManager.Instance.ShowPopup<PopupGuide>();
         }
         else if (GameManager.Instance.CheckMaxLevel())
         {
@@ -65,7 +52,7 @@ public class ScreenHome : ScreenBase
         AudioManager.Instance.PlayOnceShot(AudioType.CLICK);
 
     }
-    private void StartLoading()
+    public void StartLoading()
     {
         int loadTime = 3;
 

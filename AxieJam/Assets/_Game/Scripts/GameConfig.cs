@@ -5,6 +5,7 @@ public class GameConfig : ScriptableObject
 {
     public const int maxPlayer = 3;
     public const int maxlevel = 5;
+    public const string showGuide = "showGuide";
 
     public float forceBackTime = 0.5f;
     [SerializeField, Range(0, 5)]

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using UnityEditor;
 using UnityEngine;
 public enum GameState
 {
@@ -52,6 +53,12 @@ public class GameManager : MonoSingleton<GameManager>
             currentPlayer.OnUpdate(Time.deltaTime);
             levelController.OnUpdate(Time.deltaTime);
         }
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            EditorApplication.isPaused = true;
+        }
+#endif
     }
     public void UpdatePlayerList()
     {

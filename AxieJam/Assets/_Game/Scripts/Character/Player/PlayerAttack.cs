@@ -78,7 +78,14 @@ public class PlayerAttack : PlayerComponent
             cooldown = Mathf.Max(cooldown, spawnCooldown);
             SetCurrentCooldown(config.defaultValue.cooldown);
         }
-
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            weapon.ActiveSKill(config);
+            cooldown = Mathf.Max(cooldown, spawnCooldown);
+            SetCurrentCooldown(config.defaultValue.cooldown);
+        }
+#endif
     }
 
 
