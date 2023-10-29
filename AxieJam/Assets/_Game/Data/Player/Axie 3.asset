@@ -35,7 +35,7 @@ MonoBehaviour:
     - defaultValue:
         potionRequire: 10
         duration: 3
-        cooldown: 18
+        cooldown: 20
       propertieList:
       - type: 3
         value: 15
@@ -46,7 +46,7 @@ MonoBehaviour:
     - defaultValue:
         potionRequire: 20
         duration: 3.25
-        cooldown: 17.5
+        cooldown: 19
       propertieList:
       - type: 3
         value: 15
@@ -57,7 +57,7 @@ MonoBehaviour:
     - defaultValue:
         potionRequire: 40
         duration: 3.5
-        cooldown: 16.5
+        cooldown: 18
       propertieList:
       - type: 3
         value: 15
@@ -68,7 +68,7 @@ MonoBehaviour:
     - defaultValue:
         potionRequire: 80
         duration: 3.75
-        cooldown: 15
+        cooldown: 17
       propertieList:
       - type: 3
         value: 20
@@ -79,7 +79,7 @@ MonoBehaviour:
     - defaultValue:
         potionRequire: 150
         duration: 4
-        cooldown: 12.5
+        cooldown: 15
       propertieList:
       - type: 3
         value: 20

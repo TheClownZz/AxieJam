@@ -40,7 +40,7 @@ MonoBehaviour:
       - type: 1
         value: 3
       - type: 0
-        value: 0.35
+        value: 0.7
     - defaultValue:
         potionRequire: 20
         duration: 3.25
@@ -49,7 +49,7 @@ MonoBehaviour:
       - type: 1
         value: 4
       - type: 0
-        value: 0.4
+        value: 0.85
     - defaultValue:
         potionRequire: 40
         duration: 4
@@ -58,7 +58,7 @@ MonoBehaviour:
       - type: 1
         value: 5
       - type: 0
-        value: 0.45
+        value: 1
     - defaultValue:
         potionRequire: 80
         duration: 4.5
@@ -67,11 +67,11 @@ MonoBehaviour:
       - type: 1
         value: 5
       - type: 0
-        value: 0.5
+        value: 1.15
       - type: 7
         value: 3
       - type: 8
-        value: 0.35
+        value: 1.35
     - defaultValue:
         potionRequire: 150
         duration: 5
@@ -80,9 +80,9 @@ MonoBehaviour:
       - type: 1
         value: 5
       - type: 0
-        value: 0.5
+        value: 1.3
       - type: 7
         value: 4
       - type: 8
-        value: 0.75
+        value: 1.5
     dataAsset: {fileID: 11400000, guid: b49379cb4c0ea41ad8687d360ccaa72b, type: 2}

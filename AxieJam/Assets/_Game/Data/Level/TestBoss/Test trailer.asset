@@ -15,33 +15,33 @@ MonoBehaviour:
   dataList:
   - waveTime: 60
     waveProterties:
-      hpRate: 1.1
-      damageRate: 1.1
-    enemyConfigList:
-    - type: 100
-      numberSpawn: 4
-  - waveTime: 60
-    waveProterties:
-      hpRate: 1.1
-      damageRate: 1.1
-    enemyConfigList:
-    - type: 101
-      numberSpawn: 4
-  - waveTime: 60
-    waveProterties:
-      hpRate: 1.1
-      damageRate: 1.1
+      hpRate: 1
+      damageRate: 5
     enemyConfigList:
     - type: 102
       numberSpawn: 4
   - waveTime: 60
     waveProterties:
       hpRate: 1.1
-      damageRate: 1.1
+      damageRate: 5
     enemyConfigList:
-    - type: 100
+    - type: 102
       numberSpawn: 4
-    - type: 101
+  - waveTime: 60
+    waveProterties:
+      hpRate: 1.1
+      damageRate: 5
+    enemyConfigList:
+    - type: 102
+      numberSpawn: 4
+  - waveTime: 60
+    waveProterties:
+      hpRate: 1.1
+      damageRate: 5
+    enemyConfigList:
+    - type: 102
+      numberSpawn: 4
+    - type: 102
       numberSpawn: 4
     - type: 102
       numberSpawn: 4

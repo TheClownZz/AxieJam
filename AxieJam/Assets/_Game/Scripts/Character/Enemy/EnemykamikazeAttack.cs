@@ -27,6 +27,7 @@ public class EnemykamikazeAttack : EnemyAttack
     public override void OnAttackDone()
     {
         base.OnAttackDone();
-        control.OnDead();
+        if (!control.isDead)
+            control.OnDead();
     }
 }

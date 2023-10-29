@@ -76,7 +76,6 @@ public class PlayerConfig
     public float critRate = 0.05f;
     public float critDamage = 2;
     public float armor = 0.5f;
-  //  public float armor = 0;
     [TableList(ShowIndexLabels = true)]
     public List<PlayerStatConfig> levelConfiglist;
     [TableList(ShowIndexLabels = true)]
