@@ -15,8 +15,18 @@ public class DataManager : MonoSingleton<DataManager>
 
     private void SetupController()
     {
-        writer = QuickSaveWriter.Create(rootKey);
-        reader = QuickSaveReader.Create(rootKey);
+        try
+        {
+            writer = QuickSaveWriter.Create(rootKey);
+            reader = QuickSaveReader.Create(rootKey);
+
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError(e.Message);
+            ResetData();
+        }
+
     }
 
     public void OnInit()
