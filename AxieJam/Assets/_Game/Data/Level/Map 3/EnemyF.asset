@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: EnemyF
   m_EditorClassIdentifier: 
   data:
-    hp: 200
-    damage: 30
+    hp: 150
+    damage: 20
     moveSpeed: 1
     attackSpeed: -1
     armor: 0

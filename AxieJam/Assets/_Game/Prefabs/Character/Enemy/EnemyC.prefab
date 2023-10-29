@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6037f1d68bc50d4aa2122e0c5f3d44c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runScale: 1.5
+  runScale: 1
   Run: action/move-forward
   Idle: action/idle/normal
   Die: action/die
@@ -268,11 +268,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8911379269055794545}
   - component: {fileID: 6424210748062074210}
-  - component: {fileID: 8163886571578138403}
   - component: {fileID: 9074905401213251309}
   - component: {fileID: -5443143430796421240}
   - component: {fileID: 257800880118908662}
   - component: {fileID: 9210610988872730766}
+  - component: {fileID: 1743951915199902934}
   m_Layer: 8
   m_Name: EnemyC
   m_TagString: Untagged
@@ -326,9 +326,9 @@ MonoBehaviour:
     dodge: 0
   spineController: {fileID: 8387529452460821212}
   componentList:
-  - {fileID: 8163886571578138403}
   - {fileID: 9074905401213251309}
   - {fileID: -5443143430796421240}
+  - {fileID: 1743951915199902934}
   - {fileID: 6004482664581828030}
   deadClip: {fileID: 8300000, guid: 6f1be2915b1d1ed488800be78f7e97c8, type: 3}
   spawItemTime: 0.3
@@ -336,21 +336,6 @@ MonoBehaviour:
     hpRate: 1
     damageRate: 1
   currspawItemTime: 0
---- !u!114 &8163886571578138403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8911379269055794558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63ce3bb05ded4a541bebdb1050a7150f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  control: {fileID: 0}
-  baseSpeed: 0
-  currentSpeed: 0
 --- !u!114 &9074905401213251309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,3 +412,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 8ed95c7dbf400dd43995a4f99f809c2c, type: 2}
+--- !u!114 &1743951915199902934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8911379269055794558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c772157bef0b3764b90f474823d6f607, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  control: {fileID: 0}
+  baseSpeed: 0
+  currentSpeed: 0
+  direction: {x: 0, y: 0, z: 0}
+  jumpDistance: 1.25
+  jumnpCooldown: 1

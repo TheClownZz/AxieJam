@@ -95,6 +95,15 @@ public class LevelController : MonoBehaviour
     public void SpawnEnemy(EnemyType enemyType, WaveStat stat)
     {
         Enemy e = PoolManager.Instance.SpawnObject((PoolType)enemyType).GetComponent<Enemy>();
+        if (enemyType >= EnemyType.Boss_1)
+        {
+            e.GetComponent<SetupBossData>().asset = asset.GetBossAsset(enemyType);
+        }
+        else
+        {
+            e.GetComponent<SetupEnemyData>().asset = asset.GetEnemyAsset(enemyType);
+
+        }
         e.transform.SetParent(transform);
         e.SetStat();
         e.SetWaveStat(stat);
@@ -121,7 +130,7 @@ public class LevelController : MonoBehaviour
 
     public Vector3 GetSpawnErea()
     {
-        Vector2 pos = Quaternion.Euler(0f, 0f, Random.Range(0, 360)) * Vector2.right * spawnRadius;
+        Vector2 pos = Random.insideUnitCircle * spawnRadius;
         pos.x = Mathf.Clamp(pos.x, left.position.x, right.position.x);
         pos.y = Mathf.Clamp(pos.y, bot.position.y, top.position.y - 2f);
         return pos;

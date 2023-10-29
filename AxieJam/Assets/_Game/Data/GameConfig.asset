@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forceBackTime: 0.2
   forceDrag: 2
+  forceValue: 3
   textHeight: 0.5
   iconHeight: 0.5
-  spawnRadius: 6
+  spawnRadius: 8
   critColor: {r: 1, g: 0.47418147, b: 0.033018887, a: 1}
-  forceValue: 3
+  normalAnimSacle: 1.5
+  deadAnimScale: 2

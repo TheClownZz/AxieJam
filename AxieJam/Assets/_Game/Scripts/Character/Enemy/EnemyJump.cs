@@ -6,8 +6,8 @@ public class EnemyJump : EnemyMove
 {
     const float jumpPower = 2;
     const float jumpTime = 0.3f;
-    const float jumpDistance = 1.5f;
-    const float jumnpCooldown = 1.5f;
+    [SerializeField] float jumpDistance = 1.5f;
+    [SerializeField] float jumnpCooldown = 1.5f;
 
     bool isJump;
     float activeTime;
@@ -52,11 +52,11 @@ public class EnemyJump : EnemyMove
         float maxTime = 0.2f;
         float flashTime = 0.1f;
 
-        bool isShow = true;
+        //bool isShow = true;
         while (time < maxTime)
         {
-            isShow = !isShow;
-            control.spineController.ShowRender(isShow);
+           // isShow = !isShow;
+          //  control.spineController.ShowRender(isShow);
             yield return new WaitForSeconds(flashTime);
             if (control.isDisable)
             {

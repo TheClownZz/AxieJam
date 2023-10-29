@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control: {fileID: 0}
+  damgeRate: 3
   touched: defense/hit-die
   spawnItemTime: 0.7
 --- !u!58 &4225630007934940469
@@ -565,4 +566,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28404f47a47877148b04f35a96f2eaf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asset: {fileID: 11400000, guid: f89aa4d509b8edf4b9c6ed97eca36ad0, type: 2}
+  asset: {fileID: 11400000, guid: f7dc369a70fe16e4d8bf1be5d9e8ee5c, type: 2}

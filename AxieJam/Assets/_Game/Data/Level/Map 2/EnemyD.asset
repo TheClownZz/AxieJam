@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: EnemyD
   m_EditorClassIdentifier: 
   data:
-    hp: 120
-    damage: 30
+    hp: 100
+    damage: 8
     moveSpeed: 1
     attackSpeed: 0.33333334
     armor: 0

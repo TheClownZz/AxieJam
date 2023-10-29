@@ -792,6 +792,7 @@ MonoBehaviour:
   bot: {fileID: 3047324131484730531}
   left: {fileID: 3047324130589896303}
   right: {fileID: 3047324130391617663}
+  waveIndex: 0
   enemyList: []
 --- !u!1 &3047324131484730528
 GameObject:

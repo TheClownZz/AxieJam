@@ -56,7 +56,7 @@ public class Player : Character
     public override void SetStat()
     {
         stat.SetHp(config.hp)
-          //  .Setarmor(config.armor)
+            .Setarmor(config.armor)
             .SetDamage(config.damage)
             .SetCritRate(config.critRate)
             .SetMoveSpeed(config.moveSpeed)

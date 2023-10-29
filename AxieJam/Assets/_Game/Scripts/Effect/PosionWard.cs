@@ -20,7 +20,7 @@ public class PosionWard : HealingWard
         {
             SlowEffect effect = new SlowEffect(slowTime, slowRate);
             e.GetCom<EffectController>().AddEffect(effect);
-            e.TakePosionDamage(activeValue);
+            e.TakePosionDamage(Random.Range(0.9f, 1.1f) * activeValue);
         }
     }
 

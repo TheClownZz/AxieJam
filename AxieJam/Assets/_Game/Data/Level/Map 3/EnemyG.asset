@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: EnemyG
   m_EditorClassIdentifier: 
   data:
-    hp: 100
-    damage: 50
+    hp: 70
+    damage: 30
     moveSpeed: 1
     attackSpeed: 0.33333334
     armor: 0
