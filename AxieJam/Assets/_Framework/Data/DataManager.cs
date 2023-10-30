@@ -11,7 +11,7 @@ public class DataManager : MonoSingleton<DataManager>
 
     QuickSaveReader reader;
     QuickSaveWriter writer;
-    const string rootKey = "dataRoot";
+    const string rootKey = "AxieMasterdata";
 
     private void SetupController()
     {
@@ -26,6 +26,7 @@ public class DataManager : MonoSingleton<DataManager>
             Debug.LogError(e.Message);
             ResetData();
         }
+
 
     }
 
@@ -44,6 +45,7 @@ public class DataManager : MonoSingleton<DataManager>
                 data.LoadData();
             }
         }
+
     }
 
     public T GetAsset<T>() where T : ScriptableObject
