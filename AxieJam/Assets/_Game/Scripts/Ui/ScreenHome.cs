@@ -9,7 +9,7 @@ public class ScreenHome : ScreenBase
 {
 
     [SerializeField] TextAnimation textAnimation;
-    [SerializeField] TextMeshProUGUI tmpLoad;
+    [SerializeField] Text tmpLoad;
     [SerializeField] GameObject panelContent;
     [SerializeField] Image imgLoad;
     [SerializeField] GameObject objNoti;
@@ -18,7 +18,7 @@ public class ScreenHome : ScreenBase
     public override void OnShow()
     {
         base.OnShow();
-        tmpLoad.SetText("");
+        tmpLoad.text = "";
         imgLoad.fillAmount = 0;
         textAnimation.PlayAnim();
         panelContent.SetActive(true);
@@ -56,7 +56,7 @@ public class ScreenHome : ScreenBase
         int loadTime = 3;
 
         panelContent.SetActive(false);
-        tmpLoad.SetText("Loading...");
+        tmpLoad.text = "Loading...";
         imgLoad.fillAmount = 0;
         imgLoad.DOFillAmount(1, loadTime).OnComplete(() =>
         {
