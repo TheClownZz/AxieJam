@@ -11,14 +11,19 @@ public class DataManager : MonoSingleton<DataManager>
 
     QuickSaveReader reader;
     QuickSaveWriter writer;
-    const string rootKey = "AxieMasterdata";
+#if UNITY_EDITOR
+    const string dataKey = "editor-data";
+
+#else
+    const string dataKey = "game-data";
+#endif
 
     private void SetupController()
     {
         try
         {
-            writer = QuickSaveWriter.Create(rootKey);
-            reader = QuickSaveReader.Create(rootKey);
+            writer = QuickSaveWriter.Create(dataKey);
+            reader = QuickSaveReader.Create(dataKey);
 
         }
         catch (System.Exception e)
@@ -107,7 +112,7 @@ public class DataManager : MonoSingleton<DataManager>
             data.NewData();
         }
         writer.Commit();
-        reader = QuickSaveReader.Create(rootKey);// syns with writer
+        reader = QuickSaveReader.Create(dataKey);// syns with writer
     }
 
     private void OnApplicationQuit()
