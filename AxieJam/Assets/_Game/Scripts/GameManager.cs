@@ -10,24 +10,28 @@ public enum GameState
 }
 public class GameManager : MonoSingleton<GameManager>
 {
+    Vector3 outPos = new Vector3(9999, 9999, 9999);
+
+
+    public GameObject objMap;
     public GameState gameState;
     public GameConfig gameConfig;
     public Transform bulletSpawner;
     public LevelController levelController;
 
-    public bool isCheat;
-    public GameObject objMap;
-
-    [SerializeField] List<LevelAsset> assetList;
-
-    protected Player currentPlayer;
-    [HideInInspector] public List<Player> playerList;
-    public Player GetCurrentPlayer() { return currentPlayer; }
 
     int mapIndex = 0;
 
-    Vector3 outPos = new Vector3(9999, 9999, 9999);
+    protected Player currentPlayer;
+    [HideInInspector] public List<Player> playerList;
+
+    public Player GetCurrentPlayer() { return currentPlayer; }
     public bool isPause { get { return Time.timeScale == 0; } }
+
+    private void OnDestroy()
+    {
+        m_Instance = null;
+    }
     protected override void Initiate()
     {
         base.Initiate();
@@ -36,14 +40,15 @@ public class GameManager : MonoSingleton<GameManager>
 
     private IEnumerator I_Initiate()
     {
-        yield return new WaitUntil(() => Master.Instance.isMasterReady);
+        yield return new WaitUntil(() => UIManager.Instance);
         OnInit();
     }
     void OnInit()
     {
-        levelController.OnInits();
         SetGameState(GameState.Ready);
-        UIManager.Instance.ShowScreen<ScreenHome>();
+        levelController.OnInits();
+        UpdatePlayerList();
+        StartLevel();
     }
 
     private void Update()
@@ -105,7 +110,7 @@ public class GameManager : MonoSingleton<GameManager>
         UIManager.Instance.GetScreen<ScreenGame>().SetMap(mapIndex + 1);
         currentPlayer.OnSelect();
         SetGameState(GameState.Playing);
-        levelController.SetAsset(assetList[mapIndex]);
+        levelController.SetAsset(DataManager.Instance.GetData<DataLevel>().levelAssetList[mapIndex]);
         levelController.LoadLevel();
     }
 
@@ -116,7 +121,7 @@ public class GameManager : MonoSingleton<GameManager>
         SetGameState(GameState.Ready);
         DataManager.Instance.GetData<DataLevel>().SetNextLevel();
         UIManager.Instance.ShowPopup<PopupWin>().SetAnim(currentPlayer.spineController.GetAsset());
-        UIManager.Instance.ShowPopup<PopupWin>().SetNext(!CheckMaxLevel());
+        UIManager.Instance.ShowPopup<PopupWin>().SetNext(!DataManager.Instance.GetData<DataLevel>().CheckMaxLevel());
     }
     public void ClearLevel()
     {
@@ -170,10 +175,6 @@ public class GameManager : MonoSingleton<GameManager>
 
     }
 
-    public void ShowMap(bool isShow)
-    {
-        objMap.SetActive(isShow);
-    }
 
     public Transform GetMapTf()
     {
@@ -183,16 +184,10 @@ public class GameManager : MonoSingleton<GameManager>
 
     public Tween DelayedCall(float time, TweenCallback callback)
     {
-
         return DOVirtual.DelayedCall(time, () =>
         {
             if (gameState == GameState.Playing)
                 callback();
         });
-    }
-
-    public bool CheckMaxLevel()
-    {
-        return DataManager.Instance.GetData<DataLevel>().CurrentLevelId > assetList.Count;
     }
 }

@@ -14,11 +14,19 @@ public class UIManager : MonoSingleton<UIManager>
     protected PopupBase[] arrPopups = new PopupBase[0];
     [SerializeField]
     protected Dictionary<string, PopupBase> dicPopups = new Dictionary<string, PopupBase>();
+
+    [SerializeField] ScreenBase activeScene;
     #endregion
 
     private void Start()
     {
+        OnInit();
         GetComponent<Canvas>().enabled= true;
+    }
+
+    private void OnDestroy()
+    {
+        m_Instance = null;
     }
     public void OnInit()
     {
@@ -58,6 +66,7 @@ public class UIManager : MonoSingleton<UIManager>
             arrPopups[i].OnInit();
         }
 
+        activeScene?.OnShow();
     }
 
 

@@ -12,94 +12,94 @@ namespace EpicToonFX
 	public bool GUIHide4 = false;
 	
     public void LoadScene2DDemo()  {
-		SceneManager.LoadScene ("etfx_2ddemo");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_2ddemo");
 	}
 	public void LoadSceneCards()  {
-		SceneManager.LoadScene ("etfx_cards");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_cards");
 	}
     public void LoadSceneCombat()  {
-		SceneManager.LoadScene ("etfx_combat");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_combat");
 	}
 	public void LoadSceneDecals()  {
-		SceneManager.LoadScene ("etfx_decals");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_decals");
 	}
 	public void LoadSceneDecals2()  {
-		SceneManager.LoadScene ("etfx_decals2");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_decals2");
 	}
 	public void LoadSceneEmojis()  {
-		SceneManager.LoadScene ("etfx_emojis");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_emojis");
 	}
 	public void LoadSceneEmojis2()  {
-		SceneManager.LoadScene ("etfx_emojis2");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_emojis2");
 	}
 	public void LoadSceneExplosions()  {
-		SceneManager.LoadScene ("etfx_explosions");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_explosions");
 	}
 	public void LoadSceneExplosions2()  {
-		SceneManager.LoadScene ("etfx_explosions2");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_explosions2");
 	}
 	public void LoadSceneFire()  {
-		SceneManager.LoadScene ("etfx_fire");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_fire");
 	}
 	public void LoadSceneOnomatopoeia()  {
-		SceneManager.LoadScene ("etfx_onomatopoeia");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_onomatopoeia");
 	}
 	public void LoadSceneFireworks()  {
-		SceneManager.LoadScene ("etfx_fireworks");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_fireworks");
 	}
 	public void LoadSceneFlares()  {
-		SceneManager.LoadScene ("etfx_flares");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_flares");
 	}
 	public void LoadSceneMagic()  {
-		SceneManager.LoadScene ("etfx_magic");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_magic");
 	}
 	public void LoadSceneMagic2()  {
-		SceneManager.LoadScene ("etfx_magic2");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_magic2");
 	}
 	public void LoadSceneMagic3()  {
-		SceneManager.LoadScene ("etfx_magic3");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_magic3");
 	}
 	public void LoadSceneMainDemo()  {
-		SceneManager.LoadScene ("etfx_maindemo");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_maindemo");
 	}
 	public void LoadSceneMissiles()  {
-		SceneManager.LoadScene ("etfx_missiles");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_missiles");
 	}
 	public void LoadScenePortals()  {
-		SceneManager.LoadScene ("etfx_portals");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_portals");
 	}
 	public void LoadScenePortals2()  {
-		SceneManager.LoadScene ("etfx_portals2");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_portals2");
 	}
 	public void LoadScenePowerups()  {
-		SceneManager.LoadScene ("etfx_powerups");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_powerups");
 	}
 	public void LoadScenePowerups2()  {
-		SceneManager.LoadScene ("etfx_powerups2");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_powerups2");
 	}
 	public void LoadScenePowerups3()  {
-		SceneManager.LoadScene ("etfx_powerups3");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_powerups3");
 	}
 	public void LoadSceneSparkles()  {
-		SceneManager.LoadScene ("etfx_sparkles");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_sparkles");
 	}
 	public void LoadSceneSwordCombat()  {
-		SceneManager.LoadScene ("etfx_swordcombat");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_swordcombat");
 	}
 	public void LoadSceneSwordCombat2()  {
-		SceneManager.LoadScene ("etfx_swordcombat2");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_swordcombat2");
 	}
 	public void LoadSceneMoney()  {
-		SceneManager.LoadScene ("etfx_money");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_money");
 	}
 	public void LoadSceneHealing()  {
-		SceneManager.LoadScene ("etfx_healing");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_healing");
 	}
 	public void LoadSceneWind()  {
-		SceneManager.LoadScene ("etfx_wind");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_wind");
 	}
 	public void LoadSceneWater()  {
-		SceneManager.LoadScene ("etfx_water");
+            UnityEngine.SceneManagement.SceneManager.LoadScene ("etfx_water");
 	}
 	
 	void Update ()

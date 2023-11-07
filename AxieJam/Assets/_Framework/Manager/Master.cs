@@ -42,17 +42,15 @@ public class Master : MonoSingleton<Master>
 
         AudioManager.Instance.OnInit();
 
-        yield return new WaitUntil(() => UIManager.Instance != null);
-
-        UIManager.Instance.OnInit();
-
 #if UNITY_EDITOR
         Debug.unityLogger.logEnabled = true;
 #else
         Debug.unityLogger.logEnabled = false;
 #endif
         isMasterReady = true;
+        yield return new WaitUntil(() => SceneController.Instance != null);
 
+        SceneController.Instance.LoadMenu();
     }
 
     #endregion

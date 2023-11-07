@@ -184,20 +184,16 @@ namespace I2.TextAnimation
 
 		public SE_Animation PlayAnim ( int slotIndex=0 )
 		{
-			Debug.LogError("PlayAnim");
 			if (slotIndex >= _AnimationSlots.Length)
 				return null;
 
 			var slot = _AnimationSlots[slotIndex];
 			if (slot != null)
             {
-                Debug.LogError("PlayAnim 2");
-
                 var anim = slot._Animation;
 				anim.Play( this );
 				return anim;
 			}
-            Debug.LogError("PlayAnim 1");
 
             return null;
 		}

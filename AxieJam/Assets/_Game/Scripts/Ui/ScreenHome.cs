@@ -1,7 +1,7 @@
 using DG.Tweening;
 using I2.TextAnimation;
+using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,8 +25,6 @@ public class ScreenHome : ScreenBase
 
         List<PlayerType> team = DataManager.Instance.GetData<DataUser>().GetTeam();
         teamAvtController.UpdateTeam(team);
-
-        GameManager.Instance.ShowMap(false);
         objNoti.SetActive(CheckNoti());
     }
 
@@ -36,7 +34,7 @@ public class ScreenHome : ScreenBase
         {
             UIManager.Instance.ShowPopup<PopupGuide>();
         }
-        else if (GameManager.Instance.CheckMaxLevel())
+        else if (DataManager.Instance.GetData<DataLevel>().CheckMaxLevel())
         {
             UIManager.Instance.ShowPopup<PopupContinue>();
         }
@@ -58,15 +56,18 @@ public class ScreenHome : ScreenBase
         panelContent.SetActive(false);
         tmpLoad.text = "Loading...";
         imgLoad.fillAmount = 0;
+        var async = SceneController.Instance.LoadGame();
+        async.allowSceneActivation = false;
         imgLoad.DOFillAmount(1, loadTime).OnComplete(() =>
         {
-            OnHide();
-            GameManager.Instance.ShowMap(true);
-            GameManager.Instance.UpdatePlayerList();
-            GameManager.Instance.StartLevel();
-            UIManager.Instance.ShowScreen<ScreenGame>();
-
+            StartCoroutine(ICompleteLoad(async));
         });
+    }
+
+    IEnumerator ICompleteLoad(AsyncOperation async)
+    {
+        yield return new WaitUntil(() => async.progress == 0.9f);
+        async.allowSceneActivation = true;
     }
 
     private bool CheckNoti()

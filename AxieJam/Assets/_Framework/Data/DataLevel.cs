@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DataLevel : GameData
@@ -12,6 +13,8 @@ public class DataLevel : GameData
     public LevelSave LevelSave { get => levelSave; set => levelSave = value; }
     public int CurrentLevelId { get => this.levelSave.currentLevel; set => this.levelSave.currentLevel = value; }
     public int HighestLevelId { get => this.levelSave.highestLevel; set => this.levelSave.highestLevel = value; }
+
+    public List<LevelAsset> levelAssetList;
 
     #region METHODS
 
@@ -40,6 +43,10 @@ public class DataLevel : GameData
         SaveData();
     }
 
+    public bool CheckMaxLevel()
+    {
+        return CurrentLevelId > levelAssetList.Count;
+    }
 
     #endregion
 
