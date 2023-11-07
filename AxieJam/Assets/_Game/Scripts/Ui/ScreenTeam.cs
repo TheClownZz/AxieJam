@@ -5,11 +5,17 @@ using UnityEngine.UI;
 
 public class ScreenTeam : ScreenBase
 {
+    [SerializeField] Image imgBg;
     [SerializeField] ScrollRect scrollRect;
     [SerializeField] List<ItemSelect> itemList;
     [HideInInspector] public List<ItemSelect> itemSelectedList = new List<ItemSelect>();
     [SerializeField] TeamAvtController teamAvtController;
     List<PlayerType> currentTeam = new List<PlayerType>();
+
+    public void SetBg(Sprite sprite)
+    {
+        imgBg.sprite = sprite;
+    }
     public override void OnShow()
     {
         base.OnShow();

@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 public class ScreenAxie : ScreenBase
 {
+    [SerializeField] Image imgBg;
     [SerializeField] ScrollRect scrollRect;
     [SerializeField] List<ItemAxie> itemList;
 
@@ -25,6 +26,11 @@ public class ScreenAxie : ScreenBase
         }
         scrollRect.DOVerticalNormalizedPos(1, 1f).SetSpeedBased(true);
 
+    }
+
+    public void SetBg(Sprite sprite)
+    {
+        imgBg.sprite = sprite;
     }
     public void OnBtnBackClick()
     {

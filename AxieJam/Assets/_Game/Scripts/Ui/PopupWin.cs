@@ -31,7 +31,7 @@ public class PopupWin : PopupBase
         OnHide();
         GameManager.Instance.ClearLevel();
         AudioManager.Instance.PlayOnceShot(AudioType.CLICK);
-        SceneController.Instance.LoadMenu();
+        UIManager.Instance.GetScreen<ScreenGame>().LoadMenu();
     }
 
     public void OnBtnNextClick()

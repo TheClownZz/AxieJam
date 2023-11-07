@@ -12,6 +12,10 @@ public class SceneController : MonoSingleton<SceneController>
     {
         SceneManager.LoadScene(MenuScene);
     }
+    public AsyncOperation LoadMenuAsync()
+    {
+        return SceneManager.LoadSceneAsync(MenuScene);
+    }
 
     public AsyncOperation LoadGame()
     {

@@ -9,7 +9,7 @@ public class PopupGameOver : PopupBase
     {
         OnHide();
         GameManager.Instance.ClearLevel();
-        SceneController.Instance.LoadMenu();
+        UIManager.Instance.GetScreen<ScreenGame>().LoadMenu();
 
     }
 

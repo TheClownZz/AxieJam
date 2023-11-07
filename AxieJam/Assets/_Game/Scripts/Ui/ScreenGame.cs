@@ -1,14 +1,23 @@
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
+using System.Collections;
 
 public class ScreenGame : ScreenBase
 {
-    [SerializeField] TextMeshProUGUI tmpWave;
     [SerializeField] ItemAvt mainItem;
-    [SerializeField] List<ItemAvt> itemAvtList;
+    [SerializeField] Text tmpBackHome;
     [SerializeField] TextMeshProUGUI tmpMap;
+    [SerializeField] TextMeshProUGUI tmpWave;
+    [SerializeField] List<ItemAvt> itemAvtList;
 
+    public override void OnShow()
+    {
+        base.OnShow();
+        tmpBackHome.text = string.Empty;
+    }
     public void UpdateWave(int current, int max)
     {
         tmpWave.SetText("{0}/{1}", current, max);
@@ -53,15 +62,29 @@ public class ScreenGame : ScreenBase
 
     public void OnBtnHomeClick()
     {
-        OnHide();
         GameManager.Instance.ClearLevel();
         GameManager.Instance.SetGameState(GameState.Ready);
         AudioManager.Instance.PlayOnceShot(AudioType.CLICK);
-        SceneController.Instance.LoadMenu();
+        UIManager.Instance.GetScreen<ScreenGame>().LoadMenu();
     }
 
     public void OnBtnGuideClick()
     {
         UIManager.Instance.ShowPopup<PopupGuide>();
+    }
+
+    public void LoadMenu()
+    {
+        tmpBackHome.text = "Back Home";
+        AsyncOperation async = SceneController.Instance.LoadMenuAsync();
+        async.allowSceneActivation = false;
+        StartCoroutine(ICompleteLoad(async));
+    }
+
+    IEnumerator ICompleteLoad(AsyncOperation async)
+    {
+        yield return new WaitForSeconds(1f);
+        yield return new WaitUntil(() => async.progress == 0.9f);
+        async.allowSceneActivation = true;
     }
 }

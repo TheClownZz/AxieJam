@@ -262,34 +262,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assetsList:
+  - {fileID: 11400000, guid: b3835f8ffeb094141b45cf61987bbc30, type: 2}
   - {fileID: 11400000, guid: 78a6cf93f30c26f498a642d12ab74a62, type: 2}
+  - {fileID: 11400000, guid: f7dc369a70fe16e4d8bf1be5d9e8ee5c, type: 2}
   - {fileID: 11400000, guid: 511b63438521ecd4db4505c929b97674, type: 2}
-  - {fileID: 11400000, guid: 501f0e6fb7d1d498384d1b43bcb7b56d, type: 2}
+  - {fileID: 11400000, guid: d7f2d26ba9d42274d82bf8db99f9a7aa, type: 2}
+  - {fileID: 11400000, guid: 8ed95c7dbf400dd43995a4f99f809c2c, type: 2}
+  - {fileID: 11400000, guid: f89aa4d509b8edf4b9c6ed97eca36ad0, type: 2}
   - {fileID: 11400000, guid: ba7b08e25ab9bf242a9b86e6689b4e55, type: 2}
+  - {fileID: 11400000, guid: 8b8f1ea1052a1d64b8f40033601ef488, type: 2}
+  - {fileID: 11400000, guid: fe1a09459095a6a4b8fa11c005673203, type: 2}
+  - {fileID: 11400000, guid: bb8336c32ff15114198c38e923647cdd, type: 2}
+  - {fileID: 11400000, guid: 7e27546474c1ce74997b28fa30e11ca0, type: 2}
+  - {fileID: 11400000, guid: 26d0de8afd7bcd54d824208044632f46, type: 2}
+  - {fileID: 11400000, guid: 7e2713768eba0b946b57272dba5e3c4d, type: 2}
+  - {fileID: 11400000, guid: f78bd3e8b039d824f9431917263aff44, type: 2}
+  - {fileID: 11400000, guid: 501f0e6fb7d1d498384d1b43bcb7b56d, type: 2}
+  - {fileID: 11400000, guid: e16c6f202aeaa3d4a84ac4ec1a248607, type: 2}
+  - {fileID: 11400000, guid: 0a1af3fd1e1a4f843a5659fe8e20ac03, type: 2}
   - {fileID: 11400000, guid: d7a3d494c06c3864f832ec9d5943d4eb, type: 2}
+  - {fileID: 11400000, guid: 9674ce2a76ab4654084484080880df73, type: 2}
+  - {fileID: 11400000, guid: 161658685fe8ffe40a531633da29f9ed, type: 2}
   - {fileID: 11400000, guid: ff2b90c61bf24bd4ea350722f2f13c60, type: 2}
   - {fileID: 11400000, guid: dd68734f81a3dbf43830fa05d84df167, type: 2}
   - {fileID: 11400000, guid: 34ed9efdf1bbf5243be77b846b90c125, type: 2}
-  - {fileID: 11400000, guid: 26d0de8afd7bcd54d824208044632f46, type: 2}
-  - {fileID: 11400000, guid: 08673644c66a6a24f8bba041f94dda40, type: 2}
-  - {fileID: 11400000, guid: 5cfd373592e01484b80eb7855a5060a5, type: 2}
-  - {fileID: 11400000, guid: e16c6f202aeaa3d4a84ac4ec1a248607, type: 2}
-  - {fileID: 11400000, guid: 8ed95c7dbf400dd43995a4f99f809c2c, type: 2}
-  - {fileID: 11400000, guid: bb8336c32ff15114198c38e923647cdd, type: 2}
-  - {fileID: 11400000, guid: f89aa4d509b8edf4b9c6ed97eca36ad0, type: 2}
-  - {fileID: 11400000, guid: f7dc369a70fe16e4d8bf1be5d9e8ee5c, type: 2}
-  - {fileID: 11400000, guid: b3835f8ffeb094141b45cf61987bbc30, type: 2}
-  - {fileID: 11400000, guid: 9674ce2a76ab4654084484080880df73, type: 2}
   - {fileID: 11400000, guid: 32f3d108eae92384188bce1c5c3a770e, type: 2}
-  - {fileID: 11400000, guid: 0a1af3fd1e1a4f843a5659fe8e20ac03, type: 2}
-  - {fileID: 11400000, guid: d7f2d26ba9d42274d82bf8db99f9a7aa, type: 2}
-  - {fileID: 11400000, guid: 8b8f1ea1052a1d64b8f40033601ef488, type: 2}
-  - {fileID: 11400000, guid: fe1a09459095a6a4b8fa11c005673203, type: 2}
-  - {fileID: 11400000, guid: 7e27546474c1ce74997b28fa30e11ca0, type: 2}
-  - {fileID: 11400000, guid: 7e2713768eba0b946b57272dba5e3c4d, type: 2}
-  - {fileID: 11400000, guid: f78bd3e8b039d824f9431917263aff44, type: 2}
-  - {fileID: 11400000, guid: 161658685fe8ffe40a531633da29f9ed, type: 2}
+  - {fileID: 11400000, guid: 08673644c66a6a24f8bba041f94dda40, type: 2}
   - {fileID: 11400000, guid: e6e257c29f2077e46b31742a3c7bbc8d, type: 2}
+  - {fileID: 11400000, guid: 5cfd373592e01484b80eb7855a5060a5, type: 2}
   gameDatasList:
   - {fileID: 4577836405810613548}
   - {fileID: 4577836405810613523}
@@ -352,6 +352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4577836406015401181}
   - component: {fileID: 4577836406015401182}
+  - component: {fileID: 1176254317024430958}
   m_Layer: 0
   m_Name: PoolManager
   m_TagString: Untagged
@@ -388,9 +389,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16747d94947cd5c4f8d3d3f0529f6eea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyAssetManager: {fileID: 1176254317024430958}
   poolAsset: {fileID: 11400000, guid: 4d4e26eaff1e4354cafc5b6feeb6a872, type: 2}
   poolDestroy: {fileID: 4577836404945297612}
   poolDontDestroy: {fileID: 4577836404637376372}
+--- !u!114 &1176254317024430958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4577836406015401180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d3f6f25e5cbeeb43b7d661432afe795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolAsset: {fileID: 11400000, guid: 4d4e26eaff1e4354cafc5b6feeb6a872, type: 2}
 --- !u!1 &4577836406063666689
 GameObject:
   m_ObjectHideFlags: 0

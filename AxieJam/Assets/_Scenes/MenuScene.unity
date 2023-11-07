@@ -147,10 +147,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4337825415699806755}
     m_Modifications:
-    - target: {fileID: 1371117732450934970, guid: d678bcf43abf684489413efb8b28cbbf, type: 3}
-      propertyPath: m_Alpha
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4534560530987832307, guid: d678bcf43abf684489413efb8b28cbbf, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -628,6 +624,7 @@ MonoBehaviour:
   - {fileID: 7829022743755257051}
   - {fileID: 2978505098507030333}
   activeScene: {fileID: 3238834502434436955}
+  isInit: 0
 --- !u!114 &695502967907132075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,6 +661,7 @@ GameObject:
   - component: {fileID: 695502967907132075}
   - component: {fileID: 6452529217444921517}
   - component: {fileID: 197114383013428775}
+  - component: {fileID: 6452529217444921518}
   m_Layer: 5
   m_Name: UIManager
   m_TagString: Untagged
@@ -1446,10 +1444,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6304435070320531694, guid: 21d3e15f01fd7494b81845edee3425b8, type: 3}
-      propertyPath: m_Alpha
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6499651787631399683, guid: 21d3e15f01fd7494b81845edee3425b8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1774,6 +1768,28 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 55
+--- !u!114 &6452529217444921518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382672681372622131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae1ba4e622abb64bba96c982e8c2e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teamBgAsset:
+    m_AssetGUID: d1e2a4223778403418f7f899a66fd5ed
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  axieBgAsset:
+    m_AssetGUID: 461e7f664f0b4964290e43e79b87cf3f
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
 --- !u!224 &6774132206031806634 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3223779534538873516, guid: b919a822da48be64c9fafacdf26bac20, type: 3}

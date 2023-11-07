@@ -18,6 +18,7 @@ public class UIManager : MonoSingleton<UIManager>
     [SerializeField] ScreenBase activeScene;
     #endregion
 
+    [HideInInspector] public bool isInit = false;
     private void Start()
     {
         OnInit();
@@ -67,6 +68,7 @@ public class UIManager : MonoSingleton<UIManager>
         }
 
         activeScene?.OnShow();
+        isInit = true;
     }
 
 
