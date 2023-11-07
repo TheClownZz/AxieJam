@@ -9,8 +9,8 @@ public class PopupGameOver : PopupBase
     {
         OnHide();
         GameManager.Instance.ClearLevel();
-        UIManager.Instance.HideScreen<ScreenGame>();
-        UIManager.Instance.ShowScreen<ScreenHome>();
+        SceneController.Instance.LoadMenu();
+
     }
 
     public void SetAnim(SkeletonDataAsset asset)

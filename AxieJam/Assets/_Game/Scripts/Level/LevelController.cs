@@ -74,7 +74,6 @@ public class LevelController : MonoBehaviour
     }
     public void SpawnWave()
     {
-        // float time = waveConfig.waveTime;
         List<EnemyWaveConfig> enemyConfigList = waveConfig.enemyConfigList;
 
         for (int i = 0; i < enemyConfigList.Count; i++)

@@ -32,7 +32,11 @@ public class ScreenHome : ScreenBase
     {
         if (PlayerPrefs.GetInt(GameConfig.showGuide, 0) == 0)
         {
-            UIManager.Instance.ShowPopup<PopupGuide>();
+            UIManager.Instance.ShowPopup<PopupGuide>().hideCallBack.AddListener(() =>
+            {
+                PlayerPrefs.SetInt(GameConfig.showGuide, 1);
+                StartLoading();
+            });
         }
         else if (DataManager.Instance.GetData<DataLevel>().CheckMaxLevel())
         {

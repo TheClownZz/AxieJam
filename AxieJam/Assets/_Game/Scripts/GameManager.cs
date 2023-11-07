@@ -83,6 +83,8 @@ public class GameManager : MonoSingleton<GameManager>
 
         currentPlayer = playerList[0];
         currentPlayer.transform.position = Vector3.zero;
+
+        UIManager.Instance.GetScreen<ScreenGame>().UpdateAvt();
     }
 
 

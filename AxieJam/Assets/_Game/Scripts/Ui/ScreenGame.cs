@@ -8,11 +8,6 @@ public class ScreenGame : ScreenBase
     [SerializeField] ItemAvt mainItem;
     [SerializeField] List<ItemAvt> itemAvtList;
     [SerializeField] TextMeshProUGUI tmpMap;
-    public override void OnShow()
-    {
-        base.OnShow();
-        UpdateAvt();
-    }
 
     public void UpdateWave(int current, int max)
     {
@@ -62,7 +57,7 @@ public class ScreenGame : ScreenBase
         GameManager.Instance.ClearLevel();
         GameManager.Instance.SetGameState(GameState.Ready);
         AudioManager.Instance.PlayOnceShot(AudioType.CLICK);
-        UIManager.Instance.ShowScreen<ScreenHome>();
+        SceneController.Instance.LoadMenu();
     }
 
     public void OnBtnGuideClick()

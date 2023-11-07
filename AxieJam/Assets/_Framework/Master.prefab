@@ -115,6 +115,9 @@ GameObject:
   - component: {fileID: 4577836405381219829}
   - component: {fileID: 4577836405381219828}
   - component: {fileID: 1868016943}
+  - component: {fileID: 4518800176337348292}
+  - component: {fileID: 8869661322861126468}
+  - component: {fileID: 6898107514091896086}
   m_Layer: 0
   m_Name: Master
   m_TagString: Untagged
@@ -167,12 +170,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   setPassCall: 0
-  drawCall: 1
+  drawCall: 0
   vertices: 0
   triangles: 0
-  memory: 1
+  memory: 0
   GC: 0
   mainThread: 0
+--- !u!114 &4518800176337348292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4577836405381219835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e20fe595638ab5347964c871d72ce965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFrameRate: 60
+--- !u!114 &8869661322861126468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4577836405381219835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d560d05a9c95a4459875a4e663db76f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6898107514091896086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4577836405381219835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e20fe595638ab5347964c871d72ce965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetFrameRate: 60
 --- !u!1 &4577836405810613527
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +262,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assetsList:
-  - {fileID: 11400000, guid: 3e5671c9073f60446a4a2d73f52c9af3, type: 2}
   - {fileID: 11400000, guid: 78a6cf93f30c26f498a642d12ab74a62, type: 2}
   - {fileID: 11400000, guid: 511b63438521ecd4db4505c929b97674, type: 2}
   - {fileID: 11400000, guid: 501f0e6fb7d1d498384d1b43bcb7b56d, type: 2}
@@ -233,6 +273,23 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 26d0de8afd7bcd54d824208044632f46, type: 2}
   - {fileID: 11400000, guid: 08673644c66a6a24f8bba041f94dda40, type: 2}
   - {fileID: 11400000, guid: 5cfd373592e01484b80eb7855a5060a5, type: 2}
+  - {fileID: 11400000, guid: e16c6f202aeaa3d4a84ac4ec1a248607, type: 2}
+  - {fileID: 11400000, guid: 8ed95c7dbf400dd43995a4f99f809c2c, type: 2}
+  - {fileID: 11400000, guid: bb8336c32ff15114198c38e923647cdd, type: 2}
+  - {fileID: 11400000, guid: f89aa4d509b8edf4b9c6ed97eca36ad0, type: 2}
+  - {fileID: 11400000, guid: f7dc369a70fe16e4d8bf1be5d9e8ee5c, type: 2}
+  - {fileID: 11400000, guid: b3835f8ffeb094141b45cf61987bbc30, type: 2}
+  - {fileID: 11400000, guid: 9674ce2a76ab4654084484080880df73, type: 2}
+  - {fileID: 11400000, guid: 32f3d108eae92384188bce1c5c3a770e, type: 2}
+  - {fileID: 11400000, guid: 0a1af3fd1e1a4f843a5659fe8e20ac03, type: 2}
+  - {fileID: 11400000, guid: d7f2d26ba9d42274d82bf8db99f9a7aa, type: 2}
+  - {fileID: 11400000, guid: 8b8f1ea1052a1d64b8f40033601ef488, type: 2}
+  - {fileID: 11400000, guid: fe1a09459095a6a4b8fa11c005673203, type: 2}
+  - {fileID: 11400000, guid: 7e27546474c1ce74997b28fa30e11ca0, type: 2}
+  - {fileID: 11400000, guid: 7e2713768eba0b946b57272dba5e3c4d, type: 2}
+  - {fileID: 11400000, guid: f78bd3e8b039d824f9431917263aff44, type: 2}
+  - {fileID: 11400000, guid: 161658685fe8ffe40a531633da29f9ed, type: 2}
+  - {fileID: 11400000, guid: e6e257c29f2077e46b31742a3c7bbc8d, type: 2}
   gameDatasList:
   - {fileID: 4577836405810613548}
   - {fileID: 4577836405810613523}
@@ -266,6 +323,10 @@ MonoBehaviour:
   levelSave:
     currentLevel: 0
     highestLevel: 0
+  levelAssetList:
+  - {fileID: 11400000, guid: 78a6cf93f30c26f498a642d12ab74a62, type: 2}
+  - {fileID: 11400000, guid: fe1a09459095a6a4b8fa11c005673203, type: 2}
+  - {fileID: 11400000, guid: 161658685fe8ffe40a531633da29f9ed, type: 2}
 --- !u!114 &4577836405810613522
 MonoBehaviour:
   m_ObjectHideFlags: 0

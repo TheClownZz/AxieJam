@@ -26,6 +26,8 @@ public class Enemy : Character
         spawnFx = PoolManager.Instance.SpawnObject(PoolType.SpawnFx);
         spawnFx.position = pos;
         gameObject.SetActive(false);
+        spawnFx.transform.SetParent(GameManager.Instance.GetMapTf().GetChild(1));
+
         spawnTween = GameManager.Instance.DelayedCall(time, () =>
         {
             PoolManager.Instance.DespawnObject(spawnFx);

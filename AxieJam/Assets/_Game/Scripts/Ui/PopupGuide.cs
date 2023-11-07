@@ -1,8 +1,10 @@
 
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PopupGuide : PopupBase
 {
+    public UnityEvent hideCallBack;
     public override void OnShow(float fadeTime = 0)
     {
         base.OnShow(fadeTime);
@@ -13,16 +15,12 @@ public class PopupGuide : PopupBase
     {
         base.OnHide(fadeTime);
         Time.timeScale = 1;
+        hideCallBack.Invoke();
+        hideCallBack.RemoveAllListeners();
     }
     public void OnBtnOkClick()
     {
         OnHide();
-        if(UIManager.Instance.GetScreen<ScreenHome>().isShowing)
-        {
-            PlayerPrefs.SetInt(GameConfig.showGuide, 1);
-            UIManager.Instance.GetScreen<ScreenHome>().StartLoading();
-        }
         AudioManager.Instance.PlayOnceShot(AudioType.CLICK);
-
     }
 }

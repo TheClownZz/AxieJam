@@ -41,7 +41,7 @@ public class PopupSelect : PopupBase
         GameManager.Instance.SetPlayer(index);
         UpdateUi();
         UIManager.Instance.GetScreen<ScreenGame>().UpdateAvt();
-        OnHide(0);
+        OnHide();
     }
 
     private void UpdateUi()
