@@ -7,7 +7,6 @@ public enum AudioType
     GAME_OVER,
     WIN,
     CLICK,
-    Hit,
     Item,
     LvUp,
     GAME_MUSIC,

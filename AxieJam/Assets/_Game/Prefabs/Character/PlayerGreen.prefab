@@ -1,5 +1,54 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1132607132537136472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5279766832441970844}
+  - component: {fileID: 7257641158133665200}
+  m_Layer: 7
+  m_Name: AudioGetter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5279766832441970844
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132607132537136472}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5353043555186907966}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7257641158133665200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132607132537136472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f4a8e5a038ef241994557a317e2ddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  assetReference:
+    m_AssetGUID: fcfa53ce54acaae4eb2ad143f4e308e2
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
 --- !u!1 &4051739056062253032
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,6 +362,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &6627325400963729476
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5353043555186907966}
+  m_Layer: 7
+  m_Name: AssetGetter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5353043555186907966
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6627325400963729476}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5279766832441970844}
+  m_Father: {fileID: 8915905001403885882}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7961137418168686118
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,8 +439,8 @@ GameObject:
   - component: {fileID: 8915905001403885883}
   - component: {fileID: 4173694845247501963}
   - component: {fileID: 8915905001403885886}
-  - component: {fileID: 2093326263687780720}
   - component: {fileID: 2837831664808693144}
+  - component: {fileID: 2093326263687780720}
   m_Layer: 7
   m_Name: PlayerGreen
   m_TagString: Untagged
@@ -382,6 +463,7 @@ Transform:
   m_Children:
   - {fileID: 6575195091954274342}
   - {fileID: 5310755436093151505}
+  - {fileID: 5353043555186907966}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &8915905001403885880
@@ -461,6 +543,8 @@ MonoBehaviour:
   hitTime: 0.2
   currentHp: 0
   itemAvt: {fileID: 0}
+  audioGetter: {fileID: 7257641158133665200}
+  allowTakeDamge: 0
 --- !u!114 &8915905001403885886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,26 +564,6 @@ MonoBehaviour:
   faceDistance: 0.25
   moveDistance: 0.5
   minMoveDistance: 0.2
---- !u!114 &2093326263687780720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8915905001403885877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2097b0e19d72334c9d18a2921a3555e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  control: {fileID: 0}
-  weapon: {fileID: 2577495016681561918}
-  config:
-    defaultValue:
-      potionRequire: 15
-      duration: 3
-      cooldown: 20
-    propertieList: []
 --- !u!58 &2837831664808693144
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -535,6 +599,26 @@ CircleCollider2D:
   m_Offset: {x: 0.04042083, y: 0}
   serializedVersion: 2
   m_Radius: 0.80989283
+--- !u!114 &2093326263687780720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8915905001403885877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2097b0e19d72334c9d18a2921a3555e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  control: {fileID: 0}
+  weapon: {fileID: 2577495016681561918}
+  config:
+    defaultValue:
+      potionRequire: 15
+      duration: 3
+      cooldown: 20
+    propertieList: []
 --- !u!1001 &3474932936736254808
 PrefabInstance:
   m_ObjectHideFlags: 0

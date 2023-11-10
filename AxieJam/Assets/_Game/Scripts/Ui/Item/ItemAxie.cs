@@ -70,8 +70,8 @@ public class ItemAxie : MonoBehaviour
 
         imgIcon.sprite = asset.avatar;
         imgSkill.sprite = asset.skillIcon;
-        imgFood.sprite = footConfig.uiSprite;
-        imgPotion.sprite = potionConfig.uiSprite;
+        imgFood.sprite = footConfig.sprite;
+        imgPotion.sprite = potionConfig.sprite;
 
         tmpLevel.SetText("LV.{0}", data.level);
         tmpAtk.SetText(Mathf.CeilToInt(damage).ToString());

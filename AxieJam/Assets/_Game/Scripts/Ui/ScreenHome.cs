@@ -3,6 +3,7 @@ using I2.TextAnimation;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ScreenHome : ScreenBase
@@ -60,7 +61,7 @@ public class ScreenHome : ScreenBase
         panelContent.SetActive(false);
         tmpLoad.text = "Loading...";
         imgLoad.fillAmount = 0;
-        var async = SceneController.Instance.LoadGame();
+        var async = SceneSwitcher.Instance.LoadGame();
         async.allowSceneActivation = false;
         imgLoad.DOFillAmount(1, loadTime).OnComplete(() =>
         {
@@ -70,10 +71,9 @@ public class ScreenHome : ScreenBase
 
     IEnumerator ICompleteLoad(AsyncOperation async)
     {
-        yield return new WaitUntil(() => async.progress == 0.9f);
+        yield return new WaitUntil(() => async.progress == 0.9f && SceneSwitcher.Instance.IsLoadAllRef());
         async.allowSceneActivation = true;
     }
-
     private bool CheckNoti()
     {
         bool isUpdate = false;

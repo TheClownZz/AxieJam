@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class ItemSelect : MonoBehaviour
 {
+
     public PlayerType playerType;
 
     [SerializeField] TextMeshProUGUI tmpLevel;

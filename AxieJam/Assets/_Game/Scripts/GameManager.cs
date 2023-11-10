@@ -173,8 +173,6 @@ public class GameManager : MonoSingleton<GameManager>
     public void SetGameState(GameState gameState)
     {
         this.gameState = gameState;
-        AudioManager.Instance.SetMusic(gameState == GameState.Ready);
-
     }
 
 

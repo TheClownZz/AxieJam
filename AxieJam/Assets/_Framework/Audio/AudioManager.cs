@@ -67,7 +67,6 @@ public class AudioManager : MonoSingleton<AudioManager>
 
             audioSourcePool = new AudioSourcePool(audioPrefab);
             audioAsset?.InitDic();
-            PlayMusic(AudioType.BG_MUSIC, 0.5f);
         }
     }
 

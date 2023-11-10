@@ -45,12 +45,12 @@ public class Master : MonoSingleton<Master>
 #if UNITY_EDITOR
         Debug.unityLogger.logEnabled = true;
 #else
-        Debug.unityLogger.logEnabled = false;
+        Debug.unityLogger.logEnabled = true;
 #endif
         isMasterReady = true;
-        yield return new WaitUntil(() => SceneController.Instance != null);
+        yield return new WaitUntil(() => SceneSwitcher.Instance != null);
 
-        SceneController.Instance.LoadMenu();
+        SceneSwitcher.Instance.LoadMenu();
     }
 
     #endregion

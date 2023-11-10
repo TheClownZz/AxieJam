@@ -17,13 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 8ffe59cd02a36674aa691da8100c6d17
   m_SerializeEntries:
-  - m_GUID: d1e2a4223778403418f7f899a66fd5ed
-    m_Address: Assets/_Game/Texture/BG/NewCanvas2.jpg
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 461e7f664f0b4964290e43e79b87cf3f
-    m_Address: Assets/_Game/Texture/BG/NewCanvas3.jpg
+  - m_GUID: fcfa53ce54acaae4eb2ad143f4e308e2
+    m_Address: Assets/_Game/Addressable Asset/Sound/etfx_stun01.wav
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

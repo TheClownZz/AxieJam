@@ -468,6 +468,7 @@ MonoBehaviour:
   - {fileID: 6006610071341274703}
   - {fileID: 5477373500677830237}
   activeScene: {fileID: 3220776094545384556}
+  isInit: 0
 --- !u!114 &695502967907132075
 MonoBehaviour:
   m_ObjectHideFlags: 0

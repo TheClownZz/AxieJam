@@ -8,7 +8,6 @@ public class FoodConfig
 {
     public PlayerType type;
     public Sprite sprite;
-    public Sprite uiSprite;
 
 }
 

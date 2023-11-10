@@ -15,17 +15,13 @@ MonoBehaviour:
   audioDataSet:
   - audioType: 4
     audioClip: {fileID: 8300000, guid: 06e75bebbc38bcc49baf10a667e39c26, type: 3}
-  - audioType: 6
+  - audioType: 5
     audioClip: {fileID: 8300000, guid: 99467e05ffef6c84398ddf0deef05010, type: 3}
   - audioType: 2
     audioClip: {fileID: 8300000, guid: 19767d6436c82a44fb19d91d502ce013, type: 3}
-  - audioType: 5
-    audioClip: {fileID: 8300000, guid: fcfa53ce54acaae4eb2ad143f4e308e2, type: 3}
-  - audioType: 7
+  - audioType: 6
     audioClip: {fileID: 8300000, guid: 90373606e24098747944e963893967c4, type: 3}
-  - audioType: 1
-    audioClip: {fileID: 8300000, guid: 8882ddab2a0ee0a438c680350191a9cb, type: 3}
   - audioType: 3
     audioClip: {fileID: 8300000, guid: 0cde815fd1e6e2f40b450110cf2b82f7, type: 3}
-  - audioType: 9
+  - audioType: 8
     audioClip: {fileID: 8300000, guid: 5052682f23f19384da5d743dc76ed64b, type: 3}

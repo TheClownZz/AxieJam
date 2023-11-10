@@ -76,7 +76,7 @@ public class ScreenGame : ScreenBase
     public void LoadMenu()
     {
         tmpBackHome.text = "Back Home";
-        AsyncOperation async = SceneController.Instance.LoadMenuAsync();
+        AsyncOperation async = SceneSwitcher.Instance.LoadMenuAsync();
         async.allowSceneActivation = false;
         StartCoroutine(ICompleteLoad(async));
     }
@@ -84,7 +84,7 @@ public class ScreenGame : ScreenBase
     IEnumerator ICompleteLoad(AsyncOperation async)
     {
         yield return new WaitForSeconds(1f);
-        yield return new WaitUntil(() => async.progress == 0.9f);
+        yield return new WaitUntil(() => async.progress == 0.9f && SceneSwitcher.Instance.IsLoadAllRef());
         async.allowSceneActivation = true;
     }
 }

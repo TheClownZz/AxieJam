@@ -81,7 +81,8 @@ public class DataManager : MonoSingleton<DataManager>
 
     public void SaveData<T>(string key, T userSaveData)
     {
-        writer.Write(key, userSaveData).Commit();
+        if (writer != null)
+            writer.Write(key, userSaveData).Commit();
     }
 
     public T LoadData<T>(string key)
