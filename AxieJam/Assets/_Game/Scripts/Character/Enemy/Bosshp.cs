@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Bosshp : EnemyHp
 {
     [SerializeField] Image hpSlider;
@@ -11,6 +12,13 @@ public class Bosshp : EnemyHp
         base.OnInits(enemy);
         maxhp = control.stat.hp;
         hpSlider.fillAmount = 1;
+        hpSlider.transform.parent.gameObject.SetActive(true);
+    }
+
+    public override void OnDead()
+    {
+        base.OnDead();
+        hpSlider.transform.parent.gameObject.SetActive(false);
     }
 
     public override float TakeDamage(float damage, bool isCrit)

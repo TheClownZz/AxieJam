@@ -175,6 +175,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Master
       objectReference: {fileID: 0}
+    - target: {fileID: 4577836405810613523, guid: 5e49b154cd648c146b9880f63b0b88ad, type: 3}
+      propertyPath: levelAssetList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577836405810613523, guid: 5e49b154cd648c146b9880f63b0b88ad, type: 3}
+      propertyPath: levelAssetList.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: f5044f562c6a13c44a903c052c5d33a9, type: 2}
+    - target: {fileID: 4577836405810613523, guid: 5e49b154cd648c146b9880f63b0b88ad, type: 3}
+      propertyPath: levelAssetList.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 161658685fe8ffe40a531633da29f9ed, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

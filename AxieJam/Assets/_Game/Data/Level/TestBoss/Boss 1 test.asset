@@ -15,7 +15,7 @@ MonoBehaviour:
   dataList:
   - waveTime: 60
     waveProterties:
-      hpRate: 1.1
+      hpRate: 0.1
       damageRate: 0
     enemyConfigList:
     - type: 200
