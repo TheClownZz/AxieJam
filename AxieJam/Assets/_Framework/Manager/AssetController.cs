@@ -14,12 +14,9 @@ public class AssetLoader
     public AssetController controller;
     [SerializeField] protected List<AssetGetter> getterList;
 
-    protected List<AsyncOperationHandle<UnityEngine.Object>> handleList;
-
     public AssetLoader()
     {
         getterList = new List<AssetGetter>();
-        handleList = new List<AsyncOperationHandle<UnityEngine.Object>>();
     }
 
     public List<AssetGetter> GetRefList()
@@ -31,7 +28,7 @@ public class AssetLoader
     {
         Debug.LogError("Loading scene:" + sceneName);
         controller.UpdateAssetList(getterList);
-        if (getterList.Count == 0)
+        if (IsLoadAll())
         {
             loadComplete?.Invoke();
             return;
@@ -46,23 +43,16 @@ public class AssetLoader
                 getter.OnAssetLoaded(loadHandle);
                 if (IsLoadAll()) loadComplete?.Invoke();
             };
-            handleList.Add(loadHandle);
         }
     }
 
     public bool IsLoadAll()
     {
-        for (int i = handleList.Count - 1; i >= 0; i--)
+       foreach(AssetGetter getter in getterList)
         {
-            if (handleList[i].IsDone)
-            {
-                Debug.LogError("load done");
-                getterList[i].OnAssetLoaded(handleList[i]);
-                handleList.RemoveAt(i);
-            }
+            if (!AssetManager.IsLoaded(getter.assetReference)) return false;
         }
-
-        return handleList.Count == 0;
+        return true;
     }
 
     public void UnLoadAsset()
@@ -71,7 +61,6 @@ public class AssetLoader
         {
             AssetManager.Unload(getter.assetReference);
         }
-        handleList.Clear();
     }
 }
 public class AssetController : MonoBehaviour

@@ -71,7 +71,7 @@ public class ScreenHome : ScreenBase
 
     IEnumerator ICompleteLoad(AsyncOperation async)
     {
-        yield return new WaitUntil(() => async.progress == 0.9f && SceneSwitcher.Instance.IsLoadAllRef());
+        yield return new WaitUntil(() => async.progress == 0.9f);
         async.allowSceneActivation = true;
     }
     private bool CheckNoti()

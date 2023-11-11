@@ -12,7 +12,6 @@ public class SceneSwitcher : MonoSingleton<SceneSwitcher>
 
     AssetLoader currentLoader;
 
-
     public void LoadMenu()
     {
         currentLoader?.UnLoadAsset();

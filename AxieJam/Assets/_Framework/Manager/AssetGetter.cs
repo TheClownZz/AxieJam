@@ -10,6 +10,5 @@ public class AssetGetter : MonoBehaviour
    
     public virtual void OnAssetLoaded(AsyncOperationHandle<UnityEngine.Object> handle)
     {
-        Debug.LogError("OnAssetLoaded:" + handle.Result.name);
     }
 }

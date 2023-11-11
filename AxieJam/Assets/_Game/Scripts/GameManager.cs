@@ -40,7 +40,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     private IEnumerator I_Initiate()
     {
-        yield return new WaitUntil(() => UIManager.Instance);
+        yield return new WaitUntil(() => UIManager.Instance && SceneSwitcher.Instance.IsLoadAllRef());
         OnInit();
     }
     void OnInit()
