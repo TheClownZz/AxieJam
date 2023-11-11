@@ -84,6 +84,55 @@ MonoBehaviour:
   damgeRate: 3
   touched: attack/ranged/goo-destruct
   spawnItemTime: 1
+--- !u!1 &3232464808058858847
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3954869064295322656}
+  - component: {fileID: 161303304648225741}
+  m_Layer: 7
+  m_Name: DeadClip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3954869064295322656
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3232464808058858847}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2044198759292943636}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &161303304648225741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3232464808058858847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f4a8e5a038ef241994557a317e2ddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  assetReference:
+    m_AssetGUID: 6f1be2915b1d1ed488800be78f7e97c8
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
 --- !u!1 &3946840036128495154
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,6 +170,7 @@ Transform:
   m_Children:
   - {fileID: 1193762222352017907}
   - {fileID: 7687391999997561288}
+  - {fileID: 2044198759292943636}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &2067074600825698244
@@ -192,6 +242,7 @@ MonoBehaviour:
   - {fileID: 363395862009043723}
   - {fileID: 5244677630370320604}
   deadClip: {fileID: 8300000, guid: 6f1be2915b1d1ed488800be78f7e97c8, type: 3}
+  audioGetter: {fileID: 161303304648225741}
   spawItemTime: 0.5
   waveStat:
     hpRate: 1
@@ -399,6 +450,38 @@ MonoBehaviour:
   Hit: defense/hit-by-normal
   Attack: action/die
   attackTime: 1
+--- !u!1 &7139840320348704769
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2044198759292943636}
+  m_Layer: 7
+  m_Name: AssetGetter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2044198759292943636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7139840320348704769}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3954869064295322656}
+  m_Father: {fileID: 8631873100902015713}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7621509337611053420
 GameObject:
   m_ObjectHideFlags: 0

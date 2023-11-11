@@ -3,10 +3,9 @@ using UnityEngine;
 public class BossAttack : EnemyAttack
 {
     protected int skillIndex;
-    [SerializeField] protected AudioClip attackClip;
+    protected AudioClip attackClip;
     [SerializeField] AssetGetter audioGetter;
-
-    private void Awake()
+    protected virtual void Awake()
     {
         audioGetter.OnGetAsset = (audio) =>
         {

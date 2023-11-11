@@ -8,6 +8,18 @@ public class HealingWard : MonoBehaviour
     protected float cooldown;
     protected float activeValue;
     [SerializeField] Transform fxHeal;
+    [SerializeField] protected AssetGetter audioGetter;
+
+    protected AudioClip attackClip;
+    protected virtual void Awake()
+    {
+        audioGetter.OnGetAsset = (audio) =>
+        {
+            attackClip = (AudioClip)audio;
+        };
+        audioGetter.LoadAsset();
+    }
+
     public void OnInits(float activeValue, float cooldown, float duarion)
     {
         gameObject.SetActive(true);
@@ -43,7 +55,7 @@ public class HealingWard : MonoBehaviour
             {
                 PoolManager.Instance.DespawnObject(clone);
             });
-            AudioManager.Instance.PlayOnceShot(AudioType.Healing);
+            AudioManager.Instance.PlaySound(attackClip);
             target.GetCom<PlayerHp>().RegenPercen(activeValue);
         }
     }

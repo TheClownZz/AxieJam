@@ -6,16 +6,25 @@ public class PlayerGun : Weapon
     [SerializeField] protected Transform shooter;
     [SerializeField] protected float butlletSpeed = 22f;
     [SerializeField] protected Sprite bulletSprite;
-    [SerializeField] protected AudioClip hitClip;
     [SerializeField] protected float force = 300;
     [SerializeField] GameObject gunFx;
 
-    CameraShake cameraShake;
+    [SerializeField] AssetGetter audioGetter;
 
     protected float damageRate = 1;
     protected float cachedDamageRate;
 
     protected bool isActive = false;
+    CameraShake cameraShake;
+
+    protected virtual void Awake()
+    {
+        audioGetter.OnGetAsset = (audio) =>
+        {
+            attackClip = (AudioClip)audio;
+        };
+        audioGetter.LoadAsset();
+    }
     public override void OnInits(Character characterControl)
     {
         base.OnInits(characterControl);
@@ -38,7 +47,6 @@ public class PlayerGun : Weapon
         b.transform.rotation = shooter.transform.rotation;
         b.OnInits(this, butlletSpeed, -b.transform.right);
         b.SetSprite(bulletSprite);
-        b.SetHitClip(hitClip);
         b.SetDamageRate(damageRate);
         return b;
     }

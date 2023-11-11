@@ -8,15 +8,25 @@ public class BossBigSlam : BossAttack
     [SerializeField] protected ParticleSystem fxSlam;
     [SerializeField] protected Transform wpTf;
     [SerializeField] protected Transform exposionPrefab;
-    [SerializeField] protected AudioClip explosionClip;
-    protected List<Transform> spawnList = new List<Transform>();
+    [SerializeField] protected AssetGetter explosionClipGetter;
 
     [SerializeField] protected float radius = 3f;
     [SerializeField] float explosionTime = 1f;
     protected float attackSize = 2;
     protected float damageRate;
     protected int numberExplosion;
+    protected AudioClip explosionClip;
+    protected List<Transform> spawnList = new List<Transform>();
 
+    protected override void Awake()
+    {
+        base.Awake();
+        explosionClipGetter.OnGetAsset = (audio) =>
+        {
+            explosionClip = (AudioClip)audio;
+        };
+        explosionClipGetter.LoadAsset();
+    }
     public override void OnInits(Character enemy)
     {
         base.OnInits(enemy);

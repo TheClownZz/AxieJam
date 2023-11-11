@@ -28,7 +28,6 @@ public class RedGun : PlayerGun
             bullet.transform.rotation = Quaternion.identity;
             bullet.transform.localScale = Vector3.one * size;
             bullet.OnInits(this, 0, Vector3.zero);
-            bullet.SetHitClip(hitClip);
             bullet.SetDamageRate(damage);
             GameManager.Instance.DelayedCall(0.2f, () =>
             {

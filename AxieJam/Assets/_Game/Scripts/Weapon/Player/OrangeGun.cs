@@ -6,11 +6,11 @@ using UnityEngine;
 public class OrangeGun : PlayerGun
 {
     const float animTime = 0.5f;
+    [SerializeField] Transform circleBulletPrefab;
     [SerializeField] List<float> speedList;
     [SerializeField] List<float> radiusList;
     [SerializeField] List<Transform> circleList;
-    [SerializeField] List<Bullet> bulletList;
-    [SerializeField] Transform circleBulletPrefab;
+    List<Bullet> bulletList = new List<Bullet>();
     Coroutine coroutine;
     public override void ActiveSKill(SkillConfig config)
     {
@@ -35,7 +35,6 @@ public class OrangeGun : PlayerGun
                 b.transform.SetParent(circleList[0], true);
                 b.OnInits(this, 0, Vector3.zero);
                 b.SetSprite(bulletSprite);
-                b.SetHitClip(hitClip);
                 b.SetDamageRate(damageRate);
                 bulletList.Add(b);
             }
@@ -54,7 +53,6 @@ public class OrangeGun : PlayerGun
                 b.transform.SetParent(circleList[1], true);
                 b.OnInits(this, 0, Vector3.zero);
                 b.SetSprite(bulletSprite);
-                b.SetHitClip(hitClip);
                 b.SetDamageRate(extraDamgeRate);
                 bulletList.Add(b);
             }

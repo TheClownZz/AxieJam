@@ -4,7 +4,8 @@ using DG.Tweening;
 public class Enemy : Character
 {
     const float timeDelayDespawn = 1.5f;
-    [SerializeField] protected AudioClip deadClip;
+    [SerializeField] AssetGetter audioGetter;
+
     [SerializeField] float spawItemTime = 1f;
 
     protected Transform spawnFx;
@@ -15,6 +16,16 @@ public class Enemy : Character
 
     [HideInInspector] public WaveStat waveStat;
     [HideInInspector] public float currspawItemTime;
+    protected AudioClip deadClip;
+
+    private void Awake()
+    {
+        audioGetter.OnGetAsset = (audio) =>
+        {
+            deadClip = (AudioClip)audio;
+        };
+        audioGetter.LoadAsset();
+    }
     public override void OnInit()
     {
         base.OnInit();

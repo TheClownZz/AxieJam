@@ -4,9 +4,7 @@ public class Bullet : MonoBehaviour, ICreateDamage
 {
     const int maxHit = 1;
     protected Vector3 dir;
-    protected float timePlaySound;
     protected float damageRate = 1;
-    [SerializeField] protected AudioClip hitClip;
     [SerializeField] protected SpriteRenderer bulletRender;
 
     [HideInInspector] public Weapon weapon;
@@ -61,11 +59,6 @@ public class Bullet : MonoBehaviour, ICreateDamage
         character.KnockBack(dir.normalized, GameManager.Instance.gameConfig.forceValue);
 
         AddEffect(character);
-        if (hitClip && Time.time - timePlaySound > 0.1f)
-        {
-            timePlaySound = Time.time;
-            AudioManager.Instance.PlaySound(hitClip);
-        }
     }
     public virtual void CreateDamage(Character character)
     {
@@ -110,11 +103,6 @@ public class Bullet : MonoBehaviour, ICreateDamage
     public void SetSprite(Sprite sprite)
     {
         bulletRender.sprite = sprite;
-    }
-
-    public void SetHitClip(AudioClip clip)
-    {
-        hitClip = clip;
     }
 
     // only for enemy -- player do in player hp

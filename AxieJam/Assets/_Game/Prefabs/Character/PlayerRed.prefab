@@ -49,6 +49,55 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+--- !u!1 &3389690399695701636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7354850691201180066}
+  - component: {fileID: 1310508752279811619}
+  m_Layer: 7
+  m_Name: attackClip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7354850691201180066
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3389690399695701636}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6827714214187299507}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1310508752279811619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3389690399695701636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f4a8e5a038ef241994557a317e2ddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  assetReference:
+    m_AssetGUID: 101106cd810615041bb13f121e59a2d7
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
 --- !u!1 &4307356870232946831
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,15 +144,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b76d7afe644c05049852c584c2d511c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackClip: {fileID: 8300000, guid: 101106cd810615041bb13f121e59a2d7, type: 3}
+  attackClip: {fileID: 0}
   effectDataList: []
   bulletPf: {fileID: 6161039371015719557, guid: 6a09dae721babc14f99a79a7cc1ee679, type: 3}
   shooter: {fileID: 6968806356762508417}
   butlletSpeed: 22
   bulletSprite: {fileID: 21300000, guid: a401f9a842b071f45a15885001c3341e, type: 3}
-  hitClip: {fileID: 0}
   force: 500
   gunFx: {fileID: 3883062032405191634}
+  audioGetter: {fileID: 1310508752279811619}
   exposionPrefab: {fileID: 4558091446817699207, guid: f90b600ebec1e08409551f6c3f990643, type: 3}
 --- !u!1 &4424165598337138926
 GameObject:
@@ -360,6 +409,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5397360981082715570}
+  - {fileID: 7354850691201180066}
   m_Father: {fileID: 8915905001403885882}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7331739214876913811

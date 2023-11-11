@@ -10,7 +10,6 @@ public enum AudioType
     Item,
     LvUp,
     GAME_MUSIC,
-    Healing,
 }
 
 [CreateAssetMenu]
