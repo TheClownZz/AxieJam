@@ -17,122 +17,128 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 8ffe59cd02a36674aa691da8100c6d17
   m_SerializeEntries:
+  - m_GUID: 32aeeae89807bf949bb5620bb8724879
+    m_Address: Assets/_Game/Addressable Asset/Sound/WoodCrashesDistant.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 18e14009918ac9e4d92d5f09c7bde963
+    m_Address: Assets/_Game/Addressable Asset/Sound/treeSlam.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3004c5804d18f214b95f444cd60ffb3a
+    m_Address: Assets/_Game/Addressable Asset/Sound/treeDead.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ba7f7f67a8296dc48bb889b3d5d1e172
+    m_Address: Assets/_Game/Addressable Asset/Sound/treeBossDead.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6f1be2915b1d1ed488800be78f7e97c8
+    m_Address: Assets/_Game/Addressable Asset/Sound/slimeDead.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f29a5c18969e60246b48808e07759961
+    m_Address: Assets/_Game/Addressable Asset/Sound/TreeSumon.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b134f70c37527cf4594c104251810f81
+    m_Address: Assets/_Game/Addressable Asset/Sound/monster-hurt.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fcfa53ce54acaae4eb2ad143f4e308e2
     m_Address: Assets/_Game/Addressable Asset/Sound/etfx_stun01.wav
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 4686de3506c101f43a9393cea35fbe13
-    m_Address: Assets/_Game/Sound/etfx_shoot_energy03.wav
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Audio
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3fb856f9843426e4d9c7ef7864aa17ff
-    m_Address: Assets/_Game/Sound/boss1slam.mp3
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Audio
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 4e9bff56ee93c6f42b214141e44e763d
-    m_Address: Assets/_Game/Sound/etfx_explosion_plasma.wav
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Audio
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a36c0d4fe500082469a8359da5d3fec5
-    m_Address: Assets/_Game/Sound/BearDead.mp3
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Audio
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b134f70c37527cf4594c104251810f81
-    m_Address: Assets/_Game/Sound/monster-hurt-47161.mp3
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Audio
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ba7f7f67a8296dc48bb889b3d5d1e172
-    m_Address: Assets/_Game/Sound/treeBossDead.mp3
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Audio
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f29a5c18969e60246b48808e07759961
-    m_Address: Assets/_Game/Sound/monster-roar-6985.mp3
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Audio
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 18e14009918ac9e4d92d5f09c7bde963
-    m_Address: Assets/_Game/Sound/treeSlam.mp3
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Audio
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 32aeeae89807bf949bb5620bb8724879
-    m_Address: Assets/_Game/Sound/WoodCrashesDistant FS022705.mp3
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Audio
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 32f565ba94f200f49adb407cce64e873
-    m_Address: Assets/_Game/Sound/etfx_explosion_magic.wav
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Audio
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6f1be2915b1d1ed488800be78f7e97c8
-    m_Address: Assets/_Game/Sound/slimeDead.mp3
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Audio
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3004c5804d18f214b95f444cd60ffb3a
-    m_Address: Assets/_Game/Sound/treeDead.wav
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Audio
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 0bab18109cc0d434fa35ed3a525ef1e2
-    m_Address: Assets/_Game/Sound/etfx_shoot_lightning2.wav
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Audio
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 561b6a4e69f38a745939dfa7fd2befab
-    m_Address: Assets/_Game/Sound/etfx_shoot_fireball2.wav
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Audio
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b4ce975868fff68458a47704dd4a8cdf
-    m_Address: Assets/_Game/Sound/etfx_shoot_energy04.wav
+  - m_GUID: 5052682f23f19384da5d743dc76ed64b
+    m_Address: Assets/_Game/Addressable Asset/Sound/etfx_spawn.wav
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 49fd8f26329a7d447b6232131cfd5e71
-    m_Address: Assets/_Game/Sound/etfx_shoot_soul.wav
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Audio
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ce4eab13c40dd5c46983f3e002a4f869
-    m_Address: Assets/_Game/Sound/etfx_explosion_poisoncloud.wav
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Audio
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5052682f23f19384da5d743dc76ed64b
-    m_Address: Assets/_Game/Sound/etfx_spawn.wav
+    m_Address: Assets/_Game/Addressable Asset/Sound/etfx_shoot_soul.wav
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 101106cd810615041bb13f121e59a2d7
-    m_Address: Assets/_Game/Sound/etfx_shoot_magic.wav
+    m_Address: Assets/_Game/Addressable Asset/Sound/etfx_shoot_magic.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0bab18109cc0d434fa35ed3a525ef1e2
+    m_Address: Assets/_Game/Addressable Asset/Sound/etfx_shoot_lightning2.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 561b6a4e69f38a745939dfa7fd2befab
+    m_Address: Assets/_Game/Addressable Asset/Sound/etfx_shoot_fireball2.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b4ce975868fff68458a47704dd4a8cdf
+    m_Address: Assets/_Game/Addressable Asset/Sound/etfx_shoot_energy04.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4686de3506c101f43a9393cea35fbe13
+    m_Address: Assets/_Game/Addressable Asset/Sound/etfx_shoot_energy03.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ce4eab13c40dd5c46983f3e002a4f869
+    m_Address: Assets/_Game/Addressable Asset/Sound/etfx_explosion_poisoncloud.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4e9bff56ee93c6f42b214141e44e763d
+    m_Address: Assets/_Game/Addressable Asset/Sound/etfx_explosion_plasma.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 32f565ba94f200f49adb407cce64e873
+    m_Address: Assets/_Game/Addressable Asset/Sound/etfx_explosion_magic.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 074cee5e8624aa4428300be00e1d2bd2
+    m_Address: Assets/_Game/Addressable Asset/Sound/etfx_explosion_laser.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3fb856f9843426e4d9c7ef7864aa17ff
+    m_Address: Assets/_Game/Addressable Asset/Sound/boss1slam.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a36c0d4fe500082469a8359da5d3fec5
+    m_Address: Assets/_Game/Addressable Asset/Sound/BearDead.mp3
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio

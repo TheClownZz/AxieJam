@@ -110,9 +110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8566a7ff461dd4e43a38be607a53db3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitClip: {fileID: 0}
   bulletRender: {fileID: 4213681387588997435}
   weapon: {fileID: 0}
+  audioGetter: {fileID: 8367447620648024072, guid: 780da6594e17abd4bb0d2fd4dbb1ea7f, type: 3}
 --- !u!1 &7671896170673365986
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,18 +210,6 @@ PrefabInstance:
       value: ExplosionNovaSoftFire
       objectReference: {fileID: 0}
     - target: {fileID: 4748011548503308, guid: 70142c574eda8c946afcd53b4ac828d8, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4748011548503308, guid: 70142c574eda8c946afcd53b4ac828d8, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4748011548503308, guid: 70142c574eda8c946afcd53b4ac828d8, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4748011548503308, guid: 70142c574eda8c946afcd53b4ac828d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -261,33 +249,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4748011548503308, guid: 70142c574eda8c946afcd53b4ac828d8, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 199419555383610722, guid: 70142c574eda8c946afcd53b4ac828d8, type: 3}
-      propertyPath: m_SortingOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 199516726361932834, guid: 70142c574eda8c946afcd53b4ac828d8, type: 3}
-      propertyPath: m_SortingOrder
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 199803454817424124, guid: 70142c574eda8c946afcd53b4ac828d8, type: 3}
-      propertyPath: m_SortingOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 199922442617840762, guid: 70142c574eda8c946afcd53b4ac828d8, type: 3}
-      propertyPath: m_SortingOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 199965996128782606, guid: 70142c574eda8c946afcd53b4ac828d8, type: 3}
-      propertyPath: m_SortingOrder
-      value: 20
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 108724315285832388, guid: 70142c574eda8c946afcd53b4ac828d8, type: 3}
-    - {fileID: 114297119657385916, guid: 70142c574eda8c946afcd53b4ac828d8, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

@@ -9,7 +9,7 @@ public class PlayerGun : Weapon
     [SerializeField] protected float force = 300;
     [SerializeField] GameObject gunFx;
 
-    [SerializeField] AssetGetter audioGetter;
+    [SerializeField] AudioGetter attackClipGetter;
 
     protected float damageRate = 1;
     protected float cachedDamageRate;
@@ -17,19 +17,13 @@ public class PlayerGun : Weapon
     protected bool isActive = false;
     CameraShake cameraShake;
 
-    protected virtual void Awake()
-    {
-        audioGetter.OnGetAsset = (audio) =>
-        {
-            attackClip = (AudioClip)audio;
-        };
-        audioGetter.LoadAsset();
-    }
     public override void OnInits(Character characterControl)
     {
         base.OnInits(characterControl);
         cameraShake = Camera.main.GetComponent<CameraShake>();
         cachedDamageRate = damageRate;
+
+        attackClip = attackClipGetter.clip;
     }
     public override void OnAttack()
     {

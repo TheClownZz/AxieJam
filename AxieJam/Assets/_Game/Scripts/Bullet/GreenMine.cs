@@ -6,7 +6,7 @@ public class GreenMine : EnemyBullet
 {
     [SerializeField] List<GameObject> objRenderList;
     [SerializeField] ParticleSystem fx;
-    [SerializeField] AudioClip explosionClip;
+    [SerializeField] AudioGetter audioGetter;
 
     public override void OnInits(Weapon weapon, float speed, Vector3 dir)
     {
@@ -24,11 +24,9 @@ public class GreenMine : EnemyBullet
 
     public override void Clear()
     {
-        Debug.LogError("Clear 2");
-
         fx.Play();
         SetCol(false);
-        AudioManager.Instance.PlaySound(explosionClip);
+        AudioManager.Instance.PlaySound(audioGetter.clip);
         foreach(GameObject obj in objRenderList)
         {
             obj.SetActive(false);

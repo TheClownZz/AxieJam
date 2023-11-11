@@ -8,25 +8,15 @@ public class BossBigSlam : BossAttack
     [SerializeField] protected ParticleSystem fxSlam;
     [SerializeField] protected Transform wpTf;
     [SerializeField] protected Transform exposionPrefab;
-    [SerializeField] protected AssetGetter explosionClipGetter;
+    [SerializeField] protected AudioGetter explosionClipGetter;
 
     [SerializeField] protected float radius = 3f;
     [SerializeField] float explosionTime = 1f;
     protected float attackSize = 2;
     protected float damageRate;
     protected int numberExplosion;
-    protected AudioClip explosionClip;
     protected List<Transform> spawnList = new List<Transform>();
 
-    protected override void Awake()
-    {
-        base.Awake();
-        explosionClipGetter.OnGetAsset = (audio) =>
-        {
-            explosionClip = (AudioClip)audio;
-        };
-        explosionClipGetter.LoadAsset();
-    }
     public override void OnInits(Character enemy)
     {
         base.OnInits(enemy);
@@ -56,8 +46,8 @@ public class BossBigSlam : BossAttack
         fxSlam.Play();
         fxSlam.transform.position = wpTf.transform.position;
 
-        if (attackClip)
-            AudioManager.Instance.PlaySound(attackClip);
+        if (attackClipGetter.clip)
+            AudioManager.Instance.PlaySound(attackClipGetter.clip);
         GameManager.Instance.DelayedCall(0.1f, () =>
         {
             Player player = GameManager.Instance.GetCurrentPlayer();
@@ -95,7 +85,7 @@ public class BossBigSlam : BossAttack
             GameManager.Instance.DelayedCall(delayWarning + delay * i, () =>
             {
 
-                AudioManager.Instance.PlaySound(explosionClip);
+                AudioManager.Instance.PlaySound(explosionClipGetter.clip);
                 PoolManager.Instance.DespawnObject(spawnList[index]);
                 Bullet bullet = PoolManager.Instance.SpawnObject(exposionPrefab).GetComponent<Bullet>();
                 bullet.transform.SetParent(GameManager.Instance.bulletSpawner, false);

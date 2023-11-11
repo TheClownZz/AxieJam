@@ -294,6 +294,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7e27546474c1ce74997b28fa30e11ca0, type: 2}
   - {fileID: 11400000, guid: 26d0de8afd7bcd54d824208044632f46, type: 2}
   - {fileID: 11400000, guid: 7e2713768eba0b946b57272dba5e3c4d, type: 2}
+  - {fileID: 11400000, guid: f5044f562c6a13c44a903c052c5d33a9, type: 2}
   - {fileID: 11400000, guid: f78bd3e8b039d824f9431917263aff44, type: 2}
   - {fileID: 11400000, guid: 501f0e6fb7d1d498384d1b43bcb7b56d, type: 2}
   - {fileID: 11400000, guid: e16c6f202aeaa3d4a84ac4ec1a248607, type: 2}
@@ -505,14 +506,31 @@ MonoBehaviour:
   loaderList:
   - sceneName: MenuScene
     controller: {fileID: 1677072966477655019}
-    assetReferenceList: []
+    getterList: []
   - sceneName: GameScene
     controller: {fileID: 5457273259345555208}
-    assetReferenceList:
-    - m_AssetGUID: fcfa53ce54acaae4eb2ad143f4e308e2
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
+    getterList:
+    - {fileID: 110309579138009963, guid: b9bffd05865b5ca41a541e207d7b2c06, type: 3}
+    - {fileID: 3774543478236528738, guid: 6adb54619d7d3334eb0e945cd4a3ecc8, type: 3}
+    - {fileID: 110309579138009963, guid: 4d17b4f7a7ce9994db99e4fc865c00b7, type: 3}
+    - {fileID: 110309579138009963, guid: c90e24f8e02c5f142be1ba224a97f07e, type: 3}
+    - {fileID: 8367447620648024072, guid: 780da6594e17abd4bb0d2fd4dbb1ea7f, type: 3}
+    - {fileID: 4882474826765419975, guid: 67e80b1a00348b347ab4759f9393805a, type: 3}
+    - {fileID: 1352641503417191230, guid: dabebc2784aecc04ba0a672310a84a9c, type: 3}
+    - {fileID: 7834545240045170778, guid: cecca0495e3fe344cbe9e91cfa891a39, type: 3}
+    - {fileID: 3969814520081645276, guid: 764b01ad9f7ca284282dcb5d73108659, type: 3}
+    - {fileID: 793761494229070171, guid: 5a17eb1ff0c913045b3d4f9c68d58773, type: 3}
+    - {fileID: 2838184430211540789, guid: a5de023c9db6b9d4694108cd6ec5e4f2, type: 3}
+    - {fileID: 2687628689591672846, guid: 6a25c9bddb6e35643879aec6e9ef1850, type: 3}
+    - {fileID: 2979274782273838664, guid: 05610db11303630489610f10f7832094, type: 3}
+    - {fileID: 2382659821902971991, guid: e7a10f6d0800345458cdf49a2e82bb51, type: 3}
+    - {fileID: 5891263889014323400, guid: f8c95c406fe6b644aa3d3247e89278f8, type: 3}
+    - {fileID: 2630181757316861890, guid: 509d44cfe0a198546b9dea41315de8af, type: 3}
+    - {fileID: 7717345734546424218, guid: fdb42fbd7e90d6d41aad13fc3266a66c, type: 3}
+    - {fileID: 5811445325453042717, guid: d8db63fdde132ae49a6726df9062de9f, type: 3}
+    - {fileID: 5661324370409326797, guid: 76809e6b6dd11794fbc23a4d51b34875, type: 3}
+    - {fileID: 6930487803619394330, guid: 4796a409e87b05548935a95fe2f2518a, type: 3}
+    - {fileID: 110309579138009963, guid: 80f6f0430ad82ee45a672e4670b4b0ba, type: 3}
 --- !u!1 &7667759319433783089
 GameObject:
   m_ObjectHideFlags: 0

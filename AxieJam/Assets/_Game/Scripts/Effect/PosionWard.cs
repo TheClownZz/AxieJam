@@ -6,17 +6,14 @@ public class PosionWard : HealingWard
     [SerializeField] float slowTime = 0.5f;
     [SerializeField] float slowRate = 0.5f;
     [SerializeField] AudioSource audioSource;
-    protected override void Awake()
+    private void Awake()
     {
-        audioGetter.OnGetAsset = (audio) =>
-        {
-            audioSource.clip = (AudioClip)audio;
-        };
-        audioGetter.LoadAsset();
+        audioSource.clip = audioGetter.clip;
     }
     protected override void OnActive()
     {
         col2d.enabled = true;
+
         GameManager.Instance.DelayedCall(cooldown / 2, () =>
         {
             col2d.enabled = false;

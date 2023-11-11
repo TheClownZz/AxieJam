@@ -4,9 +4,9 @@ using DG.Tweening;
 public class Enemy : Character
 {
     const float timeDelayDespawn = 1.5f;
-    [SerializeField] AssetGetter audioGetter;
-
     [SerializeField] float spawItemTime = 1f;
+    [SerializeField] protected  AudioGetter deadClipGetter;
+
 
     protected Transform spawnFx;
     protected Tween spawnTween;
@@ -16,16 +16,7 @@ public class Enemy : Character
 
     [HideInInspector] public WaveStat waveStat;
     [HideInInspector] public float currspawItemTime;
-    protected AudioClip deadClip;
 
-    private void Awake()
-    {
-        audioGetter.OnGetAsset = (audio) =>
-        {
-            deadClip = (AudioClip)audio;
-        };
-        audioGetter.LoadAsset();
-    }
     public override void OnInit()
     {
         base.OnInit();
@@ -91,7 +82,7 @@ public class Enemy : Character
 
         itemTween = GameManager.Instance.DelayedCall(currspawItemTime, () =>
         {
-            SpawnItem(deadClip);
+            SpawnItem(deadClipGetter.clip);
         });
     }
 

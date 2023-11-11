@@ -4,6 +4,7 @@ public class PotionItem : MonoBehaviour
 {
     [SerializeField] Transform fx;
     [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] AudioGetter audioGetter;
     PotionConfig config;
 
     public void SetConfig(PotionConfig config)
@@ -26,6 +27,8 @@ public class PotionItem : MonoBehaviour
             {
                 PoolManager.Instance.DespawnObject(clone);
             });
+            AudioManager.Instance.PlaySound(audioGetter.clip);
+
         }
     }
 }

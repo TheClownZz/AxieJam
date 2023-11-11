@@ -227,38 +227,6 @@ MonoBehaviour:
   control: {fileID: 0}
   target: {fileID: 0}
   gun: {fileID: 9204217921828880337}
---- !u!1 &5759665668444830171
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6999281498317916547}
-  m_Layer: 7
-  m_Name: AssetGetter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6999281498317916547
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5759665668444830171}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1573756951271141555}
-  m_Father: {fileID: 8911379269055794545}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6947929414499229399
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,55 +259,6 @@ Transform:
   - {fileID: 3224924550898990300}
   m_Father: {fileID: 8911379269055794545}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7128448465185296379
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1573756951271141555}
-  - component: {fileID: 7171004336887197295}
-  m_Layer: 7
-  m_Name: DeadClip
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1573756951271141555
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7128448465185296379}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6999281498317916547}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7171004336887197295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7128448465185296379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3f4a8e5a038ef241994557a317e2ddd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  assetReference:
-    m_AssetGUID: 6f1be2915b1d1ed488800be78f7e97c8
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
 --- !u!1 &7133891756050461585
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,10 +352,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8911379269055794545}
+  - component: {fileID: 257800880118908662}
   - component: {fileID: 6424210748062074210}
   - component: {fileID: 9074905401213251309}
   - component: {fileID: -5443143430796421240}
-  - component: {fileID: 257800880118908662}
   - component: {fileID: 5211071208203465144}
   - component: {fileID: 5394943965421945067}
   m_Layer: 8
@@ -462,78 +381,8 @@ Transform:
   - {fileID: 2695216860031690762}
   - {fileID: 8015173986889032469}
   - {fileID: 1432684468164113895}
-  - {fileID: 6999281498317916547}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6424210748062074210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8911379269055794558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ff834006e62b7544977371889b9252f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isDead: 0
-  isDisable: 0
-  isKnockBack: 0
-  body: {fileID: 2695216860031690762}
-  stat:
-    hp: 0
-    regen: 0
-    armor: 0
-    damage: 0
-    critRate: 0
-    critDamage: 0
-    attackSpeed: 0
-    moveSpeed: 0
-    lifeSteal: 0
-    dodge: 0
-  spineController: {fileID: 8387529452460821212}
-  componentList:
-  - {fileID: 9074905401213251309}
-  - {fileID: -5443143430796421240}
-  - {fileID: 5211071208203465144}
-  - {fileID: 6465875842576101454}
-  - {fileID: 4862453717967239322}
-  deadClip: {fileID: 8300000, guid: 6f1be2915b1d1ed488800be78f7e97c8, type: 3}
-  audioGetter: {fileID: 7171004336887197295}
-  spawItemTime: 0.25
-  waveStat:
-    hpRate: 1
-    damageRate: 1
-  currspawItemTime: 0
---- !u!114 &9074905401213251309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8911379269055794558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f23b52b7899bef8428df83b9f408dae7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  control: {fileID: 0}
-  currentHp: 0
---- !u!114 &-5443143430796421240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8911379269055794558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9678b54506e89840ba467b93bb1c982, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  control: {fileID: 0}
-  effectList: []
 --- !u!58 &257800880118908662
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -569,6 +418,74 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.2}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &6424210748062074210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8911379269055794558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff834006e62b7544977371889b9252f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDead: 0
+  isDisable: 0
+  isKnockBack: 0
+  body: {fileID: 2695216860031690762}
+  stat:
+    hp: 0
+    regen: 0
+    armor: 0
+    damage: 0
+    critRate: 0
+    critDamage: 0
+    attackSpeed: 0
+    moveSpeed: 0
+    lifeSteal: 0
+    dodge: 0
+  spineController: {fileID: 8387529452460821212}
+  componentList:
+  - {fileID: 9074905401213251309}
+  - {fileID: -5443143430796421240}
+  - {fileID: 5211071208203465144}
+  - {fileID: 6465875842576101454}
+  - {fileID: 4862453717967239322}
+  spawItemTime: 0.25
+  deadClipGetter: {fileID: 2630181757316861890, guid: 509d44cfe0a198546b9dea41315de8af, type: 3}
+  waveStat:
+    hpRate: 1
+    damageRate: 1
+  currspawItemTime: 0
+--- !u!114 &9074905401213251309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8911379269055794558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f23b52b7899bef8428df83b9f408dae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  control: {fileID: 0}
+  currentHp: 0
+--- !u!114 &-5443143430796421240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8911379269055794558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9678b54506e89840ba467b93bb1c982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  control: {fileID: 0}
+  effectList: []
 --- !u!114 &5211071208203465144
 MonoBehaviour:
   m_ObjectHideFlags: 0

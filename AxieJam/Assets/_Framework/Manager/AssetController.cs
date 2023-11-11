@@ -2,6 +2,7 @@ using Sirenix.OdinInspector;
 using Skywatch.AssetManagement;
 using System;
 using System.Collections.Generic;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -11,37 +12,38 @@ public class AssetLoader
 {
     public string sceneName;
     public AssetController controller;
-    [SerializeField] protected List<AssetReference> assetReferenceList;
+    [SerializeField] protected List<AssetGetter> getterList;
 
-    protected List<AsyncOperationHandle> handleList;
+    protected List<AsyncOperationHandle<UnityEngine.Object>> handleList;
 
     public AssetLoader()
     {
-        assetReferenceList = new List<AssetReference>();
-        handleList = new List<AsyncOperationHandle>();
+        getterList = new List<AssetGetter>();
+        handleList = new List<AsyncOperationHandle<UnityEngine.Object>>();
     }
 
-    public List<AssetReference> GetRefList()
+    public List<AssetGetter> GetRefList()
     {
-        return assetReferenceList;
+        return getterList;
     }
 
     public void LoadAsset(Action loadComplete = null)
     {
         Debug.LogError("Loading scene:" + sceneName);
-        controller.UpdateAssetList(assetReferenceList);
-        if (IsLoadAll())
+        controller.UpdateAssetList(getterList);
+        if (getterList.Count == 0)
         {
             loadComplete?.Invoke();
             return;
         }
 
-        foreach (AssetReference assetRef in assetReferenceList)
+        foreach (AssetGetter getter in getterList)
         {
             AsyncOperationHandle<UnityEngine.Object> loadHandle;
-            AssetManager.TryGetOrLoadObjectAsync(assetRef, out loadHandle);
+            AssetManager.TryGetOrLoadObjectAsync(getter.assetReference, out loadHandle);
             loadHandle.Completed += op =>
             {
+                getter.OnAssetLoaded(loadHandle);
                 if (IsLoadAll()) loadComplete?.Invoke();
             };
             handleList.Add(loadHandle);
@@ -53,7 +55,11 @@ public class AssetLoader
         for (int i = handleList.Count - 1; i >= 0; i--)
         {
             if (handleList[i].IsDone)
+            {
+                Debug.LogError("load done");
+                getterList[i].OnAssetLoaded(handleList[i]);
                 handleList.RemoveAt(i);
+            }
         }
 
         return handleList.Count == 0;
@@ -61,16 +67,16 @@ public class AssetLoader
 
     public void UnLoadAsset()
     {
-        foreach (AssetReference assetRef in assetReferenceList)
+        foreach (AssetGetter getter in getterList)
         {
-            AssetManager.Unload(assetRef);
+            AssetManager.Unload(getter.assetReference);
         }
         handleList.Clear();
     }
 }
 public class AssetController : MonoBehaviour
 {
-    public virtual void UpdateAssetList(List<AssetReference> assetReferenceList)
+    public virtual void UpdateAssetList(List<AssetGetter> getterList)
     {
 
     }

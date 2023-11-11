@@ -245,6 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fx: {fileID: 4295584574520772, guid: dd46de4320f3d1b4087b5f9c0a24ab36, type: 3}
   spriteRenderer: {fileID: 8073953996355844998}
+  audioGetter: {fileID: 2979274782273838664, guid: 05610db11303630489610f10f7832094, type: 3}
 --- !u!1 &653311014498091482
 GameObject:
   m_ObjectHideFlags: 0

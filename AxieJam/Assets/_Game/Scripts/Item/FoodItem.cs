@@ -4,6 +4,7 @@ public class FoodItem : MonoBehaviour
 {
     [SerializeField] Transform fx;
     [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] AudioGetter audioGetter;
     FoodConfig config;
 
     public void SetConfig(FoodConfig config)
@@ -27,6 +28,7 @@ public class FoodItem : MonoBehaviour
             {
                 PoolManager.Instance.DespawnObject(clone);
             });
+            AudioManager.Instance.PlaySound(audioGetter.clip);
         }
     }
 }

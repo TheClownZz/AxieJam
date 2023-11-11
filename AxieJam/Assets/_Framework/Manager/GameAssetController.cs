@@ -6,8 +6,8 @@ using UnityEngine.AddressableAssets;
 
 public class GameAssetController : AssetController
 {
-    public override void UpdateAssetList(List<AssetReference> assetReferenceList)
+    public override void UpdateAssetList(List<AssetGetter> getterList)
     {
-        base.UpdateAssetList(assetReferenceList);
+        base.UpdateAssetList(getterList);
     }
 }

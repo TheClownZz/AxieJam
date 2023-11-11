@@ -9,7 +9,7 @@ public class PlayerHp : PlayerComponent, ITakeDamage
     [SerializeField] float hitTime = 0.2f;
     [SerializeField] float currentHp;
     [SerializeField] ItemAvt itemAvt;
-    [SerializeField] AssetGetter audioGetter;
+    [SerializeField] AudioGetter hitClipGetter;
     float maxHp;
     float regen;
     public bool allowTakeDamge;
@@ -19,16 +19,10 @@ public class PlayerHp : PlayerComponent, ITakeDamage
     CameraShake camShake;
     Coroutine hitCoroutine;
     Coroutine regenCoroutine;
-    AudioClip hitClip;
     private void Awake()
     {
         delay = new WaitForSeconds(1);
         camShake = Camera.main.GetComponent<CameraShake>();
-        audioGetter.OnGetAsset = (audio) =>
-        {
-            hitClip = (AudioClip)audio;
-        };
-        audioGetter.LoadAsset();
     }
     public override void OnInits(Character player)
     {
@@ -76,7 +70,7 @@ public class PlayerHp : PlayerComponent, ITakeDamage
         camShake.BigShake();
         Sethp(currentHp - damage);
         hitCoroutine = StartCoroutine(Ihit());
-        AudioManager.Instance.PlaySound(hitClip);
+        AudioManager.Instance.PlaySound(hitClipGetter.clip);
 
         if (currentHp <= 0)
         {

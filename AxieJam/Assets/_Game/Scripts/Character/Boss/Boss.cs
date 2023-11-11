@@ -72,7 +72,7 @@ public class Boss : Enemy
             GameManager.Instance.levelController.RemoveEnemy(this);
         });
 
-        if (deadClip != null)
-            AudioManager.Instance.PlaySound(deadClip);
+        if (deadClipGetter.clip != null)
+            AudioManager.Instance.PlaySound(deadClipGetter.clip);
     }
 }

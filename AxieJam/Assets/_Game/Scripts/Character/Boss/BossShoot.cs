@@ -32,7 +32,7 @@ public class BossShoot : BossAttack
         if (target)
             gun.targetPos = target.transform.position;
         gun.SpawnBullet();
-        if (attackClip)
-            AudioManager.Instance.PlaySound(attackClip);
+        if (attackClipGetter.clip)
+            AudioManager.Instance.PlaySound(attackClipGetter.clip);
     }
 }
