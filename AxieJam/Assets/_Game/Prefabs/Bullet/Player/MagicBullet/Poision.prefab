@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7799813976895212220
 Transform:
   m_ObjectHideFlags: 0
@@ -82,8 +82,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d3ad2a0c7d7884ba648d8cd2792204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fxHeal: {fileID: 0}
-  audioGetter: {fileID: 0}
+  fxHeal: {fileID: 3881845929658346825}
+  audioGetter: {fileID: 4882474826765419975, guid: 67e80b1a00348b347ab4759f9393805a, type: 3}
   col2d: {fileID: 1611097591134594435}
   slowTime: 0.5
   slowRate: 0.5

@@ -15,7 +15,6 @@ public class BlueGun : PlayerGun
             b.transform.position = shooter.transform.position;
             b.transform.rotation = Quaternion.Euler(0, 0, transform.eulerAngles.z + angle);
             b.OnInits(this, butlletSpeed, -b.transform.right);
-            b.SetSprite(bulletSprite);
             b.SetDamageRate(damageRate);
 
         }

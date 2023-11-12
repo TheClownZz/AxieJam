@@ -3,12 +3,6 @@ using UnityEngine;
 
 public class Explosion : Bullet
 {
-    [SerializeField] AudioGetter audioGetter;
-
-    private void OnEnable()
-    {
-        AudioManager.Instance.PlaySound(audioGetter.clip);
-    }
     protected override void Update()
     {
     }

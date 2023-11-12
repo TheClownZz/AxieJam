@@ -5,7 +5,6 @@ public class Bullet : MonoBehaviour, ICreateDamage
     const int maxHit = 1;
     protected Vector3 dir;
     protected float damageRate = 1;
-    [SerializeField] protected SpriteRenderer bulletRender;
 
     [HideInInspector] public Weapon weapon;
 
@@ -100,10 +99,7 @@ public class Bullet : MonoBehaviour, ICreateDamage
         }
     }
 
-    public void SetSprite(Sprite sprite)
-    {
-        bulletRender.sprite = sprite;
-    }
+
 
     // only for enemy -- player do in player hp
     protected void OnTriggerEnter2D(Collider2D collision)

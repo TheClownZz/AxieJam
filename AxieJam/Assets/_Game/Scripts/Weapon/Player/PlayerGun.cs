@@ -40,7 +40,6 @@ public class PlayerGun : Weapon
         b.transform.position = shooter.transform.position;
         b.transform.rotation = shooter.transform.rotation;
         b.OnInits(this, butlletSpeed, -b.transform.right);
-        b.SetSprite(bulletSprite);
         b.SetDamageRate(damageRate);
         return b;
     }

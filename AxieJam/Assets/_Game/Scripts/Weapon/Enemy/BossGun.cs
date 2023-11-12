@@ -23,7 +23,7 @@ public class BossGun : EnemyGun
             float angle = angleRate * (i - offset);
             Vector3 _dir = Quaternion.AngleAxis(angle, Vector3.forward) * dir;
 
-            Bullet b = PoolManager.Instance.SpawnObject(bulletPf.transform).GetComponent<Bullet>();
+            EnemyBullet b = PoolManager.Instance.SpawnObject(bulletPf.transform).GetComponent<EnemyBullet>();
             b.transform.SetParent(GameManager.Instance.bulletSpawner, false);
             b.transform.position = shooter.transform.position;
             b.OnInits(this, butlletSpeed, _dir);

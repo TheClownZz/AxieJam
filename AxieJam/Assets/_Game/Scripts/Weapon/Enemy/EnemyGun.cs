@@ -16,7 +16,7 @@ public class EnemyGun : Weapon
     public virtual Bullet SpawnBullet()
     {
         Vector3 dir = (targetPos - shooter.transform.position).normalized;
-        Bullet b = PoolManager.Instance.SpawnObject(bulletPf.transform).GetComponent<Bullet>();
+        EnemyBullet b = PoolManager.Instance.SpawnObject(bulletPf.transform).GetComponent<EnemyBullet>();
         b.transform.SetParent(GameManager.Instance.bulletSpawner);
         b.transform.position = shooter.transform.position;
         b.transform.rotation = shooter.transform.rotation;

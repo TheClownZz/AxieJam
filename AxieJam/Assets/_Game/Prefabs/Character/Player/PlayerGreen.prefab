@@ -644,10 +644,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: healingWard
       objectReference: {fileID: 0}
-    - target: {fileID: 336267759900283745, guid: c6307d4f86937e54b850a0c461703656, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1700266625724750466, guid: c6307d4f86937e54b850a0c461703656, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -688,10 +684,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7761659599616094004, guid: c6307d4f86937e54b850a0c461703656, type: 3}
-      propertyPath: audioGetter
-      value: 
-      objectReference: {fileID: 2979274782273838664, guid: 05610db11303630489610f10f7832094, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

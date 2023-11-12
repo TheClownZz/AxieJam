@@ -34,7 +34,6 @@ public class OrangeGun : PlayerGun
                 b.transform.localScale = Vector3.one;
                 b.transform.SetParent(circleList[0], true);
                 b.OnInits(this, 0, Vector3.zero);
-                b.SetSprite(bulletSprite);
                 b.SetDamageRate(damageRate);
                 bulletList.Add(b);
             }
@@ -52,7 +51,6 @@ public class OrangeGun : PlayerGun
                 b.transform.localScale = Vector3.one;
                 b.transform.SetParent(circleList[1], true);
                 b.OnInits(this, 0, Vector3.zero);
-                b.SetSprite(bulletSprite);
                 b.SetDamageRate(extraDamgeRate);
                 bulletList.Add(b);
             }
