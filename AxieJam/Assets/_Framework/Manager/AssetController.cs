@@ -9,22 +9,10 @@ public class AssetLoader
     public AssetController controller;
     [SerializeField] protected List<AssetGetter> getterList;
 
-    public void Inits()
-    {
-        foreach (AssetGetter getter in getterList)
-        {
-            getter.SetLoad(false);
-        }
-    }
     public void LoadAsset()
     {
         Debug.LogError("Loading scene:" + sceneName);
         controller.UpdateAssetList(getterList);
-        if (IsLoadAll())
-        {
-            return;
-        }
-
         foreach (AssetGetter getter in getterList)
         {
             getter.Load();

@@ -9,7 +9,6 @@ public class PlayerHp : PlayerComponent, ITakeDamage
     [SerializeField] float hitTime = 0.2f;
     [SerializeField] float currentHp;
     [SerializeField] ItemAvt itemAvt;
-    [SerializeField] AudioGetter hitClipGetter;
     float maxHp;
     float regen;
     public bool allowTakeDamge;
@@ -70,7 +69,7 @@ public class PlayerHp : PlayerComponent, ITakeDamage
         camShake.BigShake();
         Sethp(currentHp - damage);
         hitCoroutine = StartCoroutine(Ihit());
-        AudioManager.Instance.PlaySound(hitClipGetter.clip);
+        AudioManager.Instance.PlayOnceShot(AudioType.Hit);
 
         if (currentHp <= 0)
         {

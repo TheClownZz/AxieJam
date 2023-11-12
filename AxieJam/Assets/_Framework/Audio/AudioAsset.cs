@@ -10,6 +10,7 @@ public enum AudioType
     Item,
     LvUp,
     GAME_MUSIC,
+    Hit,
 }
 
 [CreateAssetMenu]

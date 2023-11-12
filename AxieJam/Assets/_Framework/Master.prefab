@@ -355,13 +355,7 @@ MonoBehaviour:
     getterList: []
   - sceneName: GameScene
     controller: {fileID: 5457273259345555208}
-    getterList:
-    - {fileID: -546153424434335748, guid: 5471b9d6eeb117348a97386d6b343c7b, type: 3}
-    - {fileID: -546153424434335748, guid: 22a1c72d8b1d9f342a3600a0353dbfc5, type: 3}
-    - {fileID: -546153424434335748, guid: 0d22ec563b838ab4cad72ab1efe73364, type: 3}
-    - {fileID: -546153424434335748, guid: 08522fe0db4731840bef3b4c0315df66, type: 3}
-    - {fileID: -546153424434335748, guid: 6c31d100c125c194486790c61d905526, type: 3}
-    - {fileID: -546153424434335748, guid: cb0e91f1310b54942a24cd70f09d10c5, type: 3}
+    getterList: []
 --- !u!1 &7667759319433783089
 GameObject:
   m_ObjectHideFlags: 0

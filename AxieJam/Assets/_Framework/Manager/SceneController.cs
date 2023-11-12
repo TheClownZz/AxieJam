@@ -12,13 +12,6 @@ public class SceneController : MonoSingleton<SceneController>
 
     AssetLoader currentLoader;
 
-    private void Awake()
-    {
-        foreach(var loader in loaderList)
-        {
-            loader.Inits();
-        }
-    }
     public void LoadMenu()
     {
         currentLoader?.UnLoadAsset();
