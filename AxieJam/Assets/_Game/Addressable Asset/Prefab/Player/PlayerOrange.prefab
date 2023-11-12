@@ -471,7 +471,6 @@ MonoBehaviour:
   hitTime: 0.2
   currentHp: 0
   itemAvt: {fileID: 0}
-  hitClipGetter: {fileID: 2382659821902971991, guid: e7a10f6d0800345458cdf49a2e82bb51, type: 3}
   allowTakeDamge: 0
 --- !u!114 &8915905001403885886
 MonoBehaviour:
@@ -558,14 +557,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04b2ae0ac66f66e4cb54dc7685796286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackClip: {fileID: 8300000, guid: 561b6a4e69f38a745939dfa7fd2befab, type: 3}
+  attackClip: {fileID: 8300000, guid: d34159815405e1b49aac10e499da173b, type: 3}
   effectDataList: []
   butlletSpeed: 22
   force: 500
   bulletPf: {fileID: 6161039371015719557, guid: 30acd15df14ad8647a9f5418a5ebbcd9, type: 3}
   shooter: {fileID: 1218697222805373011}
   gunFx: {fileID: 5088304390579951456}
-  attackClipGetter: {fileID: 3969814520081645276, guid: 764b01ad9f7ca284282dcb5d73108659, type: 3}
   circleBulletPrefab: {fileID: 5061255608990394047, guid: bf442612d38588147bd98d301b97596e, type: 3}
   speedList:
   - 175

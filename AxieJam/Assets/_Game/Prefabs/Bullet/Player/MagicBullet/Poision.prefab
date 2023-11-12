@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fxHeal: {fileID: 3881845929658346825}
-  activeClip: {fileID: 8300000, guid: ce4eab13c40dd5c46983f3e002a4f869, type: 3}
+  activeClip: {fileID: 8300000, guid: 3b138d2a9ae298147bc1d372330bba2b, type: 3}
   col2d: {fileID: 1611097591134594435}
   slowTime: 0.5
   slowRate: 0.5

@@ -46,16 +46,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b76d7afe644c05049852c584c2d511c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackClip: {fileID: 8300000, guid: 101106cd810615041bb13f121e59a2d7, type: 3}
+  attackClip: {fileID: 8300000, guid: 3e06c45e3372dd345b50a642fe86616d, type: 3}
   effectDataList: []
   butlletSpeed: 22
   force: 500
   bulletPf: {fileID: 6161039371015719557, guid: 6a09dae721babc14f99a79a7cc1ee679, type: 3}
   shooter: {fileID: 6968806356762508417}
   gunFx: {fileID: 3883062032405191634}
-  attackClipGetter: {fileID: 2838184430211540789, guid: a5de023c9db6b9d4694108cd6ec5e4f2, type: 3}
   exposionPrefab: {fileID: 4558091446817699207, guid: f90b600ebec1e08409551f6c3f990643, type: 3}
-  explosionClip: {fileID: 8300000, guid: 4e9bff56ee93c6f42b214141e44e763d, type: 3}
+  explosionClip: {fileID: 8300000, guid: 547411a6ed13917438e392d0fdb6add5, type: 3}
 --- !u!1 &4424165598337138926
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,7 +204,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 118070519520916897}
-  - component: {fileID: 1125310740396411379}
   m_Layer: 0
   m_Name: body
   m_TagString: Untagged
@@ -229,58 +227,6 @@ Transform:
   - {fileID: 3883062032405377988}
   m_Father: {fileID: 327087890184204588}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -10}
---- !u!212 &1125310740396411379
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5118584193262292840}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 11
-  m_Sprite: {fileID: 21300000, guid: f800dbc9c4b454b43b159f0ad20f0f3e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &7331739214876913811
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,7 +441,6 @@ MonoBehaviour:
   hitTime: 0.2
   currentHp: 0
   itemAvt: {fileID: 0}
-  hitClipGetter: {fileID: 2382659821902971991, guid: e7a10f6d0800345458cdf49a2e82bb51, type: 3}
   allowTakeDamge: 0
 --- !u!114 &8915905001403885886
 MonoBehaviour:
