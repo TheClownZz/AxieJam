@@ -45,14 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abed482437ff865469fd49d83deea347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackClip: {fileID: 8300000, guid: 0bab18109cc0d434fa35ed3a525ef1e2, type: 3}
+  attackClip: {fileID: 8300000, guid: 0a046c12cf3d7c14785351ae607bacdf, type: 3}
   effectDataList: []
   butlletSpeed: 22
   force: 500
   bulletPf: {fileID: 6161039371015719557, guid: 5617b726ed3394243a9c01b10dc55316, type: 3}
   shooter: {fileID: 8102825361258075458}
   gunFx: {fileID: 3408179404033021892}
-  attackClipGetter: {fileID: 793761494229070171, guid: 5a17eb1ff0c913045b3d4f9c68d58773, type: 3}
 --- !u!1 &2978818438145362108
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,7 +492,6 @@ MonoBehaviour:
   hitTime: 0.2
   currentHp: 0
   itemAvt: {fileID: 0}
-  hitClipGetter: {fileID: 2382659821902971991, guid: e7a10f6d0800345458cdf49a2e82bb51, type: 3}
   allowTakeDamge: 0
 --- !u!114 &8915905001403885886
 MonoBehaviour:
