@@ -3,28 +3,10 @@ using PathologicalGames;
 
 public class PoolManager : MonoSingleton<PoolManager>
 {
-    protected override void Initiate()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
 
     [SerializeField] PoolAsset poolAsset;
     [SerializeField] SpawnPool poolDestroy = null;
-    /*
-     * Dont despawn when game-end
-     */
-    [SerializeField] SpawnPool poolDontDestroy = null;
 
-    public Transform SpawnDontDestroy(Transform prefab)
-    {
-        if (prefab == null)
-        {
-            Debug.LogError("[error]Cant spawn, Missing prefab");
-            return null;
-        }
-        Transform clone = poolDontDestroy.Spawn(prefab);
-        return AssignPool(clone, poolDontDestroy);
-    }
 
     public Transform SpawnObject(PoolType poolType)
     {
