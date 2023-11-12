@@ -8,9 +8,6 @@ public class PlayerGun : Weapon
     [SerializeField] protected Transform shooter;
     [SerializeField] GameObject gunFx;
 
-
-    [SerializeField] AudioGetter attackClipGetter;
-
     protected float damageRate = 1;
     protected float cachedDamageRate;
 
@@ -22,12 +19,6 @@ public class PlayerGun : Weapon
         base.OnInits(characterControl);
         cameraShake = Camera.main.GetComponent<CameraShake>();
         cachedDamageRate = damageRate;
-
-        attackClip = attackClipGetter.clip;
-        Debug.LogError(attackClipGetter.isLoad);
-        Debug.LogError(attackClipGetter.name);
-        Debug.LogError(attackClipGetter.clip);
-
     }
     public override void OnAttack()
     {

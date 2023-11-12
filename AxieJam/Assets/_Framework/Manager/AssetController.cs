@@ -38,11 +38,9 @@ public class AssetLoader
 
             if (!getter.isLoad)
             {
-                Debug.LogError(getter.name);
                 return false;
             }
         }
-        Debug.LogError("IsLoadAll ok");
         return true;
     }
 

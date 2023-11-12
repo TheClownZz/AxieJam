@@ -55,6 +55,7 @@ MonoBehaviour:
   gunFx: {fileID: 3883062032405191634}
   attackClipGetter: {fileID: 2838184430211540789, guid: a5de023c9db6b9d4694108cd6ec5e4f2, type: 3}
   exposionPrefab: {fileID: 4558091446817699207, guid: f90b600ebec1e08409551f6c3f990643, type: 3}
+  explosionClip: {fileID: 8300000, guid: 4e9bff56ee93c6f42b214141e44e763d, type: 3}
 --- !u!1 &4424165598337138926
 GameObject:
   m_ObjectHideFlags: 0

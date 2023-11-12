@@ -11,10 +11,6 @@ public class AssetGetter : MonoBehaviour
 
     public void SetLoad(bool isLoad)
     {
-        if (isLoad)
-        {
-            Debug.LogError("SetLoad ok:" + name);
-        }
         this.isLoad = isLoad;
     }
     public virtual void Load()
