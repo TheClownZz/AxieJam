@@ -76,7 +76,7 @@ public class ScreenGame : ScreenBase
     public void LoadMenu()
     {
         tmpBackHome.text = "Back Home";
-        AsyncOperation async = SceneSwitcher.Instance.LoadMenuAsync();
+        AsyncOperation async = SceneController.Instance.LoadMenuAsync();
         async.allowSceneActivation = false;
         StartCoroutine(ICompleteLoad(async));
     }

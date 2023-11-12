@@ -1,11 +1,6 @@
-using Sirenix.OdinInspector;
-using Skywatch.AssetManagement;
 using System;
 using System.Collections.Generic;
-using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
 
 [System.Serializable]
 public class AssetLoader
@@ -14,44 +9,40 @@ public class AssetLoader
     public AssetController controller;
     [SerializeField] protected List<AssetGetter> getterList;
 
-    public AssetLoader()
+    public void Inits()
     {
-        getterList = new List<AssetGetter>();
+        foreach (AssetGetter getter in getterList)
+        {
+            getter.SetLoad(false);
+        }
     }
-
-    public List<AssetGetter> GetRefList()
-    {
-        return getterList;
-    }
-
-    public void LoadAsset(Action loadComplete = null)
+    public void LoadAsset()
     {
         Debug.LogError("Loading scene:" + sceneName);
         controller.UpdateAssetList(getterList);
         if (IsLoadAll())
         {
-            loadComplete?.Invoke();
             return;
         }
 
         foreach (AssetGetter getter in getterList)
         {
-            AsyncOperationHandle<UnityEngine.Object> loadHandle;
-            AssetManager.TryGetOrLoadObjectAsync(getter.assetReference, out loadHandle);
-            loadHandle.Completed += op =>
-            {
-                getter.OnAssetLoaded(loadHandle);
-                if (IsLoadAll()) loadComplete?.Invoke();
-            };
+            getter.Load();
         }
     }
 
     public bool IsLoadAll()
     {
-       foreach(AssetGetter getter in getterList)
+        foreach (AssetGetter getter in getterList)
         {
-            if (!AssetManager.IsLoaded(getter.assetReference)) return false;
+
+            if (!getter.isLoad)
+            {
+                Debug.LogError(getter.name);
+                return false;
+            }
         }
+        Debug.LogError("IsLoadAll ok");
         return true;
     }
 
@@ -59,7 +50,7 @@ public class AssetLoader
     {
         foreach (AssetGetter getter in getterList)
         {
-            AssetManager.Unload(getter.assetReference);
+            getter.UnLoad();
         }
     }
 }

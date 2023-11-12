@@ -17,7 +17,7 @@ MonoBehaviour:
   axieName: Blue
   skillName: MULTISHOOT
   discription: Releases a flurry of bullets  per attack
-  prefab: {fileID: 8915905001403885883, guid: 1f20aad660854d345800d09714c01fa9, type: 3}
+  prefabGetter: {fileID: -546153424434335748, guid: 5471b9d6eeb117348a97386d6b343c7b, type: 3}
   data:
     type: 0
     hp: 330

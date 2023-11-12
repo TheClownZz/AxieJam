@@ -8,7 +8,7 @@ public class PosionWard : HealingWard
     [SerializeField] AudioSource audioSource;
     private void Awake()
     {
-        audioSource.clip = audioGetter.clip;
+        audioSource.clip = activeClip;
     }
     protected override void OnActive()
     {

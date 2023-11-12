@@ -143,6 +143,42 @@ MonoBehaviour:
     m_SerializedLabels:
     - Audio
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0413da3a91604214a8c24e8b66b7a058
+    m_Address: Assets/_Game/Addressable Asset/Prefab/Player/PlayerRed.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 54a22edf982095c4ab4dc647a53611c2
+    m_Address: Assets/_Game/Addressable Asset/Prefab/Player/PlayerPurple.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 13fac01dc75567840a53f00bb162b15b
+    m_Address: Assets/_Game/Addressable Asset/Prefab/Player/PlayerPink.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7cc54d19a1ab2d744b8b80f2ad10b22c
+    m_Address: Assets/_Game/Addressable Asset/Prefab/Player/PlayerOrange.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 58d55a6873ba85b4d8ec737967622eef
+    m_Address: Assets/_Game/Addressable Asset/Prefab/Player/PlayerGreen.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1f20aad660854d345800d09714c01fa9
+    m_Address: Assets/_Game/Addressable Asset/Prefab/Player/PlayerBlue.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 1ce191bf3f2e9ec489bb6af36ad11011, type: 2}
   m_SchemaSet:

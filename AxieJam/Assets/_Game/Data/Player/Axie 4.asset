@@ -17,7 +17,7 @@ MonoBehaviour:
   axieName: Purple
   skillName: POISON GAS
   discription: Create poison gas that cause damage to enemy and slow them
-  prefab: {fileID: 8915905001403885883, guid: 54a22edf982095c4ab4dc647a53611c2, type: 3}
+  prefabGetter: {fileID: -546153424434335748, guid: 6c31d100c125c194486790c61d905526, type: 3}
   data:
     type: 4
     hp: 380

@@ -17,7 +17,7 @@ MonoBehaviour:
   axieName: Green
   skillName: HEALING
   discription: Creates a circle that restores vitality
-  prefab: {fileID: 8915905001403885883, guid: 58d55a6873ba85b4d8ec737967622eef, type: 3}
+  prefabGetter: {fileID: -546153424434335748, guid: 22a1c72d8b1d9f342a3600a0353dbfc5, type: 3}
   data:
     type: 3
     hp: 400

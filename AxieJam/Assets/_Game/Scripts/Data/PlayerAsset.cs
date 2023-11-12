@@ -103,7 +103,7 @@ public class PlayerAsset : GameAsset
     public string axieName;
     public string skillName;
     public string discription;
-    public Player prefab;
+    public GameObjectGetter prefabGetter;
     public PlayerConfig data;
 
 }

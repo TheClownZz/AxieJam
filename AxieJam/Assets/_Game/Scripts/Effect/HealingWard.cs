@@ -8,8 +8,7 @@ public class HealingWard : MonoBehaviour
     protected float cooldown;
     protected float activeValue;
     [SerializeField] Transform fxHeal;
-    [SerializeField] protected AudioGetter audioGetter;
-
+    [SerializeField] protected AudioClip activeClip;
     public void OnInits(float activeValue, float cooldown, float duarion)
     {
         gameObject.SetActive(true);
@@ -45,7 +44,7 @@ public class HealingWard : MonoBehaviour
             {
                 PoolManager.Instance.DespawnObject(clone);
             });
-            AudioManager.Instance.PlaySound(audioGetter.clip);
+            AudioManager.Instance.PlaySound(activeClip);
             target.GetCom<PlayerHp>().RegenPercen(activeValue);
         }
     }

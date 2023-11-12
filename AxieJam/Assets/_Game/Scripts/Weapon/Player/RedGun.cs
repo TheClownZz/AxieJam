@@ -4,6 +4,7 @@ using UnityEngine;
 public class RedGun : PlayerGun
 {
     [SerializeField] Transform exposionPrefab;
+    [SerializeField] AudioClip explosionClip;
     Coroutine coroutine;
     public override void ActiveSKill(SkillConfig config)
     {
@@ -29,6 +30,8 @@ public class RedGun : PlayerGun
             bullet.transform.localScale = Vector3.one * size;
             bullet.OnInits(this, 0, Vector3.zero);
             bullet.SetDamageRate(damage);
+
+            AudioManager.Instance.PlaySound(explosionClip);
             GameManager.Instance.DelayedCall(0.2f, () =>
             {
                 bullet.SetCol(false);

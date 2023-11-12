@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9120714d8e2a1fc4194b9f8977fdabe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLoad: 0
   assetReference:
     m_AssetGUID: ce4eab13c40dd5c46983f3e002a4f869
     m_SubObjectName: 

@@ -1,14 +1,31 @@
 using Skywatch.AssetManagement;
-using System;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class AssetGetter : MonoBehaviour
 {
+    [HideInInspector] public bool isLoad;
     public AssetReference assetReference;
-   
-    public virtual void OnAssetLoaded(AsyncOperationHandle<UnityEngine.Object> handle)
+    public System.Action OnComplete;
+
+    public void SetLoad(bool isLoad)
     {
+        if (isLoad)
+        {
+            Debug.LogError("SetLoad ok:" + name);
+        }
+        this.isLoad = isLoad;
+    }
+    public virtual void Load()
+    {
+        SetLoad(false);
+    }
+
+    public virtual void UnLoad()
+    {
+        SetLoad(false);
+        OnComplete = null;
+        AssetManager.Unload(assetReference);
     }
 }

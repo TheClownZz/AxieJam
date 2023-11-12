@@ -17,7 +17,7 @@ MonoBehaviour:
   axieName: Orange
   skillName: MAGIC CIRCLE
   discription: 'Creates magic circles arround axie that cause damage to enemy '
-  prefab: {fileID: 8915905001403885883, guid: 7cc54d19a1ab2d744b8b80f2ad10b22c, type: 3}
+  prefabGetter: {fileID: -546153424434335748, guid: 0d22ec563b838ab4cad72ab1efe73364, type: 3}
   data:
     type: 1
     hp: 450

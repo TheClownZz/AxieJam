@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1700266625724750466
 Transform:
   m_ObjectHideFlags: 0
@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fxHeal: {fileID: 422108, guid: ff672eaca96d32c419d7a1f1b0346e8d, type: 3}
-  audioGetter: {fileID: 2979274782273838664, guid: 05610db11303630489610f10f7832094, type: 3}
+  activeClip: {fileID: 8300000, guid: 5052682f23f19384da5d743dc76ed64b, type: 3}
 --- !u!1001 &2711729990744880187
 PrefabInstance:
   m_ObjectHideFlags: 0

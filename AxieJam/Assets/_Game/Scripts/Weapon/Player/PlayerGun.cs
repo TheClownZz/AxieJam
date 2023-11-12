@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class PlayerGun : Weapon
 {
+    [SerializeField] protected float butlletSpeed = 22f;
+    [SerializeField] protected float force = 300;
     [SerializeField] protected Bullet bulletPf;
     [SerializeField] protected Transform shooter;
-    [SerializeField] protected float butlletSpeed = 22f;
-    [SerializeField] protected Sprite bulletSprite;
-    [SerializeField] protected float force = 300;
     [SerializeField] GameObject gunFx;
+
 
     [SerializeField] AudioGetter attackClipGetter;
 
@@ -24,6 +24,10 @@ public class PlayerGun : Weapon
         cachedDamageRate = damageRate;
 
         attackClip = attackClipGetter.clip;
+        Debug.LogError(attackClipGetter.isLoad);
+        Debug.LogError(attackClipGetter.name);
+        Debug.LogError(attackClipGetter.clip);
+
     }
     public override void OnAttack()
     {

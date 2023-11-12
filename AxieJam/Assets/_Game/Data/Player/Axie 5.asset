@@ -17,7 +17,7 @@ MonoBehaviour:
   axieName: Pink
   skillName: BIG BULLET
   discription: Releases a big bullet with more damage per attack
-  prefab: {fileID: 8915905001403885883, guid: 13fac01dc75567840a53f00bb162b15b, type: 3}
+  prefabGetter: {fileID: -546153424434335748, guid: 08522fe0db4731840bef3b4c0315df66, type: 3}
   data:
     type: 5
     hp: 350

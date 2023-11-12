@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 
 
-public class SceneSwitcher : MonoSingleton<SceneSwitcher>
+public class SceneController : MonoSingleton<SceneController>
 {
     [SerializeField] string MenuScene = "MenuScene";
     [SerializeField] string GameScene = "GameScene";
@@ -12,14 +12,20 @@ public class SceneSwitcher : MonoSingleton<SceneSwitcher>
 
     AssetLoader currentLoader;
 
+    private void Awake()
+    {
+        foreach(var loader in loaderList)
+        {
+            loader.Inits();
+        }
+    }
     public void LoadMenu()
     {
         currentLoader?.UnLoadAsset();
         currentLoader = GetLoader(MenuScene);
-        currentLoader.LoadAsset(() =>
-        {
-            SceneManager.LoadScene(MenuScene);
-        });
+        currentLoader.LoadAsset();
+        SceneManager.LoadScene(MenuScene);
+
     }
     public AsyncOperation LoadMenuAsync()
     {
@@ -45,6 +51,7 @@ public class SceneSwitcher : MonoSingleton<SceneSwitcher>
 
     public bool IsLoadAllRef()
     {
+        Debug.LogError("IsLoadAllRef");
         return currentLoader.IsLoadAll();
     }
 }

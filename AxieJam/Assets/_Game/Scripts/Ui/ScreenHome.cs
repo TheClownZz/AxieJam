@@ -61,7 +61,7 @@ public class ScreenHome : ScreenBase
         panelContent.SetActive(false);
         tmpLoad.text = "Loading...";
         imgLoad.fillAmount = 0;
-        var async = SceneSwitcher.Instance.LoadGame();
+        var async = SceneController.Instance.LoadGame();
         async.allowSceneActivation = false;
         imgLoad.DOFillAmount(1, loadTime).OnComplete(() =>
         {

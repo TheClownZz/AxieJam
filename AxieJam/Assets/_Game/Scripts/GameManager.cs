@@ -40,7 +40,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     private IEnumerator I_Initiate()
     {
-        yield return new WaitUntil(() => UIManager.Instance && SceneSwitcher.Instance.IsLoadAllRef());
+        yield return new WaitUntil(() => UIManager.Instance && SceneController.Instance.IsLoadAllRef());
         OnInit();
     }
     void OnInit()
@@ -73,7 +73,8 @@ public class GameManager : MonoSingleton<GameManager>
         foreach (var playerType in team)
         {
             var asset = assetList.GetAsset(playerType);
-            Player p = Instantiate(asset.prefab).GetComponent<Player>();
+            Player p = asset.prefabGetter.prefab.GetComponent<Player>();
+            p.gameObject.SetActive(true);
             p.transform.position = outPos;
             p.SetData(asset.data);
             p.OnInit();

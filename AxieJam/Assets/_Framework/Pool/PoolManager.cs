@@ -4,10 +4,13 @@ using PathologicalGames;
 
 public class PoolManager : MonoSingleton<PoolManager>
 {
-
     [SerializeField] PoolAsset poolAsset;
     [SerializeField] SpawnPool poolDestroy = null;
 
+    protected override void Initiate()
+    {
+        base.Initiate();
+    }
 
     public Transform SpawnObject(PoolType poolType)
     {
