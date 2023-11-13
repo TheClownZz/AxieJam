@@ -19,14 +19,14 @@ public class SceneUtility
     static void Menu()
     {
         EditorSceneManager.SaveOpenScenes();
-        EditorSceneManager.OpenScene("Assets/_Scenes/Menu.unity");
+        EditorSceneManager.OpenScene("Assets/_Scenes/MenuScene.unity");
     }
 
     [MenuItem("Play/Game")]
     static void Game()
     {
         EditorSceneManager.SaveOpenScenes();
-        EditorSceneManager.OpenScene("Assets/_Scenes/Game.unity");
+        EditorSceneManager.OpenScene("Assets/_Scenes/GameScene.unity");
     }
 }
 #endif

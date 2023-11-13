@@ -55,10 +55,14 @@ MonoBehaviour:
   enemyDataSetupList:
   - enemyType: 100
     asset: {fileID: 11400000, guid: 501f0e6fb7d1d498384d1b43bcb7b56d, type: 2}
+    prefabGetter: {fileID: -546153424434335748, guid: d64d71c1fc9aec8419b708b4817c6059, type: 3}
   - enemyType: 101
     asset: {fileID: 11400000, guid: e16c6f202aeaa3d4a84ac4ec1a248607, type: 2}
+    prefabGetter: {fileID: -546153424434335748, guid: a13d72f977e0b404bb747543f428ce99, type: 3}
   - enemyType: 102
     asset: {fileID: 11400000, guid: 8ed95c7dbf400dd43995a4f99f809c2c, type: 2}
+    prefabGetter: {fileID: -546153424434335748, guid: 1dfa92ae097e20743ada2d0dbaa4ee97, type: 3}
   bossDataSetupList:
   - enemyType: 200
     asset: {fileID: 11400000, guid: bb8336c32ff15114198c38e923647cdd, type: 2}
+    prefabGetter: {fileID: -546153424434335748, guid: f6627adb24f11824294cc67dab50b865, type: 3}

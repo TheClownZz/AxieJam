@@ -48,6 +48,11 @@ public class DataLevel : GameData
         return CurrentLevelId > levelAssetList.Count;
     }
 
+    public LevelAsset GetCurrentLevelAsset()
+    {
+        return levelAssetList[CurrentLevelId - 1];
+    }
+
     #endregion
 
     #region DEBUG

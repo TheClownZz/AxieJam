@@ -1,0 +1,114 @@
+<linker>
+  <assembly fullname="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="BlueGun" preserve="all" />
+    <type fullname="Boss" preserve="all" />
+    <type fullname="BossBigSlam" preserve="all" />
+    <type fullname="BossGun" preserve="all" />
+    <type fullname="Bosshp" preserve="all" />
+    <type fullname="BossJumpAttack" preserve="all" />
+    <type fullname="BossMove" preserve="all" />
+    <type fullname="BossShoot" preserve="all" />
+    <type fullname="BossSumon" preserve="all" />
+    <type fullname="BossSurfingAttack" preserve="all" />
+    <type fullname="BossTouch" preserve="all" />
+    <type fullname="BossTreeSlam" preserve="all" />
+    <type fullname="Bullet" preserve="all" />
+    <type fullname="BulletThrough" preserve="all" />
+    <type fullname="ClearParticle" preserve="all" />
+    <type fullname="EffectController" preserve="all" />
+    <type fullname="Enemy" preserve="all" />
+    <type fullname="EnemyBullet" preserve="all" />
+    <type fullname="EnemyFlowerGun" preserve="all" />
+    <type fullname="EnemyGun" preserve="all" />
+    <type fullname="EnemyHp" preserve="all" />
+    <type fullname="EnemyJump" preserve="all" />
+    <type fullname="EnemykamikazeAttack" preserve="all" />
+    <type fullname="EnemyMove" preserve="all" />
+    <type fullname="EnemyShoot" preserve="all" />
+    <type fullname="EnemyShootMove" preserve="all" />
+    <type fullname="EnemySpineController" preserve="all" />
+    <type fullname="EnemyTouch" preserve="all" />
+    <type fullname="Explosion" preserve="all" />
+    <type fullname="GreenGun" preserve="all" />
+    <type fullname="GreenMine" preserve="all" />
+    <type fullname="HealingWard" preserve="all" />
+    <type fullname="OrangeGun" preserve="all" />
+    <type fullname="PinkGun" preserve="all" />
+    <type fullname="Player" preserve="all" />
+    <type fullname="PlayerAttack" preserve="all" />
+    <type fullname="PlayerHp" preserve="all" />
+    <type fullname="PlayerMove" preserve="all" />
+    <type fullname="PosionWard" preserve="all" />
+    <type fullname="PurpleGun" preserve="all" />
+    <type fullname="RedGun" preserve="all" />
+    <type fullname="SetupBossData" preserve="all" />
+    <type fullname="SetupEnemyData" preserve="all" />
+    <type fullname="SpineController" preserve="all" />
+    <type fullname="Weapon" preserve="all" />
+    <type fullname="BossSkillInfo" preserve="nothing" serialized="true" />
+    <type fullname="CharacterStat" preserve="nothing" serialized="true" />
+    <type fullname="SkillConfig" preserve="nothing" serialized="true" />
+    <type fullname="SkillDefaultProperties" preserve="nothing" serialized="true" />
+    <type fullname="WaveStat" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="DG.Tweening.DOTweenAnimation" preserve="all" />
+  </assembly>
+  <assembly fullname="spine-unity, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Spine.Unity.BoneFollower" preserve="all" />
+    <type fullname="Spine.Unity.SkeletonAnimation" preserve="all" />
+    <type fullname="Spine.Unity.SkeletonDataAsset" preserve="all" />
+    <type fullname="Spine.Unity.SpineAtlasAsset" preserve="all" />
+    <type fullname="Spine.Unity.BlendModeMaterials" preserve="nothing" serialized="true" />
+    <type fullname="Spine.Unity.SkeletonRenderer/SpriteMaskInteractionMaterials" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
+    <type fullname="UnityEngine.AddressableAssets.Addressables" preserve="all" />
+  </assembly>
+  <assembly fullname="Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.InstanceProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.LegacyResourcesProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.SceneProvider" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.AudioClip" preserve="all" />
+    <type fullname="UnityEngine.AudioSource" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.GameObject" preserve="all" />
+    <type fullname="UnityEngine.Material" preserve="all" />
+    <type fullname="UnityEngine.Mesh" preserve="all" />
+    <type fullname="UnityEngine.MeshFilter" preserve="all" />
+    <type fullname="UnityEngine.MeshRenderer" preserve="all" />
+    <type fullname="UnityEngine.Object" preserve="all" />
+    <type fullname="UnityEngine.RectTransform" preserve="all" />
+    <type fullname="UnityEngine.Shader" preserve="all" />
+    <type fullname="UnityEngine.Sprite" preserve="all" />
+    <type fullname="UnityEngine.SpriteRenderer" preserve="all" />
+    <type fullname="UnityEngine.TextAsset" preserve="all" />
+    <type fullname="UnityEngine.Texture2D" preserve="all" />
+    <type fullname="UnityEngine.Transform" preserve="all" />
+    <type fullname="UnityEngine.U2D.SpriteAtlas" preserve="all" />
+    <type fullname="UnityEngine.Events.PersistentCallGroup" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.UnityEvent" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="UnityEngine.ParticleSystemModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.ParticleSystem" preserve="all" />
+    <type fullname="UnityEngine.ParticleSystemRenderer" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.Physics2DModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.BoxCollider2D" preserve="all" />
+    <type fullname="UnityEngine.CircleCollider2D" preserve="all" />
+    <type fullname="UnityEngine.Rigidbody2D" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.UI.Image" preserve="all" />
+    <type fullname="UnityEngine.UI.MaskableGraphic/CullStateChangedEvent" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Canvas" preserve="all" />
+    <type fullname="UnityEngine.CanvasRenderer" preserve="all" />
+  </assembly>
+</linker>

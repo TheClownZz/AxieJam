@@ -110,7 +110,7 @@ public class PlayerHp : PlayerComponent, ITakeDamage
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (control.isDead)
+        if (control && control.isDead)
             return;
         ICreateDamage hitter = collision.GetComponent<ICreateDamage>();
         if (hitter != null)

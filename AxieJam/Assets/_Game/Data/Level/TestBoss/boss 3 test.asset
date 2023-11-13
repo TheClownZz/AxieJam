@@ -23,14 +23,20 @@ MonoBehaviour:
   enemyDataSetupList:
   - enemyType: 103
     asset: {fileID: 11400000, guid: 7e2713768eba0b946b57272dba5e3c4d, type: 2}
+    prefabGetter: {fileID: -546153424434335748, guid: cdcec92a2a4367841bf23e922e7eeedc, type: 3}
   - enemyType: 104
     asset: {fileID: 11400000, guid: f7dc369a70fe16e4d8bf1be5d9e8ee5c, type: 2}
+    prefabGetter: {fileID: -546153424434335748, guid: 53a2083cec72b4d4ab09e4bfdd7fe89d, type: 3}
   - enemyType: 105
     asset: {fileID: 11400000, guid: b3835f8ffeb094141b45cf61987bbc30, type: 2}
+    prefabGetter: {fileID: -546153424434335748, guid: 570dc5450f8c3b24ca1c645dc8ced394, type: 3}
   - enemyType: 106
     asset: {fileID: 11400000, guid: 9674ce2a76ab4654084484080880df73, type: 2}
+    prefabGetter: {fileID: -546153424434335748, guid: a2c504c12d1607745aa662e4f4720bda, type: 3}
   bossDataSetupList:
   - enemyType: 201
     asset: {fileID: 11400000, guid: 8b8f1ea1052a1d64b8f40033601ef488, type: 2}
+    prefabGetter: {fileID: -546153424434335748, guid: 19b2d4d09601aeb4c8653a37401d3b43, type: 3}
   - enemyType: 202
     asset: {fileID: 11400000, guid: 0a1af3fd1e1a4f843a5659fe8e20ac03, type: 2}
+    prefabGetter: {fileID: -546153424434335748, guid: f0e3cdfff715dc3469e8a6950ee4f351, type: 3}

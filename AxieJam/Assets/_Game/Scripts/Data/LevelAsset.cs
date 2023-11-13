@@ -41,17 +41,18 @@ public class WaveConfig
 }
 
 [System.Serializable]
-public class EnemyAssetType
+public class EnemyAssetSetup
 {
     public EnemyType enemyType;
     public EnemyAsset asset;
-
+    public GameObjectGetter prefabGetter;
 }
 [System.Serializable]
-public class BossAssetType
+public class BossAssetSettup
 {
     public EnemyType enemyType;
     public BossAsset asset;
+    public GameObjectGetter prefabGetter;
 
 }
 
@@ -60,20 +61,20 @@ public class LevelAsset : GameAsset
 {
     [TableList(ShowIndexLabels = true)]
     public List<WaveConfig> dataList = new List<WaveConfig>();
-    public List<EnemyAssetType> enemyDataSetupList;
-    public List<BossAssetType> bossDataSetupList;
+    public List<EnemyAssetSetup> enemyDataSetupList;
+    public List<BossAssetSettup> bossDataSetupList;
     public WaveConfig GetConfig(int wave)
     {
         return dataList[wave];
     }
 
-    public BossAsset GetBossAsset(EnemyType enemyType)
+    public BossAssetSettup GetBossAsset(EnemyType enemyType)
     {
-        return bossDataSetupList.Find(x => x.enemyType == enemyType).asset;
+        return bossDataSetupList.Find(x => x.enemyType == enemyType);
     }
 
-    public EnemyAsset GetEnemyAsset(EnemyType enemyType)
+    public EnemyAssetSetup GetEnemyAsset(EnemyType enemyType)
     {
-        return enemyDataSetupList.Find(x => x.enemyType == enemyType).asset;
+        return enemyDataSetupList.Find(x => x.enemyType == enemyType);
     }
 }

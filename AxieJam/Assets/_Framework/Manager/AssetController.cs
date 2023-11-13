@@ -41,10 +41,6 @@ public class AssetLoader
                 getter.UnLoad();
 
             }
-            else
-            {
-                Debug.LogError("Same getter:" + getter.name);
-            }
         }
     }
 }

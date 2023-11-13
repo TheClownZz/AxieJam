@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b76d7afe644c05049852c584c2d511c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackClip: {fileID: 8300000, guid: 3e06c45e3372dd345b50a642fe86616d, type: 3}
+  attackClip: {fileID: 8300000, guid: f143410ed0dc7f146b4116f6566ce4be, type: 3}
   effectDataList: []
   butlletSpeed: 22
   force: 500

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+
 public class LevelController : MonoBehaviour
 {
 
@@ -82,22 +83,22 @@ public class LevelController : MonoBehaviour
         }
 
     }
-    public Enemy SpawnEnemy(Transform pf)
-    {
-        Enemy e = PoolManager.Instance.SpawnObject(pf).GetComponent<Enemy>();
-        enemyList.Add(e);
-        return e;
-    }
+
     public void SpawnEnemy(EnemyType enemyType, WaveStat stat)
     {
-        Enemy e = PoolManager.Instance.SpawnObject((PoolType)enemyType).GetComponent<Enemy>();
+        Enemy e;
         if (enemyType >= EnemyType.Boss_1)
         {
-            e.GetComponent<SetupBossData>().asset = asset.GetBossAsset(enemyType);
+            Transform prefab = asset.GetBossAsset(enemyType).prefabGetter.prefab.transform;
+            e = PoolManager.Instance.SpawnObject(prefab).GetComponent<Enemy>();
+            e.GetComponent<SetupBossData>().asset = asset.GetBossAsset(enemyType).asset;
         }
         else
         {
-            e.GetComponent<SetupEnemyData>().asset = asset.GetEnemyAsset(enemyType);
+           
+            Transform prefab = asset.GetEnemyAsset(enemyType).prefabGetter.prefab.transform;
+            e = PoolManager.Instance.SpawnObject(prefab).GetComponent<Enemy>();
+            e.GetComponent<SetupEnemyData>().asset = asset.GetEnemyAsset(enemyType).asset;
 
         }
         e.transform.SetParent(transform);

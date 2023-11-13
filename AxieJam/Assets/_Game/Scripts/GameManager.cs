@@ -19,9 +19,6 @@ public class GameManager : MonoSingleton<GameManager>
     public Transform bulletSpawner;
     public LevelController levelController;
 
-
-    int mapIndex = 0;
-
     protected Player currentPlayer;
     [HideInInspector] public List<Player> playerList;
 
@@ -47,7 +44,7 @@ public class GameManager : MonoSingleton<GameManager>
     {
         SetGameState(GameState.Ready);
         UpdatePlayerList();
-       // StartLevel();
+        StartLevel();
     }
 
     private void Update()
@@ -101,18 +98,17 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void ResetAllPlayer()
     {
-        foreach(var p in playerList)
+        foreach (var p in playerList)
         {
             p.GetCom<PlayerHp>().RegenPercen(1);
         }
     }
     public void StartLevel()
     {
-        mapIndex = (DataManager.Instance.GetData<DataLevel>().CurrentLevelId - 1);
-        UIManager.Instance.GetScreen<ScreenGame>().SetMap(mapIndex + 1);
+        UIManager.Instance.GetScreen<ScreenGame>().SetMap(DataManager.Instance.GetData<DataLevel>().CurrentLevelId);
         currentPlayer.OnSelect();
         SetGameState(GameState.Playing);
-        levelController.SetAsset(DataManager.Instance.GetData<DataLevel>().levelAssetList[mapIndex]);
+        levelController.SetAsset(DataManager.Instance.GetData<DataLevel>().GetCurrentLevelAsset());
         levelController.LoadLevel();
     }
 
