@@ -32,8 +32,7 @@ public class BossSumon : BossAttack
         {
             control.DisableEnemy(true);
             control.SetState(CharacterState.Attack);
-            if (attackClipGetter.clip)
-                AudioManager.Instance.PlaySound(attackClipGetter.clip);
+            AudioManager.Instance.PlaySound(attackClip);
         }
 
     }

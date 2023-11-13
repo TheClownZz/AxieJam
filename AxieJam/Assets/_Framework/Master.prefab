@@ -352,7 +352,13 @@ MonoBehaviour:
   loaderList:
   - sceneName: MenuScene
     controller: {fileID: 1677072966477655019}
-    getterList: []
+    getterList:
+    - {fileID: -8230290348315505019, guid: 7ec7c674d90ed3b47981d120b1add8a1, type: 3}
+    - {fileID: -5276203949986100734, guid: cc0a1598251e3b5408b8b0da5117477b, type: 3}
+    - {fileID: 615317807538239046, guid: 0991e82050904f24d8dcbaca7748eeea, type: 3}
+    - {fileID: -8834563407911591787, guid: 9b797f710a827464398731159ac5ee60, type: 3}
+    - {fileID: 5764164840808458075, guid: 87dd117786e693449bc1e3a099589913, type: 3}
+    - {fileID: 4978844061959204645, guid: c3e20616dd08213489cda999fcd93e49, type: 3}
   - sceneName: GameScene
     controller: {fileID: 5457273259345555208}
     getterList: []

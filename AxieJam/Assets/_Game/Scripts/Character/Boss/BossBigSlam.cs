@@ -8,7 +8,7 @@ public class BossBigSlam : BossAttack
     [SerializeField] protected ParticleSystem fxSlam;
     [SerializeField] protected Transform wpTf;
     [SerializeField] protected Transform exposionPrefab;
-    [SerializeField] protected AudioGetter explosionClipGetter;
+    [SerializeField] protected AudioClip explosionClip;
 
     [SerializeField] protected float radius = 3f;
     [SerializeField] float explosionTime = 1f;
@@ -46,8 +46,7 @@ public class BossBigSlam : BossAttack
         fxSlam.Play();
         fxSlam.transform.position = wpTf.transform.position;
 
-        if (attackClipGetter.clip)
-            AudioManager.Instance.PlaySound(attackClipGetter.clip);
+        AudioManager.Instance.PlaySound(attackClip);
         GameManager.Instance.DelayedCall(0.1f, () =>
         {
             Player player = GameManager.Instance.GetCurrentPlayer();
@@ -85,7 +84,7 @@ public class BossBigSlam : BossAttack
             GameManager.Instance.DelayedCall(delayWarning + delay * i, () =>
             {
 
-                AudioManager.Instance.PlaySound(explosionClipGetter.clip);
+                AudioManager.Instance.PlaySound(explosionClip);
                 PoolManager.Instance.DespawnObject(spawnList[index]);
                 Bullet bullet = PoolManager.Instance.SpawnObject(exposionPrefab).GetComponent<Bullet>();
                 bullet.transform.SetParent(GameManager.Instance.bulletSpawner, false);

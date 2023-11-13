@@ -18,6 +18,7 @@ MonoBehaviour:
   skillName: BIG BULLET
   discription: Releases a big bullet with more damage per attack
   prefabGetter: {fileID: -546153424434335748, guid: 08522fe0db4731840bef3b4c0315df66, type: 3}
+  dataAssetGetter: {fileID: -8834563407911591787, guid: 9b797f710a827464398731159ac5ee60, type: 3}
   data:
     type: 5
     hp: 350
@@ -77,4 +78,3 @@ MonoBehaviour:
         value: 2.25
       - type: 0
         value: 3
-    dataAsset: {fileID: 11400000, guid: 2452835e0b8254737b358ef2238d1a10, type: 2}

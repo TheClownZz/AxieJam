@@ -53,6 +53,42 @@ MonoBehaviour:
     m_SerializedLabels:
     - Prefab
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2452835e0b8254737b358ef2238d1a10
+    m_Address: Assets/_Game/Spine/Player/12-momo-bird/12-momo-bird_SkeletonData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpineData
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b49379cb4c0ea41ad8687d360ccaa72b
+    m_Address: Assets/_Game/Spine/Player/01-buba-beast/buba_SkeletonData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpineData
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7d1ef9104d38443a4b39cf8906cc277d
+    m_Address: Assets/_Game/Spine/Player/02-olek-plant/olek_SkeletonData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpineData
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 17b8d394a4a3048c6b388872700353a8
+    m_Address: Assets/_Game/Spine/Player/03-puffy-aquatic/03-puffy-aquatic_SkeletonData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpineData
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aae79832a3f22487ab29ca5bad687273
+    m_Address: Assets/_Game/Spine/Player/06-pomodoro-bug/06-pomodoro-bug_SkeletonData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpineData
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5e6bc02efa6c543a68cb6e2ed6d78347
+    m_Address: Assets/_Game/Spine/Player/08-machito-reptile/08-machito-reptile_SkeletonData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpineData
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 1ce191bf3f2e9ec489bb6af36ad11011, type: 2}
   m_SchemaSet:

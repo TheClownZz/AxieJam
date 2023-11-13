@@ -13,7 +13,7 @@ public class TeamAvtController : MonoBehaviour
 
         for (int i = 0; i < skeletonList.Count; i++)
         {
-            skeletonList[i].skeletonDataAsset = playerListAsset.GetAsset(team[i]).data.dataAsset;
+            skeletonList[i].skeletonDataAsset = playerListAsset.GetAsset(team[i]).dataAssetGetter.dataAsset;
             skeletonList[i].Initialize(true);
             skeletonList[i].AnimationState.SetAnimation(0, animList[(random + i) % skeletonList.Count], true);
         }
@@ -27,7 +27,7 @@ public class TeamAvtController : MonoBehaviour
 
         for (int i = 0; i < skeletonList.Count; i++)
         {
-            skeletonList[i].skeletonDataAsset = playerListAsset.GetAsset(itemSelectedList[i].playerType).data.dataAsset;
+            skeletonList[i].skeletonDataAsset = playerListAsset.GetAsset(itemSelectedList[i].playerType).dataAssetGetter.dataAsset;
             skeletonList[i].Initialize(true);
             skeletonList[i].AnimationState.SetAnimation(0, animList[(random + i) % skeletonList.Count], true);
         }

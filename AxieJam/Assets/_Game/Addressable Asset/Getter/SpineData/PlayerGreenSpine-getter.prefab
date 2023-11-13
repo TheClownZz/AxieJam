@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &118352322023500798
+--- !u!1 &6838910733995675486
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4804858091409620816}
-  - component: {fileID: 3774543478236528738}
+  - component: {fileID: 3247130801765910448}
+  - component: {fileID: -5276203949986100734}
   m_Layer: 7
-  m_Name: boss1slam-getter
+  m_Name: PlayerGreenSpine-getter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4804858091409620816
+--- !u!4 &3247130801765910448
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 118352322023500798}
+  m_GameObject: {fileID: 6838910733995675486}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3774543478236528738
+--- !u!114 &-5276203949986100734
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 118352322023500798}
+  m_GameObject: {fileID: 6838910733995675486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9120714d8e2a1fc4194b9f8977fdabe0, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f98029e2e84d524c97cb6a2cd3846b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isLoad: 0
   assetReference:
-    m_AssetGUID: 3fb856f9843426e4d9c7ef7864aa17ff
+    m_AssetGUID: 7d1ef9104d38443a4b39cf8906cc277d
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  clip: {fileID: 0}
+  dataAsset: {fileID: 0}

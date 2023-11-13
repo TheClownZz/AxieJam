@@ -5,8 +5,7 @@ public class Enemy : Character
 {
     const float timeDelayDespawn = 1.5f;
     [SerializeField] float spawItemTime = 1f;
-    [SerializeField] protected  AudioGetter deadClipGetter;
-
+    [SerializeField] protected AudioClip deadClip;
 
     protected Transform spawnFx;
     protected Tween spawnTween;
@@ -82,7 +81,7 @@ public class Enemy : Character
 
         itemTween = GameManager.Instance.DelayedCall(currspawItemTime, () =>
         {
-            SpawnItem(deadClipGetter.clip);
+            SpawnItem(deadClip);
         });
     }
 

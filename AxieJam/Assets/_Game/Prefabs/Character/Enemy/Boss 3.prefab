@@ -118,7 +118,7 @@ MonoBehaviour:
   - {fileID: 7398335165243421424}
   - {fileID: 4628347129519685165}
   spawItemTime: 3.4
-  deadClipGetter: {fileID: 7717345734546424218, guid: fdb42fbd7e90d6d41aad13fc3266a66c, type: 3}
+  deadClip: {fileID: 8300000, guid: aaa133fc849da134ea57a18e4ccca201, type: 3}
   waveStat:
     hpRate: 1
     damageRate: 1
@@ -458,11 +458,13 @@ MonoBehaviour:
   control: {fileID: 0}
   target: {fileID: 0}
   attackClipGetter: {fileID: 5661324370409326797, guid: 76809e6b6dd11794fbc23a4d51b34875, type: 3}
+  attackClip: {fileID: 8300000, guid: 18e14009918ac9e4d92d5f09c7bde963, type: 3}
   weapon: {fileID: 1210573686577001020}
   fxSlam: {fileID: 4910320527302246948}
   wpTf: {fileID: 6227039527359344021}
   exposionPrefab: {fileID: 3334494085358144767, guid: 1a2f902ef41f873409041cd590e6eadf, type: 3}
   explosionClipGetter: {fileID: 110309579138009963, guid: 80f6f0430ad82ee45a672e4670b4b0ba, type: 3}
+  explosionClip: {fileID: 8300000, guid: 7810eab492f982d48b19d3870d11b6a9, type: 3}
   radius: 2.25
   explosionTime: 2.25
 --- !u!1 &4447802915667506931
@@ -548,6 +550,7 @@ MonoBehaviour:
   control: {fileID: 0}
   target: {fileID: 0}
   attackClipGetter: {fileID: 6930487803619394330, guid: 4796a409e87b05548935a95fe2f2518a, type: 3}
+  attackClip: {fileID: 8300000, guid: 32df0f116a57dcb4a83c57c877a3e78e, type: 3}
   enemyType: 105
 --- !u!1 &4489752843629510763
 GameObject:

@@ -2,7 +2,6 @@ using UnityEngine;
 public class BossShoot : BossAttack
 {
     [SerializeField] EnemyGun gun;
-
     public override void OnInits(Character enemy)
     {
         base.OnInits(enemy);
@@ -32,7 +31,6 @@ public class BossShoot : BossAttack
         if (target)
             gun.targetPos = target.transform.position;
         gun.SpawnBullet();
-        if (attackClipGetter.clip)
-            AudioManager.Instance.PlaySound(attackClipGetter.clip);
+        AudioManager.Instance.PlaySound(attackClip);
     }
 }

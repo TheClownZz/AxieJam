@@ -18,6 +18,7 @@ MonoBehaviour:
   skillName: POISON GAS
   discription: Create poison gas that cause damage to enemy and slow them
   prefabGetter: {fileID: -546153424434335748, guid: 6c31d100c125c194486790c61d905526, type: 3}
+  dataAssetGetter: {fileID: 5764164840808458075, guid: 87dd117786e693449bc1e3a099589913, type: 3}
   data:
     type: 4
     hp: 380
@@ -87,4 +88,3 @@ MonoBehaviour:
         value: 0.2
       - type: 5
         value: 0.5
-    dataAsset: {fileID: 11400000, guid: 5e6bc02efa6c543a68cb6e2ed6d78347, type: 2}

@@ -263,7 +263,6 @@ GameObject:
   - component: {fileID: 3996525239287616283}
   - component: {fileID: 4973704595930800522}
   - component: {fileID: 8694048538363356435}
-  - component: {fileID: 1741914559627927405}
   m_Layer: 10
   m_Name: GreenMine
   m_TagString: Untagged
@@ -349,8 +348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da2e58c98034ba408b1a4be286b0cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletRender: {fileID: 2192196822112207919}
   weapon: {fileID: 0}
+  bulletRender: {fileID: 2192196822112207919}
   objRenderList:
   - {fileID: 4738295837727634539}
   - {fileID: 356902702639613698}
@@ -358,26 +357,8 @@ MonoBehaviour:
   - {fileID: 2257252936235334884}
   - {fileID: 6731531664897493977}
   fx: {fileID: 927623946958981510}
-  audioGetter: {fileID: 1741914559627927405}
---- !u!114 &1741914559627927405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4886825721760854145}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9120714d8e2a1fc4194b9f8977fdabe0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isLoaded: 0
-  assetReference:
-    m_AssetGUID: 074cee5e8624aa4428300be00e1d2bd2
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  clip: {fileID: 0}
+  audioGetter: {fileID: 0}
+  clip: {fileID: 8300000, guid: f411c151f1eba6748859b34e32d91eb7, type: 3}
 --- !u!1 &6249706863474052822
 GameObject:
   m_ObjectHideFlags: 0

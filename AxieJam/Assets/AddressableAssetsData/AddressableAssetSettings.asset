@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 8ffe59cd02a36674aa691da8100c6d17
   m_currentHash:
     serializedVersion: 2
-    Hash: ae26b6e96fe73c69cdea31fe4657599a
+    Hash: 2792d89a8f4b63eab2871324cc500d33
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -89,6 +89,7 @@ MonoBehaviour:
     - default
     - Audio
     - Prefab
+    - SpineData
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 3575ac5de65882946a3c311ef2577a16, type: 2}

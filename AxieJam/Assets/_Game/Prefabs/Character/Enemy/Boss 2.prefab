@@ -118,7 +118,7 @@ MonoBehaviour:
   - {fileID: 7398335165243421424}
   - {fileID: 4628347129519685165}
   spawItemTime: 1
-  deadClipGetter: {fileID: 110309579138009963, guid: b9bffd05865b5ca41a541e207d7b2c06, type: 3}
+  deadClip: {fileID: 8300000, guid: a36c0d4fe500082469a8359da5d3fec5, type: 3}
   waveStat:
     hpRate: 1
     damageRate: 1
@@ -444,11 +444,13 @@ MonoBehaviour:
   control: {fileID: 0}
   target: {fileID: 0}
   attackClipGetter: {fileID: 110309579138009963, guid: 4d17b4f7a7ce9994db99e4fc865c00b7, type: 3}
+  attackClip: {fileID: 8300000, guid: f411c151f1eba6748859b34e32d91eb7, type: 3}
   weapon: {fileID: 1210573686577001020}
   fxSlam: {fileID: 924973672924769280}
   wpTf: {fileID: 6227039527359344021}
   exposionPrefab: {fileID: 3334494085358144767, guid: 5bc227c2a45a7e44ea8521ddb446b620, type: 3}
   explosionClipGetter: {fileID: 110309579138009963, guid: c90e24f8e02c5f142be1ba224a97f07e, type: 3}
+  explosionClip: {fileID: 8300000, guid: 04ab5ee7d70689b4ebdf659f042b85ae, type: 3}
   radius: 5.25
   explosionTime: 1
 --- !u!114 &1210573686577001020
@@ -548,6 +550,7 @@ MonoBehaviour:
   control: {fileID: 0}
   target: {fileID: 0}
   attackClipGetter: {fileID: 8367447620648024072, guid: 780da6594e17abd4bb0d2fd4dbb1ea7f, type: 3}
+  attackClip: {fileID: 8300000, guid: 547411a6ed13917438e392d0fdb6add5, type: 3}
   buffAnim: action/idle/counter-state
   moveSpeed: 10
   attackSize: 2

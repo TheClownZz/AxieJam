@@ -118,7 +118,7 @@ MonoBehaviour:
   - {fileID: 7398335165243421424}
   - {fileID: 4628347129519685165}
   spawItemTime: 1
-  deadClipGetter: {fileID: 5891263889014323400, guid: f8c95c406fe6b644aa3d3247e89278f8, type: 3}
+  deadClip: {fileID: 8300000, guid: 0982d04e4a4c57249bd201f50577bfef, type: 3}
   waveStat:
     hpRate: 1
     damageRate: 1
@@ -281,6 +281,7 @@ MonoBehaviour:
   control: {fileID: 0}
   target: {fileID: 0}
   attackClipGetter: {fileID: 3774543478236528738, guid: 6adb54619d7d3334eb0e945cd4a3ecc8, type: 3}
+  attackClip: {fileID: 8300000, guid: 3fb856f9843426e4d9c7ef7864aa17ff, type: 3}
   jumpPower: 2.5
   jumptime: 0.6
   attackAoe: 2
@@ -574,6 +575,7 @@ MonoBehaviour:
   control: {fileID: 0}
   target: {fileID: 0}
   attackClipGetter: {fileID: 1352641503417191230, guid: dabebc2784aecc04ba0a672310a84a9c, type: 3}
+  attackClip: {fileID: 8300000, guid: b3b6608fe19b764439acdb1d668d2133, type: 3}
   gun: {fileID: 8342530175396194733}
 --- !u!1 &6008692780142271998
 GameObject:

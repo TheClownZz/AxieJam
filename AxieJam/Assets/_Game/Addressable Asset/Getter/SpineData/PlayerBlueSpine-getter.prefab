@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3247130801765910448}
-  - component: {fileID: 110309579138009963}
+  - component: {fileID: -8230290348315505019}
   m_Layer: 7
-  m_Name: etfx_explosion_magic-getter
+  m_Name: PlayerBlueSpine-getter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &110309579138009963
+--- !u!114 &-8230290348315505019
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,13 +41,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6838910733995675486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9120714d8e2a1fc4194b9f8977fdabe0, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f98029e2e84d524c97cb6a2cd3846b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isLoad: 0
   assetReference:
-    m_AssetGUID: 32f565ba94f200f49adb407cce64e873
+    m_AssetGUID: 17b8d394a4a3048c6b388872700353a8
     m_SubObjectName: 
     m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  clip: {fileID: 0}
+    m_EditorAssetChanged: 1
+  dataAsset: {fileID: 0}

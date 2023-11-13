@@ -41,8 +41,7 @@ public class BossSurfingAttack : BossAttack
         fxSlam.Play();
         fxSlam.transform.position = furry.transform.position;
 
-        if (attackClipGetter.clip)
-            AudioManager.Instance.PlaySound(attackClipGetter.clip);
+        AudioManager.Instance.PlaySound(attackClip);
         GameManager.Instance.DelayedCall(0.1f, () =>
         {
             Player player = GameManager.Instance.GetCurrentPlayer();

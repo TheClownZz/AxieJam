@@ -30,8 +30,7 @@ public class BossJumpAttack : BossAttack
     public override void Attacktarget()
     {
         fxSlam.Play();
-        if (attackClipGetter.clip)
-            AudioManager.Instance.PlaySound(attackClipGetter.clip);
+        AudioManager.Instance.PlaySound(attackClip);
         GameManager.Instance.DelayedCall(0.1f, () =>
         {
             Player player = GameManager.Instance.GetCurrentPlayer();

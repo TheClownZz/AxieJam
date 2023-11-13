@@ -80,7 +80,6 @@ public class PlayerConfig
     public List<PlayerStatConfig> levelConfiglist;
     [TableList(ShowIndexLabels = true)]
     public List<SkillConfig> skillConfiglist;
-    public SkeletonDataAsset dataAsset;
     public PlayerStatConfig GetLevelConfig(int lv)
     {
         return levelConfiglist[Mathf.Min(lv - 1, levelConfiglist.Count - 1)];
@@ -104,6 +103,7 @@ public class PlayerAsset : GameAsset
     public string skillName;
     public string discription;
     public GameObjectGetter prefabGetter;
+    public SpineDataGetter dataAssetGetter;
     public PlayerConfig data;
 
 }

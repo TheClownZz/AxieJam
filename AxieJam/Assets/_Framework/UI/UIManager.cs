@@ -1,9 +1,10 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class UIManager : MonoSingleton<UIManager>
 {
- 
+
 
     #region Editor paramters
     [SerializeField]
@@ -19,10 +20,11 @@ public class UIManager : MonoSingleton<UIManager>
     #endregion
 
     [HideInInspector] public bool isInit = false;
-    private void Start()
+    IEnumerator Start()
     {
+        yield return new WaitUntil(() => SceneController.Instance.IsLoadAllRef());
         OnInit();
-        GetComponent<Canvas>().enabled= true;
+        GetComponent<Canvas>().enabled = true;
     }
 
     private void OnDestroy()

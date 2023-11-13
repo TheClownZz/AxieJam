@@ -18,6 +18,7 @@ MonoBehaviour:
   skillName: HEALING
   discription: Creates a circle that restores vitality
   prefabGetter: {fileID: -546153424434335748, guid: 22a1c72d8b1d9f342a3600a0353dbfc5, type: 3}
+  dataAssetGetter: {fileID: -5276203949986100734, guid: cc0a1598251e3b5408b8b0da5117477b, type: 3}
   data:
     type: 3
     hp: 400
@@ -87,4 +88,3 @@ MonoBehaviour:
         value: 0.35
       - type: 5
         value: 0.1
-    dataAsset: {fileID: 11400000, guid: 7d1ef9104d38443a4b39cf8906cc277d, type: 2}

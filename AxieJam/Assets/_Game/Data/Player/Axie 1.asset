@@ -18,6 +18,7 @@ MonoBehaviour:
   skillName: MAGIC CIRCLE
   discription: 'Creates magic circles arround axie that cause damage to enemy '
   prefabGetter: {fileID: -546153424434335748, guid: 0d22ec563b838ab4cad72ab1efe73364, type: 3}
+  dataAssetGetter: {fileID: 615317807538239046, guid: 0991e82050904f24d8dcbaca7748eeea, type: 3}
   data:
     type: 1
     hp: 450
@@ -85,4 +86,3 @@ MonoBehaviour:
         value: 4
       - type: 8
         value: 1.5
-    dataAsset: {fileID: 11400000, guid: b49379cb4c0ea41ad8687d360ccaa72b, type: 2}

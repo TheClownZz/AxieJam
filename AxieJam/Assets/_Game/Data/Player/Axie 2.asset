@@ -18,6 +18,7 @@ MonoBehaviour:
   skillName: BIG BANG
   discription: Creates large explosions that damage monsters
   prefabGetter: {fileID: -546153424434335748, guid: cb0e91f1310b54942a24cd70f09d10c5, type: 3}
+  dataAssetGetter: {fileID: 4978844061959204645, guid: c3e20616dd08213489cda999fcd93e49, type: 3}
   data:
     type: 2
     hp: 500
@@ -97,4 +98,3 @@ MonoBehaviour:
         value: 3.5
       - type: 3
         value: 3
-    dataAsset: {fileID: 11400000, guid: aae79832a3f22487ab29ca5bad687273, type: 2}

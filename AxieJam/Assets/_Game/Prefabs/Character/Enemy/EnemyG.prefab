@@ -111,6 +111,7 @@ MonoBehaviour:
   - {fileID: 4276601453587313873}
   spawItemTime: 0.15
   deadClipGetter: {fileID: 5811445325453042717, guid: d8db63fdde132ae49a6726df9062de9f, type: 3}
+  deadClip: {fileID: 8300000, guid: aaa133fc849da134ea57a18e4ccca201, type: 3}
   waveStat:
     hpRate: 1
     damageRate: 1
