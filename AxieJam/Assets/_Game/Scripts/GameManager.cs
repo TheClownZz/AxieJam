@@ -40,15 +40,14 @@ public class GameManager : MonoSingleton<GameManager>
 
     private IEnumerator I_Initiate()
     {
-        yield return new WaitUntil(() => UIManager.Instance && SceneController.Instance.IsLoadAllRef());
+        yield return new WaitUntil(() => UIManager.Instance.isInit && SceneController.Instance.IsLoadAllRef());
         OnInit();
     }
     void OnInit()
     {
         SetGameState(GameState.Ready);
-        levelController.OnInits();
         UpdatePlayerList();
-        StartLevel();
+       // StartLevel();
     }
 
     private void Update()

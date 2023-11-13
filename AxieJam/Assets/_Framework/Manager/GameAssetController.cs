@@ -12,7 +12,8 @@ public class GameAssetController : AssetController
         foreach (var playerType in team)
         {
             var asset = assetList.GetAsset(playerType);
-            getterList.Add(asset.prefabGetter);       
+            getterList.Add(asset.prefabGetter);
+            getterList.Add(asset.dataAssetGetter);
         }
     }
 }

@@ -119,6 +119,7 @@ MonoBehaviour:
   - {fileID: 4628347129519685165}
   spawItemTime: 3.4
   deadClip: {fileID: 8300000, guid: aaa133fc849da134ea57a18e4ccca201, type: 3}
+  spawnFxPrefab: {fileID: 3943016598055714950, guid: ba0b4d2650aafb64ab65c49087a9f602, type: 3}
   waveStat:
     hpRate: 1
     damageRate: 1
@@ -159,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4fbd2540a9f3364482b236b2e7a1d9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asset: {fileID: 11400000, guid: 0a1af3fd1e1a4f843a5659fe8e20ac03, type: 2}
+  asset: {fileID: 0}
 --- !u!114 &724379711993735569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,16 +458,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: {fileID: 0}
   target: {fileID: 0}
-  attackClipGetter: {fileID: 5661324370409326797, guid: 76809e6b6dd11794fbc23a4d51b34875, type: 3}
   attackClip: {fileID: 8300000, guid: 18e14009918ac9e4d92d5f09c7bde963, type: 3}
   weapon: {fileID: 1210573686577001020}
   fxSlam: {fileID: 4910320527302246948}
   wpTf: {fileID: 6227039527359344021}
   exposionPrefab: {fileID: 3334494085358144767, guid: 1a2f902ef41f873409041cd590e6eadf, type: 3}
-  explosionClipGetter: {fileID: 110309579138009963, guid: 80f6f0430ad82ee45a672e4670b4b0ba, type: 3}
   explosionClip: {fileID: 8300000, guid: 7810eab492f982d48b19d3870d11b6a9, type: 3}
   radius: 2.25
   explosionTime: 2.25
+  spawnFxPrefab: {fileID: 3943016598055714950, guid: ba0b4d2650aafb64ab65c49087a9f602, type: 3}
 --- !u!1 &4447802915667506931
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,7 +549,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   control: {fileID: 0}
   target: {fileID: 0}
-  attackClipGetter: {fileID: 6930487803619394330, guid: 4796a409e87b05548935a95fe2f2518a, type: 3}
   attackClip: {fileID: 8300000, guid: 32df0f116a57dcb4a83c57c877a3e78e, type: 3}
   enemyType: 105
 --- !u!1 &4489752843629510763
@@ -704,8 +703,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: df939b80d681443f0b9a2d1eea7c34a8, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 649da8f992e9f924f8c00946fd09dfca, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -982,7 +981,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bfad0e64f8ef1491c8def7e679187b89, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 649da8f992e9f924f8c00946fd09dfca, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1

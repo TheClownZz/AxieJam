@@ -243,9 +243,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed9aa145058765f4b869b3acc1bf9648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fx: {fileID: 4295584574520772, guid: dd46de4320f3d1b4087b5f9c0a24ab36, type: 3}
+  prefabGetter: {fileID: -546153424434335748, guid: 6e6573927e1a8e144be4372bdeb365b3, type: 3}
   spriteRenderer: {fileID: 5205279039712185400}
-  audioGetter: {fileID: 2979274782273838664, guid: 05610db11303630489610f10f7832094, type: 3}
+  audioGetter: {fileID: 167365604859566640, guid: b0e12689714d89d4b9a44f4cb905e959, type: 3}
 --- !u!1 &2404246934767725348
 GameObject:
   m_ObjectHideFlags: 0

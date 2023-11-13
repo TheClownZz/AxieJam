@@ -4950,7 +4950,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  skeletonDataAsset: {fileID: 11400000, guid: b49379cb4c0ea41ad8687d360ccaa72b, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: cdcacac536c5d4634b1b35077055b084, type: 2}
   initialSkinName: default
   initialFlipX: 0
   initialFlipY: 0
@@ -10221,7 +10221,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  skeletonDataAsset: {fileID: 11400000, guid: b49379cb4c0ea41ad8687d360ccaa72b, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: cdcacac536c5d4634b1b35077055b084, type: 2}
   initialSkinName: default
   initialFlipX: 0
   initialFlipY: 0
@@ -10247,6 +10247,81 @@ MonoBehaviour:
       calculateTangents: 0
       addNormals: 0
       immutableTriangles: 0
+--- !u!1 &3190537996325256040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2386367984603339396}
+  - component: {fileID: 5619758955734947602}
+  - component: {fileID: 468698420606266708}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2386367984603339396
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3190537996325256040}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7231018888529649256}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5619758955734947602
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3190537996325256040}
+  m_CullTransparentMesh: 1
+--- !u!114 &468698420606266708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3190537996325256040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 9c45ac3dbdf604145a4cfcfcbf7895cd, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &4185351846764446265
 GameObject:
   m_ObjectHideFlags: 0
@@ -11484,7 +11559,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  skeletonDataAsset: {fileID: 11400000, guid: b49379cb4c0ea41ad8687d360ccaa72b, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: cdcacac536c5d4634b1b35077055b084, type: 2}
   initialSkinName: default
   initialFlipX: 0
   initialFlipY: 0
@@ -16432,6 +16507,7 @@ RectTransform:
   - {fileID: 4079394939361287991}
   - {fileID: 390340217731757018}
   - {fileID: 7386665996444683893}
+  - {fileID: 2386367984603339396}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -16474,10 +16550,11 @@ MonoBehaviour:
   cvGroup: {fileID: 6363111038152696894}
   uiAnimator: {fileID: 0}
   isShowing: 0
-  textAnimation: {fileID: 6809758118558331971}
   tmpLoad: {fileID: 8966032370686542371}
-  panelContent: {fileID: 3130305560797299311}
+  textAnimation: {fileID: 6809758118558331971}
   imgLoad: {fileID: 3522853646681516469}
+  imgCover: {fileID: 468698420606266708}
+  panelContent: {fileID: 3130305560797299311}
   objNoti: {fileID: 9039133946996382334}
   teamAvtController: {fileID: 5806658963760600064}
 --- !u!114 &5806658963760600064

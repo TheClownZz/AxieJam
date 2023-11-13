@@ -5,9 +5,6 @@ public class TextDisplay : MonoBehaviour
     const string MISS = "Miss";
     const string ONE_HIT = "Bingo";
 
-    [SerializeField] Sprite crit;
-    [SerializeField] Sprite oneHit;
-
     [SerializeField] TextMeshPro tmp;
 
     public void ShowDamage(float damage, bool isCrit)

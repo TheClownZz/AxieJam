@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,26 +15,38 @@ public class SceneController : MonoSingleton<SceneController>
 
     public void LoadMenu()
     {
-        currentLoader?.UnLoadAsset();
+        AssetLoader oldAsset = currentLoader;
         currentLoader = GetLoader(MenuScene);
         currentLoader.LoadAsset();
+        if (oldAsset != null)
+        {
+            StartCoroutine(IUnLoad(oldAsset));
+        }
         SceneManager.LoadScene(MenuScene);
 
     }
     public AsyncOperation LoadMenuAsync()
     {
-        currentLoader?.UnLoadAsset();
+        AssetLoader oldAsset = currentLoader;
         currentLoader = GetLoader(MenuScene);
         currentLoader.LoadAsset();
+        if (oldAsset != null)
+        {
+            StartCoroutine(IUnLoad(oldAsset));
+        }
         return SceneManager.LoadSceneAsync(MenuScene);
 
     }
 
     public AsyncOperation LoadGame()
     {
-        currentLoader?.UnLoadAsset();
+        AssetLoader oldAsset = currentLoader;
         currentLoader = GetLoader(GameScene);
         currentLoader.LoadAsset();
+        if (oldAsset != null)
+        {
+            StartCoroutine(IUnLoad(oldAsset));
+        }
         return SceneManager.LoadSceneAsync(GameScene);
     }
 
@@ -44,7 +57,12 @@ public class SceneController : MonoSingleton<SceneController>
 
     public bool IsLoadAllRef()
     {
-        Debug.LogError("IsLoadAllRef");
         return currentLoader.IsLoadAll();
+    }
+
+    IEnumerator IUnLoad(AssetLoader loader)
+    {
+        yield return IsLoadAllRef();
+        loader.UnLoadAsset(currentLoader);
     }
 }

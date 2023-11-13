@@ -15,29 +15,7 @@ MonoBehaviour:
   poolDataList:
   - poolType: 300
     prefab: {fileID: 6866847650525164682, guid: b4d9f4b38d4e7a54c89a3fa96c0a4fe8, type: 3}
-  - poolType: 1
-    prefab: {fileID: 3943016598055714950, guid: ba0b4d2650aafb64ab65c49087a9f602, type: 3}
-  - poolType: 3
-    prefab: {fileID: 4780363646103494414, guid: 5c0068053b10b0941b55f2a7e0b19b98, type: 3}
   - poolType: 2
     prefab: {fileID: 6401769469313199612, guid: 797fba1ecd001a746bf1656fa806aa16, type: 3}
-  - poolType: 100
-    prefab: {fileID: 8911379269055794545, guid: 083b219e0899cdb4392cbee9c3529a40, type: 3}
-  - poolType: 101
-    prefab: {fileID: 8911379269055794545, guid: 2bc1377c5783adf45859063486b5b464, type: 3}
-  - poolType: 102
-    prefab: {fileID: 8911379269055794545, guid: 53982201b4c364d4eadc6c33682163a7, type: 3}
-  - poolType: 103
-    prefab: {fileID: 8631873100902015713, guid: 11c7033ef68c94d4281da48ce47a8b85, type: 3}
-  - poolType: 104
-    prefab: {fileID: 4281330819101525496, guid: 7e8525c75e2c9154b94160fd102fece4, type: 3}
-  - poolType: 105
-    prefab: {fileID: 8911379269055794545, guid: 895cb352b87a8504faa82a496601bc0c, type: 3}
-  - poolType: 106
-    prefab: {fileID: 2798085764197083457, guid: 5d4e4418e1708e24eae2434a77cf6896, type: 3}
-  - poolType: 200
-    prefab: {fileID: 8840170584174963856, guid: 0cd0ad77e42eee841aaefaf032cb6853, type: 3}
-  - poolType: 201
-    prefab: {fileID: 8840170584174963856, guid: 3f3b271afecf98a4fb96e9a34cc47138, type: 3}
-  - poolType: 202
-    prefab: {fileID: 8840170584174963856, guid: a62ac0c73dd9b5d4aacecaaa6efd8caa, type: 3}
+  - poolType: 3
+    prefab: {fileID: 4780363646103494414, guid: 5c0068053b10b0941b55f2a7e0b19b98, type: 3}

@@ -192,8 +192,8 @@ MonoBehaviour:
   - {fileID: 363395862009043723}
   - {fileID: 5244677630370320604}
   spawItemTime: 0.5
-  deadClipGetter: {fileID: 2630181757316861890, guid: 509d44cfe0a198546b9dea41315de8af, type: 3}
   deadClip: {fileID: 8300000, guid: 6f1be2915b1d1ed488800be78f7e97c8, type: 3}
+  spawnFxPrefab: {fileID: 3943016598055714950, guid: ba0b4d2650aafb64ab65c49087a9f602, type: 3}
   waveStat:
     hpRate: 1
     damageRate: 1
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28404f47a47877148b04f35a96f2eaf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asset: {fileID: 11400000, guid: f89aa4d509b8edf4b9c6ed97eca36ad0, type: 2}
+  asset: {fileID: 0}
 --- !u!1 &6396456688472780618
 GameObject:
   m_ObjectHideFlags: 0

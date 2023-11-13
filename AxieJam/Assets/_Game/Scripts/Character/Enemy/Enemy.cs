@@ -6,6 +6,7 @@ public class Enemy : Character
     const float timeDelayDespawn = 1.5f;
     [SerializeField] float spawItemTime = 1f;
     [SerializeField] protected AudioClip deadClip;
+    [SerializeField] Transform spawnFxPrefab;
 
     protected Transform spawnFx;
     protected Tween spawnTween;
@@ -24,7 +25,7 @@ public class Enemy : Character
     }
     public void DelaySpawn(float time, Vector3 pos)
     {
-        spawnFx = PoolManager.Instance.SpawnObject(PoolType.SpawnFx);
+        spawnFx = PoolManager.Instance.SpawnObject(spawnFxPrefab);
         spawnFx.position = pos;
         gameObject.SetActive(false);
         spawnFx.transform.SetParent(GameManager.Instance.GetMapTf().GetChild(1));

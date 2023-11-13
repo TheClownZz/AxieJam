@@ -454,6 +454,9 @@ MonoBehaviour:
   canvasGroup: {fileID: 2269614499480163184}
   uiAnimator: {fileID: 0}
   isShowing: 0
+  hideCallBack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6307877413164692792
 GameObject:
   m_ObjectHideFlags: 0

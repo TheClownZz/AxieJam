@@ -4,6 +4,7 @@ using UnityEngine;
 public class BossBigSlam : BossAttack
 {
     [SerializeField] protected Weapon weapon;
+    [SerializeField] Transform spawnFxPrefab;
 
     [SerializeField] protected ParticleSystem fxSlam;
     [SerializeField] protected Transform wpTf;
@@ -73,7 +74,7 @@ public class BossBigSlam : BossAttack
         for (int i = 0; i < numberExplosion; i++)
         {
             Vector3 spawnPos = GetSpawnPos();
-            var spawnFx = PoolManager.Instance.SpawnObject(PoolType.SpawnFx);
+            var spawnFx = PoolManager.Instance.SpawnObject(spawnFxPrefab);
             spawnFx.position = spawnPos;
             spawnList.Add(spawnFx);
         }

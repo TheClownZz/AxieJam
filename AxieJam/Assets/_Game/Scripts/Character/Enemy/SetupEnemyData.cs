@@ -2,5 +2,5 @@ using UnityEngine;
 
 public class SetupEnemyData : MonoBehaviour
 {
-    public EnemyAsset asset;
+    [HideInInspector] public EnemyAsset asset;
 }

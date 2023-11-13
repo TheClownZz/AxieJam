@@ -17,26 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 8ffe59cd02a36674aa691da8100c6d17
   m_SerializeEntries:
-  - m_GUID: 1f20aad660854d345800d09714c01fa9
-    m_Address: Assets/_Game/Addressable Asset/Prefab/Player/PlayerBlue.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Prefab
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 58d55a6873ba85b4d8ec737967622eef
-    m_Address: Assets/_Game/Addressable Asset/Prefab/Player/PlayerGreen.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Prefab
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7cc54d19a1ab2d744b8b80f2ad10b22c
-    m_Address: Assets/_Game/Addressable Asset/Prefab/Player/PlayerOrange.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Prefab
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 13fac01dc75567840a53f00bb162b15b
-    m_Address: Assets/_Game/Addressable Asset/Prefab/Player/PlayerPink.prefab
+  - m_GUID: 0413da3a91604214a8c24e8b66b7a058
+    m_Address: Assets/_Game/Addressable Asset/Prefab/Player/PlayerRed.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - Prefab
@@ -47,8 +29,26 @@ MonoBehaviour:
     m_SerializedLabels:
     - Prefab
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 0413da3a91604214a8c24e8b66b7a058
-    m_Address: Assets/_Game/Addressable Asset/Prefab/Player/PlayerRed.prefab
+  - m_GUID: 13fac01dc75567840a53f00bb162b15b
+    m_Address: Assets/_Game/Addressable Asset/Prefab/Player/PlayerPink.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7cc54d19a1ab2d744b8b80f2ad10b22c
+    m_Address: Assets/_Game/Addressable Asset/Prefab/Player/PlayerOrange.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 58d55a6873ba85b4d8ec737967622eef
+    m_Address: Assets/_Game/Addressable Asset/Prefab/Player/PlayerGreen.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1f20aad660854d345800d09714c01fa9
+    m_Address: Assets/_Game/Addressable Asset/Prefab/Player/PlayerBlue.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - Prefab
@@ -88,6 +88,78 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - SpineData
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0cd0ad77e42eee841aaefaf032cb6853
+    m_Address: Assets/_Game/Addressable Asset/Prefab/Enemy/Boss 1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3f3b271afecf98a4fb96e9a34cc47138
+    m_Address: Assets/_Game/Addressable Asset/Prefab/Enemy/Boss 2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a62ac0c73dd9b5d4aacecaaa6efd8caa
+    m_Address: Assets/_Game/Addressable Asset/Prefab/Enemy/Boss 3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 083b219e0899cdb4392cbee9c3529a40
+    m_Address: Assets/_Game/Addressable Asset/Prefab/Enemy/EnemyA.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2bc1377c5783adf45859063486b5b464
+    m_Address: Assets/_Game/Addressable Asset/Prefab/Enemy/EnemyB.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 53982201b4c364d4eadc6c33682163a7
+    m_Address: Assets/_Game/Addressable Asset/Prefab/Enemy/EnemyC.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 11c7033ef68c94d4281da48ce47a8b85
+    m_Address: Assets/_Game/Addressable Asset/Prefab/Enemy/EnemyD.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7e8525c75e2c9154b94160fd102fece4
+    m_Address: Assets/_Game/Addressable Asset/Prefab/Enemy/EnemyE.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 895cb352b87a8504faa82a496601bc0c
+    m_Address: Assets/_Game/Addressable Asset/Prefab/Enemy/EnemyF.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5d4e4418e1708e24eae2434a77cf6896
+    m_Address: Assets/_Game/Addressable Asset/Prefab/Enemy/EnemyG.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2447fb49ef94fed40a90dcf7be8ab9f6
+    m_Address: Assets/_Game/Addressable Asset/Prefab/AudioClip/etfx_spawn.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd46de4320f3d1b4087b5f9c0a24ab36
+    m_Address: Assets/_Game/Addressable Asset/Prefab/Fx/RespawnExplosion.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 1ce191bf3f2e9ec489bb6af36ad11011, type: 2}

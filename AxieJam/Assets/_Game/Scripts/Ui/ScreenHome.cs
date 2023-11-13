@@ -9,13 +9,21 @@ using UnityEngine.UI;
 public class ScreenHome : ScreenBase
 {
 
-    [SerializeField] TextAnimation textAnimation;
     [SerializeField] Text tmpLoad;
-    [SerializeField] GameObject panelContent;
+    [SerializeField] TextAnimation textAnimation;
+
     [SerializeField] Image imgLoad;
+    [SerializeField] Image imgCover;
+    [SerializeField] GameObject panelContent;
     [SerializeField] GameObject objNoti;
 
     [SerializeField] TeamAvtController teamAvtController;
+
+    public override void OnInit()
+    {
+        base.OnInit();
+        imgCover.DOFade(0, 1);
+    }
     public override void OnShow()
     {
         base.OnShow();

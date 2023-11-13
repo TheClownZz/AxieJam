@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PotionItem : MonoBehaviour
 {
-    [SerializeField] Transform fx;
+    [SerializeField] GameObjectGetter prefabGetter;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] AudioGetter audioGetter;
     PotionConfig config;
@@ -21,7 +21,7 @@ public class PotionItem : MonoBehaviour
             DataManager.Instance.GetData<DataUser>().UpdatePotionItem(config.type, 1);
             AudioManager.Instance.PlayOnceShot(AudioType.Item);
             PoolManager.Instance.DespawnObject(transform);
-            Transform clone = PoolManager.Instance.SpawnObject(fx);
+            Transform clone = PoolManager.Instance.SpawnObject(prefabGetter.prefab.transform);
             clone.position = transform.position;
             GameManager.Instance.DelayedCall(0.5f, () =>
             {

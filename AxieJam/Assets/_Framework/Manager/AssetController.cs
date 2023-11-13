@@ -32,11 +32,19 @@ public class AssetLoader
         return true;
     }
 
-    public void UnLoadAsset()
+    public void UnLoadAsset(AssetLoader currentLoader)
     {
         foreach (AssetGetter getter in getterList)
         {
-            getter.UnLoad();
+            if (!currentLoader.getterList.Contains(getter))
+            {
+                getter.UnLoad();
+
+            }
+            else
+            {
+                Debug.LogError("Same getter:" + getter.name);
+            }
         }
     }
 }

@@ -11,9 +11,9 @@ public class LevelController : MonoBehaviour
     LevelAsset asset;
     WaveConfig waveConfig;
 
-    float spawnRadius = 7.5f;
     float delaySpawn = 1f;
     [HideInInspector] public List<Enemy> enemyList;
+
 
     public void OnUpdate(float dt)
     {
@@ -23,10 +23,7 @@ public class LevelController : MonoBehaviour
             enemyList[i].OnUpdate(dt);
         }
     }
-    public void OnInits()
-    {
-        spawnRadius = GameManager.Instance.gameConfig.spawnRadius;
-    }
+
     public void SetAsset(LevelAsset asset)
     {
         this.asset = asset;
@@ -129,7 +126,7 @@ public class LevelController : MonoBehaviour
 
     public Vector3 GetSpawnErea()
     {
-        Vector2 pos = Random.insideUnitCircle * spawnRadius;
+        Vector2 pos = Random.insideUnitCircle * GameManager.Instance.gameConfig.spawnRadius;
         pos.x = Mathf.Clamp(pos.x, left.position.x, right.position.x);
         pos.y = Mathf.Clamp(pos.y, bot.position.y, top.position.y - 2f);
         return pos;

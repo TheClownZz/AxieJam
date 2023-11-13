@@ -1,8 +1,7 @@
 using UnityEngine;
-
 public class FoodItem : MonoBehaviour
 {
-    [SerializeField] Transform fx;
+    [SerializeField] GameObjectGetter prefabGetter;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] AudioGetter audioGetter;
     FoodConfig config;
@@ -22,7 +21,7 @@ public class FoodItem : MonoBehaviour
             DataManager.Instance.GetData<DataUser>().UpdateFoodItem(config.type, 1);
             AudioManager.Instance.PlayOnceShot(AudioType.Item);
             PoolManager.Instance.DespawnObject(transform);
-            Transform clone = PoolManager.Instance.SpawnObject(fx);
+            Transform clone = PoolManager.Instance.SpawnObject(prefabGetter.prefab.transform);
             clone.position = transform.position;
             GameManager.Instance.DelayedCall(0.5f, () =>
             {
