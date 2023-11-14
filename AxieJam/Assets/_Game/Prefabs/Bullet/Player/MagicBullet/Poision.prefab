@@ -123,6 +123,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7799813976895212220}
     m_Modifications:
+    - target: {fileID: -4669694302251872044, guid: 6b4ee2ef2fff1014ba246adda6ff9fc0, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b138d2a9ae298147bc1d372330bba2b, type: 3}
     - target: {fileID: 492523169263651756, guid: 6b4ee2ef2fff1014ba246adda6ff9fc0, type: 3}
       propertyPath: m_Name
       value: PoisonExplosionSoft

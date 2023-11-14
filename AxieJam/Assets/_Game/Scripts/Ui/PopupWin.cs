@@ -18,7 +18,7 @@ public class PopupWin : PopupBase
 
     public void SetNext(bool value)
     {
-        btnNext.SetActive(value);
+        //btnNext.SetActive(value);
     }
     public override void OnShow(float fadeTime = 0)
     {
