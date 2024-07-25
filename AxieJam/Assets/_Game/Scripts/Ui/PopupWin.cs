@@ -43,5 +43,7 @@ public class PopupWin : PopupBase
 
         AudioManager.Instance.PlayOnceShot(AudioType.CLICK);
     }
+
+    
 }
 
